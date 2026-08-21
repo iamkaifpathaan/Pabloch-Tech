@@ -1,0 +1,12 @@
+# This folder IS the repo root and IS the deployed site.
+# Your working notes live in ../_internal/, one level up — outside the repo
+# entirely, so they cannot be committed even by accident.
+
+node_modules/
+.vercel/
+.env
+.env.*
+
+.DS_Store
+Thumbs.db
+desktop.ini
