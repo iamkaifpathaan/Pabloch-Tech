@@ -1,0 +1,67 @@
+# ============================================================
+#  Pabloch Tech — Apache / LiteSpeed config for Hostinger
+#  Shared hosting has no CDN in front of it, so caching and
+#  compression are worth setting up by hand. Every block is
+#  wrapped in <IfModule> so a missing module is skipped, not
+#  a 500 error.
+# ============================================================
+
+Options -Indexes
+DirectoryIndex index.html
+
+# ---- one canonical hostname, always HTTPS ------------------
+# hPanel has a "Force HTTPS" toggle as well. Either is enough;
+# both together is harmless.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# ---- compression -------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---- caching -----------------------------------------------
+# index.html must never be stale, or an update won't show.
+# The images never change without changing filename, so a year is safe.
+# config.js gets a day: long enough to help, short enough that
+# swapping a Web3Forms key takes effect the same day.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                      "access plus 1 week"
+  ExpiresByType text/html             "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType text/css              "access plus 1 year"
+  ExpiresByType image/jpeg            "access plus 1 year"
+  ExpiresByType image/png             "access plus 1 year"
+  ExpiresByType image/svg+xml         "access plus 1 year"
+  ExpiresByType image/x-icon          "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # ---- security headers ------------------------------------
+  # No Content-Security-Policy here on purpose: the page uses one
+  # inline <script>, so any useful CSP would need 'unsafe-inline'
+  # and buy nothing. Add one only if the JS moves to its own file.
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+</IfModule>
+
+# ---- never serve these -------------------------------------
+<FilesMatch "^\.(git|env|gitignore)">
+  Require all denied
+</FilesMatch>

@@ -1,106 +1,91 @@
 # Pabloch Tech
 
-The website for **Pabloch Tech** — a one-person web design and development studio building
-fast, hand-coded websites and online stores for small businesses.
+The website for **Pabloch Tech** — a one-person web design and development studio building fast,
+hand-coded websites and online stores for small businesses.
 
-**Live:** _(add the Vercel URL here once it's deployed)_
+**Live:** https://pablochtech.com
 
 ---
 
 ## What this is
 
-One file. `index.html` contains the markup, the CSS, the JavaScript and both case-study
-screenshots (embedded as data URLs), which means it can be opened by double-clicking it,
-emailed, or dropped on any host without anything breaking.
-
-No framework, no build step, no dependencies, no package manager. That's deliberate — it
-loads in well under a second, there's nothing to update at 3am, and it can move from Vercel
-to shared hosting by uploading one file.
+A static site with no framework, no build step, no dependencies and no package manager. It loads
+in well under a second, there is nothing to update at 3am, and it moves between hosts by copying
+files.
 
 | | |
 |---|---|
 | **Stack** | HTML, CSS, vanilla JS |
 | **Fonts** | Instrument Serif + Inter, via Google Fonts, with system fallbacks |
 | **Forms** | [Web3Forms](https://web3forms.com) — no backend required |
-| **Hosting** | Vercel (static) |
+| **Hosting** | Hostinger (Apache/LiteSpeed), deployed from this repo |
+
+```
+index.html      the page — markup, styles and script in one file
+config.js       settings: form key, email, social handles
+.htaccess       HTTPS, canonical host, caching, compression, security headers
+assets/         case-study screenshots
+og-image.jpg    1200×630 social share card
+robots.txt      sitemap.xml
+```
 
 ## Run it locally
 
 ```bash
 git clone https://github.com/pablochsocial/Pabloch-Tech.git
 cd Pabloch-Tech
-open index.html          # macOS  ·  'start' on Windows  ·  'xdg-open' on Linux
-```
-
-That's the whole setup. If you'd rather serve it over HTTP:
-
-```bash
 python3 -m http.server 8000
 ```
 
+Opening `index.html` directly works too. Serving over HTTP is closer to production and avoids
+`file://` quirks.
+
 ## Configuration
 
-Everything configurable lives in a single `CONFIG` object at the bottom of `index.html`:
+Everything configurable lives in **`config.js`**, deliberately separate from `index.html`:
 
 ```js
-var CONFIG = {
+window.PABLOCH_CONFIG = {
   WEB3FORMS_KEY : "…",              // free key from web3forms.com
-  EMAIL         : "…",
+  EMAIL         : "hello@pablochtech.com",
   TELEGRAM      : "…",              // handle only, no @
   INSTAGRAM     : "…",
   FACEBOOK      : "…"
 };
 ```
 
-Blank any handle out (`""`) and that button disappears from the contact block, the footer and
-the mobile menu — the links are generated from `CONFIG` at load rather than hard-coded, so
-there's one place to change and nothing goes stale.
+`index.html` declares empty defaults and merges `window.PABLOCH_CONFIG` over them, so the markup
+can be regenerated without disturbing live settings, and a missing `config.js` degrades to a
+setup notice rather than a broken page.
 
-Until `WEB3FORMS_KEY` is set, a setup bar appears at the top of the page and the enquiry form
-falls back to telling visitors to email instead of silently swallowing submissions.
+Blank a handle out (`""`) and that button disappears from the contact block, the footer and the
+mobile menu — the links are generated at load, so there is one place to change and nothing goes
+stale.
 
-> **On the Web3Forms key:** it is a public identifier, not a secret. It ships in the HTML of
-> every deployed static site by design, so committing it here changes nothing. If it ever gets
-> abused, rotate it at web3forms.com.
+> **On the Web3Forms key:** it is a public identifier, not a secret. It ships in the HTML of every
+> deployed static site by design, so committing it here changes nothing. If it is ever abused,
+> rotate it at web3forms.com.
 
 ## Deploy
 
-The repo root **is** the site, so Vercel needs no configuration:
+The repo root **is** the site. Deployment is Hostinger's GitHub integration
+(hPanel → Websites → Dashboard → Advanced → Git), pointed at `main` and `public_html`, with
+automatic deployment on push.
 
-1. **vercel.com/new** → import this repository
-2. Framework preset: **Other**, root directory: `./`, no build command
-3. Deploy
-
-Every push to `main` redeploys. For a one-off deploy without Git, [vercel.com/drop](https://vercel.com/drop)
-takes a dragged folder — but note that each drop creates a *new* project rather than updating
-an existing one.
-
-Moving to any other static host later is a file copy: upload `index.html` and `robots.txt`
-into the web root. The enquiry form keeps working because Web3Forms is called from the
-browser, not from a server.
-
-## Structure
-
-`index.html`, top to bottom:
-
-| Section | |
-|---|---|
-| `<head>` | title, meta, favicon, JSON-LD |
-| `<style>` | all CSS. Colour tokens are in `:root` — changing `--gold` reskins the whole site |
-| `.nav` / `.mobile` | sticky header and mobile menu |
-| `.hero` | headline and the featured-project card |
-| `#work` | case studies |
-| `#services` `#process` `#pricing` `#about` `#faq` | in that order |
-| `#contact` | enquiry form, social links, call booking |
-| `<script>` | `CONFIG`, social link generation, nav, scroll reveals, form handling |
+Any static host works the same way: copy the files into the web root. `.htaccess` is
+Apache/LiteSpeed-specific and is simply ignored elsewhere.
 
 ## Accessibility & performance notes
 
-- Single request for the document; no external JS or CSS beyond the font stylesheet
-- Respects `prefers-reduced-motion` — scroll reveals and transitions are disabled
-- Mobile menu closes on Escape, on outside tap, and on viewport resize past the breakpoint
-- Visible focus rings, labelled form fields, `aria-expanded` on the menu toggle
-- No horizontal overflow at 375px
+- Text contrast meets WCAG AA throughout (lowest measured pair is 5.0:1)
+- `prefers-reduced-motion` disables scroll reveals and every transition, pseudo-elements included
+- Mobile menu closes on Escape, on outside tap, and on resize past the breakpoint, returning
+  focus to the toggle
+- Form fields are 16px so iOS does not zoom the page on focus
+- Submitting moves focus to the confirmation rather than dropping it to `<body>`
+- Works with JavaScript disabled: content renders and the form is replaced by an email address
+- No horizontal overflow at 320px
+- Images are cached for a year and the HTML is revalidated on every request
 
 ---
 
