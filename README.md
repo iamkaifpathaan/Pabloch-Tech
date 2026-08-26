@@ -1,7 +1,8 @@
 # Pabloch Tech
 
-The website for **Pabloch Tech** — a one-person web design and development studio building fast,
-hand-coded websites and online stores for small businesses.
+The website for **Pabloch Tech** — a web design and development studio building fast, hand-coded
+websites and online stores for small businesses. The first working draft is built before the
+client pays anything.
 
 **Live:** https://pablochtech.com
 
@@ -84,7 +85,8 @@ Apache/LiteSpeed-specific and is simply ignored elsewhere.
 - Form fields are 16px so iOS does not zoom the page on focus
 - Submitting moves focus to the confirmation rather than dropping it to `<body>`
 - Works with JavaScript disabled: content renders and the form is replaced by an email address
-- No horizontal overflow at 320px
+- No horizontal overflow at 320 / 375 / 390 / 414 / 768 / 1024 / 1280 / 1440 / 1920px
+- One `<h1>`, no heading-level skips, no dead anchors, no duplicate ids
 - Images are cached for a year and the HTML is revalidated on every request
 
 ---

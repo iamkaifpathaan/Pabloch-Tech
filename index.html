@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pabloch Tech — Websites for small businesses that need to be found</title>
-<meta name="description" content="Pabloch Tech builds fast, hand-coded websites for small businesses: full storefronts with cart and checkout, and local service sites that quote a price before the customer picks up the phone. Free first draft. From $700.">
+<title>Pabloch Tech — Your website, built before you pay</title>
+<meta name="description" content="We design your first working website draft for free. If you love it, we build and launch the real thing. Business websites, landing pages and online stores from $400. Built by hand, not by page builder.">
 <meta name="theme-color" content="#08090B">
 <link rel="canonical" href="https://pablochtech.com/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pabloch Tech — Websites for small businesses that need to be found">
-<meta property="og:description" content="Fast, hand-coded websites for small businesses. Storefronts, local service sites, instant-quote tools. Free first draft before you pay anything.">
+<meta property="og:title" content="Pabloch Tech — Your website, built before you pay">
+<meta property="og:description" content="We design your first working website draft for free. If you love it, we build and launch the real thing. From $400.">
 <meta property="og:url" content="https://pablochtech.com/">
 <meta property="og:site_name" content="Pabloch Tech">
 <meta property="og:image" content="https://pablochtech.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pabloch Tech — your customers are searching. Give them somewhere to land.">
+<meta property="og:image:alt" content="Pabloch Tech — your website, built before you pay.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://pablochtech.com/og-image.jpg">
 
@@ -31,14 +31,13 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Pabloch Tech",
-  "alternateName": "Pabloch Tech Web Studio",
-  "description": "Web design and development studio building fast, hand-coded websites and online stores for small businesses.",
+  "description": "Web design and development studio building fast, hand-coded websites and online stores for small businesses. The first working draft is built before the client pays.",
   "url": "https://pablochtech.com/",
   "logo": "https://pablochtech.com/og-image.jpg",
   "image": "https://pablochtech.com/og-image.jpg",
   "email": "hello@pablochtech.com",
   "areaServed": ["United States", "United Kingdom", "India", "United Arab Emirates"],
-  "knowsAbout": ["Web design", "Web development", "E-commerce development", "Website hosting and maintenance"],
+  "knowsAbout": ["Web design", "Web development", "E-commerce development", "Landing pages", "Website maintenance"],
   "sameAs": [
     "https://t.me/pablochsocial",
     "https://instagram.com/pablochsocial",
@@ -57,24 +56,24 @@
 
 <style>
 /* ============================================================
-   TOKENS
+   1. TOKENS
    ============================================================ */
 :root{
   --ink:#08090B;
-  --ink-2:#0C0E12;
-  --surface:#121519;
-  --surface-2:#171B21;
-  --line:rgba(255,255,255,.085);
-  --line-2:rgba(255,255,255,.16);
-  --text:#F3F1ED;
-  --muted:#9AA0AB;
+  --ink-2:#0B0D11;
+  --surface:#111318;
+  --surface-2:#161A20;
+  --line:rgba(255,255,255,.075);
+  --line-2:rgba(255,255,255,.14);
+  --text:#F4F2EE;
+  --muted:#A2A8B4;
   --muted-2:#868C97;
   --gold:#E9B44C;
   --gold-soft:#F6D79A;
-  --gold-wash:rgba(233,180,76,.12);
+  --gold-wash:rgba(233,180,76,.11);
   --green:#5FD3A6;
-  --radius:18px;
-  --radius-lg:26px;
+
+  --r-sm:12px; --r:18px; --r-lg:26px;
   --maxw:1180px;
   --ease:cubic-bezier(.22,.7,.3,1);
   --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
@@ -86,14 +85,9 @@
 html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
-  margin:0;
-  background:var(--ink);
-  color:var(--text);
-  font-family:var(--sans);
-  font-size:17px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  margin:0;background:var(--ink);color:var(--text);
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
@@ -105,531 +99,467 @@ button,input,select,textarea{font:inherit;color:inherit}
   padding-left:max(24px,env(safe-area-inset-left));
   padding-right:max(24px,env(safe-area-inset-right));
 }
-@media (max-width:640px){.wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}}
+@media (max-width:640px){
+  .wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+}
 
 /* ============================================================
-   TYPE
+   2. TYPE
    ============================================================ */
 h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.015em}
-h1{font-family:var(--serif);font-size:clamp(2.05rem,4.3vw,3.5rem);line-height:1.06;letter-spacing:-.02em}
-h2{font-family:var(--serif);font-size:clamp(2.05rem,4.3vw,3.25rem);line-height:1.1}
-h3{font-family:var(--sans);font-weight:600;font-size:1.16rem;line-height:1.35;letter-spacing:-.01em}
+h1{font-family:var(--serif);font-size:clamp(2.35rem,5.4vw,4.15rem);line-height:1.02;letter-spacing:-.025em}
+h2{font-family:var(--serif);font-size:clamp(2rem,4.1vw,3.1rem);line-height:1.08}
+h3{font-family:var(--sans);font-weight:600;font-size:1.14rem;line-height:1.35;letter-spacing:-.01em}
 p{margin:0 0 1.1em}
 em.g{font-style:italic;color:var(--gold-soft)}
-.lede{font-size:clamp(1.03rem,1.7vw,1.2rem);color:var(--muted);line-height:1.7;max-width:60ch}
+.lede{font-size:clamp(1.02rem,1.6vw,1.17rem);color:var(--muted);line-height:1.7;max-width:60ch}
 
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--mono);font-size:.7rem;font-weight:500;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
-  margin:0 0 20px;
+  font-family:var(--mono);font-size:.69rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 20px;
 }
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
 
 /* ============================================================
-   LAYOUT
+   3. LAYOUT
    ============================================================ */
-section{position:relative}
-.sec{padding:clamp(76px,10vw,132px) 0}
+.sec{padding:clamp(74px,9.5vw,126px) 0;position:relative}
 .sec--alt{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.sec-head{max-width:660px;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head{max-width:680px;margin-bottom:clamp(38px,5vw,60px)}
 .sec-head h2{margin-bottom:18px}
+.sec-head--mid{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head--mid .eyebrow{justify-content:center}
 
 /* ============================================================
-   BUTTONS
+   4. BUTTONS
    ============================================================ */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  padding:15px 26px;border-radius:999px;border:1px solid transparent;
-  font-size:.955rem;font-weight:600;letter-spacing:-.005em;
-  cursor:pointer;transition:all .25s var(--ease);white-space:nowrap;
-  text-align:center;
+  padding:16px 28px;border-radius:999px;border:1px solid transparent;
+  font-size:.96rem;font-weight:600;letter-spacing:-.005em;
+  cursor:pointer;white-space:nowrap;text-align:center;
+  transition:background .25s var(--ease),border-color .25s var(--ease),
+             transform .25s var(--ease),box-shadow .25s var(--ease),color .25s var(--ease);
 }
-.btn--gold{background:var(--gold);color:#14100A;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 12px 30px -12px rgba(233,180,76,.55)}
-.btn--gold:hover{background:var(--gold-soft);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 16px 34px -12px rgba(233,180,76,.65)}
+.btn--gold{background:var(--gold);color:#14100A;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 14px 34px -14px rgba(233,180,76,.6)}
+.btn--gold:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 20px 40px -14px rgba(233,180,76,.7)}
 .btn--ghost{background:rgba(255,255,255,.03);border-color:var(--line-2);color:var(--text)}
-.btn--ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.28);transform:translateY(-1px)}
+.btn--ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.27);transform:translateY(-2px)}
 .btn--sm{padding:11px 20px;font-size:.88rem}
 .btn--wide{width:100%}
 .btn .ar{transition:transform .25s var(--ease)}
 .btn:hover .ar{transform:translateX(3px)}
 
 /* ============================================================
-   SETUP BANNER (only shows while placeholders are unset)
+   5. SETUP BANNER (only until the Web3Forms key is in)
    ============================================================ */
-#setup{
-  display:none;position:relative;z-index:60;
-  background:linear-gradient(90deg,#2A1F06,#3A2B08);
-  border-bottom:1px solid rgba(233,180,76,.3);
-  color:var(--gold-soft);font-size:.83rem;line-height:1.5;
-}
+#setup{display:none;position:relative;z-index:60;background:linear-gradient(90deg,#2A1F06,#3A2B08);
+  border-bottom:1px solid rgba(233,180,76,.3);color:var(--gold-soft);font-size:.83rem;line-height:1.5}
 #setup.on{display:block}
 #setup .wrap{display:flex;gap:12px;align-items:center;justify-content:center;padding:9px 24px;flex-wrap:wrap;text-align:center}
 #setup code{font-family:var(--mono);font-size:.78rem;background:rgba(0,0,0,.35);padding:2px 7px;border-radius:5px;color:#FFF}
 #setup button{background:none;border:1px solid rgba(233,180,76,.4);border-radius:999px;padding:3px 12px;font-size:.75rem;cursor:pointer;color:inherit}
 
 /* ============================================================
-   NAV
+   6. NAV
    ============================================================ */
 .nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(8,9,11,.72);
-  backdrop-filter:saturate(160%) blur(16px);
-  -webkit-backdrop-filter:saturate(160%) blur(16px);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s var(--ease),background .3s var(--ease);
+  position:sticky;top:0;z-index:50;background:rgba(8,9,11,.72);
+  backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);
+  border-bottom:1px solid transparent;transition:border-color .3s var(--ease),background .3s var(--ease);
 }
-.nav.stuck{border-bottom-color:var(--line);background:rgba(8,9,11,.9)}
+.nav.stuck{border-bottom-color:var(--line);background:rgba(8,9,11,.92)}
 .nav.menuopen{background:var(--ink)}
 .nav > .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
 .brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
 .brand-mark{
   width:34px;height:34px;border-radius:10px;flex-shrink:0;
-  background:linear-gradient(150deg,#2A2109,#0E0F12);
-  border:1px solid rgba(233,180,76,.35);
-  display:grid;place-items:center;
-  font-family:var(--serif);font-size:1.22rem;color:var(--gold);line-height:1;
+  background:linear-gradient(150deg,#2A2109,#0E0F12);border:1px solid rgba(233,180,76,.35);
+  display:grid;place-items:center;font-family:var(--serif);font-size:1.22rem;color:var(--gold);line-height:1;
   box-shadow:0 6px 18px -8px rgba(233,180,76,.5);
 }
 .brand-name{font-weight:600;font-size:1.03rem;letter-spacing:-.015em}
 .brand-name span{color:var(--muted-2);font-weight:400}
-.nav-links{display:flex;align-items:center;gap:4px}
-.nav-links a{
-  padding:8px 13px;border-radius:9px;font-size:.9rem;color:var(--muted);
-  transition:color .2s,background .2s;
-}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:8px 13px;border-radius:9px;font-size:.9rem;color:var(--muted);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
 .nav-cta{display:flex;align-items:center;gap:10px}
-.burger{
-  display:none;width:40px;height:40px;border-radius:10px;
-  border:1px solid var(--line-2);background:rgba(255,255,255,.03);
-  cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;
-}
+.burger{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--line-2);
+  background:rgba(255,255,255,.03);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
 .burger i{display:block;width:16px;height:1.5px;background:var(--text);transition:transform .3s var(--ease),opacity .2s}
 .burger.x i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
 .burger.x i:nth-child(2){opacity:0}
 .burger.x i:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
-.mobile{
-  display:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:var(--ink);
-  max-height:calc(100dvh - 72px);overflow-y:auto;-webkit-overflow-scrolling:touch;
-}
+.mobile{display:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--ink);max-height:calc(100dvh - 72px);overflow-y:auto;-webkit-overflow-scrolling:touch}
 .mobile.on{display:block}
 .mobile .wrap{padding-top:8px;padding-bottom:24px}
 .mobile > .wrap > a{display:block;padding:14px 4px;font-size:1.02rem;border-bottom:1px solid var(--line);color:var(--muted)}
 .mobile > .wrap > a.btn{display:flex;font-size:.955rem;border-bottom:none;color:#14100A;margin-top:18px;padding:15px 26px}
 .m-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.m-social a{
-  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line-2);
-  border-radius:999px;font-size:.85rem;color:var(--muted);
-}
+.m-social a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line-2);
+  border-radius:999px;font-size:.85rem;color:var(--muted)}
 .m-social a svg{width:15px;height:15px;color:var(--gold)}
-@media (max-width:900px){
+@media (max-width:920px){
   .nav-links{display:none}
   .nav-cta .btn{display:none}
   .burger{display:flex}
 }
 
 /* ============================================================
-   HERO
+   7. HERO
    ============================================================ */
-.hero{position:relative;padding:clamp(58px,8vw,104px) 0 clamp(56px,7vw,88px);overflow:hidden}
+.hero{position:relative;padding:clamp(52px,7vw,92px) 0 clamp(56px,7vw,88px);overflow:hidden}
 .hero::before{
-  content:"";position:absolute;inset:-30% -20% auto -20%;height:120%;
-  background:radial-gradient(58% 46% at 22% 8%,rgba(233,180,76,.13),transparent 62%),
-             radial-gradient(48% 40% at 88% 22%,rgba(120,110,255,.075),transparent 65%);
-  pointer-events:none;
+  content:"";position:absolute;inset:-30% -20% auto -20%;height:130%;pointer-events:none;
+  background:radial-gradient(56% 46% at 18% 4%,rgba(233,180,76,.14),transparent 62%),
+             radial-gradient(46% 40% at 90% 26%,rgba(120,110,255,.07),transparent 66%);
 }
-.hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--line-2),transparent);
-}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line-2),transparent)}
 .hero .wrap{position:relative}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,4.5vw,60px);align-items:center}
-.hero h1{margin-bottom:22px}
-.hero .lede{margin-bottom:30px;max-width:52ch}
-@media (max-width:1000px){
-  .hero-grid{grid-template-columns:1fr;gap:44px}
-  .hero-card{max-width:520px}
-}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(34px,4.5vw,62px);align-items:center}
+@media (max-width:1040px){.hero-grid{grid-template-columns:1fr;gap:48px}}
 
-/* hero proof card */
-.hero-card{
-  padding:26px;border-radius:var(--radius-lg);position:relative;overflow:hidden;
-  background:linear-gradient(165deg,rgba(233,180,76,.07),var(--surface) 45%,var(--ink-2));
-  border:1px solid var(--line-2);
-  box-shadow:0 40px 90px -50px rgba(0,0,0,1);
+.free-pill{
+  display:inline-flex;align-items:center;gap:9px;padding:7px 15px 7px 9px;border-radius:999px;
+  background:var(--gold-wash);border:1px solid rgba(233,180,76,.3);
+  font-size:.82rem;color:var(--gold-soft);margin-bottom:22px;line-height:1.4;
 }
-.hero-card::before{
-  content:"";position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;
-  background:radial-gradient(circle,rgba(233,180,76,.18),transparent 68%);pointer-events:none;
-}
-.hc-top{position:relative}
-.hc-title{font-family:var(--serif);font-weight:400;font-size:1.75rem;line-height:1.12;margin:14px 0 8px;color:var(--text)}
-.hc-sub{font-size:.93rem;color:var(--muted);line-height:1.6;margin:0 0 16px}
-.hc-rows{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
-.hc-row{display:flex;align-items:baseline;gap:14px;padding:9px 0}
-.hc-row b{
-  font-family:var(--serif);font-weight:400;font-size:1.32rem;color:var(--gold-soft);
-  min-width:96px;flex-shrink:0;line-height:1.1;
-}
-.hc-row span{font-size:.89rem;color:var(--muted);line-height:1.5}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:38px}
-.hero-note{
-  display:flex;align-items:center;gap:9px;font-size:.87rem;color:var(--muted-2);
-}
+.free-pill b{background:var(--gold);color:#14100A;font-weight:700;font-size:.7rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.hero h1{margin-bottom:22px}
+.hero .lede{margin-bottom:30px;max-width:50ch}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-note{display:flex;align-items:center;gap:9px;font-size:.87rem;color:var(--muted-2);margin:0}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(95,211,166,.16);flex-shrink:0}
 
-/* stat bar */
-.stats{border-top:1px solid var(--line);background:var(--ink-2)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:30px 22px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:none}
-.stat b{
-  display:block;font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);
-  line-height:1;color:var(--text);margin-bottom:8px;font-weight:400;
+/* --- responsive mockup: real screenshots of a real build --- */
+.mock{position:relative;padding-bottom:34px;padding-left:26px}
+.mock-desk{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);
+  background:#0d0f13;box-shadow:0 40px 90px -40px rgba(0,0,0,1),0 0 0 1px rgba(255,255,255,.03)}
+.chrome{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#15181d;border-bottom:1px solid var(--line)}
+.chrome i{width:9px;height:9px;border-radius:50%;background:#2c313a;display:block;flex-shrink:0}
+.chrome b{flex:1;margin-left:8px;font-family:var(--mono);font-size:.62rem;font-weight:400;color:var(--muted-2);
+  background:#0d0f13;border-radius:5px;padding:4px 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mock-desk img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top center}
+.mock-phone{position:absolute;left:0;bottom:0;width:132px;margin:0;border-radius:16px;overflow:hidden;
+  border:1px solid var(--line-2);background:#0d0f13;box-shadow:0 26px 50px -20px rgba(0,0,0,1)}
+.mock-phone img{width:100%;height:auto;aspect-ratio:390/560;object-fit:cover;object-position:top center}
+.mock-badge{
+  position:absolute;right:-6px;top:-16px;display:flex;align-items:center;gap:10px;
+  padding:11px 15px;border-radius:14px;background:rgba(17,19,24,.92);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(233,180,76,.28);box-shadow:0 20px 40px -20px rgba(0,0,0,1);
 }
-.stat span{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-2);line-height:1.5;display:block}
-@media (max-width:760px){
-  .stats .wrap{grid-template-columns:1fr 1fr;padding:0}
-  .stat{padding:24px 20px;border-bottom:1px solid var(--line)}
-  .stat:nth-child(2n){border-right:none}
-  .stat:nth-last-child(-n+2){border-bottom:none}
+.mock-badge .tick{width:26px;height:26px;border-radius:8px;background:var(--gold-wash);
+  border:1px solid rgba(233,180,76,.3);display:grid;place-items:center;color:var(--gold);flex-shrink:0}
+.mock-badge .tick svg{width:13px;height:13px}
+.mock-badge span{font-size:.79rem;line-height:1.35;color:var(--muted)}
+.mock-badge strong{display:block;color:var(--text);font-size:.86rem;font-weight:600}
+@media (max-width:520px){
+  .mock{padding-left:0;padding-bottom:0;padding-top:58px}   /* room for the badge above the frame */
+  .mock-phone{display:none}
+  .mock-badge{right:0;top:0}
+  .hero-cta{flex-direction:column;align-items:stretch;gap:10px}
+  .hero-cta .btn{width:100%}
 }
 
 /* ============================================================
-   WORK
+   8. TRUST STRIP
+   ============================================================ */
+.trust{border-top:1px solid var(--line);background:var(--ink-2)}
+.trust .wrap{padding-top:34px;padding-bottom:34px}
+.trust-line{font-size:.88rem;color:var(--muted-2);margin:0 0 22px;text-align:center}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.trust-cell{background:var(--ink-2);padding:24px 20px;text-align:center}
+.trust-cell b{display:block;font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.05rem);
+  line-height:1;color:var(--text);margin-bottom:8px;font-weight:400}
+.trust-cell span{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted-2);line-height:1.5;display:block}
+@media (max-width:760px){.trust-grid{grid-template-columns:1fr 1fr}}
+
+/* ============================================================
+   9. PROCESS — the free draft
+   ============================================================ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.steps{grid-template-columns:1fr}}
+.step{
+  position:relative;padding:30px 28px 32px;border-radius:var(--r-lg);
+  background:var(--surface);border:1px solid var(--line);
+  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
+}
+.step:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--surface-2)}
+.step--free{background:linear-gradient(165deg,rgba(233,180,76,.1),var(--surface) 46%);border-color:rgba(233,180,76,.28)}
+.step-n{display:flex;align-items:center;gap:11px;margin-bottom:18px}
+.step-n em{font-family:var(--serif);font-style:normal;font-size:2.1rem;line-height:1;color:var(--gold);opacity:.85}
+.step-n span{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#14100A;background:var(--gold);padding:4px 10px;border-radius:999px;font-weight:600}
+.step h3{font-family:var(--serif);font-weight:400;font-size:1.42rem;line-height:1.15;margin-bottom:10px}
+.step p{font-size:.93rem;color:var(--muted);line-height:1.65;margin:0}
+.step-foot{margin-top:26px;padding:18px 22px;border-radius:var(--r);background:rgba(255,255,255,.025);
+  border:1px solid var(--line);font-size:.92rem;color:var(--muted);line-height:1.65}
+.step-foot b{color:var(--text);font-weight:600}
+
+/* ============================================================
+   10. WORK
    ============================================================ */
 .case{
-  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);
-  align-items:center;padding:clamp(30px,4vw,44px);
-  background:linear-gradient(160deg,var(--surface),var(--ink-2));
-  border:1px solid var(--line);border-radius:var(--radius-lg);
-  margin-bottom:24px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,54px);align-items:center;
+  padding:clamp(26px,3.6vw,42px);background:linear-gradient(160deg,var(--surface),var(--ink-2));
+  border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;
 }
 .case--flip .case-media{order:-1}
-.case-media{
-  border-radius:14px;overflow:hidden;border:1px solid var(--line-2);
-  background:#000;box-shadow:0 30px 70px -34px rgba(0,0,0,.95);
-  position:relative;
-}
-.case-media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.case-media{border-radius:14px;overflow:hidden;border:1px solid var(--line-2);background:#000;
+  box-shadow:0 30px 70px -34px rgba(0,0,0,.95);position:relative}
+.case-media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;transition:transform .7s var(--ease)}
 .case:hover .case-media img{transform:scale(1.025)}
-.case-media::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);border-radius:14px;pointer-events:none}
-.tag{
-  display:inline-flex;align-items:center;gap:7px;
-  font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
-  padding:6px 12px;border-radius:999px;margin-bottom:16px;
-}
+.tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.65rem;
+  letter-spacing:.13em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:16px}
 .tag--live{background:rgba(95,211,166,.12);color:var(--green);border:1px solid rgba(95,211,166,.28)}
 .tag--spec{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--line-2)}
-.case h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,2.6vw,2.05rem);line-height:1.15;margin-bottom:6px}
+.case h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.55rem,2.5vw,2rem);line-height:1.15;margin-bottom:6px}
 .case .case-sub{font-size:.9rem;color:var(--muted-2);line-height:1.5;margin-bottom:16px}
-.case p{font-size:.97rem;color:var(--muted);line-height:1.7}
+.case p{font-size:.96rem;color:var(--muted);line-height:1.7}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 22px}
-.chip{
-  font-size:.78rem;padding:5px 11px;border-radius:8px;
-  background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);
-}
+.chip{font-size:.77rem;padding:5px 11px;border-radius:8px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line);color:var(--muted)}
+.case-link{display:inline-flex;align-items:center;gap:8px;font-size:.93rem;font-weight:600;color:var(--gold);
+  border-bottom:1px solid rgba(233,180,76,.35);padding-bottom:2px;
+  transition:color .2s var(--ease),border-color .2s var(--ease)}
+.case-link span{display:inline-block;transition:transform .2s var(--ease)}
+.case-link:hover{color:var(--gold-soft);border-color:var(--gold-soft)}
+.case-link:hover span{transform:translate(2px,-2px)}
+@media (max-width:880px){.case{grid-template-columns:1fr;padding:22px}.case .case-media{order:-1}}
 
-/* ---- preview builds ---- */
-.sub-head{
-  max-width:760px;margin:clamp(44px,5.5vw,68px) 0 clamp(24px,3vw,34px);
-  padding-top:clamp(38px,4.5vw,56px);border-top:1px solid var(--line);
-}
-.sub-head h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.15;margin-bottom:12px}
+.sub-head{max-width:760px;margin:clamp(42px,5vw,64px) 0 clamp(24px,3vw,34px);
+  padding-top:clamp(36px,4.4vw,54px);border-top:1px solid var(--line)}
+.sub-head h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.45rem,2.5vw,1.95rem);line-height:1.15;margin-bottom:12px}
 .sub-head p{font-size:.94rem;color:var(--muted);line-height:1.7;margin:0}
 .sub-head strong{color:var(--text);font-weight:600}
 
 .previews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media (max-width:960px){.previews{grid-template-columns:1fr 1fr}}
 @media (max-width:680px){.previews{grid-template-columns:1fr}}
-.pv{
-  display:flex;flex-direction:column;border-radius:var(--radius);overflow:hidden;
-  background:var(--surface);border:1px solid var(--line);
-  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
-}
+.pv{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:var(--surface);
+  border:1px solid var(--line);transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
 .pv:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--surface-2)}
 .pv-shot{display:block;position:relative;background:#000;border-bottom:1px solid var(--line);overflow:hidden}
 .pv-shot img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top center;transition:transform .7s var(--ease)}
 .pv:hover .pv-shot img{transform:scale(1.03)}
 .pv-shot:focus-visible{outline-offset:-4px}
 .pv-body{padding:22px;display:flex;flex-direction:column;flex:1}
-.pv-body h4{font-family:var(--serif);font-weight:400;font-size:1.35rem;line-height:1.15;margin:0 0 4px}
+.pv-body h4{font-family:var(--serif);font-weight:400;font-size:1.32rem;line-height:1.15;margin:0 0 4px}
 .pv-body .tag{margin-bottom:14px}
 .pv-body .pv-sub{font-size:.82rem;color:var(--muted-2);line-height:1.45;margin:0 0 14px}
-.pv-body > p{font-size:.895rem;color:var(--muted);line-height:1.65;margin:0 0 16px}
+.pv-body > p{font-size:.89rem;color:var(--muted);line-height:1.65;margin:0 0 16px}
 .pv .chips{margin:auto 0 18px}
-.pv .chip{font-size:.735rem;padding:4px 9px}
+.pv .chip{font-size:.73rem;padding:4px 9px}
 .pv .case-link{font-size:.87rem;align-self:flex-start}
-.case-link{
-  display:inline-flex;align-items:center;gap:8px;font-size:.93rem;font-weight:600;color:var(--gold);
-  border-bottom:1px solid rgba(233,180,76,.35);padding-bottom:2px;
-  transition:color .2s var(--ease),border-color .2s var(--ease);
-}
-.case-link span{display:inline-block;transition:transform .2s var(--ease)}
-.case-link:hover{color:var(--gold-soft);border-color:var(--gold-soft)}
-.case-link:hover span{transform:translate(2px,-2px)}
-@media (max-width:860px){
-  .case{grid-template-columns:1fr;padding:22px}
-  .case .case-media{order:-1}
-}
 
 /* ============================================================
-   SERVICE / GENERIC CARD GRID
+   11. CARD GRIDS (services, objections)
    ============================================================ */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
-@media (max-width:660px){.grid-3,.grid-2{grid-template-columns:1fr}}
+@media (max-width:660px){.grid-2,.grid-3{grid-template-columns:1fr}}
 
-.card{
-  padding:30px 26px;border-radius:var(--radius);
-  background:var(--surface);border:1px solid var(--line);
-  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
-}
+.card{padding:30px 26px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
+  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
 .card:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--surface-2)}
-.card .ico{
-  width:40px;height:40px;border-radius:11px;margin-bottom:18px;
-  background:var(--gold-wash);border:1px solid rgba(233,180,76,.24);
-  display:grid;place-items:center;color:var(--gold);
-}
+.card .ico{width:40px;height:40px;border-radius:11px;margin-bottom:18px;background:var(--gold-wash);
+  border:1px solid rgba(233,180,76,.24);display:grid;place-items:center;color:var(--gold)}
 .card .ico svg{width:19px;height:19px}
 .card h3{margin-bottom:9px}
-.card p{font-size:.92rem;color:var(--muted);line-height:1.65;margin:0}
+.card > p{font-size:.92rem;color:var(--muted);line-height:1.65;margin:0}
 .card ul{margin:14px 0 0;padding:0;list-style:none}
-.card ul li{
-  font-size:.87rem;color:var(--muted);padding-left:20px;position:relative;margin-bottom:7px;line-height:1.55;
-}
-.card ul li::before{
-  content:"";position:absolute;left:0;top:.55em;width:9px;height:1.5px;background:var(--gold);opacity:.65;
-}
+.card ul li{font-size:.87rem;color:var(--muted);padding-left:20px;position:relative;margin-bottom:7px;line-height:1.55}
+.card ul li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:1.5px;background:var(--gold);opacity:.65}
+
+/* objection cards */
+.obj{padding:26px 24px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
+  transition:border-color .3s var(--ease),background .3s var(--ease)}
+.obj:hover{border-color:var(--line-2);background:var(--surface-2)}
+.obj q{display:block;font-family:var(--serif);font-size:1.22rem;line-height:1.3;color:var(--text);
+  margin-bottom:12px;font-style:italic;quotes:'"' '"'}
+.obj p{font-size:.91rem;color:var(--muted);line-height:1.65;margin:0}
 
 /* ============================================================
-   PROCESS
-   ============================================================ */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
-.step{padding:32px 26px;border-right:1px solid var(--line);background:var(--surface);position:relative}
-.step:last-child{border-right:none}
-.step-n{
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;color:var(--gold);
-  margin-bottom:16px;display:block;
-}
-.step h3{margin-bottom:9px;font-size:1.05rem}
-.step p{font-size:.89rem;color:var(--muted);margin:0;line-height:1.6}
-.step--free{background:linear-gradient(160deg,rgba(233,180,76,.09),var(--surface))}
-@media (max-width:900px){
-  .steps{grid-template-columns:1fr 1fr}
-  .step:nth-child(2n){border-right:none}
-  .step:nth-child(-n+2){border-bottom:1px solid var(--line)}
-}
-@media (max-width:560px){
-  .steps{grid-template-columns:1fr}
-  .step{border-right:none;border-bottom:1px solid var(--line)}
-  .step:last-child{border-bottom:none}
-}
-
-/* ============================================================
-   PRICING
+   12. PRICING
    ============================================================ */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-@media (max-width:920px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
-.plan{
-  display:flex;flex-direction:column;padding:32px 28px;border-radius:var(--radius-lg);
+@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.plan{display:flex;flex-direction:column;padding:32px 28px;border-radius:var(--r-lg);
   background:var(--surface);border:1px solid var(--line);position:relative;
-}
-.plan--best{
-  background:linear-gradient(165deg,rgba(233,180,76,.1),var(--surface) 42%);
-  border-color:rgba(233,180,76,.34);
-  box-shadow:0 30px 70px -40px rgba(233,180,76,.4);
-}
-.plan-flag{
-  position:absolute;top:-11px;left:28px;
-  font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;
-  background:var(--gold);color:#14100A;padding:4px 12px;border-radius:999px;font-weight:600;
-}
+  transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.plan:hover{transform:translateY(-3px);border-color:var(--line-2)}
+.plan--best{background:linear-gradient(165deg,rgba(233,180,76,.1),var(--surface) 42%);
+  border-color:rgba(233,180,76,.34);box-shadow:0 30px 70px -40px rgba(233,180,76,.4)}
+.plan--flag{background:linear-gradient(165deg,rgba(120,110,255,.07),var(--surface) 44%);border-color:rgba(255,255,255,.16)}
+.plan-flag{position:absolute;top:-11px;left:28px;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;background:var(--gold);color:#14100A;padding:4px 12px;border-radius:999px;font-weight:600}
+.plan-flag--alt{background:var(--text);color:var(--ink)}
 .plan h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin-bottom:6px}
-.plan .for{font-size:.85rem;color:var(--muted-2);margin-bottom:22px;line-height:1.5;min-height:2.6em}
-.price{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
-.price .from{font-size:.78rem;color:var(--muted-2);font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.price .amt{font-family:var(--serif);font-size:2.6rem;line-height:1;color:var(--text)}
-.plan .mo{font-size:.86rem;color:var(--muted);margin-bottom:24px}
-.plan .mo b{color:var(--gold-soft);font-weight:600}
+.plan .for{font-size:.85rem;color:var(--muted-2);margin-bottom:22px;line-height:1.5;min-height:3em}
+.price{display:flex;align-items:baseline;gap:7px;margin-bottom:6px;flex-wrap:wrap}
+.price .from{font-size:.72rem;color:var(--muted-2);font-family:var(--mono);letter-spacing:.09em;text-transform:uppercase}
+.price .amt{font-family:var(--serif);font-size:2.7rem;line-height:1;color:var(--text)}
+.plan .note{font-size:.83rem;color:var(--muted-2);margin-bottom:24px;line-height:1.5}
 .plan ul{list-style:none;margin:0 0 26px;padding:0;flex:1}
-.plan ul li{
-  font-size:.885rem;color:var(--muted);line-height:1.5;
-  padding:9px 0 9px 26px;position:relative;border-top:1px solid var(--line);
-}
+.plan ul li{font-size:.875rem;color:var(--muted);line-height:1.5;padding:9px 0 9px 26px;position:relative;border-top:1px solid var(--line)}
 .plan ul li:first-child{border-top:none}
-.plan ul li::before{
-  content:"";position:absolute;left:2px;top:1.15em;width:11px;height:6px;
-  border-left:1.6px solid var(--gold);border-bottom:1.6px solid var(--gold);
-  transform:rotate(-45deg);opacity:.8;
-}
-.pay-note{
-  margin-top:26px;padding:18px 22px;border-radius:14px;
-  background:rgba(255,255,255,.025);border:1px solid var(--line);
-  font-size:.88rem;color:var(--muted);line-height:1.65;
-}
+.plan ul li::before{content:"";position:absolute;left:2px;top:1.1em;width:11px;height:6px;
+  border-left:1.6px solid var(--gold);border-bottom:1.6px solid var(--gold);transform:rotate(-45deg);opacity:.8}
+.plan ul li b{color:var(--text);font-weight:600}
+.pay-note{margin-top:26px;padding:20px 24px;border-radius:var(--r);background:rgba(255,255,255,.025);
+  border:1px solid var(--line);font-size:.9rem;color:var(--muted);line-height:1.7}
 .pay-note b{color:var(--text);font-weight:600}
 
 /* ============================================================
-   ABOUT
+   13. ABOUT
    ============================================================ */
-.about{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,64px);align-items:center}
-@media (max-width:860px){.about{grid-template-columns:1fr}}
-.about-panel{
-  padding:clamp(26px,3.4vw,38px);border-radius:var(--radius-lg);
-  background:linear-gradient(160deg,var(--surface),var(--ink-2));border:1px solid var(--line);
-}
+.about{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,62px);align-items:center}
+@media (max-width:880px){.about{grid-template-columns:1fr}}
+.about-panel{padding:clamp(26px,3.4vw,38px);border-radius:var(--r-lg);
+  background:linear-gradient(160deg,var(--surface),var(--ink-2));border:1px solid var(--line)}
 .fact{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
 .fact:last-child{border-bottom:none;padding-bottom:0}
 .fact:first-child{padding-top:0}
-.fact .k{
-  font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--muted-2);width:98px;flex-shrink:0;padding-top:4px;line-height:1.5;
-}
+.fact .k{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-2);width:96px;flex-shrink:0;padding-top:4px;line-height:1.5}
 .fact .v{font-size:.93rem;color:var(--text);line-height:1.6}
 .fact .v small{display:block;color:var(--muted-2);font-size:.83rem;margin-top:2px}
 
 /* ============================================================
-   FAQ
+   14. FAQ
    ============================================================ */
-.faq{max-width:800px;margin:0 auto}
+.faq{max-width:820px;margin:0 auto}
 .q{border-bottom:1px solid var(--line)}
-.q summary{
-  list-style:none;cursor:pointer;padding:22px 40px 22px 0;position:relative;
-  font-size:1.02rem;font-weight:500;letter-spacing:-.01em;transition:color .2s;
-}
+.q summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;
+  font-size:1.02rem;font-weight:500;letter-spacing:-.01em;transition:color .2s}
 .q summary::-webkit-details-marker{display:none}
 .q summary:hover{color:var(--gold-soft)}
-.q summary::after{
-  content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
+.q summary::after{content:"";position:absolute;right:10px;top:50%;width:11px;height:11px;
   border-right:1.6px solid var(--muted);border-bottom:1.6px solid var(--muted);
-  transform:translateY(-70%) rotate(45deg);transition:transform .3s var(--ease);
-}
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s var(--ease),border-color .3s var(--ease)}
 .q[open] summary::after{transform:translateY(-30%) rotate(225deg);border-color:var(--gold)}
-.q .a{padding:0 30px 24px 0;color:var(--muted);font-size:.95rem;line-height:1.75}
+.q .a{padding:0 34px 24px 0;color:var(--muted);font-size:.95rem;line-height:1.75}
 .q .a p:last-child{margin-bottom:0}
+.q .a strong{color:var(--text);font-weight:600}
+.q[open] .a{animation:faq .32s var(--ease)}
+@keyframes faq{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
 /* ============================================================
-   CONTACT
+   15. MID-PAGE CTA BARS
    ============================================================ */
-.contact{
-  display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,60px);align-items:start;
-}
+.ctabar{margin-top:clamp(34px,4vw,48px);padding:clamp(26px,3.4vw,38px);border-radius:var(--r-lg);
+  background:linear-gradient(150deg,rgba(233,180,76,.09),var(--surface) 55%);
+  border:1px solid rgba(233,180,76,.24);display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap}
+.ctabar h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.2;margin-bottom:6px}
+.ctabar p{font-size:.92rem;color:var(--muted);margin:0;max-width:52ch}
+
+/* ============================================================
+   16. FINAL CTA + CONTACT
+   ============================================================ */
+.final{position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:150%;pointer-events:none;
+  background:radial-gradient(48% 42% at 50% 0%,rgba(233,180,76,.13),transparent 64%)}
+.final .wrap{position:relative}
+.final-head{max-width:760px;margin:0 auto clamp(40px,5vw,58px);text-align:center}
+.final-head h2{margin-bottom:18px}
+.final-head .lede{margin-left:auto;margin-right:auto}
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,58px);align-items:start}
 @media (max-width:900px){.contact{grid-template-columns:1fr}}
-.form-panel{
-  padding:clamp(26px,3.4vw,40px);border-radius:var(--radius-lg);
-  background:linear-gradient(165deg,var(--surface),var(--ink-2));
-  border:1px solid var(--line);position:relative;overflow:hidden;
-}
+.form-panel{padding:clamp(26px,3.4vw,40px);border-radius:var(--r-lg);
+  background:linear-gradient(165deg,var(--surface),var(--ink-2));border:1px solid var(--line);position:relative;overflow:hidden}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:560px){.row{grid-template-columns:1fr}}
 .field{margin-bottom:14px}
-.field label{
-  display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted-2);margin-bottom:8px;
-}
+.field label{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted-2);margin-bottom:8px}
 .field label .req{color:var(--gold);margin-left:3px}
 .field input,.field select,.field textarea{
-  width:100%;padding:13px 15px;border-radius:11px;
-  background:rgba(255,255,255,.035);border:1px solid var(--line-2);
-  font-size:1rem;transition:border-color .2s,background .2s,box-shadow .2s;
-  -webkit-appearance:none;appearance:none;
+  width:100%;padding:13px 15px;border-radius:11px;background:rgba(255,255,255,.035);
+  border:1px solid var(--line-2);font-size:1rem;
+  transition:border-color .2s,background .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;
 }
-.field select{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%239AA0AB' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;cursor:pointer;
-}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%23A2A8B4' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;cursor:pointer}
 .field select option{background:#14171C;color:var(--text)}
 .field textarea{resize:vertical;min-height:112px;line-height:1.6}
-.field input:focus,.field select:focus,.field textarea:focus{
-  outline:none;border-color:rgba(233,180,76,.55);background:rgba(255,255,255,.055);
-  box-shadow:0 0 0 3px rgba(233,180,76,.12);
-}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:rgba(233,180,76,.55);
+  background:rgba(255,255,255,.055);box-shadow:0 0 0 3px rgba(233,180,76,.12)}
 .field input::placeholder,.field textarea::placeholder{color:var(--muted-2)}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;pointer-events:none}
-.form-foot{margin-top:8px;font-size:.79rem;color:var(--muted-2);line-height:1.6;text-align:center}
-.form-msg{
-  display:none;margin-top:16px;padding:14px 16px;border-radius:12px;font-size:.9rem;line-height:1.55;
-}
+.form-foot{margin-top:10px;font-size:.79rem;color:var(--muted-2);line-height:1.6;text-align:center}
+.form-msg{display:none;margin-top:16px;padding:14px 16px;border-radius:12px;font-size:.9rem;line-height:1.55}
 .form-msg.err{display:block;background:rgba(255,110,110,.1);border:1px solid rgba(255,110,110,.3);color:#FFB3B3}
-.done{
-  display:none;text-align:center;padding:24px 8px;
-}
+.done{display:none;text-align:center;padding:24px 8px}
 .done.on{display:block}
-.done .tick{
-  width:56px;height:56px;border-radius:50%;margin:0 auto 20px;
-  background:rgba(95,211,166,.12);border:1px solid rgba(95,211,166,.35);
-  display:grid;place-items:center;
-}
+.done .tick{width:56px;height:56px;border-radius:50%;margin:0 auto 20px;background:rgba(95,211,166,.12);
+  border:1px solid rgba(95,211,166,.35);display:grid;place-items:center}
 .done .tick svg{width:24px;height:24px;color:var(--green)}
 .done h3{font-family:var(--serif);font-weight:400;font-size:1.6rem;margin-bottom:10px}
-.done p{color:var(--muted);font-size:.94rem;max-width:36ch;margin:0 auto 6px}
+.done p{color:var(--muted);font-size:.94rem;max-width:38ch;margin:0 auto 6px}
 
 .direct{margin-top:30px}
-.d-row{
-  display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;
-  background:rgba(255,255,255,.028);border:1px solid var(--line);
-  transition:all .25s var(--ease);
-}
+.d-row{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;
+  background:rgba(255,255,255,.028);border:1px solid var(--line);transition:all .25s var(--ease)}
 .d-row:hover{border-color:var(--line-2);background:rgba(255,255,255,.055);transform:translateX(3px)}
-.di{
-  width:38px;height:38px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;
-  background:var(--gold-wash);border:1px solid rgba(233,180,76,.22);color:var(--gold);
-}
+.di{width:38px;height:38px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;
+  background:var(--gold-wash);border:1px solid rgba(233,180,76,.22);color:var(--gold)}
 .di svg{width:17px;height:17px}
 .dt{font-size:.93rem;font-weight:500;line-height:1.35}
 .dt small{display:block;color:var(--muted-2);font-size:.8rem;font-weight:400;margin-top:1px}
 .dgo{margin-left:auto;color:var(--muted-2);font-size:.9rem}
-
 .socials{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:10px;margin-top:10px}
-.socials a{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
-  padding:16px 8px;border-radius:14px;text-align:center;
-  background:rgba(255,255,255,.028);border:1px solid var(--line);
-  transition:all .25s var(--ease);
-}
+.socials a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  padding:16px 8px;border-radius:14px;text-align:center;background:rgba(255,255,255,.028);
+  border:1px solid var(--line);transition:all .25s var(--ease)}
 .socials a:hover{border-color:rgba(233,180,76,.32);background:rgba(233,180,76,.06);transform:translateY(-2px)}
 .socials svg{width:19px;height:19px;color:var(--gold)}
 .socials b{font-size:.85rem;font-weight:500;line-height:1.2}
 .socials i{font-style:normal;font-size:.74rem;color:var(--muted-2);line-height:1.2}
-@media (max-width:400px){.socials{grid-template-columns:1fr}.socials a{flex-direction:row;justify-content:flex-start;gap:12px;padding:13px 16px;text-align:left}.socials a i{margin-left:auto}}
-
-.callcard{
-  margin-top:24px;padding:22px;border-radius:var(--radius);
-  background:linear-gradient(160deg,rgba(233,180,76,.09),var(--surface) 55%);
-  border:1px solid rgba(233,180,76,.26);
-}
+@media (max-width:400px){.socials{grid-template-columns:1fr}
+  .socials a{flex-direction:row;justify-content:flex-start;gap:12px;padding:13px 16px;text-align:left}
+  .socials a i{margin-left:auto}}
+.callcard{margin-top:24px;padding:22px;border-radius:var(--r);
+  background:linear-gradient(160deg,rgba(233,180,76,.09),var(--surface) 55%);border:1px solid rgba(233,180,76,.26)}
 .cc-h{display:flex;align-items:center;gap:13px;margin-bottom:13px}
 .cc-h b{font-size:1rem;font-weight:600;letter-spacing:-.01em}
 .callcard p{font-size:.9rem;color:var(--muted);line-height:1.65;margin:0 0 14px}
 .cc-tags{display:flex;flex-wrap:wrap;gap:7px}
-.cc-tags span{
-  font-size:.76rem;padding:5px 11px;border-radius:8px;
-  background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:var(--muted);
-}
+.cc-tags span{font-size:.76rem;padding:5px 11px;border-radius:8px;background:rgba(255,255,255,.05);
+  border:1px solid var(--line-2);color:var(--muted)}
 .next{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
-.next-h{
-  font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--muted-2);margin:0 0 16px;
-}
+.next-h{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-2);margin:0 0 16px}
 .next ol{margin:0;padding:0;list-style:none;counter-reset:n}
-.next li{
-  counter-increment:n;position:relative;padding-left:36px;margin-bottom:16px;
-  font-size:.91rem;color:var(--muted);line-height:1.6;
-}
+.next li{counter-increment:n;position:relative;padding-left:36px;margin-bottom:16px;font-size:.91rem;color:var(--muted);line-height:1.6}
 .next li:last-child{margin-bottom:0}
-.next li::before{
-  content:counter(n);position:absolute;left:0;top:0;
-  width:23px;height:23px;border-radius:50%;display:grid;place-items:center;
-  background:var(--gold-wash);border:1px solid rgba(233,180,76,.28);
-  color:var(--gold);font-family:var(--mono);font-size:.7rem;
-}
+.next li::before{content:counter(n);position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;
+  display:grid;place-items:center;background:var(--gold-wash);border:1px solid rgba(233,180,76,.28);
+  color:var(--gold);font-family:var(--mono);font-size:.7rem}
 
 /* ============================================================
-   FOOTER
+   17. STICKY MOBILE CTA
+   ============================================================ */
+.sticky-cta{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:45;
+  padding:12px max(16px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-right));
+  background:rgba(8,9,11,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .35s var(--ease);
+}
+.sticky-cta.on{transform:none}
+.sticky-cta .btn{width:100%}
+@media (max-width:920px){.sticky-cta{display:block}}
+
+/* ============================================================
+   18. FOOTER
    ============================================================ */
 footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 40px}
 .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
@@ -637,41 +567,42 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
 .foot-links a{font-size:.88rem;color:var(--muted);transition:color .2s}
 .foot-links a:hover{color:var(--gold-soft)}
 .foot-social{display:flex;gap:10px;flex-wrap:wrap}
-.foot-social a{
-  width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
-  border:1px solid var(--line);background:rgba(255,255,255,.028);color:var(--muted);
-  transition:all .25s var(--ease);
-}
+.foot-social a{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  border:1px solid var(--line);background:rgba(255,255,255,.028);color:var(--muted);transition:all .25s var(--ease)}
 .foot-social a:hover{color:var(--gold);border-color:rgba(233,180,76,.35);background:rgba(233,180,76,.07);transform:translateY(-2px)}
 .foot-social svg{width:17px;height:17px}
-.foot-bot{
-  margin-top:36px;padding-top:24px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  font-size:.82rem;color:var(--muted-2);
-}
+.foot-bot{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:var(--muted-2)}
 
 /* ============================================================
-   REVEAL
+   19. MOTION + A11Y
    ============================================================ */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
+  .sticky-cta{transition:none}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
 ::selection{background:rgba(233,180,76,.28);color:#fff}
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--gold);color:#14100A;
+  padding:12px 20px;border-radius:0 0 10px 0;font-weight:600;font-size:.9rem}
+.skip:focus{left:0}
 </style>
 
 <noscript><style>
   .rv{opacity:1!important;transform:none!important}
   #enquiry{display:none}
   .nojs{display:block!important}
+  .sticky-cta{display:none!important}
 </style></noscript>
 </head>
 <body>
 
-<!-- ==== SETUP BANNER: disappears once CONFIG below is filled in ==== -->
+<a class="skip" href="#top">Skip to content</a>
+
+<!-- ==== SETUP BANNER: disappears once the Web3Forms key is in config.js ==== -->
 <div id="setup" role="status">
   <div class="wrap">
     <span id="setup-text"></span>
@@ -687,14 +618,14 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
       <span class="brand-name">Pabloch <span>Tech</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a href="#process">Process</a>
       <a href="#work">Work</a>
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn--gold btn--sm">Start a project</a>
+      <a href="#contact" class="btn btn--gold btn--sm">Get free draft</a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile">
         <i></i><i></i><i></i>
       </button>
@@ -702,12 +633,12 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
   </div>
   <div class="mobile" id="mobile">
     <div class="wrap">
+      <a href="#process">Process</a>
       <a href="#work">Work</a>
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn--gold btn--wide">Start a project</a>
+      <a href="#contact" class="btn btn--gold btn--wide">Get my free draft</a>
       <div class="m-social" id="m-social"></div>
     </div>
   </div>
@@ -719,58 +650,93 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow rv">Web design &amp; development studio</p>
-      <h1 class="rv">Your customers are searching. Give them somewhere to <em class="g">land</em>.</h1>
-      <p class="lede rv">I build fast, hand-coded websites for small businesses — a real storefront with a cart and checkout, or a local service site that answers <em>"how much does it cost?"</em> before the customer ever picks up the phone. No page builders. No templates. Nothing you have to keep paying a platform for.</p>
+      <p class="free-pill rv"><b>Free</b> Your first draft is built before you pay</p>
+      <h1 class="rv">Your website. Built <em class="g">before</em> you pay.</h1>
+      <p class="lede rv">We design and build your first working website draft for free. You open it on your phone, click around, and decide. Like it, and we turn it into the real thing. Don't, and you owe nothing.</p>
       <div class="hero-cta rv">
-        <a href="#contact" class="btn btn--gold">Get a free first draft <span class="ar" aria-hidden="true">→</span></a>
-        <a href="#work" class="btn btn--ghost">See the work</a>
+        <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
+        <a href="#work" class="btn btn--ghost">See our work</a>
       </div>
-      <p class="hero-note rv"><span class="dot" aria-hidden="true"></span> Taking on two new clients this month · replies within 24 hours</p>
+      <p class="hero-note rv"><span class="dot" aria-hidden="true"></span> Taking on two new projects this month &middot; every message answered within 24 hours</p>
     </div>
 
-    <aside class="hero-card rv" aria-label="Featured project">
-      <div class="hc-top">
-        <span class="tag tag--live"><span class="dot" aria-hidden="true"></span> Live in production</span>
-        <p class="hc-title">Al-Abuzer Perfumes</p>
-        <p class="hc-sub">A full online storefront built from scratch — eight collections, cart, checkout, customer accounts and order tracking. Live and taking orders today.</p>
-        <a class="case-link" href="https://alabuzerperfumes.com" target="_blank" rel="noopener">alabuzerperfumes.com <span aria-hidden="true">↗</span></a>
+    <div class="mock rv">
+      <figure class="mock-desk">
+        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><b>oaktree-preview.netlify.app</b></div>
+        <img src="assets/oak-tree.jpg" width="900" height="563" fetchpriority="high"
+             alt="A finished Pabloch Tech draft shown in a desktop browser: the Oak Tree Garden Maintenance homepage, headlined Your garden, properly looked after.">
+      </figure>
+      <figure class="mock-phone">
+        <img src="assets/oak-tree-mobile.jpg" width="390" height="800" loading="eager"
+             alt="The same site on a phone, showing how the layout adapts to a narrow screen.">
+      </figure>
+      <div class="mock-badge">
+        <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5L20 7"/></svg></span>
+        <span><strong>First draft</strong>Built before you pay</span>
       </div>
-      <div class="hc-rows">
-        <div class="hc-row"><b>Free</b><span>A working first draft, before any money changes hands</span></div>
-        <div class="hc-row"><b>From $700</b><span>Fixed price, agreed before a line is written</span></div>
-        <div class="hc-row"><b>24 hours</b><span>Every message answered, usually faster</span></div>
-      </div>
-    </aside>
+    </div>
   </div>
 </section>
 
-<!-- ==== STATS ==== -->
-<div class="stats">
+<!-- ==== TRUST ==== -->
+<div class="trust">
   <div class="wrap">
-    <div class="stat rv"><b>100%</b><span>Hand-written<br>code</span></div>
-    <div class="stat rv"><b>&lt;1s</b><span>Typical page<br>load</span></div>
-    <div class="stat rv"><b>Free</b><span>First draft<br>before you pay</span></div>
-    <div class="stat rv"><b>You</b><span>Own the site<br>and the domain</span></div>
+    <p class="trust-line rv">Built for businesses that take their online presence seriously &mdash; in the US, the UK and the UAE.</p>
+    <div class="trust-grid rv">
+      <div class="trust-cell"><b>Live</b><span>Storefront in<br>production</span></div>
+      <div class="trust-cell"><b>4</b><span>Sites designed<br>and built</span></div>
+      <div class="trust-cell"><b>100%</b><span>Hand-written<br>code</span></div>
+      <div class="trust-cell"><b>24h</b><span>Reply time,<br>every time</span></div>
+    </div>
   </div>
 </div>
 
+<!-- ==== PROCESS ==== -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">How it works</p>
+      <h2>We build it first. You decide after.</h2>
+      <p class="lede">Most studios want a deposit before you've seen a pixel. We'd rather show you something real and let the work make the argument.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step step--free rv">
+        <div class="step-n"><em>01</em><span>Free</span></div>
+        <h3>Get your free draft</h3>
+        <p>Tell us about the business &mdash; what you do, who you sell to, and what the site needs to achieve. A few lines on the form is enough. No brief document, no deposit, no call required unless you want one.</p>
+      </div>
+      <div class="step rv">
+        <div class="step-n"><em>02</em></div>
+        <h3>See your website</h3>
+        <p>We build a working first draft and send you a link. Real layout, real copy, your services and your words &mdash; open it on your phone and click around. Typically within a few days.</p>
+      </div>
+      <div class="step rv">
+        <div class="step-n"><em>03</em></div>
+        <h3>Love it? We build it.</h3>
+        <p>Approve the direction, pay the deposit, and we turn the draft into the finished production website: final content, forms, integrations, SEO, your domain, and launch.</p>
+      </div>
+    </div>
+
+    <p class="step-foot rv"><b>To be completely clear about what the free draft is.</b> It's a real, working page you can open and use &mdash; not a picture, not a template with your logo dropped on it. It is <b>not</b> the finished production website. Final copy, forms, integrations, payment setup, SEO work, testing and launch all come after you approve the direction. The draft exists so you can judge the work before any money changes hands.</p>
+  </div>
+</section>
+
 <!-- ==== WORK ==== -->
-<section class="sec" id="work">
+<section class="sec sec--alt" id="work">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Selected work</p>
       <h2>Four builds, four different problems.</h2>
-      <p class="lede">One storefront selling online around the clock. Three local businesses whose customers could find their reviews but not their website &mdash; and those three were built before anybody asked me to.</p>
+      <p class="lede">One storefront selling online around the clock. Three local businesses whose customers could find their reviews but not their website &mdash; and those three were built before anybody asked us to.</p>
     </div>
 
-    <!-- Case 1 -->
     <article class="case case--flip rv">
       <div class="case-body">
         <span class="tag tag--live"><span class="dot" aria-hidden="true"></span> Live in production</span>
         <h3>Al-Abuzer Perfumes</h3>
-        <p class="case-sub">Full-stack e-commerce · fragrance retail</p>
-        <p>A complete online storefront for a perfume house — eight product collections from attar roll-ons and oudh to bakhoor and travel sets, each with its own catalogue page. Customers browse, search, add to cart and check out; the brand fulfils the order and the customer follows it with an order-tracking page instead of emailing to ask. The homepage opens on a full-bleed product video, because a fragrance brand sells on atmosphere before it sells on price.</p>
+        <p class="case-sub">Online store &middot; fragrance retail</p>
+        <p>A complete storefront for a perfume house &mdash; eight collections from attar roll-ons and oudh to bakhoor and travel sets, each with its own catalogue page. Customers browse, search, add to cart and check out; the brand fulfils the order and the customer follows it on an order-tracking page instead of emailing to ask. The homepage opens on a full-bleed product video, because a fragrance brand sells on atmosphere before it sells on price.</p>
         <div class="chips">
           <span class="chip">Cart &amp; checkout</span>
           <span class="chip">8 collections</span>
@@ -778,99 +744,101 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
           <span class="chip">Customer accounts</span>
           <span class="chip">Product search</span>
           <span class="chip">Downloadable catalogue</span>
-          <span class="chip">Video hero</span>
         </div>
-        <a class="case-link" href="https://alabuzerperfumes.com" target="_blank" rel="noopener">Visit alabuzerperfumes.com <span aria-hidden="true">↗</span></a>
+        <a class="case-link" href="https://alabuzerperfumes.com" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
       </div>
       <div class="case-media">
-        <img src="assets/alabuzer.jpg" alt="Al-Abuzer Perfumes homepage: a gold-lit perfume bottle over an Arabic calligraphy backdrop with an Explore Collection button" loading="lazy" width="1360" height="850">
+        <img src="assets/alabuzer.jpg" width="1200" height="750" loading="lazy"
+             alt="Al-Abuzer Perfumes homepage: a gold-lit perfume bottle over Arabic calligraphy, with an Explore Collection button.">
       </div>
     </article>
 
     <div class="sub-head rv">
       <h3>Preview builds</h3>
-      <p>These three were built on spec &mdash; my own time, no brief, no deposit &mdash; and sent to the owner as an introduction. <strong>Each one is a preview only.</strong> None is published under the business&rsquo;s own domain, none has been paid for, and every one still carries a banner across the top saying exactly that. They are online purely so the owner can open one on their phone.</p>
+      <p>These three were built on spec &mdash; our own time, no brief, no deposit &mdash; and sent to the owner as an introduction. <strong>Each one is a preview only.</strong> None is published under the business's own domain, none has been paid for, and every one still carries a banner across the top saying exactly that. They're online purely so the owner can open one on their phone.</p>
     </div>
 
     <div class="previews">
       <article class="pv rv">
         <a class="pv-shot" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener" aria-label="Open the Cleaning Queens preview">
-          <img src="assets/cleaning-queens.jpg" alt="The Cleaning Queens preview homepage: a purple and gold layout headlined Feel like royalty in your own home, beside an instant estimate card" loading="lazy" width="900" height="563">
+          <img src="assets/cleaning-queens.jpg" width="900" height="563" loading="lazy"
+               alt="The Cleaning Queens preview homepage: a purple and gold layout headlined Feel like royalty in your own home, beside an instant estimate card.">
         </a>
         <div class="pv-body">
           <span class="tag tag--spec">Preview &middot; not published</span>
           <h4>The Cleaning Queens</h4>
           <p class="pv-sub">Cleaning &middot; Sylvania &amp; Toledo, Ohio</p>
-          <p>Nineteen years, six staff, 5.0 stars across 69 reviews between Google and Facebook &mdash; and a Google listing whose <em>Website</em> button pointed at a parked domain. An estimator answers <em>&ldquo;how much for a 3-bed deep clean?&rdquo;</em> on screen, so every enquiry arrives with a price already attached to it.</p>
+          <p>Nineteen years, six staff, 5.0 stars across 69 reviews &mdash; and a Google listing whose <em>Website</em> button pointed at a parked domain. An estimator answers <em>&ldquo;how much for a 3-bed deep clean?&rdquo;</em> on screen, so every enquiry arrives with a price already attached to it.</p>
           <div class="chips"><span class="chip">Instant estimator</span><span class="chip">Booking form</span><span class="chip">Reviews from two platforms</span></div>
-          <a class="case-link" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener">Open the preview <span aria-hidden="true">&#8599;</span></a>
+          <a class="case-link" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
         </div>
       </article>
+
       <article class="pv rv">
         <a class="pv-shot" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener" aria-label="Open the Oak Tree Garden Maintenance preview">
-          <img src="assets/oak-tree.jpg" alt="Oak Tree Garden Maintenance preview homepage: a green and cream layout headlined Your garden, properly looked after, beside a quote from the owner" loading="lazy" width="900" height="563">
+          <img src="assets/oak-tree.jpg" width="900" height="563" loading="lazy"
+               alt="Oak Tree Garden Maintenance preview homepage: a green and cream layout headlined Your garden, properly looked after.">
         </a>
         <div class="pv-body">
           <span class="tag tag--spec">Preview &middot; not published</span>
           <h4>Oak Tree Garden Maintenance</h4>
           <p class="pv-sub">Landscaping &middot; Heanor, Derbyshire</p>
-          <p>Thirty-two reviews, every one of them five stars, on the county council&rsquo;s Trusted Trader register &mdash; and the website link on that profile pointed at a domain with no DNS record at all. Not parked. Nothing. The quote form takes photo attachments, so an enquiry arrives with pictures of the actual garden.</p>
+          <p>Thirty-two reviews, every one of them five stars, on the county council's Trusted Trader register &mdash; and the website link on that profile pointed at a domain with no DNS record at all. Not parked. Nothing. The quote form takes photo attachments, so an enquiry arrives with pictures of the actual garden.</p>
           <div class="chips"><span class="chip">Photo-upload quote form</span><span class="chip">The crew, by name</span><span class="chip">Recent work</span></div>
-          <a class="case-link" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener">Open the preview <span aria-hidden="true">&#8599;</span></a>
+          <a class="case-link" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
         </div>
       </article>
+
       <article class="pv rv">
         <a class="pv-shot" href="https://dean-preview.netlify.app" target="_blank" rel="noopener" aria-label="Open the Dean the Decorator preview">
-          <img src="assets/dean.jpg" alt="Dean the Decorator preview homepage: a navy and sand layout headlined A neat job, and your house left as you found it" loading="lazy" width="900" height="563">
+          <img src="assets/dean.jpg" width="900" height="563" loading="lazy"
+               alt="Dean the Decorator preview homepage: a navy and sand layout headlined A neat job, and your house left as you found it.">
         </a>
         <div class="pv-body">
           <span class="tag tag--spec">Preview &middot; not published</span>
           <h4>Dean the Decorator</h4>
           <p class="pv-sub">Painting &amp; decorating &middot; Ilkeston, Derbyshire</p>
-          <p>Fifty five-star reviews across thirteen years &mdash; and on the council&rsquo;s directory he is one line among nine near-identical decorators. Nothing was broken here; the problem was being indistinguishable. So the page is built around the four words his reviewers keep repeating.</p>
+          <p>Fifty five-star reviews across thirteen years &mdash; and on the council's directory he is one line among nine near-identical decorators. Nothing was broken here; the problem was being indistinguishable. So the page is built around the four words his reviewers keep repeating.</p>
           <div class="chips"><span class="chip">Written quote request</span><span class="chip">Reviews quoted verbatim</span><span class="chip">Built to stand out</span></div>
-          <a class="case-link" href="https://dean-preview.netlify.app" target="_blank" rel="noopener">Open the preview <span aria-hidden="true">&#8599;</span></a>
+          <a class="case-link" href="https://dean-preview.netlify.app" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
         </div>
       </article>
+    </div>
+
+    <div class="ctabar rv">
+      <div>
+        <h3>Want something like this?</h3>
+        <p>Tell us about the business and we'll build the first draft the same way &mdash; before you pay anything.</p>
+      </div>
+      <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </section>
 
 <!-- ==== SERVICES ==== -->
-<section class="sec sec--alt" id="services">
+<section class="sec" id="services">
   <div class="wrap">
     <div class="sec-head rv">
-      <p class="eyebrow">What I build</p>
+      <p class="eyebrow">What we build</p>
       <h2>Four things, done properly.</h2>
-      <p class="lede">Not a menu of forty services. These are the builds I do well, and I'll tell you honestly if what you need isn't one of them.</p>
+      <p class="lede">Not a menu of forty services. These are the builds we do well &mdash; and we'll tell you honestly if what you need isn't one of them.</p>
     </div>
     <div class="grid-2">
       <div class="card rv">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13 5.4 5M7 13l-2 4h13"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg></div>
-        <h3>Online store</h3>
-        <p>A storefront you own outright, with the cart, checkout and order tracking built in — not rented from a platform charging you per sale.</p>
-        <ul>
-          <li>Product catalogue and collections</li>
-          <li>Cart, checkout and payment integration</li>
-          <li>Order tracking and customer accounts</li>
-          <li>Search, filters and a downloadable catalogue</li>
-        </ul>
-      </div>
-      <div class="card rv">
         <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-6h5v6"/></svg></div>
-        <h3>Local business site</h3>
-        <p>For trades, cleaners, caterers, salons, clinics — the businesses people find on Google Maps and then can't learn anything more about.</p>
+        <h3>Business websites</h3>
+        <p>The site people find after they've heard your name. Built to turn a search into a phone call, not to win a design award.</p>
         <ul>
           <li>Services, areas covered and opening hours</li>
-          <li>Your Google and Facebook reviews in one place</li>
-          <li>Instant price estimator, if your pricing suits one</li>
+          <li>Your reviews pulled into one place</li>
           <li>Enquiry form landing straight in your inbox</li>
+          <li>Fast on a phone, on a bad connection</li>
         </ul>
       </div>
       <div class="card rv">
         <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v11H4z"/><path d="M4 15h16"/><path d="M9 20h6"/><path d="M12 15v5"/><path d="M8 8h8M8 11h5"/></svg></div>
-        <h3>Landing page &amp; lead capture</h3>
-        <p>One page with one job: turn an ad click, a flyer QR code or a Google listing into a name and a phone number you can call back.</p>
+        <h3>Landing pages</h3>
+        <p>One page with one job: turn an ad click, a flyer QR code or a Google listing into a name and a number you can call back.</p>
         <ul>
           <li>Written to convert, not to look busy</li>
           <li>Quote calculator or booking flow</li>
@@ -879,48 +847,26 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
         </ul>
       </div>
       <div class="card rv">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13 5.4 5M7 13l-2 4h13"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg></div>
+        <h3>Online stores</h3>
+        <p>A storefront you own outright, with the cart, checkout and order tracking built in &mdash; not rented from a platform taking a cut of every sale.</p>
+        <ul>
+          <li>Product catalogue and collections</li>
+          <li>Cart, checkout and payment gateway</li>
+          <li>Order management and confirmations</li>
+          <li>Search, filters and bundles</li>
+        </ul>
+      </div>
+      <div class="card rv">
         <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6.5v5c0 4.6 3.2 8.8 8 9.9 4.8-1.1 8-5.3 8-9.9v-5z"/><path d="M9.2 12.2 11.3 14.3 15 10.6"/></svg></div>
-        <h3>Care plan</h3>
+        <h3>Website care</h3>
         <p>The part most people skip. A website nobody maintains is out of date within a year and invisible within two.</p>
         <ul>
           <li>Hosting, SSL and domain kept pointed and renewed</li>
-          <li>Forms monitored so no enquiry quietly goes missing</li>
+          <li>Forms monitored so no enquiry goes missing</li>
           <li>New reviews, prices and photos added as they come</li>
-          <li>Small edits included — just send me an email</li>
+          <li>Small edits included &mdash; just send an email</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==== PROCESS ==== -->
-<section class="sec" id="process">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">How it works</p>
-      <h2>I build it first. You decide after.</h2>
-      <p class="lede">Most studios want a deposit before you've seen a pixel. I'd rather show you something real and let the work make the argument.</p>
-    </div>
-    <div class="steps rv">
-      <div class="step step--free">
-        <span class="step-n">01 · FREE</span>
-        <h3>A real first draft</h3>
-        <p>Tell me about the business and I'll build a working version — your services, your reviews, your words — and send you a link you can open on your phone. No cost, no obligation.</p>
-      </div>
-      <div class="step">
-        <span class="step-n">02</span>
-        <h3>Deposit &amp; details</h3>
-        <p>If you like it, half up front gets it moving. You send the real prices, photos and hours; I send back a one-page scope so we both know exactly what's included.</p>
-      </div>
-      <div class="step">
-        <span class="step-n">03</span>
-        <h3>Build &amp; revisions</h3>
-        <p>I finish the pages, wire up the forms and the estimator, and connect your domain. Two rounds of changes are included — say what you want moved and it moves.</p>
-      </div>
-      <div class="step">
-        <span class="step-n">04</span>
-        <h3>Launch &amp; look after</h3>
-        <p>Balance on launch day. Then the care plan takes over: hosting, edits, new reviews, and a person who answers when you email. Cancel any time with 30 days' notice.</p>
       </div>
     </div>
   </div>
@@ -931,226 +877,388 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Pricing</p>
-      <h2>Published, so you don't have to ask.</h2>
-      <p class="lede">A one-time build fee, plus a monthly care plan that keeps the thing alive. Every quote is fixed before work starts — you'll never get an invoice you weren't expecting.</p>
+      <h2>Straightforward pricing. No agency mystery.</h2>
+      <p class="lede">Starting prices, not surprise invoices. Every project is quoted around what you actually need &mdash; and you see the draft before any of it applies.</p>
     </div>
+
     <div class="plans">
       <div class="plan rv">
         <h3>Essential</h3>
-        <p class="for">A business that has nothing online, or a parked domain doing nothing.</p>
-        <div class="price"><span class="from">from</span><span class="amt">$700</span></div>
-        <p class="mo">then <b>$45/month</b> care plan</p>
+        <p class="for">For businesses that need a clean, professional presence online.</p>
+        <div class="price"><span class="from">Starting at</span><span class="amt">$400</span></div>
+        <p class="note">Most sites here land close to the starting price.</p>
         <ul>
-          <li>Up to 3 pages, written for you</li>
-          <li>Enquiry form to your inbox</li>
-          <li>Mobile-first, built to load fast</li>
-          <li>Your domain connected, SSL included</li>
-          <li>Google Business listing pointed at it</li>
-          <li>2 rounds of revisions</li>
+          <li>Custom responsive website</li>
+          <li>Around <b>5 pages</b></li>
+          <li>Custom design &mdash; no templates</li>
+          <li>Mobile optimisation</li>
+          <li>Contact / lead form to your inbox</li>
+          <li>Basic SEO setup</li>
+          <li>Performance optimisation</li>
+          <li>Domain and hosting deployment help</li>
+          <li>Your Google Business listing pointed at it</li>
+          <li>Fixed price agreed in writing first</li>
+          <li>2 revision rounds</li>
         </ul>
-        <a href="#contact" class="btn btn--ghost btn--wide">Start here</a>
+        <a href="#contact" class="btn btn--ghost btn--wide">Start with a free draft</a>
       </div>
 
       <div class="plan plan--best rv">
-        <span class="plan-flag">Most chosen</span>
+        <span class="plan-flag">Most popular</span>
         <h3>Growth</h3>
-        <p class="for">A working business that wants the site to actually bring in enquiries.</p>
-        <div class="price"><span class="from">from</span><span class="amt">$1,000</span></div>
-        <p class="mo">then <b>$60/month</b> care plan</p>
+        <p class="for">For businesses that want the site to actually bring in enquiries.</p>
+        <div class="price"><span class="from">Starting at</span><span class="amt">$700</span></div>
+        <p class="note">The right fit for most established local businesses.</p>
         <ul>
-          <li>Everything in Essential, more pages</li>
-          <li>Instant price estimator or booking flow</li>
-          <li>Reviews pulled together from Google &amp; Facebook</li>
-          <li>Careers page with an application form</li>
+          <li>Everything in Essential</li>
+          <li>Around <b>8&ndash;10 pages</b></li>
+          <li>More advanced custom sections</li>
+          <li>Lead-generation focused design</li>
+          <li>WhatsApp / Telegram / contact integrations</li>
+          <li>Analytics setup</li>
+          <li>Advanced SEO foundations</li>
+          <li>Blog, service or content sections where needed</li>
+          <li>More advanced interactions</li>
           <li>Photo gallery and service-area pages</li>
-          <li>Monthly content edits included</li>
+          <li>Reviews pulled together from Google &amp; Facebook</li>
+          <li>2 revision rounds</li>
         </ul>
-        <a href="#contact" class="btn btn--gold btn--wide">Start here</a>
+        <a href="#contact" class="btn btn--gold btn--wide">Start with a free draft</a>
       </div>
 
-      <div class="plan rv">
+      <div class="plan plan--flag rv">
+        <span class="plan-flag plan-flag--alt">Sell online</span>
         <h3>Storefront</h3>
-        <p class="for">Selling product online, and tired of paying a platform a cut of every order.</p>
-        <div class="price"><span class="from">from</span><span class="amt">$2,000</span></div>
-        <p class="mo"><b>Quoted to the build</b>, not sold as a package</p>
+        <p class="for">Everything you need to start selling online, in one package.</p>
+        <div class="price"><span class="from">Starting at</span><span class="amt">$1,200</span></div>
+        <p class="note">A complete working store, not a stripped-back starter.</p>
         <ul>
-          <li>Full catalogue with collections</li>
-          <li>Cart, checkout and payment integration</li>
-          <li>Order tracking and customer accounts</li>
-          <li>Search, filters and combo/bundle products</li>
-          <li>Admin handover so you can add products</li>
-          <li>Built like Al-Abuzer Perfumes, above</li>
+          <li>Custom responsive storefront</li>
+          <li>Custom UI/UX design</li>
+          <li>Around <b>15 core pages</b> and sections</li>
+          <li>Product and catalogue system</li>
+          <li>Cart and checkout</li>
+          <li><b>Payment gateway integration</b></li>
+          <li>Order management</li>
+          <li>Customer order confirmation</li>
+          <li>Email / WhatsApp notifications where applicable</li>
+          <li>Basic shipping and tax configuration</li>
+          <li>Basic SEO and analytics</li>
+          <li>Performance optimisation and deployment</li>
+          <li>2 revision rounds</li>
         </ul>
-        <a href="#contact" class="btn btn--ghost btn--wide">Ask for a quote</a>
+        <a href="#contact" class="btn btn--ghost btn--wide">Start with a free draft</a>
       </div>
     </div>
-    <p class="pay-note rv"><b>How payment works:</b> 50% to start, 50% on launch day. The first draft is free and always comes before any money changes hands. Paid by bank transfer, Wise, Payoneer or PayPal, in USD, GBP, AED or INR. Care plans are monthly, cancel with 30 days' notice — and if you cancel, the site and the domain are yours to take with you.</p>
+
+    <p class="pay-note rv"><b>Why every price says &ldquo;starting at&rdquo;.</b> Final pricing depends on product count, integrations, custom functionality, third-party services and what the business actually needs &mdash; and we'd rather quote you honestly than advertise a number we can't hold. You'll have a fixed figure in writing before any work starts. <b>Payment:</b> 50% deposit once you approve the draft, 50% on launch day. Bank transfer, Wise, Payoneer or PayPal, in USD, GBP, AED or INR. <b>Website Care</b> is optional and quoted per site. You own the site, the code and the domain either way.</p>
+  </div>
+</section>
+
+<!-- ==== OBJECTIONS ==== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Honest answers</p>
+      <h2>Still wondering if you need a website?</h2>
+      <p class="lede">The six things people actually say when we bring this up. No sales pitch &mdash; just what we'd tell you on a call.</p>
+    </div>
+    <div class="grid-3">
+      <div class="obj rv">
+        <q>I already have Instagram.</q>
+        <p>Instagram is rented ground, and it's built for people who already follow you. Someone searching <em>&ldquo;decorator near me&rdquo;</em> at nine at night doesn't find your grid &mdash; and even if they do, they can't see your prices, your areas or your reviews in one place.</p>
+      </div>
+      <div class="obj rv">
+        <q>My business is too small.</q>
+        <p>Every business on this page is one person or a small crew. Small is exactly who this is for &mdash; a site levels the field against the bigger firm with a marketing budget and worse reviews than yours.</p>
+      </div>
+      <div class="obj rv">
+        <q>I don't know what I need.</q>
+        <p>Then don't decide yet. Tell us what the business does and we'll come back with what we'd build and what it would cost. Working that out is our job, not yours.</p>
+      </div>
+      <div class="obj rv">
+        <q>Websites are expensive.</q>
+        <p>Agencies are expensive. A site here starts at $400, the price is fixed in writing before work starts, and you see the draft first. If one extra customer a year covers it, the maths is not complicated.</p>
+      </div>
+      <div class="obj rv">
+        <q>I don't want to deal with developers.</q>
+        <p>There's no account manager, no ticket number and no portal to log into. You email or message one person, and that person makes the change. Plain English, always.</p>
+      </div>
+      <div class="obj rv">
+        <q>I don't know if I'll like the design.</q>
+        <p>Which is the whole reason the first draft is free. You'll be looking at a real, working version of your site before you've spent anything &mdash; and if it's not right, you walk away owing nothing.</p>
+      </div>
+    </div>
+
+    <div class="ctabar rv">
+      <div>
+        <h3>Every one of those ends the same way.</h3>
+        <p>You can't judge a website from a description. So we build it first, and you decide with the thing in front of you.</p>
+      </div>
+      <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
+    </div>
   </div>
 </section>
 
 <!-- ==== ABOUT ==== -->
-<section class="sec" id="about">
+<section class="sec sec--alt" id="about">
   <div class="wrap about">
     <div class="rv">
       <p class="eyebrow">Who you're dealing with</p>
       <h2>You'll be talking to the person writing the code.</h2>
-      <p class="lede">Pabloch Tech is small on purpose. There's no account manager passing your message down a chain, no offshore team you never meet, and no ticket number. You email me, I answer, I make the change.</p>
-      <p class="lede">I don't use Wix, Squarespace or a WordPress theme with forty plugins. Every site is written by hand, which is why they load in under a second and why there's nothing to break when a plugin updates itself at 3am. It also means you own the whole thing — files, domain, forms and all.</p>
+      <p class="lede">Pabloch Tech is small on purpose. No account manager passing your message down a chain, no offshore team you never meet, no ticket number. You email, we answer, we make the change.</p>
+      <p class="lede">We don't use Wix, Squarespace or a WordPress theme carrying forty plugins. Every site is written by hand, which is why they load in under a second and why there's nothing to break when a plugin updates itself at 3am. It also means you own the whole thing &mdash; files, domain, forms and all.</p>
     </div>
     <div class="about-panel rv">
-      <div class="fact"><span class="k">Based in</span><span class="v">India — working US and UK business hours<small>Your morning is my evening. Messages sent overnight are answered before you're back at your desk.</small></span></div>
-      <div class="fact"><span class="k">Talk to me</span><span class="v">Email, Telegram, Instagram, Facebook — or a Zoom / Google Meet call<small>Whichever you already use. No portal to log into, no ticket number.</small></span></div>
+      <div class="fact"><span class="k">Based in</span><span class="v">India &mdash; working US and UK business hours<small>Your morning is our evening. Messages sent overnight are answered before you're back at your desk.</small></span></div>
+      <div class="fact"><span class="k">Talk to us</span><span class="v">Email, Telegram, Instagram, Facebook &mdash; or a Zoom / Google Meet call<small>Whichever you already use. No portal to log into.</small></span></div>
       <div class="fact"><span class="k">Reply time</span><span class="v">Within 24 hours, every time<small>Usually a lot faster than that.</small></span></div>
-      <div class="fact"><span class="k">You own</span><span class="v">The site, the code, the domain<small>Cancel the care plan and I hand over the files. No hostage-taking.</small></span></div>
+      <div class="fact"><span class="k">You own</span><span class="v">The site, the code, the domain<small>Cancel anything and we hand over the files. No hostage-taking.</small></span></div>
       <div class="fact"><span class="k">Built with</span><span class="v">Hand-written HTML, CSS and JavaScript<small>Plus a real back end where a store needs one.</small></span></div>
     </div>
   </div>
 </section>
 
 <!-- ==== FAQ ==== -->
-<section class="sec sec--alt" id="faq">
+<section class="sec" id="faq">
   <div class="wrap">
-    <div class="sec-head rv" style="margin-left:auto;margin-right:auto;text-align:center">
-      <p class="eyebrow" style="justify-content:center">Questions</p>
+    <div class="sec-head sec-head--mid rv">
+      <p class="eyebrow">Questions</p>
       <h2>The things people ask first.</h2>
     </div>
     <div class="faq">
-      <details class="q rv"><summary>Do I need to buy a domain first?</summary><div class="a"><p>No. If you already own one — even one that's just sitting on a parking page — I'll point it at the new site, which takes about five minutes. If you don't have one, I'll help you pick and register it. It usually runs $10–15 a year and it stays registered in your name, not mine.</p></div></details>
-      <details class="q rv"><summary>How long does it take?</summary><div class="a"><p>The free first draft is usually with you within a few days. After that, a small site is typically live in one to two weeks, and a storefront in three to five — but the real variable is how quickly you can get me your photos, prices and opening hours. That's almost always the slow part, not the code.</p></div></details>
-      <details class="q rv"><summary>What does the monthly fee actually cover?</summary><div class="a"><p>Hosting, SSL and your domain kept pointed and renewed. Your enquiry forms monitored, so you find out if something stops arriving. New reviews, price changes, seasonal updates and small edits — you email me, I do it, no hourly charge. If nothing needs doing that month, nothing needs doing; you're paying for the site staying live, current and looked after.</p></div></details>
-      <details class="q rv"><summary>Can I cancel? What happens to my site?</summary><div class="a"><p>Cancel any time with 30 days' notice. The site is yours — I hand over the files and you can host them anywhere, or I'll help you move them. The domain has always been in your name. Nothing is held hostage.</p></div></details>
-      <details class="q rv"><summary>What if I already have a website?</summary><div class="a"><p>Send me the link. Sometimes the honest answer is that it's fine and you'd be better off spending the money elsewhere — I'll tell you if that's the case. If it's slow, unreadable on a phone, or hasn't been touched since 2019, a rebuild is usually cheaper than trying to repair it.</p></div></details>
-      <details class="q rv"><summary>Why is the first draft free?</summary><div class="a"><p>Because describing a website is a waste of both our time when I could just show you one. It's the fastest way for you to judge whether I'm any good, and the fastest way for me to find out whether we'd work well together. If you don't like it, you owe me nothing and we shake hands.</p></div></details>
-      <details class="q rv"><summary>Can we get on a call first?</summary><div class="a"><p>Yes, and it's usually the fastest way to work out whether this is worth doing. Zoom or Google Meet, whichever you already have — Meet needs nothing installed, it opens in a browser tab. Twenty minutes, I'll ask what the business actually needs and tell you honestly if a website isn't it. Pick a platform in the form above and I'll send the invite with my reply. Happy to do it on Telegram or an ordinary phone call instead if you'd rather.</p></div></details>
-      <details class="q rv"><summary>How do I pay from outside India?</summary><div class="a"><p>Bank transfer, Wise, Payoneer or PayPal, invoiced in USD, GBP, AED or INR — whichever is easiest for you. You get a proper invoice for your records, and there's no minimum contract beyond the 30 days' notice on the care plan.</p></div></details>
-      <details class="q rv"><summary>Will it show up on Google?</summary><div class="a"><p>Every site is built with clean markup, proper page titles and descriptions, and structured data so Google understands what the business is and where it operates. That's the foundation, and it's included. Ranking above established competitors for competitive terms is a longer game that depends on reviews, listings and content — I'll be straight with you about what's realistic rather than promising page one.</p></div></details>
+
+      <details class="q rv"><summary>Is the first website draft really free?</summary><div class="a">
+        <p>Yes, and there's no catch worth hunting for. You tell us about the business, we build a working first draft, and we send you a link. No deposit, no card details, no contract, no obligation to continue. <strong>You only pay if you like the direction and want us to build the real thing.</strong></p>
+        <p>Why we do it: describing a website is a waste of both our time when we could just show you one. It's the fastest way for you to judge whether we're any good, and the fastest way for us to find out whether we'd work well together.</p>
+      </div></details>
+
+      <details class="q rv"><summary>What happens if I don't like the draft?</summary><div class="a">
+        <p>Nothing. You owe us nothing, you're not billed for the time, and we don't chase you. Tell us it's not right and that's the end of it &mdash; no hard feelings.</p>
+        <p>If it's close but not there, say so. Often one conversation about what's off is enough to fix it, and that costs nothing either.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Is the free draft a complete website?</summary><div class="a">
+        <p>No, and we'd rather be upfront about that than have you find out later. The draft is a <strong>real, working page</strong> &mdash; genuine layout, your services, your words, opens on your phone, you can click around it. It is not a picture or a template with your logo dropped on top.</p>
+        <p>What it doesn't include yet: final copy and photography, working forms wired to your inbox, integrations, payment setup, full SEO work, testing across devices, your domain, and launch. That's the production build, and it starts once you approve the direction.</p>
+      </div></details>
+
+      <details class="q rv"><summary>How much does a website cost?</summary><div class="a">
+        <p>Three starting points. <strong>Essential from $400</strong> for a clean professional presence of around five pages. <strong>Growth from $700</strong> for eight to ten pages with lead-generation features, integrations and analytics. <strong>Storefront from $1,200</strong> for a complete online store with cart, checkout, payment gateway and order management.</p>
+        <p>You get a fixed figure in writing before any work starts, so the number you agree is the number you pay.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Why does the price say &ldquo;starting at&rdquo;?</summary><div class="a">
+        <p>Because a five-page site for a decorator and a store with four hundred products are not the same job, and pretending otherwise would mean either overcharging you or quietly cutting corners.</p>
+        <p>What moves the number: how many pages or products, which integrations and third-party services you need, custom functionality, and how much content we're writing versus you supplying. We'll tell you where you land before you commit &mdash; and if your requirements are simple, you pay the starting price.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Do I own my website?</summary><div class="a">
+        <p>Completely. The site, the code and the domain are yours. The domain is registered in your name from day one, and on request we hand over the files so you can host them anywhere or take them to another developer.</p>
+        <p>Nothing is locked to us and nothing is held hostage. That's deliberate &mdash; we'd rather you stay because the work is good.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Do you use WordPress or website builders?</summary><div class="a">
+        <p>No. Every site is written by hand in HTML, CSS and JavaScript, with a real back end where a store needs one. No Wix, no Squarespace, no WordPress theme carrying forty plugins.</p>
+        <p>That matters for three practical reasons: pages load in well under a second, there's no plugin to break itself during an update at 3am, and there's no monthly platform fee you're stuck paying to keep your own site online.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Can you build an online store?</summary><div class="a">
+        <p>Yes &mdash; that's the Storefront package, from $1,200. Product catalogue and collections, cart, checkout, payment gateway integration, order management, customer order confirmations, basic shipping and tax configuration, search and filters.</p>
+        <p>Al-Abuzer Perfumes in the work section above is a live example: eight collections, cart, checkout, customer accounts and order tracking, in production and taking orders.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Can you integrate payments?</summary><div class="a">
+        <p>Yes. Payment gateway integration is included in the Storefront starting package.</p>
+        <p>One honest caveat: which gateway you can use, and how quickly it goes live, depends on the provider's own requirements &mdash; your country, your business documents and their approval process, none of which we control. We'll integrate whichever gateway you're approved for and tell you early if something looks likely to hold you up.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Do you provide hosting and a domain?</summary><div class="a">
+        <p>We set both up and get everything live, but they're registered in <strong>your</strong> name and paid for by you, so you're never locked in. A domain is usually around $10&ndash;15 a year and hosting is modest; we'll recommend what fits and walk you through it.</p>
+        <p>Already own a domain &mdash; even one sitting on a parking page? Even better. Pointing it at the new site is a five-minute change.</p>
+      </div></details>
+
+      <details class="q rv"><summary>How long does a website take?</summary><div class="a">
+        <p>The free first draft is usually with you within a few days. After that, a small site is typically live in one to two weeks and a store in three to five, depending on complexity.</p>
+        <p>The honest variable is you. The slow part is almost never the code &mdash; it's waiting on photos, prices, opening hours and approvals. Get those to us quickly and the timeline holds.</p>
+      </div></details>
+
+      <details class="q rv"><summary>How many revisions do I get?</summary><div class="a">
+        <p>Two full revision rounds are included in every package. A round means you go through the whole site and send back everything you want changed at once, and we work through the list.</p>
+        <p>In practice we're not precious about it &mdash; small tweaks after that don't get invoiced. What the limit is really there for is a third redesign in a different direction, which is a different job and gets quoted as one.</p>
+      </div></details>
+
+      <details class="q rv"><summary>What happens after I approve the draft?</summary><div class="a">
+        <p>Five steps, in this order. <strong>1.</strong> We send a one-page scope: what's included, the fixed price, the timeline. <strong>2.</strong> You pay a 50% deposit and send your content &mdash; photos, prices, hours. <strong>3.</strong> We build the production site: real forms, integrations, SEO, testing. <strong>4.</strong> Two rounds of revisions. <strong>5.</strong> Final 50% and we launch on your domain.</p>
+        <p>The timeline starts when the deposit and your content arrive, not when you say yes.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Do you provide maintenance after launch?</summary><div class="a">
+        <p>Yes &mdash; Website Care is optional and quoted per site. It covers hosting, SSL and your domain kept pointed and renewed, your enquiry forms monitored so nothing goes quietly missing, new reviews and prices and photos added as they come, and small edits without an hourly charge.</p>
+        <p>You're not obliged to take it. If you'd rather manage the site yourself, we hand it over and that's genuinely fine.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Can you redesign my existing website?</summary><div class="a">
+        <p>Yes, and the free draft works exactly the same way &mdash; we'll build a new version of your homepage so you can compare them side by side before deciding.</p>
+        <p>Sometimes the honest answer is that your current site is fine and you'd be better off spending the money elsewhere. We'll tell you if that's the case. But if it's slow, unreadable on a phone, or hasn't been touched since 2019, a rebuild is usually cheaper than repairing it.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Can you build custom functionality?</summary><div class="a">
+        <p>Usually, yes. Booking systems, price calculators, photo-upload quote forms, customer portals, membership areas, custom dashboards &mdash; the estimator and photo-upload forms in the work section above were all built from scratch for those specific businesses.</p>
+        <p>Custom work is quoted on top of the package price, based on what it actually involves. Describe what you want it to do and we'll tell you whether it's a small addition or a project of its own &mdash; and if it isn't something we should be building, we'll say that too.</p>
+      </div></details>
+
+      <details class="q rv"><summary>Do you work with businesses outside India?</summary><div class="a">
+        <p>Most of our work is outside India. We work US and UK business hours, and the projects on this page are in the United States, the United Kingdom and the UAE.</p>
+        <p>Invoicing is in USD, GBP, AED or INR by bank transfer, Wise, Payoneer or PayPal, and you get a proper invoice for your records. Time zones have never been the hard part &mdash; messages sent overnight are answered before you're back at your desk.</p>
+      </div></details>
+
+      <details class="q rv"><summary>How do I start?</summary><div class="a">
+        <p>Fill in the form below with a few lines about the business &mdash; what you do, where you are, and what you'd want the site to do for you. That's genuinely all we need to begin.</p>
+        <p>We'll reply within 24 hours with what we'd build, what it would cost and how long it would take. If it's a fit, the free draft follows. No deposit at any point in that process.</p>
+        <p><a class="case-link" href="#contact">Get my free draft <span aria-hidden="true">&rarr;</span></a></p>
+      </div></details>
+
+    </div>
+
+    <div class="ctabar rv">
+      <div>
+        <h3>Still have questions?</h3>
+        <p>Ask them directly &mdash; email, Telegram, or twenty minutes on a call. We'd rather answer properly than have you guess.</p>
+      </div>
+      <a href="#contact" class="btn btn--ghost">Ask us anything <span class="ar" aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </section>
 
-<!-- ==== CONTACT ==== -->
-<section class="sec" id="contact">
-  <div class="wrap contact">
-    <div class="rv">
-      <p class="eyebrow">Start a project</p>
-      <h2>Tell me about the business.</h2>
-      <p class="lede">A few lines is plenty. I'll come back within 24 hours with what I'd build, what it'd cost, and how long it'd take — and if it's a fit, a free first draft after that.</p>
-      <div class="direct">
-        <a class="d-row" href="mailto:hello@pablochtech.com?subject=Website%20enquiry%20via%20Pabloch%20Tech">
-          <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
-          <span class="dt">Email me<small>hello@pablochtech.com</small></span>
-          <span class="dgo" aria-hidden="true">&rarr;</span>
-        </a>
-        <div class="socials">
-          <a id="c-tg" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.61-.2L6.36 13.1 1.56 11.6c-1.04-.33-1.06-1.04.22-1.54L20.55 2.8c.87-.32 1.63.2 1.35 1.5Z"/></svg><b>Telegram</b><i id="tg-h"></i></a>
-          <a id="c-ig" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg><b>Instagram</b><i id="ig-h"></i></a>
-          <a id="c-fb" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/></svg><b>Facebook</b><i id="fb-h"></i></a>
-        </div>
-      </div>
-
-      <div class="callcard">
-        <div class="cc-h"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.6"/><path d="m15.5 10.6 5-3.1v9l-5-3.1z"/></svg></span><b>Would you rather just talk?</b></div>
-        <p>Twenty minutes on <strong style="color:var(--text);font-weight:600">Zoom</strong> or <strong style="color:var(--text);font-weight:600">Google Meet</strong> — whichever you already use. Pick one in the form, tell me a good time, and the invite comes back with my reply. Nothing to install for Meet, and no pitch.</p>
-        <div class="cc-tags"><span>Zoom</span><span>Google Meet</span><span>Telegram call</span><span>Ordinary phone call</span></div>
-      </div>
-      <div class="next">
-        <p class="next-h">What happens next</p>
-        <ol>
-          <li>I read it properly and reply within 24 hours — a real answer, not an auto-response.</li>
-          <li>If it looks like a fit, I build you a working first draft. Free, no obligation, no deposit.</li>
-          <li>You open it on your phone and decide. If it's not for you, we shake hands and that's that.</li>
-        </ol>
-      </div>
+<!-- ==== FINAL CTA + CONTACT ==== -->
+<section class="sec sec--alt final" id="contact">
+  <div class="wrap">
+    <div class="final-head rv">
+      <p class="eyebrow" style="justify-content:center">Start a project</p>
+      <h2>Your next customer is already searching.</h2>
+      <p class="lede">Let's make sure they find a website worth trusting. Tell us what you need &mdash; we'll take it from there.</p>
     </div>
 
-    <div class="form-panel rv">
-      <form id="enquiry" novalidate>
-        <div class="row">
-          <div class="field">
-            <label for="f-name">Your name <span class="req">*</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
+    <div class="contact">
+      <div class="rv">
+        <div class="direct">
+          <a class="d-row" href="mailto:hello@pablochtech.com?subject=Free%20draft%20request%20%E2%80%94%20Pabloch%20Tech">
+            <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
+            <span class="dt">Email us<small>hello@pablochtech.com</small></span>
+            <span class="dgo" aria-hidden="true">&rarr;</span>
+          </a>
+          <div class="socials">
+            <a id="c-tg" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.61-.2L6.36 13.1 1.56 11.6c-1.04-.33-1.06-1.04.22-1.54L20.55 2.8c.87-.32 1.63.2 1.35 1.5Z"/></svg><b>Telegram</b><i id="tg-h"></i></a>
+            <a id="c-ig" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg><b>Instagram</b><i id="ig-h"></i></a>
+            <a id="c-fb" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/></svg><b>Facebook</b><i id="fb-h"></i></a>
           </div>
-          <div class="field">
-            <label for="f-biz">Business name</label>
-            <input id="f-biz" name="business" type="text" autocomplete="organization" placeholder="Doe &amp; Co.">
-          </div>
-        </div>
-        <div class="row">
-          <div class="field">
-            <label for="f-email">Email <span class="req">*</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="jane@doeandco.com" required>
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone or Telegram</label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000 or @handle">
-          </div>
-        </div>
-        <div class="row">
-          <div class="field">
-            <label for="f-need">What do you need?</label>
-            <select id="f-need" name="project_type">
-              <option>A new website</option>
-              <option>A rebuild of my old site</option>
-              <option>An online store</option>
-              <option>A landing page for ads</option>
-              <option>Care plan only</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-budget">Budget in mind</label>
-            <select id="f-budget" name="budget">
-              <option>Not sure yet</option>
-              <option>Under $700</option>
-              <option>$700 – $1,000</option>
-              <option>$1,000 – $2,000</option>
-              <option>$2,000+</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-site">Existing website or Google listing</label>
-          <input id="f-site" name="existing_site" type="text" placeholder="yourbusiness.com — or leave blank">
-        </div>
-        <div class="row">
-          <div class="field">
-            <label for="f-talk">How shall we talk?</label>
-            <select id="f-talk" name="preferred_contact">
-              <option>Email is fine</option>
-              <option>Zoom call</option>
-              <option>Google Meet</option>
-              <option>Telegram</option>
-              <option>Ordinary phone call</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-when">Good time to reach you</label>
-            <input id="f-when" name="best_time" type="text" placeholder="Weekday mornings, US Eastern">
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-msg">Tell me about it <span class="req">*</span></label>
-          <textarea id="f-msg" name="message" placeholder="What the business does, where you're based, and what you'd want the site to do for you." required></textarea>
         </div>
 
-        <!-- honeypot: bots fill this, humans never see it -->
-        <input class="hp" type="text" name="pt_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="callcard">
+          <div class="cc-h"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.6"/><path d="m15.5 10.6 5-3.1v9l-5-3.1z"/></svg></span><b>Would you rather just talk?</b></div>
+          <p>Twenty minutes on <strong style="color:var(--text);font-weight:600">Zoom</strong> or <strong style="color:var(--text);font-weight:600">Google Meet</strong> &mdash; whichever you already use. Pick one in the form, tell us a good time, and the invite comes back with our reply. Nothing to install for Meet, and no pitch.</p>
+          <div class="cc-tags"><span>Zoom</span><span>Google Meet</span><span>Telegram call</span><span>Ordinary phone call</span></div>
+        </div>
 
-        <button type="submit" class="btn btn--gold btn--wide" id="submit-btn">Send enquiry <span class="ar" aria-hidden="true">→</span></button>
-        <p class="form-foot">I'll reply within 24 hours. Your details go straight to my inbox and nowhere else — no list, no newsletter, no sharing.</p>
-        <div class="form-msg" id="form-err" role="alert"></div>
-      </form>
-
-      <div class="nojs" style="display:none;padding:20px 4px;text-align:center">
-        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem;margin-bottom:10px">The form needs JavaScript</h3>
-        <p style="color:var(--muted);font-size:.94rem;margin:0 auto;max-width:38ch">It's switched off in your browser. Email <a href="mailto:hello@pablochtech.com" style="color:var(--gold-soft)">hello@pablochtech.com</a> instead and it reaches me just the same.</p>
+        <div class="next">
+          <p class="next-h">What happens next</p>
+          <ol>
+            <li>We read it properly and reply within 24 hours &mdash; a real answer, not an auto-response.</li>
+            <li>If it looks like a fit, we build your first draft. Free, no obligation, no deposit.</li>
+            <li>You open it on your phone and decide. If it's not for you, we shake hands and that's that.</li>
+          </ol>
+        </div>
       </div>
 
-      <div class="done" id="done" role="status" tabindex="-1">
-        <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5L20 7"/></svg></div>
-        <h3>Got it — thank you.</h3>
-        <p>Your enquiry has landed in my inbox. I'll come back to you within 24 hours with what I'd build and what it would cost — and if you asked for a call, the Zoom or Meet invite comes with that reply.</p>
-        <p style="color:var(--muted-2);font-size:.86rem">In a hurry? Email <a href="mailto:hello@pablochtech.com" style="color:var(--gold-soft)">hello@pablochtech.com</a> directly.</p>
+      <div class="form-panel rv">
+        <form id="enquiry" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="f-name">Your name <span class="req">*</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
+            </div>
+            <div class="field">
+              <label for="f-biz">Business name</label>
+              <input id="f-biz" name="business" type="text" autocomplete="organization" placeholder="Doe &amp; Co.">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="jane@doeandco.com" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone or Telegram</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000 or @handle">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="f-need">What do you need?</label>
+              <select id="f-need" name="project_type">
+                <option>A business website</option>
+                <option>A landing page</option>
+                <option>An online store</option>
+                <option>A rebuild of my old site</option>
+                <option>Website care only</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-budget">Budget in mind</label>
+              <select id="f-budget" name="budget">
+                <option>Not sure yet</option>
+                <option>Around $400</option>
+                <option>$400 &ndash; $700</option>
+                <option>$700 &ndash; $1,200</option>
+                <option>$1,200+</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-site">Existing website or Google listing</label>
+            <input id="f-site" name="existing_site" type="text" placeholder="yourbusiness.com — or leave blank">
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="f-talk">How shall we talk?</label>
+              <select id="f-talk" name="preferred_contact">
+                <option>Email is fine</option>
+                <option>Zoom call</option>
+                <option>Google Meet</option>
+                <option>Telegram</option>
+                <option>Ordinary phone call</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-when">Good time to reach you</label>
+              <input id="f-when" name="best_time" type="text" placeholder="Weekday mornings, US Eastern">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Tell us about it <span class="req">*</span></label>
+            <textarea id="f-msg" name="message" placeholder="What the business does, where you're based, and what you'd want the site to do for you." required></textarea>
+          </div>
+
+          <input class="hp" type="text" name="pt_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button type="submit" class="btn btn--gold btn--wide" id="submit-btn">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></button>
+          <p class="form-foot">No deposit, no card details, no obligation. We reply within 24 hours, and your details go straight to our inbox and nowhere else.</p>
+          <div class="form-msg" id="form-err" role="alert"></div>
+        </form>
+
+        <div class="nojs" style="display:none;padding:20px 4px;text-align:center">
+          <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem;margin-bottom:10px">The form needs JavaScript</h3>
+          <p style="color:var(--muted);font-size:.94rem;margin:0 auto;max-width:38ch">It's switched off in your browser. Email <a href="mailto:hello@pablochtech.com" style="color:var(--gold-soft)">hello@pablochtech.com</a> instead and it reaches us just the same.</p>
+        </div>
+
+        <div class="done" id="done" role="status" tabindex="-1">
+          <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5L20 7"/></svg></div>
+          <h3>Got it &mdash; thank you.</h3>
+          <p>Your enquiry has landed in our inbox. We'll come back within 24 hours with what we'd build and what it would cost &mdash; and if you asked for a call, the Zoom or Meet invite comes with that reply.</p>
+          <p style="color:var(--muted-2);font-size:.86rem">In a hurry? Email <a href="mailto:hello@pablochtech.com" style="color:var(--gold-soft)">hello@pablochtech.com</a> directly.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1162,18 +1270,18 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
 <footer>
   <div class="wrap">
     <div class="foot">
-      <div style="max-width:320px">
+      <div style="max-width:330px">
         <a href="#top" class="brand" style="margin-bottom:14px">
           <span class="brand-mark" aria-hidden="true">P</span>
           <span class="brand-name">Pabloch <span>Tech</span></span>
         </a>
-        <p style="font-size:.88rem;color:var(--muted-2);line-height:1.65;margin:0">Fast, hand-coded websites and online stores for small businesses. Built by one person who answers the phone.</p>
+        <p style="font-size:.88rem;color:var(--muted-2);line-height:1.65;margin:0">Fast, hand-coded websites and online stores for small businesses. Your first draft is built before you pay.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
         <nav class="foot-links" aria-label="Footer">
+          <a href="#process">Process</a>
           <a href="#work">Work</a>
           <a href="#services">Services</a>
-          <a href="#process">Process</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
@@ -1187,6 +1295,11 @@ footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 4
     </div>
   </div>
 </footer>
+
+<!-- ==== STICKY MOBILE CTA ==== -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
+</div>
 
 <script>
 /* ------------------------------------------------------------
@@ -1205,6 +1318,7 @@ var CONFIG = Object.assign({
 
 (function () {
   "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var keyReady = !!CONFIG.WEB3FORMS_KEY && CONFIG.WEB3FORMS_KEY.indexOf("PASTE") === -1 && CONFIG.WEB3FORMS_KEY.length > 20;
 
   /* ---- setup banner (only you ever see this, and only until the key is in) ---- */
@@ -1263,17 +1377,15 @@ var CONFIG = Object.assign({
     mobile.classList.toggle("on", open);
     burger.classList.toggle("x", open);
     burger.setAttribute("aria-expanded", open ? "true" : "false");
-    document.getElementById("nav").classList.toggle("menuopen", open);
+    nav.classList.toggle("menuopen", open);
   }
   burger.addEventListener("click", function (e) {
     e.stopPropagation();
     setMenu(!mobile.classList.contains("on"));
   });
-  /* close on any link tap, anywhere inside the panel (including the social row) */
   mobile.addEventListener("click", function (e) {
     if (e.target.closest("a")) setMenu(false);
   });
-  /* close on Escape, on tapping the page behind it, and if the window grows to desktop */
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && mobile.classList.contains("on")) { setMenu(false); burger.focus(); }
   });
@@ -1285,13 +1397,12 @@ var CONFIG = Object.assign({
     }
   });
   window.addEventListener("resize", function () {
-    if (window.innerWidth > 900) setMenu(false);
+    if (window.innerWidth > 920) setMenu(false);
   });
 
   /* ---- reveal on scroll ---- */
   var items = document.querySelectorAll(".rv");
-  if (!("IntersectionObserver" in window) ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (!("IntersectionObserver" in window) || reduced) {
     items.forEach(function (el) { el.classList.add("in"); });
   } else {
     var io = new IntersectionObserver(function (entries) {
@@ -1306,6 +1417,19 @@ var CONFIG = Object.assign({
     items.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---- sticky mobile CTA: after the hero, hidden once the form is on screen ---- */
+  var sticky  = document.getElementById("sticky-cta"),
+      heroEl  = document.querySelector(".hero"),
+      contact = document.getElementById("contact");
+  if (sticky && heroEl && contact && "IntersectionObserver" in window) {
+    var pastHero = false, atContact = false;
+    var sync = function () { sticky.classList.toggle("on", pastHero && !atContact); };
+    new IntersectionObserver(function (e) { pastHero = !e[0].isIntersecting; sync(); },
+      { threshold: 0 }).observe(heroEl);
+    new IntersectionObserver(function (e) { atContact = e[0].isIntersecting; sync(); },
+      { threshold: 0 }).observe(contact);
+  }
+
   /* ---- enquiry form ---- */
   var form = document.getElementById("enquiry"),
       btn  = document.getElementById("submit-btn"),
@@ -1313,6 +1437,10 @@ var CONFIG = Object.assign({
       done = document.getElementById("done");
 
   var showErr = function (html) { err.innerHTML = html; err.className = "form-msg err"; };
+  var resetBtn = function () {
+    btn.disabled = false;
+    btn.innerHTML = "Get my free draft <span class='ar' aria-hidden='true'>&rarr;</span>";
+  };
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -1327,6 +1455,7 @@ var CONFIG = Object.assign({
     var f = new FormData(form);
     // Honeypot. Show the confirmation anyway so a bot gets no signal it was caught.
     if (f.get("pt_hp")) { finish(); return; }
+
     var val = function (k) { return (f.get(k) || "").trim(); };
     if (!val("name") || !val("email") || !val("message")) {
       return showErr("Please fill in your name, email and a short message.");
@@ -1337,7 +1466,7 @@ var CONFIG = Object.assign({
 
     var payload = {
       access_key : CONFIG.WEB3FORMS_KEY,
-      subject    : "New enquiry from " + (val("business") || val("name")) + " — Pabloch Tech",
+      subject    : "Free draft request from " + (val("business") || val("name")) + " — Pabloch Tech",
       from_name  : "Pabloch Tech website",
       name       : val("name"),
       email      : val("email"),
@@ -1355,11 +1484,10 @@ var CONFIG = Object.assign({
     btn.disabled = true;
     btn.innerHTML = "Sending…";
 
-
     if (!keyReady) {                                    // not configured yet
       showErr("This form isn't connected yet. Email <a href='mailto:" + CONFIG.EMAIL +
-              "' style='color:var(--gold-soft)'>" + CONFIG.EMAIL + "</a> and it'll reach me straight away.");
-      btn.disabled = false; btn.innerHTML = "Send enquiry <span class='ar' aria-hidden='true'>→</span>";
+              "' style='color:var(--gold-soft)'>" + CONFIG.EMAIL + "</a> and it'll reach us straight away.");
+      resetBtn();
       return;
     }
 
@@ -1374,8 +1502,7 @@ var CONFIG = Object.assign({
       else { throw new Error(d && d.message ? d.message : "send failed"); }
     })
     .catch(function () {
-      btn.disabled = false;
-      btn.innerHTML = "Send enquiry <span class='ar' aria-hidden='true'>→</span>";
+      resetBtn();
       showErr("Something went wrong sending that. Please email <a href='mailto:" + CONFIG.EMAIL +
               "' style='color:var(--gold-soft)'>" + CONFIG.EMAIL + "</a> instead — sorry about that.");
     });

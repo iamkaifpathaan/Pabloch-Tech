@@ -1,26 +1,18 @@
 # ============================================================
 #  Pabloch Tech — Apache / LiteSpeed config for Hostinger
-#  Shared hosting has no CDN in front of it, so caching and
-#  compression are worth setting up by hand. Every block is
-#  wrapped in <IfModule> so a missing module is skipped, not
-#  a 500 error.
+#
+#  NO HTTPS REDIRECT IN HERE, ON PURPOSE.
+#  Use hPanel → Security → SSL → "Force HTTPS" instead.
+#
+#  Why: on shared hosting that terminates SSL at a proxy, the
+#  origin never sees %{HTTPS} == on, so a redirect rule based on
+#  it fires on every request forever — ERR_TOO_MANY_REDIRECTS.
+#  hPanel's toggle runs above that layer and knows the truth.
+#  Everything below is safe: no redirects, nothing that can loop.
 # ============================================================
 
 Options -Indexes
 DirectoryIndex index.html
-
-# ---- one canonical hostname, always HTTPS ------------------
-# hPanel has a "Force HTTPS" toggle as well. Either is enough;
-# both together is harmless.
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  RewriteCond %{HTTPS} !=on
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-</IfModule>
 
 # ---- compression -------------------------------------------
 <IfModule mod_deflate.c>
@@ -30,20 +22,20 @@ DirectoryIndex index.html
 </IfModule>
 
 # ---- caching -----------------------------------------------
-# index.html must never be stale, or an update won't show.
-# The images never change without changing filename, so a year is safe.
+# index.html must never be stale or an update won't show.
+# Images never change without changing filename, so a year is safe.
 # config.js gets a day: long enough to help, short enough that
 # swapping a Web3Forms key takes effect the same day.
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresDefault                      "access plus 1 week"
-  ExpiresByType text/html             "access plus 0 seconds"
+  ExpiresDefault                       "access plus 1 week"
+  ExpiresByType text/html              "access plus 0 seconds"
   ExpiresByType application/javascript "access plus 1 day"
-  ExpiresByType text/css              "access plus 1 year"
-  ExpiresByType image/jpeg            "access plus 1 year"
-  ExpiresByType image/png             "access plus 1 year"
-  ExpiresByType image/svg+xml         "access plus 1 year"
-  ExpiresByType image/x-icon          "access plus 1 year"
+  ExpiresByType text/css               "access plus 1 year"
+  ExpiresByType image/jpeg             "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType image/svg+xml          "access plus 1 year"
+  ExpiresByType image/x-icon           "access plus 1 year"
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -52,9 +44,9 @@ DirectoryIndex index.html
   </FilesMatch>
 
   # ---- security headers ------------------------------------
-  # No Content-Security-Policy here on purpose: the page uses one
-  # inline <script>, so any useful CSP would need 'unsafe-inline'
-  # and buy nothing. Add one only if the JS moves to its own file.
+  # No Content-Security-Policy on purpose: the page uses one inline
+  # <script>, so any useful CSP would need 'unsafe-inline' and buy
+  # nothing. Add one only if the JS moves to its own file.
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
@@ -65,3 +57,22 @@ DirectoryIndex index.html
 <FilesMatch "^\.(git|env|gitignore)">
   Require all denied
 </FilesMatch>
+
+# ============================================================
+#  If you ever move to a host where %{HTTPS} is reliable and you
+#  want the redirect back, this version is loop-safe because it
+#  also checks the proxy header:
+#
+#  <IfModule mod_rewrite.c>
+#    RewriteEngine On
+#    RewriteCond %{HTTPS} !=on
+#    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+#    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+#  </IfModule>
+#
+#  The www → bare-domain redirect is deliberately gone too: the
+#  SSL certificate currently covers pablochtech.com only, so
+#  anyone reaching https://www. hits a certificate warning BEFORE
+#  any redirect can run. Add www to the certificate in hPanel
+#  first, then re-add the redirect if you want it.
+# ============================================================
