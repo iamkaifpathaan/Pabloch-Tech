@@ -21,7 +21,7 @@ window.PABLOCH_CONFIG = {
   WEB3FORMS_KEY : "d85e0497-4eae-40f9-af9d-3630bf80d328",
 
   EMAIL         : "hello@pablochtech.com",
-  TELEGRAM      : "pablochsocial",
-  INSTAGRAM     : "pablochsocial",
+  TELEGRAM      : "pablochtech",
+  INSTAGRAM     : "pablochtech",
   FACEBOOK      : "pablochtech"
 };

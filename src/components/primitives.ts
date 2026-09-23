@@ -13,14 +13,24 @@ interface PictureOptions {
   eager?: boolean;
   className?: string;
   imgClass?: string;
+  /** Art direction: a different crop for phones (≤767px). */
+  portrait?: Shot;
+  portraitSizes?: string;
 }
+
+const PHONE = "(max-width: 767px)";
 
 const srcset = (shot: Shot, ext: "avif" | "webp"): string =>
   shot.widths.map((w) => `${env.base}assets/work/${shot.name}-${w}.${ext} ${w}w`).join(", ");
 
 export function Picture(shot: Shot, opts: PictureOptions): SafeHtml {
   const fallbackWidth = shot.widths[Math.min(1, shot.widths.length - 1)] ?? shot.widths[0];
+  const p = opts.portrait;
   return html`<picture ${attrs({ class: opts.className })}>
+    ${p
+      ? html`<source media="${PHONE}" type="image/avif" srcset="${srcset(p, "avif")}" sizes="${opts.portraitSizes ?? "100vw"}" width="${p.width}" height="${p.height}">
+    <source media="${PHONE}" type="image/webp" srcset="${srcset(p, "webp")}" sizes="${opts.portraitSizes ?? "100vw"}" width="${p.width}" height="${p.height}">`
+      : ""}
     <source type="image/avif" srcset="${srcset(shot, "avif")}" sizes="${opts.sizes}">
     <source type="image/webp" srcset="${srcset(shot, "webp")}" sizes="${opts.sizes}">
     <img ${attrs({

@@ -21,8 +21,8 @@ export const site = {
 
   email: "hello@pablochtech.com",
   socials: {
-    telegram: "pablochsocial",
-    instagram: "pablochsocial",
+    telegram: "pablochtech",
+    instagram: "pablochtech",
     facebook: "pablochtech",
   },
 

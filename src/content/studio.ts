@@ -1,5 +1,5 @@
 import { PENDING, type Fact, type Principle, type ProofItem, type Rich } from "../lib/types.ts";
-import { featured, previews } from "./work.ts";
+import { alAbuzer, featured, previews } from "./work.ts";
 
 /* ------------------------------------------------------------------ */
 /*  Intro statement                                                    */
@@ -97,7 +97,7 @@ export const marqueeWords = [
 /* ------------------------------------------------------------------ */
 
 export const caseStudy = {
-  project: featured,
+  project: alAbuzer,
   headline: ["Selling ", { em: "atmosphere" }, ", online."] as Rich,
   meta: [
     { label: "Client", value: "Al-Abuzer Perfumes" },
@@ -160,12 +160,12 @@ export const proof: readonly ProofItem[] = [
   {
     claim: "A live store you can open right now.",
     detail: "Browse it, search it, add something to the cart. It’s in production.",
-    links: [{ label: featured.link.label, href: featured.link.href }],
+    links: [{ label: "alabuzerperfumes.com", href: alAbuzer.link.href }],
   },
   {
-    claim: "Three previews you can open on your phone.",
-    detail: "Built on spec, before anybody asked. Each one is labelled as a preview.",
-    links: previews.map((p) => ({ label: p.name, href: p.link.href })),
+    claim: "Four more builds you can open on your phone.",
+    detail: "One self-initiated concept and three previews built on spec before anybody asked — each labelled for exactly what it is.",
+    links: [featured, ...previews].map((p) => ({ label: p.name, href: p.link.href })),
   },
   {
     claim: "A fixed price, in writing, before work starts.",
@@ -182,7 +182,7 @@ export const proof: readonly ProofItem[] = [
 ];
 
 export const facts: readonly Fact[] = [
-  { value: "4", label: "Builds designed & built" },
+  { value: "5", label: "Builds designed & built" },
   { value: "100%", label: "Hand-written code" },
   { value: "24h", label: "Reply time, every time" },
   { value: "$0", label: "Until you’ve seen the draft" },

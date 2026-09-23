@@ -20,7 +20,10 @@ export interface ExternalLink {
   readonly href: string;
 }
 
-export type ProjectStatus = "live" | "preview";
+/** live = a client's site in production · preview = unpaid spec build for a real business · concept = self-initiated */
+export type ProjectStatus = "live" | "preview" | "concept";
+
+export type ProjectLayout = "a" | "b" | "c";
 
 export interface Project {
   readonly id: string;
@@ -32,8 +35,17 @@ export interface Project {
   readonly summary: Rich;
   readonly features: readonly string[];
   readonly link: ExternalLink;
+  /** Extra in-page links, e.g. to the case study. */
+  readonly more?: readonly ExternalLink[];
   readonly desktop: Shot;
+  /** Portrait crop used instead of `desktop` on phones (art direction). */
+  readonly portrait?: Shot;
+  /** Secondary screenshot that overlaps the main one. */
   readonly mobile?: Shot;
+  readonly mobileKind?: "phone" | "tablet";
+  readonly layout?: ProjectLayout;
+  /** The two words that split apart behind the featured project. */
+  readonly words?: readonly [string, string];
 }
 
 export interface Service {

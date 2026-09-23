@@ -14,6 +14,27 @@ const shot = (name: string, width: number, height: number, widths: number[], alt
 });
 
 export const shots = {
+  rctHero: shot(
+    "rct-hero",
+    1550,
+    700,
+    [800, 1200, 1550],
+    "Royal Compass Travels homepage: the headline “Every journey begins with a direction” over Positano at dusk, with a compass reading heading 144° SE and the coordinates of the Amalfi Coast.",
+  ),
+  rctPortrait: shot(
+    "rct-portrait",
+    720,
+    620,
+    [360, 540, 720],
+    "Positano lit up at dusk on the Royal Compass Travels homepage, with a gold compass needle and a readout: heading 144° SE, now viewing Positano, Amalfi Coast.",
+  ),
+  rctDestinations: shot(
+    "rct-destinations",
+    1550,
+    616,
+    [800, 1200, 1550],
+    "Royal Compass Travels destinations section: “Choose a direction. We’ll map the way.” beside a compass instrument reading 4.1755° N, 73.5093° E, heading 189° S for the Maldives.",
+  ),
   alabuzerDesktop: shot(
     "alabuzer-desktop",
     1568,
