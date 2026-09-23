@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Hero + intro statement
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* keep the grid out from under the navigation and the meta row */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, transparent 96px, #000 180px);
+  mask-image: linear-gradient(to bottom, transparent 0, transparent 96px, #000 180px);
+}
+/* Where the canvas draws the assembling "first draft". Layout lives here in
+   CSS; the canvas just reads this box. Hidden (so not drawn) below 1024px. */
+.hero-draft-slot {
+  position: absolute;
+  right: var(--margin);
+  top: 37%;
+  bottom: 19%;
+  width: min(29vw, 470px);
+  pointer-events: none;
+  visibility: hidden;
+}
+@media (max-width: 1099px), (max-height: 600px) {
+  .hero-draft-slot {
+    display: none;
+  }
+}
+
+/* The hero animates with pure CSS on first paint, so the largest text on the
+   page never waits for the JavaScript bundle. */
+@keyframes hero-rise {
+  from { transform: translate3d(0, 112%, 0); }
+  to { transform: none; }
+}
+@keyframes hero-fade {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: none; }
+}
+.js-motion .hero-title .rw-i {
+  animation: hero-rise 1.25s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 60ms + 120ms);
+}
+.js-motion .hero-in {
+  animation: hero-fade 1s var(--ease-out) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.hero-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(28px, 5vh, 56px);
+  width: 100%;
+  padding-top: calc(var(--nav-h) + clamp(12px, 3vh, 36px));
+  padding-bottom: clamp(20px, 3.5vh, 36px);
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-ink);
+  color: var(--fg-2);
+}
+.hero-meta-clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-main {
+  display: grid;
+  gap: clamp(28px, 4.5vh, 52px);
+}
+
+.hero-title {
+  font-size: var(--t-hero);
+  line-height: 0.88;
+  letter-spacing: -0.058em;
+  font-weight: 480;
+  text-wrap: initial;
+}
+.hero-line {
+  display: block;
+}
+.hero-title em {
+  font-size: 1.05em;
+  letter-spacing: -0.03em;
+}
+.hero-line:nth-child(2) {
+  padding-left: 0.62em;
+}
+
+.hero-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(24px, 3.5vh, 36px);
+}
+.hero-lede {
+  max-width: 33ch;
+  font-size: var(--t-body-l);
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+.hero-lede-em {
+  color: var(--fg);
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+}
+
+.hero-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  color: var(--fg-3);
+}
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-2);
+}
+.hero-fig span:first-child {
+  color: var(--accent);
+  margin-right: 6px;
+}
+
+@media (max-width: 1023px) {
+  .hero-meta-mid {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .hero-line {
+    display: inline;
+  }
+  .hero-line:nth-child(2) {
+    padding-left: 0;
+  }
+  .hero-fig {
+    display: none;
+  }
+  .hero-meta > span:first-child {
+    max-width: 22ch;
+  }
+  .hero-ctas {
+    width: 100%;
+  }
+  .hero-ctas .btn {
+    flex: 1 1 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Intro statement — words light up as you read down.
+   -------------------------------------------------------------------------- */
+.intro {
+  padding-block: var(--section-y);
+  border-top: 1px solid var(--line-ink);
+}
+.intro-statement {
+  margin-top: clamp(28px, 4vw, 56px);
+  max-width: 24em;
+  font-size: var(--t-statement);
+  line-height: 1.13;
+  letter-spacing: -0.032em;
+  font-weight: 450;
+  text-indent: 2.4em;
+}
+.intro-statement em {
+  font-size: 1.05em;
+}
+.intro-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  max-width: 52rem;
+  margin: clamp(56px, 8vw, 128px) 0 0 auto;
+}
+.intro-note {
+  padding-top: 18px;
+  border-top: 1px solid var(--line-ink-2);
+  color: var(--fg-2);
+  font-size: 1.0625rem;
+}
+.intro-note-label {
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+@media (max-width: 599px) {
+  .intro-notes {
+    grid-template-columns: 1fr;
+  }
+  .intro-statement {
+    text-indent: 0;
+  }
+}

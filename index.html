@@ -3,1511 +3,805 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pabloch Tech — Your website, built before you pay</title>
-<meta name="description" content="We design your first working website draft for free. If you love it, we build and launch the real thing. Business websites, landing pages and online stores from $400. Built by hand, not by page builder.">
-<meta name="theme-color" content="#08090B">
-<link rel="canonical" href="https://pablochtech.com/">
-
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;sha256-PNdOkfgDxIzDK8rOWb/lGYESosPK64Ci6cDIsaCQVNQ=&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; data:; font-src &#39;self&#39;; connect-src &#39;self&#39; https://api.web3forms.com; base-uri &#39;self&#39;; form-action &#39;self&#39;; object-src &#39;none&#39;; frame-src &#39;none&#39;; manifest-src &#39;self&#39;; upgrade-insecure-requests">
+<title>Pabloch Tech — Independent digital product &amp; experience studio</title>
+<meta name="description" content="Pabloch Tech designs and hand-builds websites, online stores and the product features behind them. Every line written by hand — and your first working draft is built before you pay.">
+<link rel="canonical" href="https://projects.pablochtech.com/">
+<meta name="theme-color" content="#0B0B0C">
+<meta name="color-scheme" content="dark light">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pabloch Tech — Your website, built before you pay">
-<meta property="og:description" content="We design your first working website draft for free. If you love it, we build and launch the real thing. From $400.">
-<meta property="og:url" content="https://pablochtech.com/">
 <meta property="og:site_name" content="Pabloch Tech">
-<meta property="og:image" content="https://pablochtech.com/og-image.jpg">
+<meta property="og:title" content="Pabloch Tech — Independent digital product &amp; experience studio">
+<meta property="og:description" content="Pabloch Tech designs and hand-builds websites, online stores and the product features behind them. Every line written by hand — and your first working draft is built before you pay.">
+<meta property="og:url" content="https://projects.pablochtech.com/">
+<meta property="og:image" content="https://projects.pablochtech.com/og-studio.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pabloch Tech — your website, built before you pay.">
+<meta property="og:image:alt" content="Pabloch Tech — digital products, crafted line by line.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pablochtech.com/og-image.jpg">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308090B'/%3E%3Cpath d='M20 46V18h13.5c6.4 0 10.5 3.9 10.5 9.8 0 6-4.1 9.9-10.5 9.9H27V46h-7Zm7-14.6h5.3c2.6 0 4.2-1.4 4.2-3.6s-1.6-3.6-4.2-3.6H27v7.2Z' fill='%23E9B44C'/%3E%3C/svg%3E">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Pabloch Tech",
-  "description": "Web design and development studio building fast, hand-coded websites and online stores for small businesses. The first working draft is built before the client pays.",
-  "url": "https://pablochtech.com/",
-  "logo": "https://pablochtech.com/og-image.jpg",
-  "image": "https://pablochtech.com/og-image.jpg",
-  "email": "hello@pablochtech.com",
-  "areaServed": ["United States", "United Kingdom", "India", "United Arab Emirates"],
-  "knowsAbout": ["Web design", "Web development", "E-commerce development", "Landing pages", "Website maintenance"],
-  "sameAs": [
-    "https://t.me/pablochsocial",
-    "https://instagram.com/pablochsocial",
-    "https://facebook.com/pablochtech"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "hello@pablochtech.com",
-    "availableLanguage": ["English"]
-  }
-}
-</script>
-
-<script src="config.js"></script>
-
-<style>
-/* ============================================================
-   1. TOKENS
-   ============================================================ */
-:root{
-  --ink:#08090B;
-  --ink-2:#0B0D11;
-  --surface:#111318;
-  --surface-2:#161A20;
-  --line:rgba(255,255,255,.075);
-  --line-2:rgba(255,255,255,.14);
-  --text:#F4F2EE;
-  --muted:#A2A8B4;
-  --muted-2:#868C97;
-  --gold:#E9B44C;
-  --gold-soft:#F6D79A;
-  --gold-wash:rgba(233,180,76,.11);
-  --green:#5FD3A6;
-
-  --r-sm:12px; --r:18px; --r-lg:26px;
-  --maxw:1180px;
-  --ease:cubic-bezier(.22,.7,.3,1);
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-}
-
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{
-  margin:0;background:var(--ink);color:var(--text);
-  font-family:var(--sans);font-size:17px;line-height:1.65;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-img{max-width:100%;display:block}
-[hidden]{display:none!important}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit;color:inherit}
-
-.wrap{
-  width:100%;max-width:var(--maxw);margin:0 auto;
-  padding-left:max(24px,env(safe-area-inset-left));
-  padding-right:max(24px,env(safe-area-inset-right));
-}
-@media (max-width:640px){
-  .wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
-}
-
-/* ============================================================
-   2. TYPE
-   ============================================================ */
-h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.015em}
-h1{font-family:var(--serif);font-size:clamp(2.35rem,5.4vw,4.15rem);line-height:1.02;letter-spacing:-.025em}
-h2{font-family:var(--serif);font-size:clamp(2rem,4.1vw,3.1rem);line-height:1.08}
-h3{font-family:var(--sans);font-weight:600;font-size:1.14rem;line-height:1.35;letter-spacing:-.01em}
-p{margin:0 0 1.1em}
-em.g{font-style:italic;color:var(--gold-soft)}
-.lede{font-size:clamp(1.02rem,1.6vw,1.17rem);color:var(--muted);line-height:1.7;max-width:60ch}
-
-.eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--mono);font-size:.69rem;font-weight:500;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 20px;
-}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
-
-/* ============================================================
-   3. LAYOUT
-   ============================================================ */
-.sec{padding:clamp(74px,9.5vw,126px) 0;position:relative}
-.sec--alt{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.sec-head{max-width:680px;margin-bottom:clamp(38px,5vw,60px)}
-.sec-head h2{margin-bottom:18px}
-.sec-head--mid{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head--mid .eyebrow{justify-content:center}
-
-/* ============================================================
-   4. BUTTONS
-   ============================================================ */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  padding:16px 28px;border-radius:999px;border:1px solid transparent;
-  font-size:.96rem;font-weight:600;letter-spacing:-.005em;
-  cursor:pointer;white-space:nowrap;text-align:center;
-  transition:background .25s var(--ease),border-color .25s var(--ease),
-             transform .25s var(--ease),box-shadow .25s var(--ease),color .25s var(--ease);
-}
-.btn--gold{background:var(--gold);color:#14100A;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 14px 34px -14px rgba(233,180,76,.6)}
-.btn--gold:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 20px 40px -14px rgba(233,180,76,.7)}
-.btn--ghost{background:rgba(255,255,255,.03);border-color:var(--line-2);color:var(--text)}
-.btn--ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.27);transform:translateY(-2px)}
-.btn--sm{padding:11px 20px;font-size:.88rem}
-.btn--wide{width:100%}
-.btn .ar{transition:transform .25s var(--ease)}
-.btn:hover .ar{transform:translateX(3px)}
-
-/* ============================================================
-   5. SETUP BANNER (only until the Web3Forms key is in)
-   ============================================================ */
-#setup{display:none;position:relative;z-index:60;background:linear-gradient(90deg,#2A1F06,#3A2B08);
-  border-bottom:1px solid rgba(233,180,76,.3);color:var(--gold-soft);font-size:.83rem;line-height:1.5}
-#setup.on{display:block}
-#setup .wrap{display:flex;gap:12px;align-items:center;justify-content:center;padding:9px 24px;flex-wrap:wrap;text-align:center}
-#setup code{font-family:var(--mono);font-size:.78rem;background:rgba(0,0,0,.35);padding:2px 7px;border-radius:5px;color:#FFF}
-#setup button{background:none;border:1px solid rgba(233,180,76,.4);border-radius:999px;padding:3px 12px;font-size:.75rem;cursor:pointer;color:inherit}
-
-/* ============================================================
-   6. NAV
-   ============================================================ */
-.nav{
-  position:sticky;top:0;z-index:50;background:rgba(8,9,11,.72);
-  backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);
-  border-bottom:1px solid transparent;transition:border-color .3s var(--ease),background .3s var(--ease);
-}
-.nav.stuck{border-bottom-color:var(--line);background:rgba(8,9,11,.92)}
-.nav.menuopen{background:var(--ink)}
-.nav > .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
-.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
-.brand-mark{
-  width:34px;height:34px;border-radius:10px;flex-shrink:0;
-  background:linear-gradient(150deg,#2A2109,#0E0F12);border:1px solid rgba(233,180,76,.35);
-  display:grid;place-items:center;font-family:var(--serif);font-size:1.22rem;color:var(--gold);line-height:1;
-  box-shadow:0 6px 18px -8px rgba(233,180,76,.5);
-}
-.brand-name{font-weight:600;font-size:1.03rem;letter-spacing:-.015em}
-.brand-name span{color:var(--muted-2);font-weight:400}
-.nav-links{display:flex;align-items:center;gap:2px}
-.nav-links a{padding:8px 13px;border-radius:9px;font-size:.9rem;color:var(--muted);transition:color .2s,background .2s}
-.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
-.nav-cta{display:flex;align-items:center;gap:10px}
-.burger{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--line-2);
-  background:rgba(255,255,255,.03);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
-.burger i{display:block;width:16px;height:1.5px;background:var(--text);transition:transform .3s var(--ease),opacity .2s}
-.burger.x i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
-.burger.x i:nth-child(2){opacity:0}
-.burger.x i:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
-.mobile{display:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:var(--ink);max-height:calc(100dvh - 72px);overflow-y:auto;-webkit-overflow-scrolling:touch}
-.mobile.on{display:block}
-.mobile .wrap{padding-top:8px;padding-bottom:24px}
-.mobile > .wrap > a{display:block;padding:14px 4px;font-size:1.02rem;border-bottom:1px solid var(--line);color:var(--muted)}
-.mobile > .wrap > a.btn{display:flex;font-size:.955rem;border-bottom:none;color:#14100A;margin-top:18px;padding:15px 26px}
-.m-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.m-social a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line-2);
-  border-radius:999px;font-size:.85rem;color:var(--muted)}
-.m-social a svg{width:15px;height:15px;color:var(--gold)}
-@media (max-width:920px){
-  .nav-links{display:none}
-  .nav-cta .btn{display:none}
-  .burger{display:flex}
-}
-
-/* ============================================================
-   7. HERO
-   ============================================================ */
-.hero{position:relative;padding:clamp(52px,7vw,92px) 0 clamp(56px,7vw,88px);overflow:hidden}
-.hero::before{
-  content:"";position:absolute;inset:-30% -20% auto -20%;height:130%;pointer-events:none;
-  background:radial-gradient(56% 46% at 18% 4%,rgba(233,180,76,.14),transparent 62%),
-             radial-gradient(46% 40% at 90% 26%,rgba(120,110,255,.07),transparent 66%);
-}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--line-2),transparent)}
-.hero .wrap{position:relative}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(34px,4.5vw,62px);align-items:center}
-@media (max-width:1040px){.hero-grid{grid-template-columns:1fr;gap:48px}}
-
-.free-pill{
-  display:inline-flex;align-items:center;gap:9px;padding:7px 15px 7px 9px;border-radius:999px;
-  background:var(--gold-wash);border:1px solid rgba(233,180,76,.3);
-  font-size:.82rem;color:var(--gold-soft);margin-bottom:22px;line-height:1.4;
-}
-.free-pill b{background:var(--gold);color:#14100A;font-weight:700;font-size:.7rem;letter-spacing:.06em;
-  text-transform:uppercase;padding:3px 9px;border-radius:999px}
-.hero h1{margin-bottom:22px}
-.hero .lede{margin-bottom:30px;max-width:50ch}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
-.hero-note{display:flex;align-items:center;gap:9px;font-size:.87rem;color:var(--muted-2);margin:0}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(95,211,166,.16);flex-shrink:0}
-
-/* --- responsive mockup: real screenshots of a real build --- */
-.mock{position:relative;padding-bottom:34px;padding-left:26px}
-.mock-desk{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);
-  background:#0d0f13;box-shadow:0 40px 90px -40px rgba(0,0,0,1),0 0 0 1px rgba(255,255,255,.03)}
-.chrome{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#15181d;border-bottom:1px solid var(--line)}
-.chrome i{width:9px;height:9px;border-radius:50%;background:#2c313a;display:block;flex-shrink:0}
-.chrome b{flex:1;margin-left:8px;font-family:var(--mono);font-size:.62rem;font-weight:400;color:var(--muted-2);
-  background:#0d0f13;border-radius:5px;padding:4px 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mock-desk img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top center}
-.mock-phone{position:absolute;left:0;bottom:0;width:132px;margin:0;border-radius:16px;overflow:hidden;
-  border:1px solid var(--line-2);background:#0d0f13;box-shadow:0 26px 50px -20px rgba(0,0,0,1)}
-.mock-phone img{width:100%;height:auto;aspect-ratio:390/560;object-fit:cover;object-position:top center}
-.mock-badge{
-  position:absolute;right:-6px;top:-16px;display:flex;align-items:center;gap:10px;
-  padding:11px 15px;border-radius:14px;background:rgba(17,19,24,.92);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border:1px solid rgba(233,180,76,.28);box-shadow:0 20px 40px -20px rgba(0,0,0,1);
-}
-.mock-badge .tick{width:26px;height:26px;border-radius:8px;background:var(--gold-wash);
-  border:1px solid rgba(233,180,76,.3);display:grid;place-items:center;color:var(--gold);flex-shrink:0}
-.mock-badge .tick svg{width:13px;height:13px}
-.mock-badge span{font-size:.79rem;line-height:1.35;color:var(--muted)}
-.mock-badge strong{display:block;color:var(--text);font-size:.86rem;font-weight:600}
-@media (max-width:520px){
-  .mock{padding-left:0;padding-bottom:0;padding-top:58px}   /* room for the badge above the frame */
-  .mock-phone{display:none}
-  .mock-badge{right:0;top:0}
-  .hero-cta{flex-direction:column;align-items:stretch;gap:10px}
-  .hero-cta .btn{width:100%}
-}
-
-/* ============================================================
-   8. TRUST STRIP
-   ============================================================ */
-.trust{border-top:1px solid var(--line);background:var(--ink-2)}
-.trust .wrap{padding-top:34px;padding-bottom:34px}
-.trust-line{font-size:.88rem;color:var(--muted-2);margin:0 0 22px;text-align:center}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.trust-cell{background:var(--ink-2);padding:24px 20px;text-align:center}
-.trust-cell b{display:block;font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.05rem);
-  line-height:1;color:var(--text);margin-bottom:8px;font-weight:400}
-.trust-cell span{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--muted-2);line-height:1.5;display:block}
-@media (max-width:760px){.trust-grid{grid-template-columns:1fr 1fr}}
-
-/* ============================================================
-   9. PROCESS — the free draft
-   ============================================================ */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:900px){.steps{grid-template-columns:1fr}}
-.step{
-  position:relative;padding:30px 28px 32px;border-radius:var(--r-lg);
-  background:var(--surface);border:1px solid var(--line);
-  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
-}
-.step:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--surface-2)}
-.step--free{background:linear-gradient(165deg,rgba(233,180,76,.1),var(--surface) 46%);border-color:rgba(233,180,76,.28)}
-.step-n{display:flex;align-items:center;gap:11px;margin-bottom:18px}
-.step-n em{font-family:var(--serif);font-style:normal;font-size:2.1rem;line-height:1;color:var(--gold);opacity:.85}
-.step-n span{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
-  color:#14100A;background:var(--gold);padding:4px 10px;border-radius:999px;font-weight:600}
-.step h3{font-family:var(--serif);font-weight:400;font-size:1.42rem;line-height:1.15;margin-bottom:10px}
-.step p{font-size:.93rem;color:var(--muted);line-height:1.65;margin:0}
-.step-foot{margin-top:26px;padding:18px 22px;border-radius:var(--r);background:rgba(255,255,255,.025);
-  border:1px solid var(--line);font-size:.92rem;color:var(--muted);line-height:1.65}
-.step-foot b{color:var(--text);font-weight:600}
-
-/* ============================================================
-   10. WORK
-   ============================================================ */
-.case{
-  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,54px);align-items:center;
-  padding:clamp(26px,3.6vw,42px);background:linear-gradient(160deg,var(--surface),var(--ink-2));
-  border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:22px;
-}
-.case--flip .case-media{order:-1}
-.case-media{border-radius:14px;overflow:hidden;border:1px solid var(--line-2);background:#000;
-  box-shadow:0 30px 70px -34px rgba(0,0,0,.95);position:relative}
-.case-media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;transition:transform .7s var(--ease)}
-.case:hover .case-media img{transform:scale(1.025)}
-.tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.65rem;
-  letter-spacing:.13em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:16px}
-.tag--live{background:rgba(95,211,166,.12);color:var(--green);border:1px solid rgba(95,211,166,.28)}
-.tag--spec{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--line-2)}
-.case h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.55rem,2.5vw,2rem);line-height:1.15;margin-bottom:6px}
-.case .case-sub{font-size:.9rem;color:var(--muted-2);line-height:1.5;margin-bottom:16px}
-.case p{font-size:.96rem;color:var(--muted);line-height:1.7}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 22px}
-.chip{font-size:.77rem;padding:5px 11px;border-radius:8px;background:rgba(255,255,255,.04);
-  border:1px solid var(--line);color:var(--muted)}
-.case-link{display:inline-flex;align-items:center;gap:8px;font-size:.93rem;font-weight:600;color:var(--gold);
-  border-bottom:1px solid rgba(233,180,76,.35);padding-bottom:2px;
-  transition:color .2s var(--ease),border-color .2s var(--ease)}
-.case-link span{display:inline-block;transition:transform .2s var(--ease)}
-.case-link:hover{color:var(--gold-soft);border-color:var(--gold-soft)}
-.case-link:hover span{transform:translate(2px,-2px)}
-@media (max-width:880px){.case{grid-template-columns:1fr;padding:22px}.case .case-media{order:-1}}
-
-.sub-head{max-width:760px;margin:clamp(42px,5vw,64px) 0 clamp(24px,3vw,34px);
-  padding-top:clamp(36px,4.4vw,54px);border-top:1px solid var(--line)}
-.sub-head h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.45rem,2.5vw,1.95rem);line-height:1.15;margin-bottom:12px}
-.sub-head p{font-size:.94rem;color:var(--muted);line-height:1.7;margin:0}
-.sub-head strong{color:var(--text);font-weight:600}
-
-.previews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:960px){.previews{grid-template-columns:1fr 1fr}}
-@media (max-width:680px){.previews{grid-template-columns:1fr}}
-.pv{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:var(--surface);
-  border:1px solid var(--line);transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
-.pv:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--surface-2)}
-.pv-shot{display:block;position:relative;background:#000;border-bottom:1px solid var(--line);overflow:hidden}
-.pv-shot img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top center;transition:transform .7s var(--ease)}
-.pv:hover .pv-shot img{transform:scale(1.03)}
-.pv-shot:focus-visible{outline-offset:-4px}
-.pv-body{padding:22px;display:flex;flex-direction:column;flex:1}
-.pv-body h4{font-family:var(--serif);font-weight:400;font-size:1.32rem;line-height:1.15;margin:0 0 4px}
-.pv-body .tag{margin-bottom:14px}
-.pv-body .pv-sub{font-size:.82rem;color:var(--muted-2);line-height:1.45;margin:0 0 14px}
-.pv-body > p{font-size:.89rem;color:var(--muted);line-height:1.65;margin:0 0 16px}
-.pv .chips{margin:auto 0 18px}
-.pv .chip{font-size:.73rem;padding:4px 9px}
-.pv .case-link{font-size:.87rem;align-self:flex-start}
-
-/* ============================================================
-   11. CARD GRIDS (services, objections)
-   ============================================================ */
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
-@media (max-width:660px){.grid-2,.grid-3{grid-template-columns:1fr}}
-
-.card{padding:30px 26px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
-  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
-.card:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--surface-2)}
-.card .ico{width:40px;height:40px;border-radius:11px;margin-bottom:18px;background:var(--gold-wash);
-  border:1px solid rgba(233,180,76,.24);display:grid;place-items:center;color:var(--gold)}
-.card .ico svg{width:19px;height:19px}
-.card h3{margin-bottom:9px}
-.card > p{font-size:.92rem;color:var(--muted);line-height:1.65;margin:0}
-.card ul{margin:14px 0 0;padding:0;list-style:none}
-.card ul li{font-size:.87rem;color:var(--muted);padding-left:20px;position:relative;margin-bottom:7px;line-height:1.55}
-.card ul li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:1.5px;background:var(--gold);opacity:.65}
-
-/* objection cards */
-.obj{padding:26px 24px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
-  transition:border-color .3s var(--ease),background .3s var(--ease)}
-.obj:hover{border-color:var(--line-2);background:var(--surface-2)}
-.obj q{display:block;font-family:var(--serif);font-size:1.22rem;line-height:1.3;color:var(--text);
-  margin-bottom:12px;font-style:italic;quotes:'"' '"'}
-.obj p{font-size:.91rem;color:var(--muted);line-height:1.65;margin:0}
-
-/* ============================================================
-   12. PRICING
-   ============================================================ */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
-.plan{display:flex;flex-direction:column;padding:32px 28px;border-radius:var(--r-lg);
-  background:var(--surface);border:1px solid var(--line);position:relative;
-  transition:border-color .3s var(--ease),transform .3s var(--ease)}
-.plan:hover{transform:translateY(-3px);border-color:var(--line-2)}
-.plan--best{background:linear-gradient(165deg,rgba(233,180,76,.1),var(--surface) 42%);
-  border-color:rgba(233,180,76,.34);box-shadow:0 30px 70px -40px rgba(233,180,76,.4)}
-.plan--flag{background:linear-gradient(165deg,rgba(120,110,255,.07),var(--surface) 44%);border-color:rgba(255,255,255,.16)}
-.plan-flag{position:absolute;top:-11px;left:28px;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
-  text-transform:uppercase;background:var(--gold);color:#14100A;padding:4px 12px;border-radius:999px;font-weight:600}
-.plan-flag--alt{background:var(--text);color:var(--ink)}
-.plan h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin-bottom:6px}
-.plan .for{font-size:.85rem;color:var(--muted-2);margin-bottom:22px;line-height:1.5;min-height:3em}
-.price{display:flex;align-items:baseline;gap:7px;margin-bottom:6px;flex-wrap:wrap}
-.price .from{font-size:.72rem;color:var(--muted-2);font-family:var(--mono);letter-spacing:.09em;text-transform:uppercase}
-.price .amt{font-family:var(--serif);font-size:2.7rem;line-height:1;color:var(--text)}
-.plan .note{font-size:.83rem;color:var(--muted-2);margin-bottom:24px;line-height:1.5}
-.plan ul{list-style:none;margin:0 0 26px;padding:0;flex:1}
-.plan ul li{font-size:.875rem;color:var(--muted);line-height:1.5;padding:9px 0 9px 26px;position:relative;border-top:1px solid var(--line)}
-.plan ul li:first-child{border-top:none}
-.plan ul li::before{content:"";position:absolute;left:2px;top:1.1em;width:11px;height:6px;
-  border-left:1.6px solid var(--gold);border-bottom:1.6px solid var(--gold);transform:rotate(-45deg);opacity:.8}
-.plan ul li b{color:var(--text);font-weight:600}
-.pay-note{margin-top:26px;padding:20px 24px;border-radius:var(--r);background:rgba(255,255,255,.025);
-  border:1px solid var(--line);font-size:.9rem;color:var(--muted);line-height:1.7}
-.pay-note b{color:var(--text);font-weight:600}
-
-/* ============================================================
-   13. ABOUT
-   ============================================================ */
-.about{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,62px);align-items:center}
-@media (max-width:880px){.about{grid-template-columns:1fr}}
-.about-panel{padding:clamp(26px,3.4vw,38px);border-radius:var(--r-lg);
-  background:linear-gradient(160deg,var(--surface),var(--ink-2));border:1px solid var(--line)}
-.fact{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.fact:last-child{border-bottom:none;padding-bottom:0}
-.fact:first-child{padding-top:0}
-.fact .k{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--muted-2);width:96px;flex-shrink:0;padding-top:4px;line-height:1.5}
-.fact .v{font-size:.93rem;color:var(--text);line-height:1.6}
-.fact .v small{display:block;color:var(--muted-2);font-size:.83rem;margin-top:2px}
-
-/* ============================================================
-   14. FAQ
-   ============================================================ */
-.faq{max-width:820px;margin:0 auto}
-.q{border-bottom:1px solid var(--line)}
-.q summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;
-  font-size:1.02rem;font-weight:500;letter-spacing:-.01em;transition:color .2s}
-.q summary::-webkit-details-marker{display:none}
-.q summary:hover{color:var(--gold-soft)}
-.q summary::after{content:"";position:absolute;right:10px;top:50%;width:11px;height:11px;
-  border-right:1.6px solid var(--muted);border-bottom:1.6px solid var(--muted);
-  transform:translateY(-70%) rotate(45deg);transition:transform .3s var(--ease),border-color .3s var(--ease)}
-.q[open] summary::after{transform:translateY(-30%) rotate(225deg);border-color:var(--gold)}
-.q .a{padding:0 34px 24px 0;color:var(--muted);font-size:.95rem;line-height:1.75}
-.q .a p:last-child{margin-bottom:0}
-.q .a strong{color:var(--text);font-weight:600}
-.q[open] .a{animation:faq .32s var(--ease)}
-@keyframes faq{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-
-/* ============================================================
-   15. MID-PAGE CTA BARS
-   ============================================================ */
-.ctabar{margin-top:clamp(34px,4vw,48px);padding:clamp(26px,3.4vw,38px);border-radius:var(--r-lg);
-  background:linear-gradient(150deg,rgba(233,180,76,.09),var(--surface) 55%);
-  border:1px solid rgba(233,180,76,.24);display:flex;align-items:center;justify-content:space-between;
-  gap:24px;flex-wrap:wrap}
-.ctabar h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.2;margin-bottom:6px}
-.ctabar p{font-size:.92rem;color:var(--muted);margin:0;max-width:52ch}
-
-/* ============================================================
-   16. FINAL CTA + CONTACT
-   ============================================================ */
-.final{position:relative;overflow:hidden}
-.final::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:150%;pointer-events:none;
-  background:radial-gradient(48% 42% at 50% 0%,rgba(233,180,76,.13),transparent 64%)}
-.final .wrap{position:relative}
-.final-head{max-width:760px;margin:0 auto clamp(40px,5vw,58px);text-align:center}
-.final-head h2{margin-bottom:18px}
-.final-head .lede{margin-left:auto;margin-right:auto}
-.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,58px);align-items:start}
-@media (max-width:900px){.contact{grid-template-columns:1fr}}
-.form-panel{padding:clamp(26px,3.4vw,40px);border-radius:var(--r-lg);
-  background:linear-gradient(165deg,var(--surface),var(--ink-2));border:1px solid var(--line);position:relative;overflow:hidden}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media (max-width:560px){.row{grid-template-columns:1fr}}
-.field{margin-bottom:14px}
-.field label{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted-2);margin-bottom:8px}
-.field label .req{color:var(--gold);margin-left:3px}
-.field input,.field select,.field textarea{
-  width:100%;padding:13px 15px;border-radius:11px;background:rgba(255,255,255,.035);
-  border:1px solid var(--line-2);font-size:1rem;
-  transition:border-color .2s,background .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;
-}
-.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%23A2A8B4' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;cursor:pointer}
-.field select option{background:#14171C;color:var(--text)}
-.field textarea{resize:vertical;min-height:112px;line-height:1.6}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:rgba(233,180,76,.55);
-  background:rgba(255,255,255,.055);box-shadow:0 0 0 3px rgba(233,180,76,.12)}
-.field input::placeholder,.field textarea::placeholder{color:var(--muted-2)}
-.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;pointer-events:none}
-.form-foot{margin-top:10px;font-size:.79rem;color:var(--muted-2);line-height:1.6;text-align:center}
-.form-msg{display:none;margin-top:16px;padding:14px 16px;border-radius:12px;font-size:.9rem;line-height:1.55}
-.form-msg.err{display:block;background:rgba(255,110,110,.1);border:1px solid rgba(255,110,110,.3);color:#FFB3B3}
-.done{display:none;text-align:center;padding:24px 8px}
-.done.on{display:block}
-.done .tick{width:56px;height:56px;border-radius:50%;margin:0 auto 20px;background:rgba(95,211,166,.12);
-  border:1px solid rgba(95,211,166,.35);display:grid;place-items:center}
-.done .tick svg{width:24px;height:24px;color:var(--green)}
-.done h3{font-family:var(--serif);font-weight:400;font-size:1.6rem;margin-bottom:10px}
-.done p{color:var(--muted);font-size:.94rem;max-width:38ch;margin:0 auto 6px}
-
-.direct{margin-top:30px}
-.d-row{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;
-  background:rgba(255,255,255,.028);border:1px solid var(--line);transition:all .25s var(--ease)}
-.d-row:hover{border-color:var(--line-2);background:rgba(255,255,255,.055);transform:translateX(3px)}
-.di{width:38px;height:38px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;
-  background:var(--gold-wash);border:1px solid rgba(233,180,76,.22);color:var(--gold)}
-.di svg{width:17px;height:17px}
-.dt{font-size:.93rem;font-weight:500;line-height:1.35}
-.dt small{display:block;color:var(--muted-2);font-size:.8rem;font-weight:400;margin-top:1px}
-.dgo{margin-left:auto;color:var(--muted-2);font-size:.9rem}
-.socials{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:10px;margin-top:10px}
-.socials a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
-  padding:16px 8px;border-radius:14px;text-align:center;background:rgba(255,255,255,.028);
-  border:1px solid var(--line);transition:all .25s var(--ease)}
-.socials a:hover{border-color:rgba(233,180,76,.32);background:rgba(233,180,76,.06);transform:translateY(-2px)}
-.socials svg{width:19px;height:19px;color:var(--gold)}
-.socials b{font-size:.85rem;font-weight:500;line-height:1.2}
-.socials i{font-style:normal;font-size:.74rem;color:var(--muted-2);line-height:1.2}
-@media (max-width:400px){.socials{grid-template-columns:1fr}
-  .socials a{flex-direction:row;justify-content:flex-start;gap:12px;padding:13px 16px;text-align:left}
-  .socials a i{margin-left:auto}}
-.callcard{margin-top:24px;padding:22px;border-radius:var(--r);
-  background:linear-gradient(160deg,rgba(233,180,76,.09),var(--surface) 55%);border:1px solid rgba(233,180,76,.26)}
-.cc-h{display:flex;align-items:center;gap:13px;margin-bottom:13px}
-.cc-h b{font-size:1rem;font-weight:600;letter-spacing:-.01em}
-.callcard p{font-size:.9rem;color:var(--muted);line-height:1.65;margin:0 0 14px}
-.cc-tags{display:flex;flex-wrap:wrap;gap:7px}
-.cc-tags span{font-size:.76rem;padding:5px 11px;border-radius:8px;background:rgba(255,255,255,.05);
-  border:1px solid var(--line-2);color:var(--muted)}
-.next{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
-.next-h{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-2);margin:0 0 16px}
-.next ol{margin:0;padding:0;list-style:none;counter-reset:n}
-.next li{counter-increment:n;position:relative;padding-left:36px;margin-bottom:16px;font-size:.91rem;color:var(--muted);line-height:1.6}
-.next li:last-child{margin-bottom:0}
-.next li::before{content:counter(n);position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;
-  display:grid;place-items:center;background:var(--gold-wash);border:1px solid rgba(233,180,76,.28);
-  color:var(--gold);font-family:var(--mono);font-size:.7rem}
-
-/* ============================================================
-   17. STICKY MOBILE CTA
-   ============================================================ */
-.sticky-cta{
-  display:none;position:fixed;left:0;right:0;bottom:0;z-index:45;
-  padding:12px max(16px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-right));
-  background:rgba(8,9,11,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-top:1px solid var(--line);
-  transform:translateY(110%);transition:transform .35s var(--ease);
-}
-.sticky-cta.on{transform:none}
-.sticky-cta .btn{width:100%}
-@media (max-width:920px){.sticky-cta{display:block}}
-
-/* ============================================================
-   18. FOOTER
-   ============================================================ */
-footer{border-top:1px solid var(--line);background:var(--ink-2);padding:52px 0 40px}
-.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
-.foot-links{display:flex;gap:26px;flex-wrap:wrap}
-.foot-links a{font-size:.88rem;color:var(--muted);transition:color .2s}
-.foot-links a:hover{color:var(--gold-soft)}
-.foot-social{display:flex;gap:10px;flex-wrap:wrap}
-.foot-social a{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
-  border:1px solid var(--line);background:rgba(255,255,255,.028);color:var(--muted);transition:all .25s var(--ease)}
-.foot-social a:hover{color:var(--gold);border-color:rgba(233,180,76,.35);background:rgba(233,180,76,.07);transform:translateY(-2px)}
-.foot-social svg{width:17px;height:17px}
-.foot-bot{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:var(--muted-2)}
-
-/* ============================================================
-   19. MOTION + A11Y
-   ============================================================ */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .rv{opacity:1;transform:none;transition:none}
-  .sticky-cta{transition:none}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
-::selection{background:rgba(233,180,76,.28);color:#fff}
-.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--gold);color:#14100A;
-  padding:12px 20px;border-radius:0 0 10px 0;font-weight:600;font-size:.9rem}
-.skip:focus{left:0}
-</style>
-
-<noscript><style>
-  .rv{opacity:1!important;transform:none!important}
-  #enquiry{display:none}
-  .nojs{display:block!important}
-  .sticky-cta{display:none!important}
-</style></noscript>
+<meta name="twitter:title" content="Pabloch Tech — Independent digital product &amp; experience studio">
+<meta name="twitter:description" content="Pabloch Tech designs and hand-builds websites, online stores and the product features behind them. Every line written by hand — and your first working draft is built before you pay.">
+<meta name="twitter:image" content="https://projects.pablochtech.com/og-studio.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="static/fonts/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="static/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="static/app.53fdb5cc8a.css">
+<script>(function(d,w){var c=d.documentElement.classList;c.add('js');if(!w.matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('js-motion');w.setTimeout(function(){if(!w.__ptReady)c.remove('js-motion')},4000)})(document,window);</script>
+<script src="config.js" defer></script>
+<script type="module" src="static/app.f2ae2ef803.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://projects.pablochtech.com/#studio","name":"Pabloch Tech","description":"Pabloch Tech designs and hand-builds websites, online stores and the product features behind them. Every line written by hand — and your first working draft is built before you pay.","url":"https://projects.pablochtech.com/","email":"hello@pablochtech.com","image":"https://projects.pablochtech.com/og-studio.jpg","logo":"https://projects.pablochtech.com/favicon.svg","areaServed":["United States","United Kingdom","United Arab Emirates","India"],"knowsAbout":["Web design","Web development","E-commerce development","Landing pages","Website maintenance"],"sameAs":["https://t.me/pablochsocial","https://instagram.com/pablochsocial","https://facebook.com/pablochtech"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@pablochtech.com","availableLanguage":["English"]}},{"@type":"WebSite","@id":"https://projects.pablochtech.com/#website","url":"https://projects.pablochtech.com/","name":"Pabloch Tech","publisher":{"@id":"https://projects.pablochtech.com/#studio"},"inLanguage":"en"}]}</script>
 </head>
 <body>
-
-<a class="skip" href="#top">Skip to content</a>
-
-<!-- ==== SETUP BANNER: disappears once the Web3Forms key is in config.js ==== -->
-<div id="setup" role="status">
-  <div class="wrap">
-    <span id="setup-text"></span>
-    <button type="button" onclick="document.getElementById('setup').classList.remove('on')">Hide</button>
-  </div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav" data-island="nav">
+<div class="nav-plate" aria-hidden="true"></div>
+<div class="nav-bar">
+<a class="brand" href="#top" aria-label="Pabloch Tech — back to the top">
+<svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
+<rect x=".75" y=".75" width="30.5" height="30.5" rx="7" fill="#0B0B0C" stroke="currentColor" stroke-opacity=".28" stroke-width="1.5"/>
+<g fill="currentColor" opacity=".35"><circle cx="9" cy="9" r=".9"/><circle cx="16" cy="9" r=".9"/><circle cx="23" cy="9" r=".9"/><circle cx="9" cy="16" r=".9"/><circle cx="16" cy="16" r=".9"/><circle cx="23" cy="16" r=".9"/><circle cx="9" cy="23" r=".9"/><circle cx="16" cy="23" r=".9"/><circle cx="23" cy="23" r=".9"/></g>
+<path d="M11 24.5V7.5h6.4c3.4 0 5.6 2.1 5.6 5.2s-2.2 5.2-5.6 5.2H11" fill="none" stroke="#E9B44C" stroke-width="2.6" stroke-linecap="square"/>
+</svg><span class="brand-name">Pabloch<span class="brand-tech">Tech</span></span>
+</a>
+<nav class="nav-links" aria-label="Primary">
+<ul role="list">
+<li><a href="#work" data-nav-link="work"><span>Work</span></a></li><li><a href="#services" data-nav-link="services"><span>Services</span></a></li><li><a href="#process" data-nav-link="process"><span>Process</span></a></li><li><a href="#studio" data-nav-link="studio"><span>Studio</span></a></li><li><a href="#contact" data-nav-link="contact"><span>Contact</span></a></li>
+</ul>
+</nav>
+<a class="btn btn--primary btn--sm nav-cta" href="#contact" data-magnetic><span class="btn-label">Start a project</span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+<span class="menu-toggle-label">Menu</span>
+<span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i></span>
+</button>
 </div>
-
-<!-- ==== NAV ==== -->
-<header class="nav" id="nav">
-  <div class="wrap">
-    <a href="#top" class="brand" aria-label="Pabloch Tech, home">
-      <span class="brand-mark" aria-hidden="true">P</span>
-      <span class="brand-name">Pabloch <span>Tech</span></span>
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#process">Process</a>
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn--gold btn--sm">Get free draft</a>
-      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile">
-        <i></i><i></i><i></i>
-      </button>
-    </div>
-  </div>
-  <div class="mobile" id="mobile">
-    <div class="wrap">
-      <a href="#process">Process</a>
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn--gold btn--wide">Get my free draft</a>
-      <div class="m-social" id="m-social"></div>
-    </div>
-  </div>
 </header>
-
-<main id="top">
-
-<!-- ==== HERO ==== -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="free-pill rv"><b>Free</b> Your first draft is built before you pay</p>
-      <h1 class="rv">Your website. Built <em class="g">before</em> you pay.</h1>
-      <p class="lede rv">We design and build your first working website draft for free. You open it on your phone, click around, and decide. Like it, and we turn it into the real thing. Don't, and you owe nothing.</p>
-      <div class="hero-cta rv">
-        <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
-        <a href="#work" class="btn btn--ghost">See our work</a>
-      </div>
-      <p class="hero-note rv"><span class="dot" aria-hidden="true"></span> Taking on two new projects this month &middot; every message answered within 24 hours</p>
-    </div>
-
-    <div class="mock rv">
-      <figure class="mock-desk">
-        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><b>oaktree-preview.netlify.app</b></div>
-        <img src="assets/oak-tree.jpg" width="900" height="563" fetchpriority="high"
-             alt="A finished Pabloch Tech draft shown in a desktop browser: the Oak Tree Garden Maintenance homepage, headlined Your garden, properly looked after.">
-      </figure>
-      <figure class="mock-phone">
-        <img src="assets/oak-tree-mobile.jpg" width="390" height="800" loading="eager"
-             alt="The same site on a phone, showing how the layout adapts to a narrow screen.">
-      </figure>
-      <div class="mock-badge">
-        <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5L20 7"/></svg></span>
-        <span><strong>First draft</strong>Built before you pay</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==== TRUST ==== -->
-<div class="trust">
-  <div class="wrap">
-    <p class="trust-line rv">Built for businesses that take their online presence seriously &mdash; in the US, the UK and the UAE.</p>
-    <div class="trust-grid rv">
-      <div class="trust-cell"><b>Live</b><span>Storefront in<br>production</span></div>
-      <div class="trust-cell"><b>4</b><span>Sites designed<br>and built</span></div>
-      <div class="trust-cell"><b>100%</b><span>Hand-written<br>code</span></div>
-      <div class="trust-cell"><b>24h</b><span>Reply time,<br>every time</span></div>
-    </div>
-  </div>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
+<div class="menu-grid" aria-hidden="true"></div>
+<nav class="menu-links" aria-label="Menu">
+<ol role="list">
+<li style="--i:0"><a href="#work" data-menu-link><span class="menu-index mono">01</span><span class="menu-label">Work</span></a></li><li style="--i:1"><a href="#services" data-menu-link><span class="menu-index mono">02</span><span class="menu-label">Services</span></a></li><li style="--i:2"><a href="#process" data-menu-link><span class="menu-index mono">03</span><span class="menu-label">Process</span></a></li><li style="--i:3"><a href="#studio" data-menu-link><span class="menu-index mono">04</span><span class="menu-label">Studio</span></a></li><li style="--i:4"><a href="#contact" data-menu-link><span class="menu-index mono">05</span><span class="menu-label">Contact</span></a></li>
+</ol>
+</nav>
+<div class="menu-foot">
+<a class="btn btn--primary btn--md" href="#contact" data-menu-link><span class="btn-label">Start a project</span><span class="btn-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></span></a>
+<ul class="menu-social" role="list">
+<li><a href="mailto:hello@pablochtech.com" data-email-link><span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg></span><span data-email-text>hello@pablochtech.com</span></a></li>
+<li data-social-item="telegram"><a href="https://t.me/pablochsocial" target="_blank" rel="noopener" data-social="telegram">
+<span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4 3 11l6 2 2 6 3-4 5 4 2-15Z"/><path d="m9 13 8-6"/></svg></span><span>Telegram</span><span class="social-handle" data-social-handle>@pablochsocial</span><span class="sr-only"> (opens in a new tab)</span>
+</a></li><li data-social-item="instagram"><a href="https://instagram.com/pablochsocial" target="_blank" rel="noopener" data-social="instagram">
+<span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor" stroke="none"/></svg></span><span>Instagram</span><span class="social-handle" data-social-handle>@pablochsocial</span><span class="sr-only"> (opens in a new tab)</span>
+</a></li><li data-social-item="facebook"><a href="https://facebook.com/pablochtech" target="_blank" rel="noopener" data-social="facebook">
+<span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 21v-7.5h2.6l.4-3H14V8.7c0-.9.3-1.5 1.6-1.5H17V4.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.1H8.5v3H11V21"/></svg></span><span>Facebook</span><span class="social-handle" data-social-handle>@pablochtech</span><span class="sr-only"> (opens in a new tab)</span>
+</a></li>
+</ul>
+<p class="menu-clock mono"><span>Studio time</span> <span data-clock="short">IST</span></p>
 </div>
-
-<!-- ==== PROCESS ==== -->
-<section class="sec" id="process">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">How it works</p>
-      <h2>We build it first. You decide after.</h2>
-      <p class="lede">Most studios want a deposit before you've seen a pixel. We'd rather show you something real and let the work make the argument.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step step--free rv">
-        <div class="step-n"><em>01</em><span>Free</span></div>
-        <h3>Get your free draft</h3>
-        <p>Tell us about the business &mdash; what you do, who you sell to, and what the site needs to achieve. A few lines on the form is enough. No brief document, no deposit, no call required unless you want one.</p>
-      </div>
-      <div class="step rv">
-        <div class="step-n"><em>02</em></div>
-        <h3>See your website</h3>
-        <p>We build a working first draft and send you a link. Real layout, real copy, your services and your words &mdash; open it on your phone and click around. Typically within a few days.</p>
-      </div>
-      <div class="step rv">
-        <div class="step-n"><em>03</em></div>
-        <h3>Love it? We build it.</h3>
-        <p>Approve the direction, pay the deposit, and we turn the draft into the finished production website: final content, forms, integrations, SEO, your domain, and launch.</p>
-      </div>
-    </div>
-
-    <p class="step-foot rv"><b>To be completely clear about what the free draft is.</b> It's a real, working page you can open and use &mdash; not a picture, not a template with your logo dropped on it. It is <b>not</b> the finished production website. Final copy, forms, integrations, payment setup, SEO work, testing and launch all come after you approve the direction. The draft exists so you can judge the work before any money changes hands.</p>
-  </div>
+</div>
+<main id="main" tabindex="-1">
+<section class="hero" id="top" data-theme="ink" aria-labelledby="hero-title" data-island="grid-field">
+<canvas class="hero-canvas" aria-hidden="true"></canvas>
+<div class="hero-draft-slot" aria-hidden="true" data-draft-slot></div>
+<div class="wrap hero-inner">
+<div class="hero-meta mono hero-in" style="--delay:700ms">
+<span>Independent digital product &amp; experience studio</span>
+<span class="hero-meta-mid">Based in India · US &amp; UK hours</span>
+<span class="hero-meta-clock"><span class="live-dot" aria-hidden="true"></span><span data-clock="long">IST</span></span>
+</div>
+<div class="hero-main">
+<h1 class="hero-title" id="hero-title"><span class="hero-line"><span class="sr-only">Digital products,</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">Digital</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">products,</span></span></span></span> <span class="hero-line"><span class="sr-only">crafted line</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:2">crafted</span></span> <span class="rw-w"><em class="rw-i" style="--i:3">line</em></span></span></span> <span class="hero-line"><span class="sr-only">by line.</span><span class="rw" aria-hidden="true"><span class="rw-w"><em class="rw-i" style="--i:4">by</em></span> <span class="rw-w"><em class="rw-i" style="--i:5">line.</em></span></span></span> </h1>
+<div class="hero-foot">
+<p class="hero-lede hero-in" style="--delay:560ms">
+An independent studio designing and hand-building websites, online stores and the product features behind them.
+<span class="hero-lede-em">You see a working draft before you pay a thing.</span>
+</p>
+<div class="hero-ctas hero-in" style="--delay:680ms">
+<a class="btn btn--primary btn--lg" href="#contact" data-magnetic data-cursor="Let’s talk"><span class="btn-label">Start a project</span><span class="btn-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></span></a>
+<a class="arrow-link arrow-link--lg" href="#work"><span class="arrow-link-label">View our work</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a>
+</div>
+</div>
+</div>
+<div class="hero-base mono hero-in" style="--delay:820ms">
+<p class="hero-status"><span class="live-dot" aria-hidden="true"></span>Currently taking on new projects</p>
+<p class="hero-fig" aria-hidden="true"><span>Fig. 01</span> The Pabloch Grid — every draft starts here. <span class="hero-fig-hint">Move your cursor.</span></p>
+</div>
+</div>
 </section>
-
-<!-- ==== WORK ==== -->
-<section class="sec sec--alt" id="work">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Selected work</p>
-      <h2>Four builds, four different problems.</h2>
-      <p class="lede">One storefront selling online around the clock. Three local businesses whose customers could find their reviews but not their website &mdash; and those three were built before anybody asked us to.</p>
-    </div>
-
-    <article class="case case--flip rv">
-      <div class="case-body">
-        <span class="tag tag--live"><span class="dot" aria-hidden="true"></span> Live in production</span>
-        <h3>Al-Abuzer Perfumes</h3>
-        <p class="case-sub">Online store &middot; fragrance retail</p>
-        <p>A complete storefront for a perfume house &mdash; eight collections from attar roll-ons and oudh to bakhoor and travel sets, each with its own catalogue page. Customers browse, search, add to cart and check out; the brand fulfils the order and the customer follows it on an order-tracking page instead of emailing to ask. The homepage opens on a full-bleed product video, because a fragrance brand sells on atmosphere before it sells on price.</p>
-        <div class="chips">
-          <span class="chip">Cart &amp; checkout</span>
-          <span class="chip">8 collections</span>
-          <span class="chip">Order tracking</span>
-          <span class="chip">Customer accounts</span>
-          <span class="chip">Product search</span>
-          <span class="chip">Downloadable catalogue</span>
-        </div>
-        <a class="case-link" href="https://alabuzerperfumes.com" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
-      </div>
-      <div class="case-media">
-        <img src="assets/alabuzer.jpg" width="1200" height="750" loading="lazy"
-             alt="Al-Abuzer Perfumes homepage: a gold-lit perfume bottle over Arabic calligraphy, with an Explore Collection button.">
-      </div>
-    </article>
-
-    <div class="sub-head rv">
-      <h3>Preview builds</h3>
-      <p>These three were built on spec &mdash; our own time, no brief, no deposit &mdash; and sent to the owner as an introduction. <strong>Each one is a preview only.</strong> None is published under the business's own domain, none has been paid for, and every one still carries a banner across the top saying exactly that. They're online purely so the owner can open one on their phone.</p>
-    </div>
-
-    <div class="previews">
-      <article class="pv rv">
-        <a class="pv-shot" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener" aria-label="Open the Cleaning Queens preview">
-          <img src="assets/cleaning-queens.jpg" width="900" height="563" loading="lazy"
-               alt="The Cleaning Queens preview homepage: a purple and gold layout headlined Feel like royalty in your own home, beside an instant estimate card.">
-        </a>
-        <div class="pv-body">
-          <span class="tag tag--spec">Preview &middot; not published</span>
-          <h4>The Cleaning Queens</h4>
-          <p class="pv-sub">Cleaning &middot; Sylvania &amp; Toledo, Ohio</p>
-          <p>Nineteen years, six staff, 5.0 stars across 69 reviews &mdash; and a Google listing whose <em>Website</em> button pointed at a parked domain. An estimator answers <em>&ldquo;how much for a 3-bed deep clean?&rdquo;</em> on screen, so every enquiry arrives with a price already attached to it.</p>
-          <div class="chips"><span class="chip">Instant estimator</span><span class="chip">Booking form</span><span class="chip">Reviews from two platforms</span></div>
-          <a class="case-link" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
-        </div>
-      </article>
-
-      <article class="pv rv">
-        <a class="pv-shot" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener" aria-label="Open the Oak Tree Garden Maintenance preview">
-          <img src="assets/oak-tree.jpg" width="900" height="563" loading="lazy"
-               alt="Oak Tree Garden Maintenance preview homepage: a green and cream layout headlined Your garden, properly looked after.">
-        </a>
-        <div class="pv-body">
-          <span class="tag tag--spec">Preview &middot; not published</span>
-          <h4>Oak Tree Garden Maintenance</h4>
-          <p class="pv-sub">Landscaping &middot; Heanor, Derbyshire</p>
-          <p>Thirty-two reviews, every one of them five stars, on the county council's Trusted Trader register &mdash; and the website link on that profile pointed at a domain with no DNS record at all. Not parked. Nothing. The quote form takes photo attachments, so an enquiry arrives with pictures of the actual garden.</p>
-          <div class="chips"><span class="chip">Photo-upload quote form</span><span class="chip">The crew, by name</span><span class="chip">Recent work</span></div>
-          <a class="case-link" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
-        </div>
-      </article>
-
-      <article class="pv rv">
-        <a class="pv-shot" href="https://dean-preview.netlify.app" target="_blank" rel="noopener" aria-label="Open the Dean the Decorator preview">
-          <img src="assets/dean.jpg" width="900" height="563" loading="lazy"
-               alt="Dean the Decorator preview homepage: a navy and sand layout headlined A neat job, and your house left as you found it.">
-        </a>
-        <div class="pv-body">
-          <span class="tag tag--spec">Preview &middot; not published</span>
-          <h4>Dean the Decorator</h4>
-          <p class="pv-sub">Painting &amp; decorating &middot; Ilkeston, Derbyshire</p>
-          <p>Fifty five-star reviews across thirteen years &mdash; and on the council's directory he is one line among nine near-identical decorators. Nothing was broken here; the problem was being indistinguishable. So the page is built around the four words his reviewers keep repeating.</p>
-          <div class="chips"><span class="chip">Written quote request</span><span class="chip">Reviews quoted verbatim</span><span class="chip">Built to stand out</span></div>
-          <a class="case-link" href="https://dean-preview.netlify.app" target="_blank" rel="noopener">View project <span aria-hidden="true">&#8599;</span></a>
-        </div>
-      </article>
-    </div>
-
-    <div class="ctabar rv">
-      <div>
-        <h3>Want something like this?</h3>
-        <p>Tell us about the business and we'll build the first draft the same way &mdash; before you pay anything.</p>
-      </div>
-      <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
-    </div>
-  </div>
+<section class="intro" id="intro" data-theme="ink" aria-label="About the studio, in one paragraph">
+<div class="intro-track" data-island="scrub-text">
+<div class="wrap intro-inner">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(01)</span><span>The studio</span></p>
+<p class="intro-statement"><span class="sr-only">Pabloch Tech is a small, independent studio. We design in the browser, write every line by hand, and put a working draft in your hands before any money changes hands. No templates, no page builders, no account managers — just the person building your product, answering your email.</span><span class="sw-wrap" aria-hidden="true" style="--n:49"><span class="sw" style="--i:0">Pabloch</span> <span class="sw" style="--i:1">Tech</span> <span class="sw" style="--i:2">is</span> <span class="sw" style="--i:3">a</span> <span class="sw" style="--i:4">small,</span> <span class="sw" style="--i:5">independent</span> <span class="sw" style="--i:6">studio.</span> <span class="sw" style="--i:7">We</span> <span class="sw" style="--i:8">design</span> <span class="sw" style="--i:9">in</span> <span class="sw" style="--i:10">the</span> <span class="sw" style="--i:11">browser,</span> <span class="sw" style="--i:12">write</span> <em class="sw" style="--i:13">every</em> <em class="sw" style="--i:14">line</em> <em class="sw" style="--i:15">by</em> <em class="sw" style="--i:16">hand</em><span class="sw" style="--i:17">,</span> <span class="sw" style="--i:18">and</span> <span class="sw" style="--i:19">put</span> <span class="sw" style="--i:20">a</span> <span class="sw" style="--i:21">working</span> <span class="sw" style="--i:22">draft</span> <span class="sw" style="--i:23">in</span> <span class="sw" style="--i:24">your</span> <span class="sw" style="--i:25">hands</span> <span class="sw" style="--i:26">before</span> <span class="sw" style="--i:27">any</span> <span class="sw" style="--i:28">money</span> <span class="sw" style="--i:29">changes</span> <span class="sw" style="--i:30">hands.</span> <span class="sw" style="--i:31">No</span> <span class="sw" style="--i:32">templates,</span> <span class="sw" style="--i:33">no</span> <span class="sw" style="--i:34">page</span> <span class="sw" style="--i:35">builders,</span> <span class="sw" style="--i:36">no</span> <span class="sw" style="--i:37">account</span> <span class="sw" style="--i:38">managers</span> <span class="sw" style="--i:39">—</span> <span class="sw" style="--i:40">just</span> <span class="sw" style="--i:41">the</span> <span class="sw" style="--i:42">person</span> <span class="sw" style="--i:43">building</span> <span class="sw" style="--i:44">your</span> <span class="sw" style="--i:45">product,</span> <span class="sw" style="--i:46">answering</span> <span class="sw" style="--i:47">your</span> <span class="sw" style="--i:48">email.</span></span></p>
+<div class="intro-notes">
+<div class="intro-note" data-reveal="fade" style="--delay:0ms">
+<p class="mono intro-note-label">What we make</p>
+<p>Websites, online stores, landing pages — and the tools inside them: estimators, booking flows, photo-upload quote forms.</p>
+</div><div class="intro-note" data-reveal="fade" style="--delay:120ms">
+<p class="mono intro-note-label">Who it’s for</p>
+<p>Businesses that would rather judge the work than the pitch.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ==== SERVICES ==== -->
-<section class="sec" id="services">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">What we build</p>
-      <h2>Four things, done properly.</h2>
-      <p class="lede">Not a menu of forty services. These are the builds we do well &mdash; and we'll tell you honestly if what you need isn't one of them.</p>
-    </div>
-    <div class="grid-2">
-      <div class="card rv">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-6h5v6"/></svg></div>
-        <h3>Business websites</h3>
-        <p>The site people find after they've heard your name. Built to turn a search into a phone call, not to win a design award.</p>
-        <ul>
-          <li>Services, areas covered and opening hours</li>
-          <li>Your reviews pulled into one place</li>
-          <li>Enquiry form landing straight in your inbox</li>
-          <li>Fast on a phone, on a bad connection</li>
-        </ul>
-      </div>
-      <div class="card rv">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v11H4z"/><path d="M4 15h16"/><path d="M9 20h6"/><path d="M12 15v5"/><path d="M8 8h8M8 11h5"/></svg></div>
-        <h3>Landing pages</h3>
-        <p>One page with one job: turn an ad click, a flyer QR code or a Google listing into a name and a number you can call back.</p>
-        <ul>
-          <li>Written to convert, not to look busy</li>
-          <li>Quote calculator or booking flow</li>
-          <li>Spam-filtered forms, no submission limits</li>
-          <li>Live in days, not months</li>
-        </ul>
-      </div>
-      <div class="card rv">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13 5.4 5M7 13l-2 4h13"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg></div>
-        <h3>Online stores</h3>
-        <p>A storefront you own outright, with the cart, checkout and order tracking built in &mdash; not rented from a platform taking a cut of every sale.</p>
-        <ul>
-          <li>Product catalogue and collections</li>
-          <li>Cart, checkout and payment gateway</li>
-          <li>Order management and confirmations</li>
-          <li>Search, filters and bundles</li>
-        </ul>
-      </div>
-      <div class="card rv">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6.5v5c0 4.6 3.2 8.8 8 9.9 4.8-1.1 8-5.3 8-9.9v-5z"/><path d="M9.2 12.2 11.3 14.3 15 10.6"/></svg></div>
-        <h3>Website care</h3>
-        <p>The part most people skip. A website nobody maintains is out of date within a year and invisible within two.</p>
-        <ul>
-          <li>Hosting, SSL and domain kept pointed and renewed</li>
-          <li>Forms monitored so no enquiry goes missing</li>
-          <li>New reviews, prices and photos added as they come</li>
-          <li>Small edits included &mdash; just send an email</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<section class="work" id="work" data-theme="ink" aria-labelledby="work-title">
+<header class="wrap work-head">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(02)</span><span>Selected work</span></p>
+<div class="work-head-row">
+<h2 id="work-title" class="display-xl work-title" data-reveal="words"><span class="sr-only">Selected work</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">Selected</span></span> <span class="rw-w"><em class="rw-i" style="--i:1">work</em></span></span></h2>
+<p class="work-count mono" aria-hidden="true">(04)</p>
+</div>
+<p class="work-lede" data-reveal="fade">One storefront live in production. Three preview builds made on spec — our own time, no brief, no deposit — to show local businesses what their site could be.</p>
+</header>
+<div class="wf" data-island="work-feature">
+<div class="wf-track">
+<div class="wf-stage">
+<p class="wf-word wf-word--a" aria-hidden="true">Al-Abuzer</p>
+<p class="wf-word wf-word--b" aria-hidden="true">Perfumes</p>
+<a class="wf-frame" href="https://alabuzerperfumes.com" target="_blank" rel="noopener" tabindex="-1" data-cursor="Visit ↗">
+<span class="wf-img"><picture >
+<source type="image/avif" srcset="assets/work/alabuzer-hero-800.avif 800w, assets/work/alabuzer-hero-1200.avif 1200w, assets/work/alabuzer-hero-1568.avif 1568w" sizes="100vw">
+<source type="image/webp" srcset="assets/work/alabuzer-hero-800.webp 800w, assets/work/alabuzer-hero-1200.webp 1200w, assets/work/alabuzer-hero-1568.webp 1568w" sizes="100vw">
+<img src="assets/work/alabuzer-hero-1200.webp" alt="A gold perfume bottle beside a piece of oud wood, with Arabic calligraphy glowing through drifting gold dust — the opening frame of the Al-Abuzer Perfumes homepage video." width="1568" height="566" loading="lazy" decoding="async" class="wf-pic">
+</picture></span>
+<span class="wf-scrim" aria-hidden="true"></span>
+</a>
+<div class="wf-caption">
+<div class="wf-cap-main">
+<p class="wf-kicker mono"><span>01 / 04</span><span class="tag tag--live"><span class="live-dot" aria-hidden="true"></span>Live in production</span></p>
+<h3 class="wf-title" id="work-al-abuzer">Al-Abuzer Perfumes</h3>
+<p class="wf-sector mono">Online store · Fragrance retail</p>
+</div>
+<div class="wf-cap-side">
+<p class="wf-summary">A complete storefront for a perfume house — eight collections, cart and checkout, customer accounts and order tracking — opening on a <em>full-bleed product video</em>, because a fragrance brand sells on atmosphere before it sells on price.</p>
+<ul class="features mono" role="list"><li>Cart &amp; checkout</li><li>8 collections</li><li>Order tracking</li><li>Customer accounts</li><li>Product search</li><li>Downloadable catalogue</li></ul>
+<div class="wf-links">
+<a class="arrow-link" href="https://alabuzerperfumes.com" target="_blank" rel="noopener"><span class="arrow-link-label">Visit alabuzerperfumes.com</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+<a class="arrow-link" href="#case-study"><span class="arrow-link-label">Read the case study</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v15"/><path d="m6 13 6 6 6-6"/></svg></a>
+</div>
+</div>
+</div>
+<p class="wf-hint mono" aria-hidden="true">Keep scrolling</p>
+</div>
+</div>
+</div>
+<div class="wrap pv-list">
+<p class="pv-note mono" data-reveal="fade">Preview builds are unpaid and unpublished. None sits on the business’s own domain, and each still carries a banner saying it’s a design preview.</p>
+<article class="pv pv--a" aria-labelledby="work-cleaning-queens">
+<a class="pv-media" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener" tabindex="-1" data-cursor="Open ↗">
+<span class="pv-desk" data-reveal="image"><picture >
+<source type="image/avif" srcset="assets/work/cq-desktop-640.avif 640w, assets/work/cq-desktop-960.avif 960w, assets/work/cq-desktop-1440.avif 1440w, assets/work/cq-desktop-1920.avif 1920w" sizes="(min-width: 1024px) 62vw, 100vw">
+<source type="image/webp" srcset="assets/work/cq-desktop-640.webp 640w, assets/work/cq-desktop-960.webp 960w, assets/work/cq-desktop-1440.webp 1440w, assets/work/cq-desktop-1920.webp 1920w" sizes="(min-width: 1024px) 62vw, 100vw">
+<img src="assets/work/cq-desktop-960.webp" alt="The Cleaning Queens preview: headline “Feel like royalty in your own home” beside an instant estimate card for a three-bed deep clean." width="2880" height="1800" loading="lazy" decoding="async">
+</picture></span>
+<span class="pv-phone" data-reveal="image" data-parallax="-0.12"><picture >
+<source type="image/avif" srcset="assets/work/cq-mobile-360.avif 360w, assets/work/cq-mobile-540.avif 540w, assets/work/cq-mobile-780.avif 780w" sizes="(min-width: 1024px) 18vw, 38vw">
+<source type="image/webp" srcset="assets/work/cq-mobile-360.webp 360w, assets/work/cq-mobile-540.webp 540w, assets/work/cq-mobile-780.webp 780w" sizes="(min-width: 1024px) 18vw, 38vw">
+<img src="assets/work/cq-mobile-540.webp" alt="The Cleaning Queens preview on a phone, with the design-preview banner across the top." width="1170" height="2532" loading="lazy" decoding="async">
+</picture></span>
+</a>
+<div class="pv-text">
+<p class="pv-index mono" aria-hidden="true">02</p>
+<p class="tag mono">Preview · not published</p>
+<h3 class="pv-title" id="work-cleaning-queens" data-reveal="fade">The Cleaning Queens</h3>
+<p class="pv-meta mono">Cleaning · Sylvania &amp; Toledo, Ohio</p>
+<p class="pv-summary" data-reveal="fade">Nineteen years, six staff, 5.0 stars across 69 reviews — and a Google listing whose Website button pointed at a parked domain. An <em>instant estimator</em> answers “how much for a 3-bed deep clean?” on screen, so every enquiry arrives with a price already attached.</p>
+<ul class="features mono" role="list"><li>Instant estimator</li><li>Booking form</li><li>Reviews from two platforms</li></ul>
+<a class="arrow-link" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener"><span class="arrow-link-label">Open the preview<span class="sr-only">: The Cleaning Queens</span></span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+</article><article class="pv pv--b" aria-labelledby="work-oak-tree">
+<a class="pv-media" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener" tabindex="-1" data-cursor="Open ↗">
+<span class="pv-desk" data-reveal="image"><picture >
+<source type="image/avif" srcset="assets/work/oak-desktop-640.avif 640w, assets/work/oak-desktop-960.avif 960w, assets/work/oak-desktop-1440.avif 1440w, assets/work/oak-desktop-1920.avif 1920w" sizes="(min-width: 1024px) 62vw, 100vw">
+<source type="image/webp" srcset="assets/work/oak-desktop-640.webp 640w, assets/work/oak-desktop-960.webp 960w, assets/work/oak-desktop-1440.webp 1440w, assets/work/oak-desktop-1920.webp 1920w" sizes="(min-width: 1024px) 62vw, 100vw">
+<img src="assets/work/oak-desktop-960.webp" alt="Oak Tree Garden Maintenance preview: headline “Your garden, properly looked after” with the owner’s quote about word-of-mouth work." width="2880" height="1800" loading="lazy" decoding="async">
+</picture></span>
+<span class="pv-phone" data-reveal="image" data-parallax="0.10"><picture >
+<source type="image/avif" srcset="assets/work/oak-mobile-360.avif 360w, assets/work/oak-mobile-540.avif 540w, assets/work/oak-mobile-780.avif 780w" sizes="(min-width: 1024px) 18vw, 38vw">
+<source type="image/webp" srcset="assets/work/oak-mobile-360.webp 360w, assets/work/oak-mobile-540.webp 540w, assets/work/oak-mobile-780.webp 780w" sizes="(min-width: 1024px) 18vw, 38vw">
+<img src="assets/work/oak-mobile-540.webp" alt="Oak Tree Garden Maintenance preview on a phone, with the design-preview banner across the top." width="1170" height="2532" loading="lazy" decoding="async">
+</picture></span>
+</a>
+<div class="pv-text">
+<p class="pv-index mono" aria-hidden="true">03</p>
+<p class="tag mono">Preview · not published</p>
+<h3 class="pv-title" id="work-oak-tree" data-reveal="fade">Oak Tree Garden Maintenance</h3>
+<p class="pv-meta mono">Landscaping · Heanor, Derbyshire</p>
+<p class="pv-summary" data-reveal="fade">Thirty-two reviews, every one five stars, on the county council’s Trusted Trader register — and a website link pointing at a domain with no DNS record at all. The quote form <em>takes photos</em>, so an enquiry arrives with pictures of the actual garden.</p>
+<ul class="features mono" role="list"><li>Photo-upload quote form</li><li>The crew, by name</li><li>Recent work</li></ul>
+<a class="arrow-link" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener"><span class="arrow-link-label">Open the preview<span class="sr-only">: Oak Tree Garden Maintenance</span></span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+</article><article class="pv pv--c" aria-labelledby="work-dean-the-decorator">
+<a class="pv-media" href="https://dean-preview.netlify.app" target="_blank" rel="noopener" tabindex="-1" data-cursor="Open ↗">
+<span class="pv-desk" data-reveal="image"><picture >
+<source type="image/avif" srcset="assets/work/dean-desktop-640.avif 640w, assets/work/dean-desktop-960.avif 960w, assets/work/dean-desktop-1440.avif 1440w, assets/work/dean-desktop-1920.avif 1920w" sizes="(min-width: 1024px) 80vw, 100vw">
+<source type="image/webp" srcset="assets/work/dean-desktop-640.webp 640w, assets/work/dean-desktop-960.webp 960w, assets/work/dean-desktop-1440.webp 1440w, assets/work/dean-desktop-1920.webp 1920w" sizes="(min-width: 1024px) 80vw, 100vw">
+<img src="assets/work/dean-desktop-960.webp" alt="Dean the Decorator preview: headline “A neat job, and your house left as you found it” beside a quote from Dean." width="2880" height="1800" loading="lazy" decoding="async">
+</picture></span>
+<span class="pv-phone" data-reveal="image" data-parallax="-0.12"><picture >
+<source type="image/avif" srcset="assets/work/dean-mobile-360.avif 360w, assets/work/dean-mobile-540.avif 540w, assets/work/dean-mobile-780.avif 780w" sizes="(min-width: 1024px) 18vw, 38vw">
+<source type="image/webp" srcset="assets/work/dean-mobile-360.webp 360w, assets/work/dean-mobile-540.webp 540w, assets/work/dean-mobile-780.webp 780w" sizes="(min-width: 1024px) 18vw, 38vw">
+<img src="assets/work/dean-mobile-540.webp" alt="Dean the Decorator preview on a phone, with the design-preview banner across the top." width="1170" height="2532" loading="lazy" decoding="async">
+</picture></span>
+</a>
+<div class="pv-text">
+<p class="pv-index mono" aria-hidden="true">04</p>
+<p class="tag mono">Preview · not published</p>
+<h3 class="pv-title" id="work-dean-the-decorator" data-reveal="fade">Dean the Decorator</h3>
+<p class="pv-meta mono">Painting &amp; decorating · Ilkeston, Derbyshire</p>
+<p class="pv-summary" data-reveal="fade">Fifty five-star reviews across thirteen years — and one line among nine near-identical decorators on the council’s directory. Nothing was broken; the problem was <em>being indistinguishable</em>. So the page is built around the four words his reviewers keep repeating.</p>
+<ul class="features mono" role="list"><li>Written quote request</li><li>Reviews quoted verbatim</li><li>Built to stand out</li></ul>
+<a class="arrow-link" href="https://dean-preview.netlify.app" target="_blank" rel="noopener"><span class="arrow-link-label">Open the preview<span class="sr-only">: Dean the Decorator</span></span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+</article>
+</div>
 </section>
-
-<!-- ==== PRICING ==== -->
-<section class="sec sec--alt" id="pricing">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Pricing</p>
-      <h2>Straightforward pricing. No agency mystery.</h2>
-      <p class="lede">Starting prices, not surprise invoices. Every project is quoted around what you actually need &mdash; and you see the draft before any of it applies.</p>
-    </div>
-
-    <div class="plans">
-      <div class="plan rv">
-        <h3>Essential</h3>
-        <p class="for">For businesses that need a clean, professional presence online.</p>
-        <div class="price"><span class="from">Starting at</span><span class="amt">$400</span></div>
-        <p class="note">Most sites here land close to the starting price.</p>
-        <ul>
-          <li>Custom responsive website</li>
-          <li>Around <b>5 pages</b></li>
-          <li>Custom design &mdash; no templates</li>
-          <li>Mobile optimisation</li>
-          <li>Contact / lead form to your inbox</li>
-          <li>Basic SEO setup</li>
-          <li>Performance optimisation</li>
-          <li>Domain and hosting deployment help</li>
-          <li>Your Google Business listing pointed at it</li>
-          <li>Fixed price agreed in writing first</li>
-          <li>2 revision rounds</li>
-        </ul>
-        <a href="#contact" class="btn btn--ghost btn--wide">Start with a free draft</a>
-      </div>
-
-      <div class="plan plan--best rv">
-        <span class="plan-flag">Most popular</span>
-        <h3>Growth</h3>
-        <p class="for">For businesses that want the site to actually bring in enquiries.</p>
-        <div class="price"><span class="from">Starting at</span><span class="amt">$700</span></div>
-        <p class="note">The right fit for most established local businesses.</p>
-        <ul>
-          <li>Everything in Essential</li>
-          <li>Around <b>8&ndash;10 pages</b></li>
-          <li>More advanced custom sections</li>
-          <li>Lead-generation focused design</li>
-          <li>WhatsApp / Telegram / contact integrations</li>
-          <li>Analytics setup</li>
-          <li>Advanced SEO foundations</li>
-          <li>Blog, service or content sections where needed</li>
-          <li>More advanced interactions</li>
-          <li>Photo gallery and service-area pages</li>
-          <li>Reviews pulled together from Google &amp; Facebook</li>
-          <li>2 revision rounds</li>
-        </ul>
-        <a href="#contact" class="btn btn--gold btn--wide">Start with a free draft</a>
-      </div>
-
-      <div class="plan plan--flag rv">
-        <span class="plan-flag plan-flag--alt">Sell online</span>
-        <h3>Storefront</h3>
-        <p class="for">Everything you need to start selling online, in one package.</p>
-        <div class="price"><span class="from">Starting at</span><span class="amt">$1,200</span></div>
-        <p class="note">A complete working store, not a stripped-back starter.</p>
-        <ul>
-          <li>Custom responsive storefront</li>
-          <li>Custom UI/UX design</li>
-          <li>Around <b>15 core pages</b> and sections</li>
-          <li>Product and catalogue system</li>
-          <li>Cart and checkout</li>
-          <li><b>Payment gateway integration</b></li>
-          <li>Order management</li>
-          <li>Customer order confirmation</li>
-          <li>Email / WhatsApp notifications where applicable</li>
-          <li>Basic shipping and tax configuration</li>
-          <li>Basic SEO and analytics</li>
-          <li>Performance optimisation and deployment</li>
-          <li>2 revision rounds</li>
-        </ul>
-        <a href="#contact" class="btn btn--ghost btn--wide">Start with a free draft</a>
-      </div>
-    </div>
-
-    <p class="pay-note rv"><b>Why every price says &ldquo;starting at&rdquo;.</b> Final pricing depends on product count, integrations, custom functionality, third-party services and what the business actually needs &mdash; and we'd rather quote you honestly than advertise a number we can't hold. You'll have a fixed figure in writing before any work starts. <b>Payment:</b> 50% deposit once you approve the draft, 50% on launch day. Bank transfer, Wise, Payoneer or PayPal, in USD, GBP, AED or INR. <b>Website Care</b> is optional and quoted per site. You own the site, the code and the domain either way.</p>
-  </div>
+<section class="services" id="services" data-theme="paper" aria-labelledby="services-title">
+<div class="wrap">
+<header class="sec-head">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(03)</span><span>Services</span></p>
+<h2 id="services-title" class="display-xl" data-reveal="words"><span class="sr-only">What we build.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">What</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">we</span></span> <span class="rw-w"><em class="rw-i" style="--i:2">build.</em></span></span></h2>
+<p class="sec-lede" data-reveal="fade">A short list, done properly. If what you need isn’t on it, we’ll tell you — and we won’t pretend otherwise to win the job.</p>
+</header>
+<ul class="svc-list" role="list" data-island="services">
+<li class="svc" data-svc="websites" data-reveal="fade" style="--delay:0ms">
+<h3 class="svc-heading">
+<button class="svc-toggle" type="button" id="svc-websites-btn" aria-expanded="true" aria-controls="svc-websites-panel" data-svc-toggle>
+<span class="svc-num mono">01</span>
+<span class="svc-name">Websites</span>
+<span class="svc-price mono">From $400 · growth builds from $700</span>
+<span class="svc-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+</button>
+</h3>
+<div class="svc-panel" id="svc-websites-panel" role="region" aria-labelledby="svc-websites-btn">
+<div class="svc-panel-inner">
+<p class="svc-line">The site people find after they’ve heard your name — built to turn a search into a phone call, not to win a design award.</p>
+<ul class="svc-includes" role="list"><li>Custom design — no templates</li><li>Services, areas and hours laid out clearly</li><li>Your reviews pulled into one place</li><li>Enquiry forms landing straight in your inbox</li><li>Fast on a phone, on a bad connection</li><li>SEO foundations and analytics</li></ul>
+</div>
+</div>
+</li><li class="svc" data-svc="online-stores" data-reveal="fade" style="--delay:60ms">
+<h3 class="svc-heading">
+<button class="svc-toggle" type="button" id="svc-online-stores-btn" aria-expanded="true" aria-controls="svc-online-stores-panel" data-svc-toggle>
+<span class="svc-num mono">02</span>
+<span class="svc-name">Online stores</span>
+<span class="svc-price mono">From $1,200</span>
+<span class="svc-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+</button>
+</h3>
+<div class="svc-panel" id="svc-online-stores-panel" role="region" aria-labelledby="svc-online-stores-btn">
+<div class="svc-panel-inner">
+<p class="svc-line">A storefront you own outright, with cart, checkout and order tracking built in — not rented from a platform taking a cut of every sale.</p>
+<ul class="svc-includes" role="list"><li>Product catalogue and collections</li><li>Cart, checkout and payment gateway</li><li>Order management and confirmations</li><li>Customer accounts and order tracking</li><li>Search, filters and bundles</li><li>Shipping and tax configuration</li></ul>
+</div>
+</div>
+</li><li class="svc" data-svc="landing-pages" data-reveal="fade" style="--delay:120ms">
+<h3 class="svc-heading">
+<button class="svc-toggle" type="button" id="svc-landing-pages-btn" aria-expanded="true" aria-controls="svc-landing-pages-panel" data-svc-toggle>
+<span class="svc-num mono">03</span>
+<span class="svc-name">Landing pages</span>
+<span class="svc-price mono">Quoted per project</span>
+<span class="svc-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+</button>
+</h3>
+<div class="svc-panel" id="svc-landing-pages-panel" role="region" aria-labelledby="svc-landing-pages-btn">
+<div class="svc-panel-inner">
+<p class="svc-line">One page with one job: turn an ad click, a flyer QR code or a Google listing into a name and a number you can call back.</p>
+<ul class="svc-includes" role="list"><li>Written to convert, not to look busy</li><li>Quote calculator or booking flow</li><li>Spam-filtered forms, no submission limits</li><li>Live in days, not months</li></ul>
+</div>
+</div>
+</li><li class="svc" data-svc="product-features" data-reveal="fade" style="--delay:180ms">
+<h3 class="svc-heading">
+<button class="svc-toggle" type="button" id="svc-product-features-btn" aria-expanded="true" aria-controls="svc-product-features-panel" data-svc-toggle>
+<span class="svc-num mono">04</span>
+<span class="svc-name">Product features</span>
+<span class="svc-price mono">Quoted per feature</span>
+<span class="svc-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+</button>
+</h3>
+<div class="svc-panel" id="svc-product-features-panel" role="region" aria-labelledby="svc-product-features-btn">
+<div class="svc-panel-inner">
+<p class="svc-line">The tools inside the site — built from scratch around how the business actually works, not bolted on from a plugin directory.</p>
+<ul class="svc-includes" role="list"><li>Instant estimators and price calculators</li><li>Booking and enquiry flows</li><li>Photo-upload quote forms</li><li>Customer portals and dashboards</li></ul>
+</div>
+</div>
+</li><li class="svc" data-svc="care" data-reveal="fade" style="--delay:240ms">
+<h3 class="svc-heading">
+<button class="svc-toggle" type="button" id="svc-care-btn" aria-expanded="true" aria-controls="svc-care-panel" data-svc-toggle>
+<span class="svc-num mono">05</span>
+<span class="svc-name">Website care</span>
+<span class="svc-price mono">Optional · quoted per site</span>
+<span class="svc-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+</button>
+</h3>
+<div class="svc-panel" id="svc-care-panel" role="region" aria-labelledby="svc-care-btn">
+<div class="svc-panel-inner">
+<p class="svc-line">The part most people skip. A website nobody maintains is out of date within a year and invisible within two.</p>
+<ul class="svc-includes" role="list"><li>Hosting, SSL and domain kept renewed</li><li>Forms monitored so no enquiry goes missing</li><li>New reviews, prices and photos added as they come</li><li>Small edits included — just send an email</li></ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="svc-float" aria-hidden="true" data-svc-float>
+<div class="svc-float-item" data-svc-preview="websites"><picture >
+<source type="image/avif" srcset="assets/work/dean-desktop-640.avif 640w, assets/work/dean-desktop-960.avif 960w, assets/work/dean-desktop-1440.avif 1440w, assets/work/dean-desktop-1920.avif 1920w" sizes="340px">
+<source type="image/webp" srcset="assets/work/dean-desktop-640.webp 640w, assets/work/dean-desktop-960.webp 960w, assets/work/dean-desktop-1440.webp 1440w, assets/work/dean-desktop-1920.webp 1920w" sizes="340px">
+<img src="assets/work/dean-desktop-960.webp" alt="Dean the Decorator preview: headline “A neat job, and your house left as you found it” beside a quote from Dean." width="2880" height="1800" loading="lazy" decoding="async">
+</picture></div><div class="svc-float-item" data-svc-preview="online-stores"><picture >
+<source type="image/avif" srcset="assets/work/alabuzer-desktop-800.avif 800w, assets/work/alabuzer-desktop-1200.avif 1200w, assets/work/alabuzer-desktop-1568.avif 1568w" sizes="340px">
+<source type="image/webp" srcset="assets/work/alabuzer-desktop-800.webp 800w, assets/work/alabuzer-desktop-1200.webp 1200w, assets/work/alabuzer-desktop-1568.webp 1568w" sizes="340px">
+<img src="assets/work/alabuzer-desktop-1200.webp" alt="Al-Abuzer Perfumes homepage: a gold perfume bottle and Arabic calligraphy in drifting gold dust, under a navigation bar with Products, Track Order, search, account and cart." width="1568" height="700" loading="lazy" decoding="async">
+</picture></div><div class="svc-float-item" data-svc-preview="landing-pages"><picture >
+<source type="image/avif" srcset="assets/work/oak-desktop-640.avif 640w, assets/work/oak-desktop-960.avif 960w, assets/work/oak-desktop-1440.avif 1440w, assets/work/oak-desktop-1920.avif 1920w" sizes="340px">
+<source type="image/webp" srcset="assets/work/oak-desktop-640.webp 640w, assets/work/oak-desktop-960.webp 960w, assets/work/oak-desktop-1440.webp 1440w, assets/work/oak-desktop-1920.webp 1920w" sizes="340px">
+<img src="assets/work/oak-desktop-960.webp" alt="Oak Tree Garden Maintenance preview: headline “Your garden, properly looked after” with the owner’s quote about word-of-mouth work." width="2880" height="1800" loading="lazy" decoding="async">
+</picture></div><div class="svc-float-item" data-svc-preview="product-features"><picture >
+<source type="image/avif" srcset="assets/work/cq-estimator-480.avif 480w, assets/work/cq-estimator-720.avif 720w, assets/work/cq-estimator-1000.avif 1000w" sizes="340px">
+<source type="image/webp" srcset="assets/work/cq-estimator-480.webp 480w, assets/work/cq-estimator-720.webp 720w, assets/work/cq-estimator-1000.webp 1000w" sizes="340px">
+<img src="assets/work/cq-estimator-720.webp" alt="Close-up of the instant estimator: home size, service and frequency, with a Build my estimate button." width="1130" height="1130" loading="lazy" decoding="async">
+</picture></div>
+</div>
 </section>
-
-<!-- ==== OBJECTIONS ==== -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Honest answers</p>
-      <h2>Still wondering if you need a website?</h2>
-      <p class="lede">The six things people actually say when we bring this up. No sales pitch &mdash; just what we'd tell you on a call.</p>
-    </div>
-    <div class="grid-3">
-      <div class="obj rv">
-        <q>I already have Instagram.</q>
-        <p>Instagram is rented ground, and it's built for people who already follow you. Someone searching <em>&ldquo;decorator near me&rdquo;</em> at nine at night doesn't find your grid &mdash; and even if they do, they can't see your prices, your areas or your reviews in one place.</p>
-      </div>
-      <div class="obj rv">
-        <q>My business is too small.</q>
-        <p>Every business on this page is one person or a small crew. Small is exactly who this is for &mdash; a site levels the field against the bigger firm with a marketing budget and worse reviews than yours.</p>
-      </div>
-      <div class="obj rv">
-        <q>I don't know what I need.</q>
-        <p>Then don't decide yet. Tell us what the business does and we'll come back with what we'd build and what it would cost. Working that out is our job, not yours.</p>
-      </div>
-      <div class="obj rv">
-        <q>Websites are expensive.</q>
-        <p>Agencies are expensive. A site here starts at $400, the price is fixed in writing before work starts, and you see the draft first. If one extra customer a year covers it, the maths is not complicated.</p>
-      </div>
-      <div class="obj rv">
-        <q>I don't want to deal with developers.</q>
-        <p>There's no account manager, no ticket number and no portal to log into. You email or message one person, and that person makes the change. Plain English, always.</p>
-      </div>
-      <div class="obj rv">
-        <q>I don't know if I'll like the design.</q>
-        <p>Which is the whole reason the first draft is free. You'll be looking at a real, working version of your site before you've spent anything &mdash; and if it's not right, you walk away owing nothing.</p>
-      </div>
-    </div>
-
-    <div class="ctabar rv">
-      <div>
-        <h3>Every one of those ends the same way.</h3>
-        <p>You can't judge a website from a description. So we build it first, and you decide with the thing in front of you.</p>
-      </div>
-      <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
-    </div>
-  </div>
+<section class="process" id="process" data-theme="paper" aria-labelledby="process-title">
+<div class="wrap">
+<header class="process-head">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(04)</span><span>Process</span></p>
+<h2 id="process-title" class="process-title" data-reveal="words"><span class="sr-only">From idea to impact.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">From</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">idea</span></span> <span class="rw-w"><em class="rw-i" style="--i:2">to</em></span> <span class="rw-w"><em class="rw-i" style="--i:3">impact.</em></span></span></h2>
+</header>
+<div class="process-grid">
+<div class="process-aside">
+<p class="sec-lede" data-reveal="fade">Five steps, in this order. The free draft sits in the middle — after we understand the job, before you’ve paid anything.</p>
+<p class="process-now mono" aria-hidden="true"><span data-process-now>01</span>/05</p>
+</div>
+<div class="process-rail" data-island="process-line">
+<div class="process-line" aria-hidden="true"><span class="process-line-fill"></span></div>
+<ol class="process-steps" role="list">
+<li class="step" data-step="1">
+<span class="step-dot" aria-hidden="true"></span>
+<p class="step-num mono" aria-hidden="true">01</p>
+<div class="step-body">
+<h3 class="step-name">Discover</h3>
+<p class="step-when mono">Day one</p>
+<p class="step-text">You tell us about the business — what you do, who you sell to, what the site has to achieve. A few lines on the form is enough. Rather talk? Twenty minutes on Zoom or Google Meet.</p>
+<p class="step-outcome"><span class="mono">You get</span><span>A real reply within 24 hours — not an auto-response.</span></p>
+</div>
+</li><li class="step" data-step="2">
+<span class="step-dot" aria-hidden="true"></span>
+<p class="step-num mono" aria-hidden="true">02</p>
+<div class="step-body">
+<h3 class="step-name">Define</h3>
+<p class="step-when mono">Within 24 hours</p>
+<p class="step-text">We come back with what we’d build, what it would cost and how long it would take, in plain English. If what you need isn’t something we should be building, we’ll say so.</p>
+<p class="step-outcome"><span class="mono">You get</span><span>A clear proposal and an honest starting price.</span></p>
+</div>
+</li><li class="step" data-step="3">
+<span class="step-dot" aria-hidden="true"></span>
+<p class="step-num mono" aria-hidden="true">03</p>
+<div class="step-body">
+<h3 class="step-name">Design</h3>
+<p class="step-when mono">Usually a few days</p>
+<p class="step-text">We build a working first draft — real layout, your services, your words — and send you a link. Open it on your phone, click around, decide. If it isn’t right, you owe nothing.</p>
+<p class="step-outcome"><span class="mono">You get</span><span>A working draft, before you pay a thing.</span></p>
+</div>
+</li><li class="step" data-step="4">
+<span class="step-dot" aria-hidden="true"></span>
+<p class="step-num mono" aria-hidden="true">04</p>
+<div class="step-body">
+<h3 class="step-name">Build</h3>
+<p class="step-when mono">1–2 weeks for a site · 3–5 for a store</p>
+<p class="step-text">Approve the draft and you get a one-page scope with a fixed price and timeline. Then a 50% deposit, your content, and the production build: forms, integrations, payments, SEO, testing, your domain.</p>
+<p class="step-outcome"><span class="mono">You get</span><span>A fixed price in writing — the number you agree is the number you pay.</span></p>
+</div>
+</li><li class="step" data-step="5">
+<span class="step-dot" aria-hidden="true"></span>
+<p class="step-num mono" aria-hidden="true">05</p>
+<div class="step-body">
+<h3 class="step-name">Refine</h3>
+<p class="step-when mono">Launch day, and after</p>
+<p class="step-text">Two full revision rounds, then launch and the final 50%. After that, optional Website Care keeps it current — or we hand over the files and you take it from there.</p>
+<p class="step-outcome"><span class="mono">You get</span><span>A live product you own outright — code, domain and all.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ==== ABOUT ==== -->
-<section class="sec sec--alt" id="about">
-  <div class="wrap about">
-    <div class="rv">
-      <p class="eyebrow">Who you're dealing with</p>
-      <h2>You'll be talking to the person writing the code.</h2>
-      <p class="lede">Pabloch Tech is small on purpose. No account manager passing your message down a chain, no offshore team you never meet, no ticket number. You email, we answer, we make the change.</p>
-      <p class="lede">We don't use Wix, Squarespace or a WordPress theme carrying forty plugins. Every site is written by hand, which is why they load in under a second and why there's nothing to break when a plugin updates itself at 3am. It also means you own the whole thing &mdash; files, domain, forms and all.</p>
-    </div>
-    <div class="about-panel rv">
-      <div class="fact"><span class="k">Based in</span><span class="v">India &mdash; working US and UK business hours<small>Your morning is our evening. Messages sent overnight are answered before you're back at your desk.</small></span></div>
-      <div class="fact"><span class="k">Talk to us</span><span class="v">Email, Telegram, Instagram, Facebook &mdash; or a Zoom / Google Meet call<small>Whichever you already use. No portal to log into.</small></span></div>
-      <div class="fact"><span class="k">Reply time</span><span class="v">Within 24 hours, every time<small>Usually a lot faster than that.</small></span></div>
-      <div class="fact"><span class="k">You own</span><span class="v">The site, the code, the domain<small>Cancel anything and we hand over the files. No hostage-taking.</small></span></div>
-      <div class="fact"><span class="k">Built with</span><span class="v">Hand-written HTML, CSS and JavaScript<small>Plus a real back end where a store needs one.</small></span></div>
-    </div>
-  </div>
+<section class="why" id="why" data-theme="ink" aria-labelledby="why-title">
+<div class="why-track" data-island="h-scroll">
+<div class="why-stage">
+<div class="wrap why-head">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(05)</span><span>Why Pabloch</span></p>
+<div class="why-head-row">
+<h2 id="why-title" class="display-l why-title" data-reveal="words"><span class="sr-only">Four things we do differently.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">Four</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">things</span></span> <span class="rw-w"><span class="rw-i" style="--i:2">we</span></span> <span class="rw-w"><em class="rw-i" style="--i:3">do</em></span> <span class="rw-w"><em class="rw-i" style="--i:4">differently.</em></span></span></h2>
+<p class="why-count mono" aria-hidden="true"><span data-hs-now>01</span> / 04</p>
+</div>
+</div>
+<ol class="why-rail" role="list" data-hs-rail>
+<li class="why-panel" data-reveal="fade" style="--delay:0ms">
+<p class="why-num" aria-hidden="true">01</p>
+<h3 class="why-panel-title">The draft <em>comes first.</em></h3>
+<p class="why-panel-body">Most studios want a deposit before you’ve seen a pixel. We build a working first draft for free and let the work make the argument. Don’t like it? You owe nothing.</p>
+</li><li class="why-panel" data-reveal="fade" style="--delay:80ms">
+<p class="why-num" aria-hidden="true">02</p>
+<h3 class="why-panel-title">You talk to the person <em>writing the code.</em></h3>
+<p class="why-panel-body">No account manager passing your message down a chain, no ticket number, no portal to log into. You email or message one person, and that person makes the change.</p>
+</li><li class="why-panel" data-reveal="fade" style="--delay:160ms">
+<p class="why-num" aria-hidden="true">03</p>
+<h3 class="why-panel-title">Written by hand, <em>not assembled.</em></h3>
+<p class="why-panel-body">No Wix, no Squarespace, no WordPress theme carrying forty plugins. Pages load fast, and there’s nothing to break itself during an update at 3am.</p>
+</li><li class="why-panel" data-reveal="fade" style="--delay:240ms">
+<p class="why-num" aria-hidden="true">04</p>
+<h3 class="why-panel-title">You own <em>all of it.</em></h3>
+<p class="why-panel-body">The site, the code and the domain are yours — the domain registered in your name from day one. Leave whenever you like and we hand over the files.</p>
+</li>
+</ol>
+<div class="why-progress" aria-hidden="true"><span data-hs-bar></span></div>
+</div>
+</div>
 </section>
-
-<!-- ==== FAQ ==== -->
-<section class="sec" id="faq">
-  <div class="wrap">
-    <div class="sec-head sec-head--mid rv">
-      <p class="eyebrow">Questions</p>
-      <h2>The things people ask first.</h2>
-    </div>
-    <div class="faq">
-
-      <details class="q rv"><summary>Is the first website draft really free?</summary><div class="a">
-        <p>Yes, and there's no catch worth hunting for. You tell us about the business, we build a working first draft, and we send you a link. No deposit, no card details, no contract, no obligation to continue. <strong>You only pay if you like the direction and want us to build the real thing.</strong></p>
-        <p>Why we do it: describing a website is a waste of both our time when we could just show you one. It's the fastest way for you to judge whether we're any good, and the fastest way for us to find out whether we'd work well together.</p>
-      </div></details>
-
-      <details class="q rv"><summary>What happens if I don't like the draft?</summary><div class="a">
-        <p>Nothing. You owe us nothing, you're not billed for the time, and we don't chase you. Tell us it's not right and that's the end of it &mdash; no hard feelings.</p>
-        <p>If it's close but not there, say so. Often one conversation about what's off is enough to fix it, and that costs nothing either.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Is the free draft a complete website?</summary><div class="a">
-        <p>No, and we'd rather be upfront about that than have you find out later. The draft is a <strong>real, working page</strong> &mdash; genuine layout, your services, your words, opens on your phone, you can click around it. It is not a picture or a template with your logo dropped on top.</p>
-        <p>What it doesn't include yet: final copy and photography, working forms wired to your inbox, integrations, payment setup, full SEO work, testing across devices, your domain, and launch. That's the production build, and it starts once you approve the direction.</p>
-      </div></details>
-
-      <details class="q rv"><summary>How much does a website cost?</summary><div class="a">
-        <p>Three starting points. <strong>Essential from $400</strong> for a clean professional presence of around five pages. <strong>Growth from $700</strong> for eight to ten pages with lead-generation features, integrations and analytics. <strong>Storefront from $1,200</strong> for a complete online store with cart, checkout, payment gateway and order management.</p>
-        <p>You get a fixed figure in writing before any work starts, so the number you agree is the number you pay.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Why does the price say &ldquo;starting at&rdquo;?</summary><div class="a">
-        <p>Because a five-page site for a decorator and a store with four hundred products are not the same job, and pretending otherwise would mean either overcharging you or quietly cutting corners.</p>
-        <p>What moves the number: how many pages or products, which integrations and third-party services you need, custom functionality, and how much content we're writing versus you supplying. We'll tell you where you land before you commit &mdash; and if your requirements are simple, you pay the starting price.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Do I own my website?</summary><div class="a">
-        <p>Completely. The site, the code and the domain are yours. The domain is registered in your name from day one, and on request we hand over the files so you can host them anywhere or take them to another developer.</p>
-        <p>Nothing is locked to us and nothing is held hostage. That's deliberate &mdash; we'd rather you stay because the work is good.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Do you use WordPress or website builders?</summary><div class="a">
-        <p>No. Every site is written by hand in HTML, CSS and JavaScript, with a real back end where a store needs one. No Wix, no Squarespace, no WordPress theme carrying forty plugins.</p>
-        <p>That matters for three practical reasons: pages load in well under a second, there's no plugin to break itself during an update at 3am, and there's no monthly platform fee you're stuck paying to keep your own site online.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Can you build an online store?</summary><div class="a">
-        <p>Yes &mdash; that's the Storefront package, from $1,200. Product catalogue and collections, cart, checkout, payment gateway integration, order management, customer order confirmations, basic shipping and tax configuration, search and filters.</p>
-        <p>Al-Abuzer Perfumes in the work section above is a live example: eight collections, cart, checkout, customer accounts and order tracking, in production and taking orders.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Can you integrate payments?</summary><div class="a">
-        <p>Yes. Payment gateway integration is included in the Storefront starting package.</p>
-        <p>One honest caveat: which gateway you can use, and how quickly it goes live, depends on the provider's own requirements &mdash; your country, your business documents and their approval process, none of which we control. We'll integrate whichever gateway you're approved for and tell you early if something looks likely to hold you up.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Do you provide hosting and a domain?</summary><div class="a">
-        <p>We set both up and get everything live, but they're registered in <strong>your</strong> name and paid for by you, so you're never locked in. A domain is usually around $10&ndash;15 a year and hosting is modest; we'll recommend what fits and walk you through it.</p>
-        <p>Already own a domain &mdash; even one sitting on a parking page? Even better. Pointing it at the new site is a five-minute change.</p>
-      </div></details>
-
-      <details class="q rv"><summary>How long does a website take?</summary><div class="a">
-        <p>The free first draft is usually with you within a few days. After that, a small site is typically live in one to two weeks and a store in three to five, depending on complexity.</p>
-        <p>The honest variable is you. The slow part is almost never the code &mdash; it's waiting on photos, prices, opening hours and approvals. Get those to us quickly and the timeline holds.</p>
-      </div></details>
-
-      <details class="q rv"><summary>How many revisions do I get?</summary><div class="a">
-        <p>Two full revision rounds are included in every package. A round means you go through the whole site and send back everything you want changed at once, and we work through the list.</p>
-        <p>In practice we're not precious about it &mdash; small tweaks after that don't get invoiced. What the limit is really there for is a third redesign in a different direction, which is a different job and gets quoted as one.</p>
-      </div></details>
-
-      <details class="q rv"><summary>What happens after I approve the draft?</summary><div class="a">
-        <p>Five steps, in this order. <strong>1.</strong> We send a one-page scope: what's included, the fixed price, the timeline. <strong>2.</strong> You pay a 50% deposit and send your content &mdash; photos, prices, hours. <strong>3.</strong> We build the production site: real forms, integrations, SEO, testing. <strong>4.</strong> Two rounds of revisions. <strong>5.</strong> Final 50% and we launch on your domain.</p>
-        <p>The timeline starts when the deposit and your content arrive, not when you say yes.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Do you provide maintenance after launch?</summary><div class="a">
-        <p>Yes &mdash; Website Care is optional and quoted per site. It covers hosting, SSL and your domain kept pointed and renewed, your enquiry forms monitored so nothing goes quietly missing, new reviews and prices and photos added as they come, and small edits without an hourly charge.</p>
-        <p>You're not obliged to take it. If you'd rather manage the site yourself, we hand it over and that's genuinely fine.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Can you redesign my existing website?</summary><div class="a">
-        <p>Yes, and the free draft works exactly the same way &mdash; we'll build a new version of your homepage so you can compare them side by side before deciding.</p>
-        <p>Sometimes the honest answer is that your current site is fine and you'd be better off spending the money elsewhere. We'll tell you if that's the case. But if it's slow, unreadable on a phone, or hasn't been touched since 2019, a rebuild is usually cheaper than repairing it.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Can you build custom functionality?</summary><div class="a">
-        <p>Usually, yes. Booking systems, price calculators, photo-upload quote forms, customer portals, membership areas, custom dashboards &mdash; the estimator and photo-upload forms in the work section above were all built from scratch for those specific businesses.</p>
-        <p>Custom work is quoted on top of the package price, based on what it actually involves. Describe what you want it to do and we'll tell you whether it's a small addition or a project of its own &mdash; and if it isn't something we should be building, we'll say that too.</p>
-      </div></details>
-
-      <details class="q rv"><summary>Do you work with businesses outside India?</summary><div class="a">
-        <p>Most of our work is outside India. We work US and UK business hours, and the projects on this page are in the United States, the United Kingdom and the UAE.</p>
-        <p>Invoicing is in USD, GBP, AED or INR by bank transfer, Wise, Payoneer or PayPal, and you get a proper invoice for your records. Time zones have never been the hard part &mdash; messages sent overnight are answered before you're back at your desk.</p>
-      </div></details>
-
-      <details class="q rv"><summary>How do I start?</summary><div class="a">
-        <p>Fill in the form below with a few lines about the business &mdash; what you do, where you are, and what you'd want the site to do for you. That's genuinely all we need to begin.</p>
-        <p>We'll reply within 24 hours with what we'd build, what it would cost and how long it would take. If it's a fit, the free draft follows. No deposit at any point in that process.</p>
-        <p><a class="case-link" href="#contact">Get my free draft <span aria-hidden="true">&rarr;</span></a></p>
-      </div></details>
-
-    </div>
-
-    <div class="ctabar rv">
-      <div>
-        <h3>Still have questions?</h3>
-        <p>Ask them directly &mdash; email, Telegram, or twenty minutes on a call. We'd rather answer properly than have you guess.</p>
-      </div>
-      <a href="#contact" class="btn btn--ghost">Ask us anything <span class="ar" aria-hidden="true">&rarr;</span></a>
-    </div>
-  </div>
+<section class="caps" id="capabilities" data-theme="paper" aria-labelledby="caps-title">
+<div class="wrap">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(06)</span><span>Capabilities</span></p>
+<h2 class="caps-manifesto" id="caps-title" data-reveal="words">
+<span class="caps-line"><span class="sr-only">No templates.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">No</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">templates.</span></span></span></span> <span class="caps-line"><span class="sr-only">No page builders.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:3">No</span></span> <span class="rw-w"><span class="rw-i" style="--i:4">page</span></span> <span class="rw-w"><span class="rw-i" style="--i:5">builders.</span></span></span></span> <span class="caps-line"><span class="sr-only">No forty plugins.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:6">No</span></span> <span class="rw-w"><span class="rw-i" style="--i:7">forty</span></span> <span class="rw-w"><span class="rw-i" style="--i:8">plugins.</span></span></span></span>
+</h2>
+<p class="caps-coda" data-reveal="fade">Just hand-written HTML, CSS and JavaScript — and <em>a real back end</em> when a store needs one.</p>
+</div>
+<div class="marquee" data-island="marquee" aria-hidden="true">
+<div class="mq-track"><div class="mq-run"><span class="mq-word">Checkout</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Order tracking</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Estimators</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Booking flows</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Catalogues</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Landing pages</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">SEO</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Performance</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Care</span><span class="mq-sep" aria-hidden="true">/</span></div><div class="mq-run"><span class="mq-word">Checkout</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Order tracking</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Estimators</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Booking flows</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Catalogues</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Landing pages</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">SEO</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Performance</span><span class="mq-sep" aria-hidden="true">/</span><span class="mq-word">Care</span><span class="mq-sep" aria-hidden="true">/</span></div></div>
+</div>
+<div class="wrap caps-grid">
+<div class="caps-col" data-reveal="fade" style="--delay:0ms">
+<h3 class="caps-group mono"><span>01</span> Design</h3>
+<ul role="list"><li>Custom UI &amp; UX design</li><li>Mobile-first, responsive layouts</li><li>Copy &amp; content structure</li><li>Working drafts in the browser</li></ul>
+</div><div class="caps-col" data-reveal="fade" style="--delay:90ms">
+<h3 class="caps-group mono"><span>02</span> Build</h3>
+<ul role="list"><li>Hand-written HTML, CSS &amp; JavaScript</li><li>Back ends for online stores</li><li>Cart, checkout &amp; payment gateways</li><li>Customer accounts &amp; order tracking</li></ul>
+</div><div class="caps-col" data-reveal="fade" style="--delay:180ms">
+<h3 class="caps-group mono"><span>03</span> Product</h3>
+<ul role="list"><li>Instant estimators</li><li>Booking &amp; enquiry flows</li><li>Photo-upload quote forms</li><li>Search, filters &amp; catalogues</li></ul>
+</div><div class="caps-col" data-reveal="fade" style="--delay:270ms">
+<h3 class="caps-group mono"><span>04</span> Launch &amp; care</h3>
+<ul role="list"><li>Performance optimisation</li><li>SEO foundations &amp; analytics</li><li>Hosting, domain &amp; SSL</li><li>Ongoing care &amp; small edits</li></ul>
+</div>
+</div>
 </section>
-
-<!-- ==== FINAL CTA + CONTACT ==== -->
-<section class="sec sec--alt final" id="contact">
-  <div class="wrap">
-    <div class="final-head rv">
-      <p class="eyebrow" style="justify-content:center">Start a project</p>
-      <h2>Your next customer is already searching.</h2>
-      <p class="lede">Let's make sure they find a website worth trusting. Tell us what you need &mdash; we'll take it from there.</p>
-    </div>
-
-    <div class="contact">
-      <div class="rv">
-        <div class="direct">
-          <a class="d-row" href="mailto:hello@pablochtech.com?subject=Free%20draft%20request%20%E2%80%94%20Pabloch%20Tech">
-            <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
-            <span class="dt">Email us<small>hello@pablochtech.com</small></span>
-            <span class="dgo" aria-hidden="true">&rarr;</span>
-          </a>
-          <div class="socials">
-            <a id="c-tg" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.61-.2L6.36 13.1 1.56 11.6c-1.04-.33-1.06-1.04.22-1.54L20.55 2.8c.87-.32 1.63.2 1.35 1.5Z"/></svg><b>Telegram</b><i id="tg-h"></i></a>
-            <a id="c-ig" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg><b>Instagram</b><i id="ig-h"></i></a>
-            <a id="c-fb" href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/></svg><b>Facebook</b><i id="fb-h"></i></a>
-          </div>
-        </div>
-
-        <div class="callcard">
-          <div class="cc-h"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.6"/><path d="m15.5 10.6 5-3.1v9l-5-3.1z"/></svg></span><b>Would you rather just talk?</b></div>
-          <p>Twenty minutes on <strong style="color:var(--text);font-weight:600">Zoom</strong> or <strong style="color:var(--text);font-weight:600">Google Meet</strong> &mdash; whichever you already use. Pick one in the form, tell us a good time, and the invite comes back with our reply. Nothing to install for Meet, and no pitch.</p>
-          <div class="cc-tags"><span>Zoom</span><span>Google Meet</span><span>Telegram call</span><span>Ordinary phone call</span></div>
-        </div>
-
-        <div class="next">
-          <p class="next-h">What happens next</p>
-          <ol>
-            <li>We read it properly and reply within 24 hours &mdash; a real answer, not an auto-response.</li>
-            <li>If it looks like a fit, we build your first draft. Free, no obligation, no deposit.</li>
-            <li>You open it on your phone and decide. If it's not for you, we shake hands and that's that.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="form-panel rv">
-        <form id="enquiry" novalidate>
-          <div class="row">
-            <div class="field">
-              <label for="f-name">Your name <span class="req">*</span></label>
-              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
-            </div>
-            <div class="field">
-              <label for="f-biz">Business name</label>
-              <input id="f-biz" name="business" type="text" autocomplete="organization" placeholder="Doe &amp; Co.">
-            </div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="f-email">Email <span class="req">*</span></label>
-              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="jane@doeandco.com" required>
-            </div>
-            <div class="field">
-              <label for="f-phone">Phone or Telegram</label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000 or @handle">
-            </div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="f-need">What do you need?</label>
-              <select id="f-need" name="project_type">
-                <option>A business website</option>
-                <option>A landing page</option>
-                <option>An online store</option>
-                <option>A rebuild of my old site</option>
-                <option>Website care only</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="f-budget">Budget in mind</label>
-              <select id="f-budget" name="budget">
-                <option>Not sure yet</option>
-                <option>Around $400</option>
-                <option>$400 &ndash; $700</option>
-                <option>$700 &ndash; $1,200</option>
-                <option>$1,200+</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-site">Existing website or Google listing</label>
-            <input id="f-site" name="existing_site" type="text" placeholder="yourbusiness.com — or leave blank">
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="f-talk">How shall we talk?</label>
-              <select id="f-talk" name="preferred_contact">
-                <option>Email is fine</option>
-                <option>Zoom call</option>
-                <option>Google Meet</option>
-                <option>Telegram</option>
-                <option>Ordinary phone call</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="f-when">Good time to reach you</label>
-              <input id="f-when" name="best_time" type="text" placeholder="Weekday mornings, US Eastern">
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-msg">Tell us about it <span class="req">*</span></label>
-            <textarea id="f-msg" name="message" placeholder="What the business does, where you're based, and what you'd want the site to do for you." required></textarea>
-          </div>
-
-          <input class="hp" type="text" name="pt_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <button type="submit" class="btn btn--gold btn--wide" id="submit-btn">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></button>
-          <p class="form-foot">No deposit, no card details, no obligation. We reply within 24 hours, and your details go straight to our inbox and nowhere else.</p>
-          <div class="form-msg" id="form-err" role="alert"></div>
-        </form>
-
-        <div class="nojs" style="display:none;padding:20px 4px;text-align:center">
-          <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem;margin-bottom:10px">The form needs JavaScript</h3>
-          <p style="color:var(--muted);font-size:.94rem;margin:0 auto;max-width:38ch">It's switched off in your browser. Email <a href="mailto:hello@pablochtech.com" style="color:var(--gold-soft)">hello@pablochtech.com</a> instead and it reaches us just the same.</p>
-        </div>
-
-        <div class="done" id="done" role="status" tabindex="-1">
-          <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5L20 7"/></svg></div>
-          <h3>Got it &mdash; thank you.</h3>
-          <p>Your enquiry has landed in our inbox. We'll come back within 24 hours with what we'd build and what it would cost &mdash; and if you asked for a call, the Zoom or Meet invite comes with that reply.</p>
-          <p style="color:var(--muted-2);font-size:.86rem">In a hurry? Email <a href="mailto:hello@pablochtech.com" style="color:var(--gold-soft)">hello@pablochtech.com</a> directly.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="case" id="case-study" data-theme="ink" aria-labelledby="case-title">
+<div class="wrap">
+<header class="case-head">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(07)</span><span>Case study</span></p>
+<h2 id="case-title" class="display-xl case-title" data-reveal="words"><span class="sr-only">Al-Abuzer Perfumes</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">Al-Abuzer</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">Perfumes</span></span></span></h2>
+<p class="case-sub" data-reveal="fade">Selling <em>atmosphere</em>, online.</p>
+</header>
+</div>
+<figure class="case-hero" data-reveal="image">
+<span class="case-hero-img" data-parallax="0.08"><picture >
+<source type="image/avif" srcset="assets/work/alabuzer-desktop-800.avif 800w, assets/work/alabuzer-desktop-1200.avif 1200w, assets/work/alabuzer-desktop-1568.avif 1568w" sizes="100vw">
+<source type="image/webp" srcset="assets/work/alabuzer-desktop-800.webp 800w, assets/work/alabuzer-desktop-1200.webp 1200w, assets/work/alabuzer-desktop-1568.webp 1568w" sizes="100vw">
+<img src="assets/work/alabuzer-desktop-1200.webp" alt="Al-Abuzer Perfumes homepage: a gold perfume bottle and Arabic calligraphy in drifting gold dust, under a navigation bar with Products, Track Order, search, account and cart." width="1568" height="700" loading="lazy" decoding="async">
+</picture></span>
+<figcaption class="wrap mono">The homepage, as it runs in production today.</figcaption>
+</figure>
+<div class="wrap case-grid">
+<aside class="case-meta" aria-label="Project details">
+<dl>
+<div class="case-meta-row"><dt class="mono">Client</dt><dd>Al-Abuzer Perfumes</dd></div><div class="case-meta-row"><dt class="mono">Sector</dt><dd>Fragrance retail</dd></div><div class="case-meta-row"><dt class="mono">Scope</dt><dd>Design, full-stack build, launch</dd></div><div class="case-meta-row"><dt class="mono">Status</dt><dd>Live in production</dd></div>
+</dl>
+<a class="arrow-link" href="https://alabuzerperfumes.com" target="_blank" rel="noopener"><span class="arrow-link-label">Visit the live store</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+</aside>
+<div class="case-body">
+<div class="case-chapter" data-reveal="fade">
+<h3 class="case-chapter-label mono">The brief</h3>
+<p class="case-lead">A perfume house with a catalogue that runs from attar roll-ons and oudh to bakhoor, body mists and travel sets — and a brand that sells on atmosphere before it sells on price.</p>
+</div><div class="case-chapter" data-reveal="fade">
+<h3 class="case-chapter-label mono">The problem</h3>
+<p class="case-lead">Eight distinct collections, each with its own customer. A store that had to feel luxurious without feeling slow. And the question every small store gets by email: where is my order?</p>
+</div>
+<div class="case-chapter">
+<h3 class="case-chapter-label mono" data-reveal="fade">The approach</h3>
+<ol class="case-moves" role="list">
+<li class="case-move" data-reveal="fade" style="--delay:0ms">
+<span class="case-move-num mono" aria-hidden="true">01</span>
+<div><h4 class="case-move-title">Open on atmosphere</h4><p>The homepage opens on a full-bleed product video. Price comes second; the feeling comes first.</p></div>
+</li><li class="case-move" data-reveal="fade" style="--delay:80ms">
+<span class="case-move-num mono" aria-hidden="true">02</span>
+<div><h4 class="case-move-title">Make a big catalogue easy</h4><p>Eight collections, each with its own catalogue page, product search, and a catalogue customers can download.</p></div>
+</li><li class="case-move" data-reveal="fade" style="--delay:160ms">
+<span class="case-move-num mono" aria-hidden="true">03</span>
+<div><h4 class="case-move-title">Answer the question before it’s asked</h4><p>Customers follow their order on a tracking page instead of emailing to ask where it is.</p></div>
+</li><li class="case-move" data-reveal="fade" style="--delay:240ms">
+<span class="case-move-num mono" aria-hidden="true">04</span>
+<div><h4 class="case-move-title">Give customers a reason to return</h4><p>Customer accounts, sale pricing and combo packs, all running on the store’s own checkout.</p></div>
+</li>
+</ol>
+</div>
+<figure class="case-inline" data-reveal="image">
+<picture >
+<source type="image/avif" srcset="assets/work/alabuzer-tablet-600.avif 600w, assets/work/alabuzer-tablet-900.avif 900w, assets/work/alabuzer-tablet-1200.avif 1200w" sizes="(min-width: 1024px) 60vw, 100vw">
+<source type="image/webp" srcset="assets/work/alabuzer-tablet-600.webp 600w, assets/work/alabuzer-tablet-900.webp 900w, assets/work/alabuzer-tablet-1200.webp 1200w" sizes="(min-width: 1024px) 60vw, 100vw">
+<img src="assets/work/alabuzer-tablet-900.webp" alt="Al-Abuzer Perfumes on a tablet: the gold logo above the full-bleed product video and an Explore Collection button." width="1200" height="750" loading="lazy" decoding="async">
+</picture>
+<figcaption class="mono">The same storefront at tablet width: the logo, the video, one clear call to action.</figcaption>
+</figure>
+<div class="case-chapter">
+<h3 class="case-chapter-label mono" data-reveal="fade">Eight collections</h3>
+<ol class="case-collections" role="list">
+<li data-reveal="fade" style="--delay:0ms"><span class="mono" aria-hidden="true">01</span>Attar Roll On</li><li data-reveal="fade" style="--delay:50ms"><span class="mono" aria-hidden="true">02</span>Oudh Collection</li><li data-reveal="fade" style="--delay:100ms"><span class="mono" aria-hidden="true">03</span>Perfume 75ml</li><li data-reveal="fade" style="--delay:150ms"><span class="mono" aria-hidden="true">04</span>Body Mist</li><li data-reveal="fade" style="--delay:200ms"><span class="mono" aria-hidden="true">05</span>Bakhoor</li><li data-reveal="fade" style="--delay:250ms"><span class="mono" aria-hidden="true">06</span>Air Freshener</li><li data-reveal="fade" style="--delay:300ms"><span class="mono" aria-hidden="true">07</span>Travelling Collection</li><li data-reveal="fade" style="--delay:350ms"><span class="mono" aria-hidden="true">08</span>Combo Packs</li>
+</ol>
+</div>
+<div class="case-chapter">
+<h3 class="case-chapter-label mono" data-reveal="fade">What we built</h3>
+<ul class="case-built" role="list"><li data-reveal="fade">Cart &amp; checkout</li><li data-reveal="fade">Customer accounts</li><li data-reveal="fade">Order tracking</li><li data-reveal="fade">Product search</li><li data-reveal="fade">Downloadable catalogue</li><li data-reveal="fade">Full-bleed video hero</li></ul>
+</div>
+<div class="case-chapter case-status" data-reveal="fade">
+<h3 class="case-chapter-label mono">Where it stands</h3>
+<p class="case-lead">Live in production. Open it, browse it, add something to the cart — the work is there to be checked.</p>
+</div>
+</div>
+</div>
 </section>
-
+<section class="proof" id="proof" data-theme="paper" aria-labelledby="proof-title">
+<div class="wrap">
+<header class="sec-head proof-head">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(08)</span><span>Proof</span></p>
+<h2 id="proof-title" class="display-xl" data-reveal="words"><span class="sr-only">Don’t take our word for it.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">Don’t</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">take</span></span> <span class="rw-w"><span class="rw-i" style="--i:2">our</span></span> <span class="rw-w"><em class="rw-i" style="--i:3">word</em></span> <span class="rw-w"><em class="rw-i" style="--i:4">for</em></span> <span class="rw-w"><em class="rw-i" style="--i:5">it.</em></span></span></h2>
+<p class="sec-lede" data-reveal="fade">We don’t have a wall of quotes to show you yet, and we won’t write one. Here’s what you can check for yourself instead.</p>
+</header>
+<dl class="facts">
+<div class="fact" data-reveal="fade" style="--delay:0ms">
+<dt class="mono">Builds designed &amp; built</dt>
+<dd class="fact-value">4</dd>
+</div><div class="fact" data-reveal="fade" style="--delay:80ms">
+<dt class="mono">Hand-written code</dt>
+<dd class="fact-value">100%</dd>
+</div><div class="fact" data-reveal="fade" style="--delay:160ms">
+<dt class="mono">Reply time, every time</dt>
+<dd class="fact-value">24h</dd>
+</div><div class="fact" data-reveal="fade" style="--delay:240ms">
+<dt class="mono">Until you’ve seen the draft</dt>
+<dd class="fact-value">$0</dd>
+</div>
+</dl>
+<ol class="proof-list" role="list">
+<li class="proof-item" data-reveal="fade">
+<span class="proof-num mono" aria-hidden="true">01</span>
+<h3 class="proof-claim">A live store you can open right now.</h3>
+<div class="proof-detail">
+<p>Browse it, search it, add something to the cart. It’s in production.</p>
+<ul class="proof-links" role="list"><li><a class="arrow-link" href="https://alabuzerperfumes.com" target="_blank" rel="noopener"><span class="arrow-link-label">alabuzerperfumes.com</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li></ul>
+</div>
+</li><li class="proof-item" data-reveal="fade">
+<span class="proof-num mono" aria-hidden="true">02</span>
+<h3 class="proof-claim">Three previews you can open on your phone.</h3>
+<div class="proof-detail">
+<p>Built on spec, before anybody asked. Each one is labelled as a preview.</p>
+<ul class="proof-links" role="list"><li><a class="arrow-link" href="https://cleaningqueens-preview.netlify.app" target="_blank" rel="noopener"><span class="arrow-link-label">The Cleaning Queens</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li><li><a class="arrow-link" href="https://oaktree-preview.netlify.app" target="_blank" rel="noopener"><span class="arrow-link-label">Oak Tree Garden Maintenance</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li><li><a class="arrow-link" href="https://dean-preview.netlify.app" target="_blank" rel="noopener"><span class="arrow-link-label">Dean the Decorator</span><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li></ul>
+</div>
+</li><li class="proof-item" data-reveal="fade">
+<span class="proof-num mono" aria-hidden="true">03</span>
+<h3 class="proof-claim">A fixed price, in writing, before work starts.</h3>
+<div class="proof-detail">
+<p>Starting prices from $400. The number you agree is the number you pay.</p>
+</div>
+</li><li class="proof-item" data-reveal="fade">
+<span class="proof-num mono" aria-hidden="true">04</span>
+<h3 class="proof-claim">Pay in two halves — after you’ve seen it.</h3>
+<div class="proof-detail">
+<p>50% once you approve the draft, 50% on launch day. Bank transfer, Wise, Payoneer or PayPal, invoiced in USD, GBP, AED or INR.</p>
+</div>
+</li><li class="proof-item" data-reveal="fade">
+<span class="proof-num mono" aria-hidden="true">05</span>
+<h3 class="proof-claim">Two full revision rounds, included.</h3>
+<div class="proof-detail">
+<p>Small tweaks after that don’t get invoiced. A third redesign in a new direction is a new job, and quoted as one.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section class="about" id="studio" data-theme="paper" aria-labelledby="about-title">
+<div class="wrap about-grid">
+<div class="about-main">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(09)</span><span>Studio</span></p>
+<h2 id="about-title" class="display-xl" data-reveal="words"><span class="sr-only">Small on purpose.</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">Small</span></span> <span class="rw-w"><em class="rw-i" style="--i:1">on</em></span> <span class="rw-w"><em class="rw-i" style="--i:2">purpose.</em></span></span></h2>
+<p class="about-p" data-reveal="fade" style="--delay:0ms">Pabloch Tech is an independent studio based in India, working US and UK business hours. There’s no account manager passing your message down a chain and no offshore team you never meet — you’ll be talking to the person designing and writing your product.</p><p class="about-p" data-reveal="fade" style="--delay:100ms">We keep the list of clients short so each one gets properly looked after. Your morning is our evening: messages sent overnight are answered before you’re back at your desk.</p>
+</div>
+<aside class="about-side" aria-label="Studio details">
+<div class="about-clock" data-reveal="fade">
+<p class="mono">Right now at the studio</p>
+<p class="about-time"><span data-clock="big">IST</span></p>
+<p class="mono about-zone">India · IST (UTC+5:30)</p>
+</div>
+<dl class="about-details">
+<div class="about-row" data-reveal="fade" style="--delay:0ms"><dt class="mono">Based in</dt><dd>India</dd></div><div class="about-row" data-reveal="fade" style="--delay:60ms"><dt class="mono">Hours</dt><dd>US &amp; UK business hours</dd></div><div class="about-row" data-reveal="fade" style="--delay:120ms"><dt class="mono">Talk to us</dt><dd>Email, Telegram, Instagram, Facebook — or Zoom / Google Meet</dd></div><div class="about-row" data-reveal="fade" style="--delay:180ms"><dt class="mono">Reply time</dt><dd>Within 24 hours</dd></div><div class="about-row" data-reveal="fade" style="--delay:240ms"><dt class="mono">You own</dt><dd>The site, the code, the domain</dd></div>
+</dl>
+</aside>
+</div>
+</section>
+<section class="cta" data-theme="ink" aria-labelledby="cta-title">
+<div class="cta-grid" aria-hidden="true"></div>
+<div class="wrap cta-inner">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(10)</span><span>Next</span></p>
+<h2 id="cta-title" class="display-xxl cta-title" data-reveal="words"><span class="sr-only">Have something in mind?</span><span class="rw" aria-hidden="true"><span class="rw-w"><span class="rw-i" style="--i:0">Have</span></span> <span class="rw-w"><span class="rw-i" style="--i:1">something</span></span> <span class="rw-w"><em class="rw-i" style="--i:2">in</em></span> <span class="rw-w"><em class="rw-i" style="--i:3">mind?</em></span></span></h2>
+<div class="cta-row">
+<p class="cta-copy" data-reveal="fade">Send a few lines. You’ll get a real answer within 24 hours — and if it’s a fit, a working draft before you pay a thing.</p>
+<a class="cta-orb" href="#contact" data-magnetic data-cursor="Let’s go">
+<span class="cta-orb-label">Start a<br>project</span>
+<span class="cta-orb-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></span>
+</a>
+</div>
+<p class="cta-alt mono" data-reveal="fade">Or email <a href="mailto:hello@pablochtech.com" data-email-link><span data-email-text>hello@pablochtech.com</span></a></p>
+</div>
+</section>
+<section class="contact" id="contact" data-theme="ink" aria-labelledby="contact-title">
+<div class="wrap contact-grid">
+<div class="contact-intro">
+<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(11)</span><span>Contact</span></p>
+<h2 class="display-l contact-title" id="contact-title" data-reveal="fade">Tell us what you’re building.</h2>
+<p class="contact-lede" data-reveal="fade">A few lines is enough. We reply within 24 hours with what we’d build, what it would cost and how long it would take — and if it’s a fit, your first draft is free.</p>
+<div class="contact-direct" data-reveal="fade">
+<p class="mono contact-direct-label">Or reach us directly</p>
+<ul class="contact-social" role="list">
+<li><a href="mailto:hello@pablochtech.com" data-email-link><span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg></span><span data-email-text>hello@pablochtech.com</span></a></li>
+<li data-social-item="telegram"><a href="https://t.me/pablochsocial" target="_blank" rel="noopener" data-social="telegram">
+<span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4 3 11l6 2 2 6 3-4 5 4 2-15Z"/><path d="m9 13 8-6"/></svg></span><span>Telegram</span><span class="social-handle" data-social-handle>@pablochsocial</span><span class="sr-only"> (opens in a new tab)</span>
+</a></li><li data-social-item="instagram"><a href="https://instagram.com/pablochsocial" target="_blank" rel="noopener" data-social="instagram">
+<span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor" stroke="none"/></svg></span><span>Instagram</span><span class="social-handle" data-social-handle>@pablochsocial</span><span class="sr-only"> (opens in a new tab)</span>
+</a></li><li data-social-item="facebook"><a href="https://facebook.com/pablochtech" target="_blank" rel="noopener" data-social="facebook">
+<span class="social-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 21v-7.5h2.6l.4-3H14V8.7c0-.9.3-1.5 1.6-1.5H17V4.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.1H8.5v3H11V21"/></svg></span><span>Facebook</span><span class="social-handle" data-social-handle>@pablochtech</span><span class="sr-only"> (opens in a new tab)</span>
+</a></li>
+</ul>
+<p class="contact-call">Prefer to talk? Pick <strong>Zoom</strong> or <strong>Google Meet</strong> in the form and the invite comes back with our reply.</p>
+</div>
+</div>
+<div class="contact-form-wrap" data-island="brief-form">
+<form class="brief" id="brief" novalidate aria-describedby="brief-note">
+<div class="brief-row">
+<div class="field" data-field="name">
+<label class="field-label" for="f-name"><span>Name<span class="req" aria-hidden="true"> *</span></span></label>
+<input class="field-input" id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required aria-required="true" aria-describedby="f-name-err">
+<p class="field-err" id="f-name-err" data-err-for="name"></p>
+</div>
+<div class="field" data-field="email">
+<label class="field-label" for="f-email"><span>Email<span class="req" aria-hidden="true"> *</span></span></label>
+<input class="field-input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-required="true" aria-describedby="f-email-err" spellcheck="false">
+<p class="field-err" id="f-email-err" data-err-for="email"></p>
+</div>
+</div>
+<div class="field" data-field="company">
+<label class="field-label" for="f-company"><span>Company</span><span class="opt mono">Optional</span></label>
+<input class="field-input" id="f-company" name="company" type="text" autocomplete="organization" maxlength="120" aria-describedby="f-company-err">
+<p class="field-err" id="f-company-err" data-err-for="company"></p>
+</div>
+<fieldset class="choices" data-field="project_type">
+<legend class="field-label">Project type<span class="opt mono">Optional</span></legend>
+<div class="choice-row">
+<span class="choice">
+<input type="radio" id="f-project_type-0" name="project_type" value="Website">
+<label for="f-project_type-0">Website</label>
+</span><span class="choice">
+<input type="radio" id="f-project_type-1" name="project_type" value="Online store">
+<label for="f-project_type-1">Online store</label>
+</span><span class="choice">
+<input type="radio" id="f-project_type-2" name="project_type" value="Landing page">
+<label for="f-project_type-2">Landing page</label>
+</span><span class="choice">
+<input type="radio" id="f-project_type-3" name="project_type" value="Product feature">
+<label for="f-project_type-3">Product feature</label>
+</span><span class="choice">
+<input type="radio" id="f-project_type-4" name="project_type" value="Redesign">
+<label for="f-project_type-4">Redesign</label>
+</span><span class="choice">
+<input type="radio" id="f-project_type-5" name="project_type" value="Website care">
+<label for="f-project_type-5">Website care</label>
+</span><span class="choice">
+<input type="radio" id="f-project_type-6" name="project_type" value="Not sure yet">
+<label for="f-project_type-6">Not sure yet</label>
+</span>
+</div>
+</fieldset>
+<fieldset class="choices" data-field="budget">
+<legend class="field-label">Budget<span class="opt mono">Optional</span></legend>
+<div class="choice-row">
+<span class="choice">
+<input type="radio" id="f-budget-0" name="budget" value="$400 – $700">
+<label for="f-budget-0">$400 – 700</label>
+</span><span class="choice">
+<input type="radio" id="f-budget-1" name="budget" value="$700 – $1,200">
+<label for="f-budget-1">$700 – 1,200</label>
+</span><span class="choice">
+<input type="radio" id="f-budget-2" name="budget" value="$1,200 – $2,500">
+<label for="f-budget-2">$1,200 – 2,500</label>
+</span><span class="choice">
+<input type="radio" id="f-budget-3" name="budget" value="$2,500+">
+<label for="f-budget-3">$2,500+</label>
+</span><span class="choice">
+<input type="radio" id="f-budget-4" name="budget" value="Not sure yet">
+<label for="f-budget-4">Not sure yet</label>
+</span>
+</div>
+</fieldset>
+<div class="field" data-field="message">
+<label class="field-label" for="f-message"><span>Message<span class="req" aria-hidden="true"> *</span></span></label>
+<textarea class="field-input field-textarea" id="f-message" name="message" rows="5" maxlength="4000" required aria-required="true" aria-describedby="f-message-hint f-message-err"></textarea>
+<p class="field-hint" id="f-message-hint">What the business does, what the site needs to do, and anything you already have — a domain, a logo, an old site.</p>
+<p class="field-err" id="f-message-err" data-err-for="message"></p>
+</div>
+<fieldset class="choices" data-field="preferred_contact">
+<legend class="field-label">How shall we talk?</legend>
+<div class="choice-row">
+<span class="choice">
+<input type="radio" id="f-preferred_contact-0" name="preferred_contact" value="Email is fine" checked>
+<label for="f-preferred_contact-0">Email is fine</label>
+</span><span class="choice">
+<input type="radio" id="f-preferred_contact-1" name="preferred_contact" value="Zoom call">
+<label for="f-preferred_contact-1">Zoom</label>
+</span><span class="choice">
+<input type="radio" id="f-preferred_contact-2" name="preferred_contact" value="Google Meet">
+<label for="f-preferred_contact-2">Google Meet</label>
+</span><span class="choice">
+<input type="radio" id="f-preferred_contact-3" name="preferred_contact" value="Telegram">
+<label for="f-preferred_contact-3">Telegram</label>
+</span><span class="choice">
+<input type="radio" id="f-preferred_contact-4" name="preferred_contact" value="Phone call">
+<label for="f-preferred_contact-4">Phone</label>
+</span>
+</div>
+</fieldset>
+<div class="hp" aria-hidden="true">
+<label for="f-hp">Leave this field empty</label>
+<input id="f-hp" type="text" name="pt_hp" tabindex="-1" autocomplete="off">
+</div>
+<div class="brief-foot">
+<button class="btn btn--primary btn--lg brief-submit" type="submit" data-magnetic disabled data-submit>
+<span class="btn-label" data-submit-label>Send project brief</span><span class="btn-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></span>
+</button>
+<p class="brief-note mono" id="brief-note">No deposit, no card details, no obligation. Your details go to our inbox and nowhere else.</p>
+</div>
+<p class="brief-status" role="status" aria-live="polite" data-status></p>
+<noscript><p class="brief-status is-error">This form needs JavaScript, which is switched off in your browser. Email <a href="mailto:hello@pablochtech.com">hello@pablochtech.com</a> instead — it reaches us just the same.</p></noscript>
+</form>
+<div class="brief-done" tabindex="-1" hidden data-done>
+<p class="mono brief-done-kicker"><span class="live-dot" aria-hidden="true"></span>Sent</p>
+<h3 class="display-l">Brief received.</h3>
+<p>It’s landed in our inbox. We’ll reply within 24 hours with what we’d build, what it would cost and how long it would take — and if you asked for a call, the invite comes with that reply.</p>
+<p class="mono">In a hurry? <a href="mailto:hello@pablochtech.com" data-email-link><span data-email-text>hello@pablochtech.com</span></a></p>
+</div>
+</div>
+</div>
+</section>
 </main>
-
-<!-- ==== FOOTER ==== -->
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div style="max-width:330px">
-        <a href="#top" class="brand" style="margin-bottom:14px">
-          <span class="brand-mark" aria-hidden="true">P</span>
-          <span class="brand-name">Pabloch <span>Tech</span></span>
-        </a>
-        <p style="font-size:.88rem;color:var(--muted-2);line-height:1.65;margin:0">Fast, hand-coded websites and online stores for small businesses. Your first draft is built before you pay.</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
-        <nav class="foot-links" aria-label="Footer">
-          <a href="#process">Process</a>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="foot-social" id="foot-social"></div>
-      </div>
-    </div>
-    <div class="foot-bot">
-      <span>&copy; <span id="yr">2026</span> Pabloch Tech. All rights reserved.</span>
-      <span><a href="mailto:hello@pablochtech.com" style="color:var(--muted)">hello@pablochtech.com</a></span>
-    </div>
-  </div>
-</footer>
-
-<!-- ==== STICKY MOBILE CTA ==== -->
-<div class="sticky-cta" id="sticky-cta">
-  <a href="#contact" class="btn btn--gold">Get my free draft <span class="ar" aria-hidden="true">&rarr;</span></a>
+<footer class="footer" data-theme="ink">
+<div class="wrap footer-top">
+<div class="footer-lead">
+<p class="mono footer-kicker">Start a project</p>
+<a class="footer-email" href="mailto:hello@pablochtech.com" data-email-link data-cursor="Email ↗"><span data-email-text>hello@pablochtech.com</span></a>
 </div>
-
-<script>
-/* ------------------------------------------------------------
-   Settings live in config.js, in this same folder — deliberately
-   NOT in this file. index.html can be regenerated freely without
-   touching your Web3Forms key or your handles.
-   The values below are only a fallback if config.js fails to load.
-   ------------------------------------------------------------ */
-var CONFIG = Object.assign({
-  WEB3FORMS_KEY : "",
-  EMAIL         : "hello@pablochtech.com",
-  TELEGRAM      : "",
-  INSTAGRAM     : "",
-  FACEBOOK      : ""
-}, window.PABLOCH_CONFIG || {});
-
-(function () {
-  "use strict";
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var keyReady = !!CONFIG.WEB3FORMS_KEY && CONFIG.WEB3FORMS_KEY.indexOf("PASTE") === -1 && CONFIG.WEB3FORMS_KEY.length > 20;
-
-  /* ---- setup banner (only you ever see this, and only until the key is in) ---- */
-  if (!keyReady) {
-    document.getElementById("setup-text").innerHTML =
-      "<strong>Setup —</strong> open <code>config.js</code> and paste your Web3Forms access key. " +
-      "Until then enquiries won't reach you. This bar vanishes once it's done.";
-    document.getElementById("setup").classList.add("on");
-  }
-
-  /* ---- social links: built from CONFIG, hidden if the handle is blank ---- */
-  var SOCIAL = [
-    { id: "tg", key: "TELEGRAM",  name: "Telegram",  url: "https://t.me/" },
-    { id: "ig", key: "INSTAGRAM", name: "Instagram", url: "https://instagram.com/" },
-    { id: "fb", key: "FACEBOOK",  name: "Facebook",  url: "https://facebook.com/" }
-  ];
-  var footSocial = document.getElementById("foot-social");
-  var mobSocial  = document.getElementById("m-social");
-
-  SOCIAL.forEach(function (n) {
-    var handle = (CONFIG[n.key] || "").replace(/^@/, "").trim();
-    var a = document.getElementById("c-" + n.id);
-    if (!handle) return;
-    var href = n.url + handle;
-
-    a.href = href;
-    a.hidden = false;
-    document.getElementById(n.id + "-h").textContent = "@" + handle;
-
-    var icon = a.querySelector("svg").outerHTML;
-    footSocial.insertAdjacentHTML("beforeend",
-      '<a href="' + href + '" target="_blank" rel="noopener" aria-label="' + n.name + '">' + icon + '</a>');
-    mobSocial.insertAdjacentHTML("beforeend",
-      '<a href="' + href + '" target="_blank" rel="noopener">' + icon + n.name + '</a>');
-  });
-
-  /* email always shows, so add it to the footer row too */
-  footSocial.insertAdjacentHTML("beforeend",
-    '<a href="mailto:' + CONFIG.EMAIL + '" aria-label="Email">' +
-    document.querySelector('.d-row .di svg').outerHTML + '</a>');
-
-  /* ---- year ---- */
-  document.getElementById("yr").textContent = new Date().getFullYear();
-
-  /* ---- sticky nav shadow ---- */
-  var nav = document.getElementById("nav");
-  var onScroll = function () { nav.classList.toggle("stuck", window.scrollY > 8); };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  /* ---- mobile menu ---- */
-  var burger = document.getElementById("burger"),
-      mobile = document.getElementById("mobile");
-
-  function setMenu(open) {
-    mobile.classList.toggle("on", open);
-    burger.classList.toggle("x", open);
-    burger.setAttribute("aria-expanded", open ? "true" : "false");
-    nav.classList.toggle("menuopen", open);
-  }
-  burger.addEventListener("click", function (e) {
-    e.stopPropagation();
-    setMenu(!mobile.classList.contains("on"));
-  });
-  mobile.addEventListener("click", function (e) {
-    if (e.target.closest("a")) setMenu(false);
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && mobile.classList.contains("on")) { setMenu(false); burger.focus(); }
-  });
-  document.addEventListener("click", function (e) {
-    if (mobile.classList.contains("on") && !e.target.closest("#mobile") && !e.target.closest("#burger")) {
-      var inside = document.activeElement && mobile.contains(document.activeElement);
-      setMenu(false);
-      if (inside) burger.focus();
-    }
-  });
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 920) setMenu(false);
-  });
-
-  /* ---- reveal on scroll ---- */
-  var items = document.querySelectorAll(".rv");
-  if (!("IntersectionObserver" in window) || reduced) {
-    items.forEach(function (el) { el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en, i) {
-        if (en.isIntersecting) {
-          var el = en.target;
-          setTimeout(function () { el.classList.add("in"); }, Math.min(i * 70, 280));
-          io.unobserve(el);
-        }
-      });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
-    items.forEach(function (el) { io.observe(el); });
-  }
-
-  /* ---- sticky mobile CTA: after the hero, hidden once the form is on screen ---- */
-  var sticky  = document.getElementById("sticky-cta"),
-      heroEl  = document.querySelector(".hero"),
-      contact = document.getElementById("contact");
-  if (sticky && heroEl && contact && "IntersectionObserver" in window) {
-    var pastHero = false, atContact = false;
-    var sync = function () { sticky.classList.toggle("on", pastHero && !atContact); };
-    new IntersectionObserver(function (e) { pastHero = !e[0].isIntersecting; sync(); },
-      { threshold: 0 }).observe(heroEl);
-    new IntersectionObserver(function (e) { atContact = e[0].isIntersecting; sync(); },
-      { threshold: 0 }).observe(contact);
-  }
-
-  /* ---- enquiry form ---- */
-  var form = document.getElementById("enquiry"),
-      btn  = document.getElementById("submit-btn"),
-      err  = document.getElementById("form-err"),
-      done = document.getElementById("done");
-
-  var showErr = function (html) { err.innerHTML = html; err.className = "form-msg err"; };
-  var resetBtn = function () {
-    btn.disabled = false;
-    btn.innerHTML = "Get my free draft <span class='ar' aria-hidden='true'>&rarr;</span>";
-  };
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    err.className = "form-msg";
-
-    var finish = function () {
-      form.style.display = "none";
-      done.classList.add("on");
-      done.focus();                                     // don't drop focus to <body>
-    };
-
-    var f = new FormData(form);
-    // Honeypot. Show the confirmation anyway so a bot gets no signal it was caught.
-    if (f.get("pt_hp")) { finish(); return; }
-
-    var val = function (k) { return (f.get(k) || "").trim(); };
-    if (!val("name") || !val("email") || !val("message")) {
-      return showErr("Please fill in your name, email and a short message.");
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val("email"))) {
-      return showErr("That email address doesn't look right — mind checking it?");
-    }
-
-    var payload = {
-      access_key : CONFIG.WEB3FORMS_KEY,
-      subject    : "Free draft request from " + (val("business") || val("name")) + " — Pabloch Tech",
-      from_name  : "Pabloch Tech website",
-      name       : val("name"),
-      email      : val("email"),
-      replyto    : val("email"),          // hitting Reply in your inbox goes straight to them
-      business   : val("business") || "—",
-      phone      : val("phone") || "—",
-      project_type  : f.get("project_type"),
-      budget        : f.get("budget"),
-      existing_site : val("existing_site") || "—",
-      preferred_contact : f.get("preferred_contact"),
-      best_time         : val("best_time") || "—",
-      message    : val("message")
-    };
-
-    btn.disabled = true;
-    btn.innerHTML = "Sending…";
-
-    if (!keyReady) {                                    // not configured yet
-      showErr("This form isn't connected yet. Email <a href='mailto:" + CONFIG.EMAIL +
-              "' style='color:var(--gold-soft)'>" + CONFIG.EMAIL + "</a> and it'll reach us straight away.");
-      resetBtn();
-      return;
-    }
-
-    fetch("https://api.web3forms.com/submit", {
-      method  : "POST",
-      headers : { "Content-Type": "application/json", "Accept": "application/json" },
-      body    : JSON.stringify(payload)
-    })
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-      if (d && d.success) { finish(); }
-      else { throw new Error(d && d.message ? d.message : "send failed"); }
-    })
-    .catch(function () {
-      resetBtn();
-      showErr("Something went wrong sending that. Please email <a href='mailto:" + CONFIG.EMAIL +
-              "' style='color:var(--gold-soft)'>" + CONFIG.EMAIL + "</a> instead — sorry about that.");
-    });
-  });
-})();
-</script>
+<nav class="footer-cols" aria-label="Footer">
+<div class="footer-col">
+<p class="mono footer-col-title">Site</p>
+<ul role="list"><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#studio">Studio</a></li><li><a href="#contact">Contact</a></li></ul>
+</div>
+<div class="footer-col">
+<p class="mono footer-col-title">Elsewhere</p>
+<ul role="list">
+<li data-social-item="telegram"><a href="https://t.me/pablochsocial" target="_blank" rel="noopener" data-social="telegram">Telegram<span class="sr-only"> (opens in a new tab)</span></a></li><li data-social-item="instagram"><a href="https://instagram.com/pablochsocial" target="_blank" rel="noopener" data-social="instagram">Instagram<span class="sr-only"> (opens in a new tab)</span></a></li><li data-social-item="facebook"><a href="https://facebook.com/pablochtech" target="_blank" rel="noopener" data-social="facebook">Facebook<span class="sr-only"> (opens in a new tab)</span></a></li>
+</ul>
+</div>
+<div class="footer-col footer-colophon">
+<p class="mono footer-col-title">Colophon</p>
+<p>Hand-written HTML, CSS and TypeScript. Set in Instrument Sans, Instrument Serif and Geist Mono. No cookies, no trackers.</p>
+<button class="grid-toggle mono" type="button" aria-pressed="false" data-grid-toggle><span class="grid-toggle-key" aria-hidden="true">G</span> Show the grid</button>
+</div>
+</nav>
+</div>
+<p class="footer-word" aria-hidden="true"><span data-rise>Pabloch</span></p>
+<div class="wrap footer-base mono">
+<p>© <span data-year>2026</span> Pabloch Tech. All rights reserved.</p>
+<p class="footer-place">Based in India · Working US &amp; UK business hours</p>
+<a class="footer-top-link" href="#top">Back to top <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="m6 11 6-6 6 6"/></svg></a>
+</div>
+</footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pablochtech.com/sitemap.xml
+Sitemap: https://projects.pablochtech.com/sitemap.xml

@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Buttons, links, cursor, grid overlay
+   ========================================================================== */
+
+.btn {
+  --mx: 0px;
+  --my: 0px;
+  --lx: 0px;
+  --ly: 0px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translate3d(var(--mx), var(--my), 0);
+  transition:
+    transform 0.55s var(--ease-out),
+    background-color 0.3s ease,
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+.btn-label {
+  display: inline-block;
+  transform: translate3d(var(--lx), var(--ly), 0);
+  transition: transform 0.55s var(--ease-out);
+}
+.btn-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.5s var(--ease-out);
+}
+.btn:hover .btn-icon svg {
+  transform: translateX(3px);
+}
+.btn--primary {
+  background: var(--accent);
+  color: #0b0b0c;
+}
+.btn--primary:hover {
+  background: var(--accent-strong);
+}
+.btn--primary:focus-visible {
+  outline-color: var(--fg);
+}
+[data-theme="paper"] .btn--primary:focus-visible {
+  outline-color: var(--pfg);
+}
+.btn--sm {
+  height: 42px;
+  padding: 0 18px;
+  font-size: 0.75rem;
+}
+.btn--md {
+  height: 52px;
+  padding: 0 24px;
+}
+.btn--lg {
+  height: 64px;
+  padding: 0 32px;
+  font-size: 0.875rem;
+}
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 6px;
+  font-weight: 500;
+  color: var(--c-fg);
+  transition: color 0.3s ease;
+}
+.arrow-link-label {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 0.6s var(--ease-out);
+}
+.arrow-link:hover .arrow-link-label {
+  background-size: 40% 1px;
+}
+.arrow-link svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  transition: transform 0.5s var(--ease-out);
+}
+.arrow-link:hover svg {
+  transform: translate(3px, 0);
+}
+.arrow-link[target="_blank"]:hover svg {
+  transform: translate(3px, -3px);
+}
+.arrow-link--lg {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Custom cursor — a trailing ring that never replaces the system pointer.
+   Only created on fine pointers without reduced motion (client/cursor.ts).
+   -------------------------------------------------------------------------- */
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  pointer-events: none;
+  transform: translate3d(var(--cx, -100px), var(--cy, -100px), 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.cursor.is-visible {
+  opacity: 1;
+}
+.cursor-ring {
+  position: absolute;
+  left: -19px;
+  top: -19px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 239, 232, 0.55);
+  mix-blend-mode: difference;
+  transition:
+    transform 0.45s var(--ease-out),
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+.cursor.is-link .cursor-ring {
+  transform: scale(0.42);
+  background: #f2efe8;
+}
+.cursor.is-label .cursor-ring {
+  transform: scale(2.35);
+  background: var(--accent);
+  border-color: transparent;
+  mix-blend-mode: normal;
+}
+.cursor-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0b0b0c;
+  white-space: nowrap;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.45s var(--ease-out);
+}
+.cursor.is-label .cursor-label {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.cursor.is-hidden {
+  opacity: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Layout grid overlay (press G) — the Pabloch Grid, made literal.
+   -------------------------------------------------------------------------- */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+html.show-grid .grid-overlay {
+  opacity: 1;
+}
+.grid-overlay .wrap {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+.grid-overlay .col {
+  background: rgba(233, 180, 76, 0.06);
+  border-inline: 1px solid rgba(233, 180, 76, 0.22);
+}
+.grid-legend {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  border: 1px solid rgba(233, 180, 76, 0.4);
+  color: var(--accent);
+  white-space: nowrap;
+}
+@media (max-width: 1023px) {
+  .grid-overlay .wrap {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .grid-overlay .col:nth-child(n + 7) {
+    display: none;
+  }
+}
+@media (max-width: 599px) {
+  .grid-overlay .wrap {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .grid-overlay .col:nth-child(n + 5) {
+    display: none;
+  }
+}
