@@ -105,7 +105,7 @@ ${o.noindex ? html`<meta name="robots" content="noindex">` : html`<link rel="can
 <link rel="preload" href="${env.base}static/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${env.base}static/${env.css}">
 <script>${trusted(HEAD_SCRIPT)}</script>
-<script src="${env.base}config.js" defer></script>
+<script src="${env.base}config.js?v=${env.configVersion}" defer></script>
 <script type="module" src="${env.base}static/${env.js}"></script>
 ${o.structured ? structuredData() : ""}
 </head>

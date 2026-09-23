@@ -6,11 +6,12 @@
  *
  * Writes:  index.html, 404.html, static/app.<hash>.{css,js}, robots.txt,
  *          sitemap.xml, favicon.svg
- * Never touches: config.js (your Web3Forms key + handles), assets/, .htaccess
+ * Never writes: config.js (your Web3Forms key + handles), assets/, .htaccess
+ * (config.js is only *read*, to fingerprint it — see configFingerprint below)
  */
 import { build } from "esbuild";
 import { createHash } from "node:crypto";
-import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -28,6 +29,22 @@ async function safeWrite(relPath: string, contents: string | Uint8Array): Promis
 }
 
 const hash = (data: string | Uint8Array, len = 10): string => createHash("sha256").update(data).digest("hex").slice(0, len);
+
+/**
+ * The page loads config.js?v=<fingerprint>. Whenever config.js changes (and the
+ * site is rebuilt), the URL changes too, so no browser can keep serving an old
+ * copy with old handles. Without a config.js (e.g. a fresh clone), the build
+ * time is used instead, which still busts every older cached copy.
+ * CONFIG_VERSION=<value> overrides it (lowercase letters/digits only).
+ */
+async function configFingerprint(): Promise<string> {
+  if (process.env.CONFIG_VERSION && /^[a-z0-9]{1,16}$/.test(process.env.CONFIG_VERSION)) return process.env.CONFIG_VERSION;
+  try {
+    return hash(await readFile(path.join(ROOT, "config.js")), 8);
+  } catch {
+    return Date.now().toString(36);
+  }
+}
 
 async function bundleAssets(dev: boolean): Promise<{ css: string; js: string }> {
   const [js, css] = await Promise.all([
@@ -80,7 +97,15 @@ export async function runBuild({ dev = false } = {}): Promise<void> {
   const assets = await bundleAssets(dev);
   const headScriptHash = `sha256-${createHash("sha256").update(HEAD_SCRIPT).digest("base64")}`;
   const now = new Date();
-  setEnv({ dev, css: assets.css, js: assets.js, headScriptHash, year: now.getFullYear(), buildDate: now.toISOString().slice(0, 10) });
+  setEnv({
+    dev,
+    css: assets.css,
+    js: assets.js,
+    headScriptHash,
+    year: now.getFullYear(),
+    buildDate: now.toISOString().slice(0, 10),
+    configVersion: await configFingerprint(),
+  });
 
   // Pages import content at render time, after env is set.
   const { renderHome } = await import("../src/pages/home.ts");

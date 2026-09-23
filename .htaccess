@@ -40,13 +40,14 @@ RedirectMatch 404 ^/(src|scripts|node_modules)(/|$)
 # ---- caching -----------------------------------------------
 # index.html must never be stale or an update won't show.
 # Images never change without changing filename, so a year is safe.
-# config.js gets a day: long enough to help, short enough that
-# swapping a Web3Forms key takes effect the same day.
+# config.js is never cached without checking (see below): it holds the
+# handles and form key, and an old copy must never outlive a change.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault                       "access plus 1 week"
   ExpiresByType text/html              "access plus 0 seconds"
   ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType text/javascript        "access plus 1 day"
   ExpiresByType text/css               "access plus 1 year"
   ExpiresByType image/jpeg             "access plus 1 year"
   ExpiresByType image/png              "access plus 1 year"
@@ -68,9 +69,13 @@ RedirectMatch 404 ^/(src|scripts|node_modules)(/|$)
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
-  # config.js is NOT hashed: keep it short so a new Web3Forms key applies same day.
+  # config.js: browsers must re-check it on every visit (a tiny request that
+  # normally comes back "304 not modified"), so a changed handle, email or
+  # form key shows up immediately. The page also loads it as config.js?v=…
+  # with a fingerprint, which bypasses any copy cached under the old rules.
   <FilesMatch "^config\.js$">
-    Header set Cache-Control "public, max-age=3600"
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header unset Expires
   </FilesMatch>
 
   # ---- security headers ------------------------------------
