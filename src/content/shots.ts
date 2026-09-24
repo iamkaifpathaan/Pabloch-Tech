@@ -2,7 +2,7 @@ import type { Shot } from "../lib/types.ts";
 
 /**
  * Screenshots of real work, pre-encoded to /assets/work/{name}-{width}.{avif,webp}.
- * Al-Abuzer: captured from the live store. Previews: rendered from the preview
+ * Renewal Tracker: captured from the desktop app. Al-Abuzer: captured from the live store. Previews: rendered from the preview
  * builds themselves — each still shows its "design preview" banner, on purpose.
  */
 const shot = (name: string, width: number, height: number, widths: number[], alt: string): Shot => ({
@@ -34,6 +34,20 @@ export const shots = {
     616,
     [800, 1200, 1550],
     "Royal Compass Travels destinations section: “Choose a direction. We’ll map the way.” beside a compass instrument reading 4.1755° N, 73.5093° E, heading 189° S for the Maldives.",
+  ),
+  rtDesktop: shot(
+    "rt-desktop",
+    2400,
+    1500,
+    [640, 960, 1440, 1920],
+    "Renewal Tracker dashboard in dark mode: tracked subscriptions and renewals sorted by due date, monthly spend in GBP, upcoming events and a Usage and Cost panel.",
+  ),
+  rtTablet: shot(
+    "rt-tablet",
+    1200,
+    750,
+    [600, 900, 1200],
+    "Renewal Tracker calendar in dark mode, with renewals and events marked on each day.",
   ),
   alabuzerDesktop: shot(
     "alabuzer-desktop",

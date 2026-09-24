@@ -4,6 +4,7 @@ import { shots } from "./shots.ts";
 /**
  * Selected work. Every project is labelled for exactly what it is:
  *   live    — a client's site, in production
+ *   product — our own product, live
  *   concept — self-initiated, designed and built on our own time
  *   preview — unpaid, unpublished spec builds for real local businesses
  */
@@ -27,10 +28,31 @@ export const featured: Project = {
   words: ["Royal", "Compass"],
 };
 
+/** Our own product: a desktop app, live. */
+export const renewalTracker: Project = {
+  id: "renewal-tracker",
+  index: "02",
+  name: "Renewal Tracker",
+  sector: "Desktop app · Windows & Mac",
+  status: "product",
+  summary: [
+    "Our own product, built end to end in house. Subscriptions, insurance, MOT, TV Licence, passports: everything that renews sits in one calm list, and a desktop reminder plus an 8am email arrive before each one is due. We designed and built the Windows and Mac app, the API behind it, the reminder emails and the ",
+    { em: "website" },
+    ".",
+  ],
+  features: ["Windows and Mac desktop app", "Daily 8am reminder email", "Ctrl+K command palette", "Automatic background updates"],
+  link: { label: "app.pablochtech.com", href: "https://app.pablochtech.com/" },
+  more: [{ label: "Download for Windows & Mac", href: "https://app.pablochtech.com/downloads.html" }],
+  desktop: shots.rtDesktop,
+  mobile: shots.rtTablet,
+  mobileKind: "tablet",
+  layout: "b",
+};
+
 /** The live store — also the subject of the case study. */
 export const alAbuzer: Project = {
   id: "al-abuzer",
-  index: "02",
+  index: "03",
   name: "Al-Abuzer Perfumes",
   sector: "Online store · Fragrance retail",
   status: "live",
@@ -51,7 +73,7 @@ export const alAbuzer: Project = {
 export const previews: readonly Project[] = [
   {
     id: "cleaning-queens",
-    index: "03",
+    index: "04",
     name: "The Cleaning Queens",
     sector: "Cleaning",
     location: "Sylvania & Toledo, Ohio",
@@ -69,7 +91,7 @@ export const previews: readonly Project[] = [
   },
   {
     id: "oak-tree",
-    index: "04",
+    index: "05",
     name: "Oak Tree Garden Maintenance",
     sector: "Landscaping",
     location: "Heanor, Derbyshire",
@@ -87,7 +109,7 @@ export const previews: readonly Project[] = [
   },
   {
     id: "dean-the-decorator",
-    index: "05",
+    index: "06",
     name: "Dean the Decorator",
     sector: "Painting & decorating",
     location: "Ilkeston, Derbyshire",
@@ -106,19 +128,20 @@ export const previews: readonly Project[] = [
 ];
 
 /** Everything after the headline, in order. */
-export const moreWork: readonly Project[] = [alAbuzer, ...previews];
+export const moreWork: readonly Project[] = [renewalTracker, alAbuzer, ...previews];
 
 export const allWork: readonly Project[] = [featured, ...moreWork];
 
 export const statusLabel: Readonly<Record<Project["status"], string>> = {
   live: "Live in production",
+  product: "Own product · Live",
   concept: "Concept · self-initiated",
   preview: "Preview · not published",
 };
 
 export const workIntro = {
   title: "Selected work",
-  lede: "A self-initiated concept, a storefront live in production, and three preview builds made on spec — our own time, no brief, no deposit — to show local businesses what their site could be.",
+  lede: "A self-initiated concept, our own desktop app, a storefront live in production, and three preview builds made on spec — our own time, no brief, no deposit — to show local businesses what their site could be.",
   previewNote:
     "Royal Compass Travels is our own concept, not a client commission. The three previews are unpaid and unpublished: none sits on the business’s own domain, and each still carries a banner saying it’s a design preview.",
 } as const;

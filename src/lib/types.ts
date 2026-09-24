@@ -20,8 +20,8 @@ export interface ExternalLink {
   readonly href: string;
 }
 
-/** live = a client's site in production · preview = unpaid spec build for a real business · concept = self-initiated */
-export type ProjectStatus = "live" | "preview" | "concept";
+/** live = a client's site in production · product = our own product, live · preview = unpaid spec build for a real business · concept = self-initiated */
+export type ProjectStatus = "live" | "product" | "preview" | "concept";
 
 export type ProjectLayout = "a" | "b" | "c";
 

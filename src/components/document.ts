@@ -56,6 +56,15 @@ function structuredData(): SafeHtml {
         publisher: { "@id": `${site.url}#studio` },
         inLanguage: site.locale,
       },
+      {
+        "@type": "SoftwareApplication",
+        name: "Renewal Tracker",
+        url: "https://app.pablochtech.com/",
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Windows 10, Windows 11, macOS 11 or later",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        publisher: { "@id": `${site.url}#studio` },
+      },
     ],
   };
   // JSON inside <script>: escape "<" so no string can ever close the tag.

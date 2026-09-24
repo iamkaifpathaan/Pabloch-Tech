@@ -12,7 +12,7 @@ function Features(features: readonly string[]): SafeHtml {
 }
 
 function StatusTag(p: Project): SafeHtml {
-  return html`<span class="tag tag--${p.status}">${p.status === "live" ? html`<span class="live-dot" aria-hidden="true"></span>` : ""}${statusLabel[p.status]}</span>`;
+  return html`<span class="tag tag--${p.status}">${p.status === "live" || p.status === "product" ? html`<span class="live-dot" aria-hidden="true"></span>` : ""}${statusLabel[p.status]}</span>`;
 }
 
 function Links(p: Project): SafeHtml {
@@ -60,7 +60,7 @@ function Feature(p: Project): SafeHtml {
 }
 
 /* ------------------------------------------------------------------ */
-/*  02–05 — each in its own editorial layout                           */
+/*  02–06 — each in its own editorial layout                           */
 /* ------------------------------------------------------------------ */
 
 function WorkItem(p: Project): SafeHtml {

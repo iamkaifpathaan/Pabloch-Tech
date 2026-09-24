@@ -182,7 +182,7 @@ export const proof: readonly ProofItem[] = [
 ];
 
 export const facts: readonly Fact[] = [
-  { value: "5", label: "Builds designed & built" },
+  { value: "6", label: "Builds designed & built" },
   { value: "100%", label: "Hand-written code" },
   { value: "24h", label: "Reply time, every time" },
   { value: "$0", label: "Until you’ve seen the draft" },

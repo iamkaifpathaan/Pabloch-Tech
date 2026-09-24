@@ -214,7 +214,8 @@ main:focus {
   border-radius: 999px;
   color: var(--c-fg-2);
 }
-.tag--live {
+.tag--live,
+.tag--product {
   color: var(--fg);
   border-color: rgba(233, 180, 76, 0.5);
 }
