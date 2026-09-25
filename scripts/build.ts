@@ -6,7 +6,8 @@
  *
  * Writes:  index.html, 404.html, static/app.<hash>.{css,js}, robots.txt,
  *          sitemap.xml, favicon.svg
- * Never writes: config.js (your Web3Forms key + handles), assets/, .htaccess
+ * Never writes: config.js (your Web3Forms key + handles), assets/, .htaccess,
+ * googleeaf0a72808bb7594.html (Google Search Console ownership proof)
  * (config.js is only *read*, to fingerprint it — see configFingerprint below)
  */
 import { build } from "esbuild";
@@ -18,8 +19,36 @@ import { fileURLToPath } from "node:url";
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const STATIC_DIR = path.join(ROOT, "static");
 
+/**
+ * Google Search Console ownership proof for projects.pablochtech.com.
+ * It must stay in the site root, with exactly this name and exactly this
+ * content (no trailing newline) — if it goes, Search Console loses the site.
+ * Never edit, rename, move or delete it.
+ */
+const GOOGLE_VERIFICATION = {
+  file: "googleeaf0a72808bb7594.html",
+  content: "google-site-verification: googleeaf0a72808bb7594.html",
+} as const;
+
 /** Files the build must never write, whatever happens. */
-const PROTECTED = new Set(["config.js", ".htaccess"]);
+const PROTECTED = new Set(["config.js", ".htaccess", GOOGLE_VERIFICATION.file]);
+
+/** Stops a production build if the Google verification file is missing or altered. */
+async function checkGoogleVerification(dev: boolean): Promise<void> {
+  const { file, content } = GOOGLE_VERIFICATION;
+  let problem = "";
+  try {
+    if ((await readFile(path.join(ROOT, file), "utf8")) !== content) problem = "has been changed";
+  } catch {
+    problem = "is missing";
+  }
+  if (!problem) return;
+  const msg =
+    `${file} ${problem}. It proves ownership of projects.pablochtech.com to Google Search Console.\n` +
+    `Restore it in the site root with exactly this content (no newline at the end):\n  ${content}`;
+  if (dev) console.warn(`⚠ ${msg}`);
+  else throw new Error(msg);
+}
 
 async function safeWrite(relPath: string, contents: string | Uint8Array): Promise<void> {
   if (PROTECTED.has(relPath)) throw new Error(`Refusing to overwrite protected file: ${relPath}`);
@@ -88,6 +117,7 @@ async function bundleAssets(dev: boolean): Promise<{ css: string; js: string }> 
 
 export async function runBuild({ dev = false } = {}): Promise<void> {
   const started = Date.now();
+  await checkGoogleVerification(dev);
   const { setEnv } = await import("../src/lib/env.ts");
   const { HEAD_SCRIPT } = await import("../src/components/document.ts");
   const { minifyHtml } = await import("../src/lib/html.ts");

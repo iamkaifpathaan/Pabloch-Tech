@@ -18,6 +18,8 @@ assets/work/                  ← screenshots, pre-encoded to AVIF + WebP at sev
 favicon.svg robots.txt sitemap.xml   ← GENERATED
 config.js                     ← YOUR settings (Web3Forms key, email, handles). Never generated.
 .htaccess                     ← hand-maintained. Never generated.
+googleeaf0a72808bb7594.html   ← Google Search Console ownership proof. DO NOT edit, rename,
+                                move or delete (see "Protected files" below).
 og-studio.jpg apple-touch-icon.png
 
 src/
@@ -106,6 +108,28 @@ changes.
 
 The repo root **is** the site, so Hostinger's Git deployment keeps working with no build step on
 the server: build locally, commit the generated files, push. `node_modules/` is git-ignored.
+
+## Protected files
+
+These are never generated, and nothing — the build, a redesign, a cleanup, an AI assistant —
+should change them:
+
+| File | Why |
+| --- | --- |
+| `config.js` | Your Web3Forms key, email and social handles. |
+| `.htaccess` | Server rules, hand-maintained. |
+| `googleeaf0a72808bb7594.html` | Proves ownership of projects.pablochtech.com to Google Search Console. |
+
+`googleeaf0a72808bb7594.html` must stay in the repo root (= the site root), with exactly that name
+and exactly this content, with no newline at the end:
+
+```
+google-site-verification: googleeaf0a72808bb7594.html
+```
+
+It must stay reachable at https://projects.pablochtech.com/googleeaf0a72808bb7594.html. If it
+disappears, Google un-verifies the site. The build refuses to overwrite it, `npm run build` stops
+with an error if it is missing or altered, and `.gitattributes` stops Git from changing its bytes.
 
 ---
 

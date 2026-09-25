@@ -88,6 +88,10 @@ RedirectMatch 404 ^/(src|scripts|node_modules)(/|$)
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
 </IfModule>
 
+# ---- Google Search Console ownership proof -------------------
+# /googleeaf0a72808bb7594.html must stay publicly reachable, unchanged, at the
+# site root. Never add a rule that blocks, redirects or rewrites it.
+
 # ---- never serve these -------------------------------------
 <FilesMatch "^\.(git|env|gitignore|htaccess)">
   Require all denied
