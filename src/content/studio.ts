@@ -1,5 +1,6 @@
 import { PENDING, type Fact, type Principle, type ProofItem, type Rich } from "../lib/types.ts";
 import { alAbuzer, featured, previews } from "./work.ts";
+import { site } from "./site.ts";
 
 /* ------------------------------------------------------------------ */
 /*  Intro statement                                                    */
@@ -173,7 +174,7 @@ export const proof: readonly ProofItem[] = [
   },
   {
     claim: "Pay in two halves — after you’ve seen it.",
-    detail: "50% once you approve the draft, 50% on launch day. Bank transfer, Wise, Payoneer or PayPal, invoiced in USD, GBP, AED or INR.",
+    detail: `50% once you approve the draft, 50% on launch day. ${site.payments.summary} Invoiced in ${site.payments.currencyLabel}.`,
   },
   {
     claim: "Two full revision rounds, included.",

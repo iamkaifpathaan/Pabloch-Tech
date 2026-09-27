@@ -10,9 +10,13 @@ export const site = {
   name: "Pabloch Tech",
   shortName: "Pabloch",
   url: "https://projects.pablochtech.com/",
-  title: "Pabloch Tech — Independent digital product & experience studio",
+  /** Home <title>: brand + what people actually search for, under ~60 characters. */
+  title: "Pabloch Tech — Custom Websites & Online Stores, Hand-Built",
   description:
-    "Pabloch Tech designs and hand-builds websites, online stores and the product features behind them. Every line written by hand — and your first working draft is built before you pay.",
+    "Hand-built custom websites, online stores and landing pages for US & UK businesses. Fixed prices from $400 — and a free working draft before you pay.",
+  /** One-sentence definition, used wherever the studio is described in a single line (schema, llms.txt, FAQ). */
+  oneLine:
+    "Pabloch Tech is an independent digital product studio that designs and hand-builds high-performance websites, e-commerce stores and custom digital tools for businesses, with a “working draft before you pay” approach.",
   ogImage: "og-studio.jpg",
   ogImageAlt: "Pabloch Tech — digital products, crafted line by line.",
   themeColor: "#0B0B0C",
@@ -34,6 +38,18 @@ export const site = {
     replyTime: "Within 24 hours",
   },
 
+  /**
+   * How clients pay. One source of truth for the Proof section, FAQ, Terms
+   * and llms.txt. Every invoice is paid through PayPal.
+   */
+  payments: {
+    method: "PayPal",
+    summary:
+      "Invoices are paid securely through PayPal — by credit card, debit card or PayPal balance, with no PayPal account needed to pay by card.",
+    currencies: ["USD", "GBP"],
+    currencyLabel: "US dollars or pounds sterling",
+  },
+
   /** Markets the studio sells into. Used for structured data only. */
   areaServed: ["United States", "United Kingdom", "United Arab Emirates", "India"],
 } as const;
@@ -46,6 +62,7 @@ export const socialLinks: ReadonlyArray<{ key: SocialKey; label: string; base: s
   { key: "facebook", label: "Facebook", base: "https://facebook.com/" },
 ];
 
+/** In-page sections, linked as #id (or /#id from other pages). */
 export const nav = [
   { id: "work", label: "Work" },
   { id: "services", label: "Services" },
@@ -53,3 +70,18 @@ export const nav = [
   { id: "studio", label: "Studio" },
   { id: "contact", label: "Contact" },
 ] as const;
+
+/** Standalone pages. `path` is relative to the site root, with a trailing slash. */
+export const pages = {
+  blog: { path: "blog/", label: "Journal" },
+  faq: { path: "#faq", label: "FAQ" },
+} as const;
+
+export const legalPages = [
+  { slug: "privacy", label: "Privacy policy" },
+  { slug: "terms", label: "Terms of service" },
+  { slug: "cookies", label: "Cookie policy" },
+  { slug: "disclaimer", label: "Portfolio disclaimer" },
+] as const;
+
+export type LegalSlug = (typeof legalPages)[number]["slug"];

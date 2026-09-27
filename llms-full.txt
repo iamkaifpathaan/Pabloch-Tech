@@ -1,0 +1,675 @@
+# Pabloch Tech — full text
+
+> Pabloch Tech is an independent digital product studio that designs and hand-builds high-performance websites, e-commerce stores and custom digital tools for businesses, with a “working draft before you pay” approach.
+
+Source: https://projects.pablochtech.com/ · Generated 2026-09-27
+
+## Key facts
+
+- Based in India; works US & UK business hours; replies within 24 hours.
+- Serves businesses mainly in the United States and United Kingdom.
+- Process: Discover → Define → Design → Build → Refine. A working first draft is built free, before any payment.
+- Pricing: fixed price in writing; 50% deposit after the draft is approved, 50% on launch day; two revision rounds included.
+- Payment: Invoices are paid securely through PayPal — by credit card, debit card or PayPal balance, with no PayPal account needed to pay by card. Invoices in US dollars or pounds sterling.
+- Ownership: the client owns the site, the code and the domain (registered in the client's name from day one).
+- Technology: hand-written HTML, CSS and JavaScript — no templates, page builders or WordPress; a real back end when a store needs one.
+- Contact: hello@pablochtech.com · https://projects.pablochtech.com/#contact
+
+## Services
+
+### Websites
+
+The site people find after they’ve heard your name — built to turn a search into a phone call, not to win a design award.
+
+Price: From $400 · growth builds from $700
+
+Includes:
+- Custom design — no templates
+- Services, areas and hours laid out clearly
+- Your reviews pulled into one place
+- Enquiry forms landing straight in your inbox
+- Fast on a phone, on a bad connection
+- SEO foundations and analytics
+
+### Online stores
+
+A storefront you own outright, with cart, checkout and order tracking built in — not rented from a platform taking a cut of every sale.
+
+Price: From $1,200
+
+Includes:
+- Product catalogue and collections
+- Cart, checkout and payment gateway
+- Order management and confirmations
+- Customer accounts and order tracking
+- Search, filters and bundles
+- Shipping and tax configuration
+
+### Landing pages
+
+One page with one job: turn an ad click, a flyer QR code or a Google listing into a name and a number you can call back.
+
+Price: Quoted per project
+
+Includes:
+- Written to convert, not to look busy
+- Quote calculator or booking flow
+- Spam-filtered forms, no submission limits
+- Live in days, not months
+
+### Product features
+
+The tools inside the site — built from scratch around how the business actually works, not bolted on from a plugin directory.
+
+Price: Quoted per feature
+
+Includes:
+- Instant estimators and price calculators
+- Booking and enquiry flows
+- Photo-upload quote forms
+- Customer portals and dashboards
+
+### Website care
+
+The part most people skip. A website nobody maintains is out of date within a year and invisible within two.
+
+Price: Optional · quoted per site
+
+Includes:
+- Hosting, SSL and domain kept renewed
+- Forms monitored so no enquiry goes missing
+- New reviews, prices and photos added as they come
+- Small edits included — just send an email
+
+## Process
+
+Five steps, in this order. The free draft sits in the middle — after we understand the job, before you’ve paid anything.
+
+1. **Discover** (Day one) — You tell us about the business — what you do, who you sell to, what the site has to achieve. A few lines on the form is enough. Rather talk? Twenty minutes on Zoom or Google Meet. Outcome: A real reply within 24 hours — not an auto-response.
+2. **Define** (Within 24 hours) — We come back with what we’d build, what it would cost and how long it would take, in plain English. If what you need isn’t something we should be building, we’ll say so. Outcome: A clear proposal and an honest starting price.
+3. **Design** (Usually a few days) — We build a working first draft — real layout, your services, your words — and send you a link. Open it on your phone, click around, decide. If it isn’t right, you owe nothing. Outcome: A working draft, before you pay a thing.
+4. **Build** (1–2 weeks for a site · 3–5 for a store) — Approve the draft and you get a one-page scope with a fixed price and timeline. Then a 50% deposit, your content, and the production build: forms, integrations, payments, SEO, testing, your domain. Outcome: A fixed price in writing — the number you agree is the number you pay.
+5. **Refine** (Launch day, and after) — Two full revision rounds, then launch and the final 50%. After that, optional Website Care keeps it current — or we hand over the files and you take it from there. Outcome: A live product you own outright — code, domain and all.
+
+## Selected work
+
+- **Royal Compass Travels** — Luxury travel planning (Concept · self-initiated). A concept site for a luxury travel planner, built around one line — *every journey begins with a direction*. A compass reads out heading and coordinates for every destination, and a six-step trip planner takes the place of a contact form. Link: https://royalcompasstravels.netlify.app
+- **Renewal Tracker** — Desktop app · Windows & Mac (Own product · Live). Our own product, built end to end in house. Subscriptions, insurance, MOT, TV Licence, passports: everything that renews sits in one calm list, and a desktop reminder plus an 8am email arrive before each one is due. We designed and built the Windows and Mac app, the API behind it, the reminder emails and the *website*. Link: https://app.pablochtech.com/
+- **Al-Abuzer Perfumes** — Online store · Fragrance retail (Live in production). A complete storefront for a perfume house — eight collections, cart and checkout, customer accounts and order tracking — opening on a *full-bleed product video*, because a fragrance brand sells on atmosphere before it sells on price. Link: https://alabuzerperfumes.com
+- **The Cleaning Queens** — Cleaning, Sylvania & Toledo, Ohio (Preview · not published). Nineteen years, six staff, 5.0 stars across 69 reviews — and a Google listing whose Website button pointed at a parked domain. An *instant estimator* answers “how much for a 3-bed deep clean?” on screen, so every enquiry arrives with a price already attached. Link: https://cleaningqueens-preview.netlify.app
+- **Oak Tree Garden Maintenance** — Landscaping, Heanor, Derbyshire (Preview · not published). Thirty-two reviews, every one five stars, on the county council’s Trusted Trader register — and a website link pointing at a domain with no DNS record at all. The quote form *takes photos*, so an enquiry arrives with pictures of the actual garden. Link: https://oaktree-preview.netlify.app
+- **Dean the Decorator** — Painting & decorating, Ilkeston, Derbyshire (Preview · not published). Fifty five-star reviews across thirteen years — and one line among nine near-identical decorators on the council’s directory. Nothing was broken; the problem was *being indistinguishable*. So the page is built around the four words his reviewers keep repeating. Link: https://dean-preview.netlify.app
+
+## Frequently asked questions
+
+### What is Pabloch Tech?
+
+Pabloch Tech is an independent digital product studio that designs and hand-builds high-performance websites, e-commerce stores and custom digital tools for businesses, with a “working draft before you pay” approach. The studio is based in India and works US and UK business hours.
+
+### How much does a website cost?
+
+Websites start from **$400**, with growth builds from $700. Online stores start from **$1,200**. Landing pages and custom features such as estimators or booking flows are quoted per project. Whatever the job, you get a fixed price in writing before the paid build starts — the number you agree is the number you pay.
+
+### Do I have to pay before I see anything?
+
+No. We build a working first draft of your site for free — real layout, your services, your words. If it isn’t right, you owe nothing. You pay a 50% deposit only after you approve the draft, and the remaining 50% on launch day.
+
+### How do I pay?
+
+Invoices are paid securely through PayPal — by credit card, debit card or PayPal balance, with no PayPal account needed to pay by card. Your card details go to PayPal and are never shared with us, and every invoice is in US dollars or pounds sterling. You pay in two halves: 50% when you approve the draft, 50% on launch day.
+
+### How long does it take to build a website?
+
+The free first draft usually takes a few days. After you approve it, the production build takes 1–2 weeks for a website and 3–5 weeks for an online store, depending on how quickly your content arrives.
+
+### Who owns the website when it’s finished?
+
+You do — the site, the code and the domain. The domain is registered in your name from day one, and if you ever want to move on, we hand over all the files.
+
+### Do you use WordPress, Wix, Squarespace or templates?
+
+No. Every site is designed from scratch and written by hand in HTML, CSS and JavaScript, with a real back end when a store needs one. There are no page builders or plugin stacks to slow it down or break during an update.
+
+### Do you work with businesses in the US and UK?
+
+Yes — most of our clients are in the United States and the United Kingdom. The studio is based in India and works US and UK business hours, replies within 24 hours, and messages sent overnight are answered before you’re back at your desk.
+
+### How many revisions are included?
+
+Two full revision rounds are included in every project. Small tweaks after that aren’t invoiced; only a redesign in a completely new direction is quoted as a new job.
+
+### Can you build an online store with checkout and order tracking?
+
+Yes. Stores include a product catalogue, cart, checkout with a payment gateway, customer accounts, order tracking and search — on a storefront you own rather than rent. [Al-Abuzer Perfumes](https://alabuzerperfumes.com) is a live example you can browse today.
+
+### Will my website show up on Google?
+
+Every build includes SEO foundations — clean semantic markup, fast load times on phones, page titles and descriptions, structured data and analytics — so search engines can understand and rank the site. Rankings depend on your market and content, so we don’t promise positions, but we build every site to be found.
+
+### Do you look after the website after launch?
+
+If you’d like us to. Optional Website Care keeps hosting, SSL and the domain renewed, monitors your forms so no enquiry goes missing, and covers small edits — just send an email. It’s quoted per site, and you’re free to take the files and manage it yourself instead.
+
+### Who will I actually be talking to?
+
+The person designing and writing your product. There’s no account manager or ticket system — you email or message one person by email, Telegram, Instagram or Facebook, or talk on Zoom or Google Meet, and that person makes the change.
+
+## Journal: How much does a small business website cost in 2026?
+
+URL: https://projects.pablochtech.com/blog/how-much-does-a-small-business-website-cost/ · Published 2026-09-27
+
+Key takeaways:
+- A hand-built small business website from an independent studio typically starts in the hundreds of dollars, not thousands. At Pabloch Tech, websites start from $400 and online stores from $1,200.
+- The biggest price drivers are the number of pages, custom features (estimators, booking, checkout) and who writes the content.
+- Budget for running costs too: domain, hosting and maintenance, whichever route you choose.
+- Always get a fixed price in writing before paying a deposit.
+
+### The three ways to get a website — and what each really costs
+
+Almost every small business ends up on one of three routes. They differ less in the price on the sales page than in what you pay over the next few years, and in who owns the result.
+
+#### 1. Do it yourself on a website builder
+
+Builders like Wix and Squarespace charge a monthly subscription, and the cheapest plans look very affordable. What you’re really paying with is time: learning the tool, writing the copy, choosing photos and fixing layouts on mobile. You also rent the site — stop paying and it goes offline, and moving it elsewhere usually means starting again.
+
+#### 2. Hire a freelancer or small independent studio
+
+This is where most small businesses get the best value. You get a custom site designed around your business, usually for a one-off fee, and you talk directly to the person building it. Quality varies a lot, which is why seeing real, working examples matters more than a polished pitch.
+
+#### 3. Hire an agency
+
+Agencies bring bigger teams — strategists, designers, developers, account managers — and price accordingly. That makes sense for large, complex projects. For a local service business or a small store, you’re often paying for layers of people you’ll never speak to.
+
+### What actually drives the price of a website?
+
+- **Number of pages.** A focused five-page site costs far less than a thirty-page one. Most service businesses need fewer pages than they think.
+- **Custom features.** An instant price estimator, a booking flow or a photo-upload quote form adds real value — and real build time.
+- **E-commerce.** A store needs a catalogue, cart, checkout, payment gateway, order emails and often customer accounts. That’s why stores cost more than brochure sites.
+- **Content.** If the words and photos are ready, the build is faster. If the designer has to write or source them, it takes longer.
+- **Integrations.** Connecting to booking systems, CRMs or payment providers adds scope.
+
+### What Pabloch Tech charges
+
+- **Websites:** from $400, with growth builds from $700.
+- **Online stores:** from $1,200.
+- **Landing pages and custom features:** quoted per project.
+- **Website Care:** optional, quoted per site.
+
+Every project gets a one-page scope with a fixed price before the paid build starts, and you see a free working draft before you pay anything. [See the full list of services](https://projects.pablochtech.com/#services).
+
+### The running costs people forget
+
+- **Domain name** — renewed every year. Make sure it’s registered in your name, not your designer’s.
+- **Hosting** — where the site lives. Hand-built sites are light and usually cheap to host.
+- **SSL certificate** — the padlock in the browser. Often included with hosting.
+- **Maintenance** — keeping content current, forms working and renewals paid. You can do it yourself or pay someone to.
+- **Transaction fees** — if you sell online, your payment provider takes a small cut of each sale.
+
+### How to avoid overpaying
+
+1. Ask for a fixed price in writing, with what’s included, before any deposit.
+2. Ask to see live sites the designer has built — and open them on your phone.
+3. Confirm you’ll own the domain, the site and the code at the end.
+4. Ask how many revision rounds are included, and what counts as “new work”.
+5. Check what happens after launch: who fixes things, and at what cost?
+
+> Want a number for your project? [Send us a few lines](https://projects.pablochtech.com/#contact) and we’ll reply within 24 hours with what we’d build, what it would cost and how long it would take.
+
+**How much does a basic small business website cost?** From an independent studio, a basic custom website typically costs a few hundred dollars. Pabloch Tech’s websites start from $400, with a fixed price agreed in writing before the paid build starts.
+
+**Is it cheaper to build a website myself?** A website builder has a lower upfront cost, but you pay a monthly subscription for as long as the site is online, you rent rather than own it, and you spend your own time building it.
+
+**What ongoing costs does a website have?** Expect a yearly domain renewal, hosting, an SSL certificate (often included with hosting), optional maintenance, and payment-processing fees if you sell online.
+
+## Journal: Custom website vs Wix, Squarespace or WordPress: which is right for your business?
+
+URL: https://projects.pablochtech.com/blog/custom-website-vs-wix-squarespace-wordpress/ · Published 2026-09-27
+
+Key takeaways:
+- Website builders (Wix, Squarespace) are best when you want to build and edit everything yourself and don’t mind renting the platform.
+- WordPress is flexible but depends on themes and plugins that need regular updates.
+- A hand-built custom website costs more up front than a builder, but you own it outright, it loads fast, and it has no plugins to break.
+- If your site needs a custom feature — an estimator, a booking flow, a quote form — custom usually wins.
+
+### When a website builder is the right call
+
+Wix and Squarespace make it possible to get online in an afternoon with no code. If you enjoy designing, want to change things daily yourself, and your needs are simple, a builder is a sensible choice. You pay a monthly fee, and the platform handles hosting and security.
+
+The trade-offs: you rent rather than own, your site can only do what the platform supports, and moving away later usually means rebuilding from scratch. Templates also mean your site can look a lot like your competitors’.
+
+### When WordPress makes sense
+
+WordPress powers a large share of the web and can do almost anything with the right theme and plugins. That flexibility is also its weak point for small businesses: each plugin is written by a different developer, needs updating, and can conflict with the others. Unmaintained WordPress sites are a common target for attacks, so someone has to keep on top of updates.
+
+### What “hand-built” actually means
+
+A hand-built website is written directly in HTML, CSS and JavaScript for your business, with a back end added only when it’s needed — for example a store’s checkout. There’s no builder platform underneath and no plugin stack. In practice that means:
+
+- **Speed.** Pages ship only the code they need, so they load quickly — especially on phones and slow connections, which matters to visitors and to search engines.
+- **Ownership.** You own the code and can host it anywhere. No subscription keeps it alive.
+- **Fewer moving parts.** Nothing updates itself overnight and breaks the layout.
+- **Exactly what you need.** Features like an instant cleaning-price estimator or a photo-upload quote form are built around how your business works.
+
+### Side by side
+
+- **Upfront cost:** builder lowest · WordPress varies · custom a one-off fee (Pabloch Tech from $400).
+- **Ongoing cost:** builder monthly subscription · WordPress hosting plus maintenance · custom hosting plus optional care.
+- **Ownership:** builder rented · WordPress owned · custom owned.
+- **Custom features:** builder limited to its apps · WordPress via plugins · custom built to fit.
+- **Maintenance:** builder handled by the platform · WordPress frequent updates · custom minimal.
+- **Who edits it:** builder you · WordPress you or a developer · custom your developer, or you for simple changes.
+
+### The honest recommendation
+
+If you want to do it all yourself and your needs are simple, start with a builder. If you want a site that’s fast, looks like no one else’s, does something specific for your customers, and belongs to you — go custom. The easiest way to decide is to see what custom would look like for your business before paying for it.
+
+> That’s exactly how we work: [tell us about your business](https://projects.pablochtech.com/#contact) and we’ll build a working first draft for free. If it isn’t better than what you’d build yourself, you owe nothing.
+
+**Is a custom website better than Wix or Squarespace?** It depends on your needs. Builders suit people who want to edit everything themselves and are happy renting the platform. A custom website suits businesses that want speed, full ownership and features built around how they work.
+
+**Do custom websites rank better on Google?** No platform guarantees rankings, but hand-built sites are typically fast and lean, with clean markup and structured data, which gives search engines a solid technical foundation.
+
+## Journal: Shopify vs a custom online store: fees, ownership and control
+
+URL: https://projects.pablochtech.com/blog/shopify-vs-custom-online-store/ · Published 2026-09-27
+
+Key takeaways:
+- Hosted platforms like Shopify are quick to launch but come with a monthly plan, paid apps and, depending on how you take payments, platform fees.
+- A custom store costs more up front (Pabloch Tech stores start from $1,200) but you own it, with no platform subscription.
+- Custom makes the most sense when you want a distinctive brand experience, specific features, or to stop paying for a stack of apps.
+- Either way, you still pay your payment provider’s processing fees on each sale.
+
+### What you pay for on a hosted platform
+
+Hosted e-commerce platforms charge a monthly subscription, and most stores add paid apps for things like reviews, bundles, wishlists or advanced search. Depending on the payment setup, there may also be a platform fee on top of standard card-processing fees. Individually these look small; together they’re a permanent monthly cost that grows with your store. Check the platform’s current pricing page for exact numbers — they change regularly.
+
+### What a custom store includes
+
+A custom store is built around your catalogue and your customers, on code you own. A typical Pabloch Tech store includes:
+
+- A product catalogue with collections
+- Cart, checkout and a payment gateway
+- Order management and confirmation emails
+- Customer accounts and order tracking
+- Search, filters and bundles
+- Shipping and tax configuration
+
+You can see all of this working on [Al-Abuzer Perfumes](https://alabuzerperfumes.com), a live store we designed and built: eight collections, a full-bleed video homepage, customer accounts and an order-tracking page that answers “where’s my order?” before anyone has to email. [Read the case study](https://projects.pablochtech.com/#case-study).
+
+### Ownership: the part that matters later
+
+On a hosted platform, your store lives inside someone else’s system. You can export products and orders, but the design, apps and checkout don’t come with you. With a custom store, the code, the domain and the data are yours — you can change hosts, developers or direction without starting again.
+
+### When a hosted platform is the better choice
+
+- You want to launch this week and manage everything yourself.
+- You’re testing an idea and may not continue.
+- You rely on a specific integration that only exists as a platform app.
+
+### When a custom store is the better choice
+
+- Your brand sells on atmosphere and you don’t want to look like every template.
+- You’re paying for several apps to get features that could simply be built in.
+- You want a feature the platform can’t do well — bundles, custom catalogues, tailored order tracking.
+- You want to own the store outright.
+
+> Thinking about a store? [Tell us what you sell](https://projects.pablochtech.com/#contact) — you’ll get a fixed price and a free working draft before you pay anything.
+
+**Is a custom online store cheaper than Shopify?** A custom store usually costs more up front but has no platform subscription or app fees, so over several years it can cost less. Payment-processing fees apply either way.
+
+**How long does it take to build a custom online store?** At Pabloch Tech, the production build for an online store takes 3–5 weeks after you approve the free first draft.
+
+## Journal: The small business website checklist: 12 things that turn searches into calls
+
+URL: https://projects.pablochtech.com/blog/small-business-website-checklist/ · Published 2026-09-27
+
+Key takeaways:
+- Say what you do, where, and how to contact you in the first screen.
+- Show prices or an instant estimate — enquiries that arrive with a price attached convert better.
+- Put your reviews on your own site, and make it fast on a phone.
+- Cover the SEO basics: a clear title and description per page, your areas served, and structured data.
+
+### The first screen
+
+1. **What you do and where.** “Deep cleaning in Sylvania & Toledo” beats “Welcome to our website”.
+2. **One obvious next step.** A call button on mobile, and a short enquiry form or quote tool.
+3. **Proof, immediately.** Your star rating and number of reviews, visible without scrolling.
+
+### The content that answers questions
+
+1. **Services, clearly listed.** Plain names customers would search for, each with a sentence on what’s included.
+2. **Prices — or a way to get one instantly.** An estimator that answers “how much for a 3-bed deep clean?” on screen means every enquiry arrives with a price already attached.
+3. **Areas served and hours.** Towns, postcodes or ZIP codes and when you work. This is also what local search looks for.
+4. **Your reviews, in one place.** Pull them together from the platforms customers use.
+5. **Real people and real work.** The team by name and recent jobs build trust faster than stock photos.
+
+### The technical basics
+
+1. **Fast on a phone, on a bad connection.** Most local searches happen on mobile. Heavy pages lose visitors before they load.
+2. **A page title and description for every page.** They’re what shows in Google results — write them for people, with your service and location.
+3. **Structured data.** Machine-readable details about your business (name, services, area, reviews) help search engines and AI assistants understand and quote you.
+4. **Forms that never lose an enquiry.** Spam-filtered, delivered straight to your inbox, and tested regularly.
+
+### A common mistake worth checking today
+
+Open your Google Business Profile and tap the Website button. It’s surprisingly common for it to point at a parked domain, an expired site or an address with no DNS record at all — every tap on it is a lost customer. It takes two minutes to check.
+
+> Want a site that ticks every box? [See how we work](https://projects.pablochtech.com/#process) — or [send us a few lines](https://projects.pablochtech.com/#contact) and get a free working draft first.
+
+**What should a small business website include?** At minimum: what you do and where, a clear call to action, services and prices (or an estimator), areas served and hours, reviews, contact details, fast mobile performance and a title and description on every page.
+
+**Should I show prices on my website?** Usually yes. Showing prices, or offering an instant estimate, filters out poor-fit enquiries and means the ones you get arrive ready to book.
+
+## Journal: Why you should see a working draft before paying a web designer
+
+URL: https://projects.pablochtech.com/blog/see-a-working-draft-before-you-pay/ · Published 2026-09-27
+
+Key takeaways:
+- Paying a deposit before seeing any work puts all the risk on you.
+- A clickable first draft — real layout, your services, your words — shows whether a designer understands your business.
+- At Pabloch Tech the first draft is free; you pay 50% only after approving it and 50% on launch day.
+
+### The problem with the usual way
+
+The typical process runs: discovery call, proposal, deposit, then — weeks later — the first design. By the time you see whether the designer “gets” your business, you’ve already paid. If it’s wrong, you’re negotiating revisions instead of choosing someone else.
+
+### What a working draft is (and isn’t)
+
+A working draft isn’t a mood board or a static mock-up. It’s a real web page you open on your phone: your services, your words, the actual layout, clickable. It won’t have every page or feature yet — that’s what the paid build is for — but it answers the only question that matters at this stage: is this the right direction?
+
+### How our five-stage process works
+
+1. **Discover.** You tell us about the business. A few lines is enough, or twenty minutes on Zoom or Google Meet.
+2. **Define.** Within 24 hours we reply with what we’d build, what it would cost and how long it would take.
+3. **Design.** We build a working first draft and send you a link — usually within a few days. If it isn’t right, you owe nothing.
+4. **Build.** Approve the draft and you get a one-page scope with a fixed price. Then a 50% deposit and the production build.
+5. **Refine.** Two full revision rounds, launch, and the final 50%. The site, code and domain are yours.
+
+### Questions to ask any web designer
+
+- Can I see something built for my business before I pay?
+- Is the price fixed, and is it in writing?
+- Will the domain be registered in my name?
+- Who will I actually talk to while it’s being built?
+- What happens — and what does it cost — after launch?
+
+> See it before you pay for it: [start with a free draft](https://projects.pablochtech.com/#contact).
+
+**Do web designers build a draft before payment?** Most ask for a deposit first. Pabloch Tech builds a working first draft for free, and you pay a 50% deposit only after approving it.
+
+**What is the Discover, Define, Design, Build, Refine process?** It is Pabloch Tech’s five-stage workflow: understand the business, propose the approach and price, build a free working draft, do the paid production build, then refine with two revision rounds and launch.
+
+## Privacy policy
+
+URL: https://projects.pablochtech.com/privacy/ · Last updated 2026-09-27
+
+We collect as little as possible, use it only to reply to you and deliver your project, and never sell it. This page explains exactly what that means.
+
+### The short version
+
+- This website sets no cookies and runs no analytics, advertising pixels or third-party trackers.
+- If you send us a project brief, we use what you write to reply, prepare a proposal and — if you go ahead — deliver the project.
+- We never sell or rent personal data, and we never share it for advertising.
+- You can ask to see, correct or delete your data at any time by emailing [hello@pablochtech.com](mailto:hello@pablochtech.com).
+
+### Who we are
+
+Pabloch Tech (“Pabloch”, “we”, “us”) is an independent digital product studio based in India. We are the data controller for the personal data described in this policy. You can reach us about anything privacy-related at [hello@pablochtech.com](mailto:hello@pablochtech.com).
+
+This policy covers this website (projects.pablochtech.com), enquiries you send us, and the personal data we handle while delivering a project for you. Our Renewal Tracker app has its own privacy information, provided with the app.
+
+### What we collect
+
+#### When you send a project brief
+
+The contact form asks for your name and email address and a message, and optionally your company, project type, budget range and how you’d like to talk. We only receive what you type. The form also contains a hidden field that helps filter out spam bots.
+
+#### When you email or message us
+
+If you contact us by email, Telegram, Instagram or Facebook, or join a Zoom or Google Meet call, we receive whatever you share there — typically your name, contact details and what you tell us about your business.
+
+#### When you become a client
+
+To deliver and invoice a project we keep your contact and billing details, the content you supply for your site (text, images, logos), project correspondence, and any account access you choose to give us — for example to your domain registrar or hosting — which we use only for your project.
+
+#### When you simply visit
+
+Like every web server, our host automatically records basic technical data for each request — IP address, browser type, the page requested and the time — in server logs used for security and keeping the site running. We don’t use these logs to profile visitors, and we don’t combine them with anything else.
+
+> We do not collect special-category data (such as health or religious information), and we ask you not to send it to us.
+
+### How we use it, and why we’re allowed to
+
+- **To reply to your enquiry and prepare a proposal or free draft** — because you asked us to (steps before entering into a contract).
+- **To deliver, support and invoice your project** — to perform our contract with you.
+- **To keep business, tax and accounting records** — because the law requires it.
+- **To keep the website and our systems secure** — our legitimate interest in preventing abuse and spam.
+
+We don’t use your data for automated decision-making or profiling, and we don’t send marketing emails. If you ever receive an email from us, it’s a reply to you or about your project.
+
+### Who we share it with
+
+We use a small number of trusted service providers to run the studio. They process data on our behalf, only for the purposes below:
+
+- **Web3Forms** — delivers contact-form submissions to our inbox.
+- **Our email providers** — store and deliver our email.
+- **Hostinger** — hosts this website and its server logs.
+- **PayPal** — processes invoice payments. Your card or bank details go to PayPal and are never shared with us.
+- **Zoom, Google Meet, Telegram, Instagram and Facebook** — only if you choose to talk with us there, under those services’ own privacy policies.
+
+We may also disclose data if the law requires it, or to protect our rights in a dispute. We never sell personal data, and we never “share” it for cross-context behavioural advertising as defined in US state privacy laws.
+
+### International transfers
+
+We are based in India, and our service providers may process data in other countries, including the United States and the European Union. Where UK or EU law applies, we rely on appropriate safeguards such as the standard contractual clauses our providers offer, so your data keeps an equivalent level of protection.
+
+### How long we keep it
+
+- Enquiries that don’t become projects: up to 24 months after our last contact, then deleted.
+- Client project records and correspondence: for as long as we work together and as long as needed afterwards to support the site you own.
+- Invoices and accounting records: for the period tax law requires.
+- Server logs: kept by our host for a limited period for security, then deleted automatically.
+
+Access you gave us to your accounts is yours to revoke at any time, and we stop using it as soon as a project or care plan ends.
+
+### Your rights
+
+Wherever you live, you can ask us to:
+
+- tell you what personal data we hold about you and give you a copy;
+- correct anything that’s inaccurate or incomplete;
+- delete your data, unless we must keep it by law;
+- restrict or object to how we use it, or move it to another provider;
+- withdraw any consent you’ve given, without affecting what happened before.
+
+Email [hello@pablochtech.com](mailto:hello@pablochtech.com) to make a request. We’ll reply within 30 days, and we may ask you to confirm your identity first. It’s free.
+
+#### UK and EU residents
+
+You have the rights above under the UK GDPR and EU GDPR, and you can complain to a data protection authority — in the UK, the [Information Commissioner’s Office](https://ico.org.uk/make-a-complaint/). We’d appreciate the chance to put things right first.
+
+#### US residents
+
+Depending on your state (for example California, Colorado, Connecticut, Virginia or Texas), you may have the right to know, access, correct and delete personal information, and to opt out of its sale or use for targeted advertising. We don’t sell personal information or use it for targeted advertising, and we won’t discriminate against you for exercising any right. We honour Global Privacy Control signals, though there’s nothing on this site for them to switch off.
+
+#### Residents of India
+
+Under the Digital Personal Data Protection Act, 2023 you can access, correct and erase your data, nominate someone to act for you, and raise a grievance. Send grievances to [hello@pablochtech.com](mailto:hello@pablochtech.com) — we aim to resolve them within 30 days — and, if you’re not satisfied, you may approach the Data Protection Board of India.
+
+### Websites we build for clients
+
+When we build or maintain a website for you, you decide what data your site collects from your own customers, so you are the controller of that data and we act as your processor, following your instructions. We’re happy to sign a data processing agreement on request, and we’ll help you publish an accurate privacy notice for your site.
+
+### Children
+
+Our services are for businesses. This website isn’t aimed at children, and we don’t knowingly collect data from anyone under 18. If you believe a child has sent us personal data, tell us and we’ll delete it.
+
+### Security
+
+The site is served over HTTPS with a strict Content Security Policy and loads no third-party scripts. We keep what we collect to a minimum, limit who can access it, and use strong authentication on the accounts that hold it. No system is perfectly secure, but if a breach ever affects your data, we’ll tell you and the relevant authorities as the law requires.
+
+### Changes to this policy
+
+If we change how we handle personal data — for example by adding analytics — we’ll update this page first and change the date at the top. Significant changes will be highlighted here.
+
+### Contact
+
+Questions, requests or complaints about privacy: [hello@pablochtech.com](mailto:hello@pablochtech.com). You’ll hear back from a person, not an autoresponder, usually within 24 hours.
+
+## Terms of service
+
+URL: https://projects.pablochtech.com/terms/ · Last updated 2026-09-27
+
+How working with Pabloch Tech works, in plain English: the free draft, the fixed price, what you own, and what happens if plans change.
+
+### The short version
+
+- Your first working draft is free, and you owe nothing if you don’t go ahead.
+- If you do, you get a one-page scope with a fixed price and timeline — the number you agree is the number you pay.
+- You pay 50% when you approve the draft and 50% on launch day, through PayPal.
+- Two full revision rounds are included.
+- Once the project is paid in full, you own the site, the code and the domain.
+
+These terms apply to your use of projects.pablochtech.com and to every project Pabloch Tech (“we”, “us”) carries out for you (“you”). If a signed scope for your project says something different, the scope wins for that project.
+
+### 1. Enquiries and the free draft
+
+- Sending a brief doesn’t commit you to anything. We aim to reply within 24 hours with what we’d build, the likely cost and the timeline.
+- If the project is a fit, we build a working first draft at no cost. You’re under no obligation to proceed.
+- Until you approve the draft and pay the deposit, the draft and its code remain ours. If you don’t proceed, please don’t publish or reuse it — and we won’t either, except as a labelled example in our portfolio.
+
+### 2. Scope, price and timeline
+
+- When you approve the draft, we send a one-page scope setting out what’s included, the fixed price and the timeline.
+- Prices on the website marked “from” are starting prices; the scope is the price you pay.
+- Work outside the agreed scope — new pages, features or a new design direction — is quoted separately, and we only start it once you’ve agreed in writing.
+- Typical timelines are 1–2 weeks for a website and 3–5 weeks for an online store after the deposit and your content arrive. Delays in content, feedback or third-party access move the timeline by the same amount.
+
+### 3. Payment
+
+- You pay a 50% deposit when you approve the draft, and the remaining 50% on launch day, before the site goes live on your domain.
+- Invoices are paid securely through PayPal — by credit card, debit card or PayPal balance, with no PayPal account needed to pay by card. Invoices are issued in US dollars or pounds sterling.
+- Third-party costs — such as your domain, hosting, paid plugins or APIs, and payment-gateway fees on your own store — are yours unless your scope says they’re included.
+- We may pause work, or hold back launch, while an invoice is unpaid.
+
+### 4. Revisions
+
+Two full revision rounds are included. Small tweaks after that aren’t invoiced. A redesign in a new direction, or changes that go beyond the agreed scope, is a new piece of work and is quoted as one.
+
+### 5. Your responsibilities
+
+- Supply accurate content — text, images, logos, prices — and make sure you have the right to use it. You’re responsible for the content you give us and for what your site says about your business.
+- Give timely feedback and any access we need (domain, hosting, payment provider).
+- Make sure your site’s legal notices (for example your own privacy policy and terms of sale) fit your business. We’ll help you publish them, but we can’t give legal advice.
+
+### 6. Ownership and licences
+
+- When the project is paid in full, you own the website and the code written for it, and we hand over all files on request. Your domain is registered in your name from day one.
+- Fonts, libraries, icons and any stock images stay under their own licences, which we choose so that you can use them on your site.
+- We may reuse general techniques, and small generic pieces of code that aren’t specific to your business, in other work.
+- We may show the finished project in our portfolio and describe our role in it. If you’d rather we didn’t, tell us and we’ll keep it private.
+
+### 7. Launch, testing and fixes
+
+We test every build on current desktop and mobile browsers before launch. If something we built doesn’t work as described in the scope, tell us and we’ll fix it at no charge. Problems caused by later changes made by someone else, by third-party services, or by hosting we don’t manage aren’t covered, but we’re happy to quote for them.
+
+### 8. Website Care
+
+Website Care is optional and quoted per site. What it covers — such as renewals, form monitoring and small edits — is set out when you sign up, and either of us can end it with reasonable notice. If it ends, we hand over everything you need to manage the site yourself.
+
+### 9. Cancelling a project
+
+- Before you pay the deposit, you can walk away at any point and owe nothing.
+- After the deposit, you can cancel at any time by telling us in writing. The deposit covers the work already done; if the work completed is worth clearly less than the deposit, we refund the difference.
+- If we ever have to cancel a project ourselves, we refund any payment for work not yet delivered and hand over what has been built.
+
+### 10. Liability
+
+We take care over everything we build, but we can’t guarantee that a website will be uninterrupted, error-free, or produce any particular search ranking or amount of business. To the extent the law allows, our total liability for a project is limited to the amount you paid us for it, and we aren’t liable for indirect losses such as lost profits or lost data. Nothing in these terms limits liability that can’t legally be limited, or any rights you have as a consumer under the laws of the country you live in.
+
+### 11. Using this website
+
+- The design, text and code of this website belong to Pabloch Tech. You’re welcome to browse, link to and share it, but please don’t copy it or present it as your own.
+- Portfolio entries are labelled for exactly what they are. See our portfolio disclaimer for what “concept” and “preview” mean.
+- Links to other sites are provided for convenience; we aren’t responsible for their content.
+- Please don’t misuse the site — for example by attempting to break its security or sending spam through the contact form.
+
+### 12. Governing law
+
+These terms are governed by the laws of India, and disputes are subject to the courts of India. If you’re a consumer, you also keep the protection of the mandatory laws of the country where you live, and you may bring a claim there. Either way, please talk to us first — most things are solved with one email.
+
+### 13. Changes and contact
+
+We may update these terms; the version that applies to your project is the one in force when you approved its scope. Questions: [hello@pablochtech.com](mailto:hello@pablochtech.com).
+
+## Cookie policy
+
+URL: https://projects.pablochtech.com/cookies/ · Last updated 2026-09-27
+
+This website uses no cookies at all. That’s why you didn’t see a cookie banner.
+
+### What this site stores
+
+Nothing. The site sets no cookies — first-party or third-party — and doesn’t use local storage, session storage, tracking pixels, fingerprinting or any similar technology to recognise you or follow you around the web.
+
+- No analytics (no Google Analytics, no Meta Pixel, nothing similar).
+- No advertising or retargeting tags.
+- No embedded videos, maps or social widgets that set their own cookies.
+- Fonts and images are served from our own server, so viewing a page doesn’t contact any third party.
+
+A Content Security Policy built into every page blocks scripts and embeds from other domains, so this can’t change quietly.
+
+### The contact form
+
+When you press send, the details you typed are posted directly to Web3Forms, which emails them to us. Sending the form doesn’t set a cookie. How we use what you send is covered in our [privacy policy](https://projects.pablochtech.com/privacy/).
+
+### Links to other sites
+
+Our portfolio links to live sites and previews (for example Al-Abuzer Perfumes, Renewal Tracker and projects hosted on Netlify), and to our social profiles. Those sites have their own cookie and privacy policies, which apply once you arrive there.
+
+### Do Not Track and Global Privacy Control
+
+Because we don’t track you, there’s nothing for Do Not Track or Global Privacy Control to switch off — but we treat both signals as a valid opt-out anyway.
+
+### If this ever changes
+
+If we ever add analytics or any technology that stores information on your device, we’ll update this page before it goes live and ask for your consent wherever the law requires it — for example under UK and EU rules, which require consent for non-essential cookies.
+
+### Questions
+
+Email [hello@pablochtech.com](mailto:hello@pablochtech.com) and we’ll answer.
+
+## Portfolio disclaimer
+
+URL: https://projects.pablochtech.com/disclaimer/ · Last updated 2026-09-27
+
+Every project on this site is labelled for exactly what it is. This page explains the labels, and the notices that go with them.
+
+### What the labels mean
+
+- **Live** — a client’s website, built by us and running in production.
+- **Product** — our own product, built and run by Pabloch Tech (for example Renewal Tracker).
+- **Concept** — a self-initiated design built on our own time to show what we can do. It is not a real business or client.
+- **Preview** — an unpaid, unpublished spec build we made for a real local business before anyone asked, to show them what their site could be.
+
+### Concepts
+
+Royal Compass Travels is a concept. It isn’t a travel agency, it doesn’t take bookings or payments, and any destinations, tiers or prices shown are illustrative. Please don’t submit real travel plans or personal details through it.
+
+### Previews of real businesses
+
+Previews such as The Cleaning Queens, Oak Tree Garden Maintenance and Dean the Decorator are speculative designs. Unless a project says otherwise, the business named hasn’t commissioned, approved, paid for or endorsed the preview, and it isn’t their official website. Details such as review ratings, review counts and years in business were taken from public listings when the preview was made and may have changed since.
+
+If you own one of these businesses and would like a preview changed or taken down, email [hello@pablochtech.com](mailto:hello@pablochtech.com) and we’ll do it promptly — no questions asked.
+
+### Trademarks
+
+Business names, logos and trademarks shown in our portfolio belong to their respective owners and are used only to identify the work. Third-party product names mentioned on this site — including PayPal, WordPress, Wix, Squarespace, Shopify, Zoom and Google Meet — are trademarks of their owners, and their mention doesn’t imply any partnership or endorsement.
+
+### Prices and information
+
+Prices marked “from” are starting prices, and your written scope sets the price you pay. Articles in our journal are general information about websites and online business, not legal, financial or tax advice, and they reflect our understanding on the date shown. Third-party features and pricing change often, so check the provider’s own site before deciding.
+
+### Questions
+
+Anything unclear? Email [hello@pablochtech.com](mailto:hello@pablochtech.com).

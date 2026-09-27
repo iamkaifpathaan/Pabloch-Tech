@@ -1,9 +1,12 @@
 import { html, type SafeHtml } from "../lib/html.ts";
-import { nav, site, socialLinks } from "../content/site.ts";
+import { nav, pages, site, socialLinks } from "../content/site.ts";
+import { env } from "../lib/env.ts";
 import { logoMark, icons } from "./icons.ts";
 
-export function Brand(): SafeHtml {
-  return html`<a class="brand" href="#top" aria-label="Pabloch Tech — back to the top">
+/** On the home page the logo scrolls to the top; everywhere else it goes home. */
+export function Brand(href = "#top"): SafeHtml {
+  const label = href === "#top" ? "Pabloch Tech — back to the top" : "Pabloch Tech — home";
+  return html`<a class="brand" href="${href}" aria-label="${label}">
     ${logoMark}<span class="brand-name">Pabloch<span class="brand-tech">Tech</span></span>
   </a>`;
 }
@@ -16,6 +19,7 @@ export function Nav(): SafeHtml {
       <nav class="nav-links" aria-label="Primary">
         <ul role="list">
           ${nav.map((item) => html`<li><a href="#${item.id}" data-nav-link="${item.id}"><span>${item.label}</span></a></li>`)}
+          <li><a href="${env.base}${pages.blog.path}"><span>${pages.blog.label}</span></a></li>
         </ul>
       </nav>
       <a class="btn btn--primary btn--sm nav-cta" href="#contact" data-magnetic><span class="btn-label">Start a project</span></a>
@@ -46,6 +50,7 @@ export function MobileMenu(): SafeHtml {
         ${nav.map(
           (item, i) => html`<li style="--i:${i}"><a href="#${item.id}" data-menu-link><span class="menu-index mono">0${i + 1}</span><span class="menu-label">${item.label}</span></a></li>`,
         )}
+        <li style="--i:${nav.length}"><a href="${env.base}${pages.blog.path}"><span class="menu-index mono">0${nav.length + 1}</span><span class="menu-label">${pages.blog.label}</span></a></li>
       </ol>
     </nav>
     <div class="menu-foot">

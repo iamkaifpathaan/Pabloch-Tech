@@ -5,10 +5,16 @@ function parts(rich: Rich): readonly RichPart[] {
   return typeof rich === "string" ? [rich] : rich;
 }
 
+/** The visible text of one part, whatever its formatting. */
+function partText(p: RichPart): string {
+  if (typeof p === "string") return p;
+  if ("em" in p) return p.em;
+  if ("strong" in p) return p.strong;
+  return p.a;
+}
+
 export function plainText(rich: Rich): string {
-  return parts(rich)
-    .map((p) => (typeof p === "string" ? p : "em" in p ? p.em : p.strong))
-    .join("");
+  return parts(rich).map(partText).join("");
 }
 
 export function wordCount(rich: Rich): number {
@@ -22,7 +28,11 @@ export function rich(value: Rich): SafeHtml {
     parts(value).map((p) => {
       if (typeof p === "string") return p;
       if ("em" in p) return html`<em>${p.em}</em>`;
-      return html`<strong>${p.strong}</strong>`;
+      if ("strong" in p) return html`<strong>${p.strong}</strong>`;
+      const external = /^https?:/.test(p.href);
+      return external
+        ? html`<a href="${p.href}" target="_blank" rel="noopener">${p.a}<span class="sr-only"> (opens in a new tab)</span></a>`
+        : html`<a href="${p.href}">${p.a}</a>`;
     }),
   );
 }
@@ -36,8 +46,8 @@ export function revealWords(value: Rich, startIndex = 0): SafeHtml {
   let i = startIndex;
   const words: SafeHtml[] = [];
   for (const p of parts(value)) {
-    const text = typeof p === "string" ? p : "em" in p ? p.em : p.strong;
-    const tag = typeof p === "string" ? null : "em" in p ? "em" : "strong";
+    const text = partText(p);
+    const tag = typeof p === "string" ? null : "em" in p ? "em" : "strong" in p ? "strong" : null;
     for (const token of text.split(/(\s+)/)) {
       if (token === "") continue;
       if (/^\s+$/.test(token)) {
@@ -62,7 +72,7 @@ export function scrubWords(value: Rich): SafeHtml {
   let i = 0;
   const words: SafeHtml[] = [];
   for (const p of parts(value)) {
-    const text = typeof p === "string" ? p : "em" in p ? p.em : p.strong;
+    const text = partText(p);
     const isEm = typeof p !== "string" && "em" in p;
     for (const token of text.split(/(\s+)/)) {
       if (token === "") continue;

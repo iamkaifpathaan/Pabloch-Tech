@@ -7,7 +7,7 @@ export function FinalCta(): SafeHtml {
   return html`<section class="cta" data-theme="ink" aria-labelledby="cta-title">
     <div class="cta-grid" aria-hidden="true"></div>
     <div class="wrap cta-inner">
-      ${SectionLabel("10", "Next")}
+      ${SectionLabel("11", "Next")}
       ${RevealHeading(2, ["Have something ", { em: "in mind?" }], { id: "cta-title", className: "display-xxl cta-title" })}
       <div class="cta-row">
         <p class="cta-copy" data-reveal="fade">Send a few lines. You’ll get a real answer within 24 hours — and if it’s a fit, a working draft before you pay a thing.</p>

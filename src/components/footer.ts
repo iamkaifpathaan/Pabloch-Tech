@@ -1,6 +1,6 @@
 import { html, type SafeHtml } from "../lib/html.ts";
 import { env } from "../lib/env.ts";
-import { nav, site, socialLinks } from "../content/site.ts";
+import { legalPages, nav, pages, site, socialLinks } from "../content/site.ts";
 import { icons } from "./icons.ts";
 
 export function Footer(): SafeHtml {
@@ -13,7 +13,15 @@ export function Footer(): SafeHtml {
       <nav class="footer-cols" aria-label="Footer">
         <div class="footer-col">
           <p class="mono footer-col-title">Site</p>
-          <ul role="list">${nav.map((n) => html`<li><a href="#${n.id}">${n.label}</a></li>`)}</ul>
+          <ul role="list">
+            ${nav.map((n) => html`<li><a href="${env.base}#${n.id}">${n.label}</a></li>`)}
+            <li><a href="${env.base}${pages.faq.path}">${pages.faq.label}</a></li>
+            <li><a href="${env.base}${pages.blog.path}">${pages.blog.label}</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="mono footer-col-title">Legal</p>
+          <ul role="list">${legalPages.map((l) => html`<li><a href="${env.base}${l.slug}/">${l.label}</a></li>`)}</ul>
         </div>
         <div class="footer-col">
           <p class="mono footer-col-title">Elsewhere</p>

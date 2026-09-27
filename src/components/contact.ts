@@ -1,6 +1,7 @@
 import { attrs, html, type SafeHtml } from "../lib/html.ts";
 import { budgets, callPreferences, contactCopy, projectTypes, type Choice } from "../content/contact.ts";
 import { site } from "../content/site.ts";
+import { env } from "../lib/env.ts";
 import { SectionLabel } from "./primitives.ts";
 import { SocialList } from "./nav.ts";
 import { icons } from "./icons.ts";
@@ -58,7 +59,7 @@ export function Contact(): SafeHtml {
   return html`<section class="contact" id="contact" data-theme="ink" aria-labelledby="contact-title">
     <div class="wrap contact-grid">
       <div class="contact-intro">
-        ${SectionLabel("11", "Contact")}
+        ${SectionLabel("12", "Contact")}
         <h2 class="display-l contact-title" id="contact-title" data-reveal="fade">${contactCopy.title}</h2>
         <p class="contact-lede" data-reveal="fade">${contactCopy.lede}</p>
         <div class="contact-direct" data-reveal="fade">
@@ -94,7 +95,7 @@ export function Contact(): SafeHtml {
             <button class="btn btn--primary btn--lg brief-submit" type="submit" data-magnetic disabled data-submit>
               <span class="btn-label" data-submit-label>${contactCopy.submit}</span><span class="btn-icon">${icons.arrowRight}</span>
             </button>
-            <p class="brief-note mono" id="brief-note">${contactCopy.reassurance}</p>
+            <p class="brief-note mono" id="brief-note">${contactCopy.reassurance} <a href="${env.base}privacy/">How we handle your data</a>.</p>
           </div>
           <p class="brief-status" role="status" aria-live="polite" data-status></p>
           <noscript><p class="brief-status is-error">This form needs JavaScript, which is switched off in your browser. Email <a href="mailto:${site.email}">${site.email}</a> instead — it reaches us just the same.</p></noscript>
