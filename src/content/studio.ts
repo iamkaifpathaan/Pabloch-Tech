@@ -131,6 +131,8 @@ export const caseStudy = {
       body: "Designed and built in house, with the downloads for both platforms.",
     },
   ],
+  /** Short labels floated around the screenshot on wide screens (decorative; the same facts are in the text). */
+  callouts: ["Daily 8am reminder email", "Ctrl+K command palette", "Windows & Mac"],
   built: ["Windows & Mac app", "API", "Reminder emails", "Command palette", "Auto-updates", "Product website"],
   /** What the build means for a client — the point of the section. */
   forYou: [

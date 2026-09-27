@@ -15,9 +15,22 @@ export function CaseStudy(): SafeHtml {
       </header>
     </div>
 
-    <figure class="case-hero" data-reveal="image">
-      <span class="case-hero-img" data-parallax="0.08">${Picture(p.desktop, { sizes: "100vw" })}</span>
-      <figcaption class="wrap mono">The desktop app, as it runs today.</figcaption>
+    <figure class="wrap case-stage">
+      <div class="case-stage-glow" aria-hidden="true"></div>
+      <div class="case-window">
+        <div class="case-window-bar" aria-hidden="true">
+          <span class="case-window-dots"><i></i><i></i><i></i></span>
+          <span class="case-window-title mono">${p.name}</span>
+        </div>
+        ${Picture(p.desktop, { sizes: "(min-width: 1260px) 1120px, calc(100vw - 2 * clamp(20px, 4.4vw, 72px))", imgClass: "case-window-img" })}
+      </div>
+      ${p.mobile
+        ? html`<div class="case-device">${Picture(p.mobile, { sizes: "(min-width: 768px) 360px, 44vw" })}</div>`
+        : ""}
+      <ul class="case-callouts" role="list" aria-hidden="true">
+        ${cs.callouts.map((c, i) => html`<li class="case-callout mono" style="--i:${i}">${c}</li>`)}
+      </ul>
+      <figcaption class="case-stage-caption mono">The desktop app and its calendar view, as they run today.</figcaption>
     </figure>
 
     <div class="wrap case-grid">
@@ -48,13 +61,6 @@ export function CaseStudy(): SafeHtml {
             )}
           </ol>
         </div>
-
-        ${p.mobile
-          ? html`<figure class="case-inline" data-reveal="image">
-              ${Picture(p.mobile, { sizes: "(min-width: 1024px) 60vw, 100vw" })}
-              <figcaption class="mono">The same app at tablet width.</figcaption>
-            </figure>`
-          : ""}
 
         <div class="case-chapter">
           <h3 class="case-chapter-label mono" data-reveal="fade">What we built</h3>
