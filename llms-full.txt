@@ -294,7 +294,7 @@ A custom store is built around your catalogue and your customers, on code you ow
 - Search, filters and bundles
 - Shipping and tax configuration
 
-You can see all of this working on [Al-Abuzer Perfumes](https://alabuzerperfumes.com), a live store we designed and built: eight collections, a full-bleed video homepage, customer accounts and an order-tracking page that answers “where’s my order?” before anyone has to email. [Read the case study](https://projects.pablochtech.com/#case-study).
+You can see all of this working on [Al-Abuzer Perfumes](https://alabuzerperfumes.com), a live store we designed and built: eight collections, a full-bleed video homepage, customer accounts and an order-tracking page that answers “where’s my order?” before anyone has to email.
 
 ### Ownership: the part that matters later
 

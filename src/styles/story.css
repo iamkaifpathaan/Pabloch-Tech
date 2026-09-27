@@ -471,3 +471,6 @@
 .cta-alt a:hover {
   border-color: var(--accent);
 }
+.case-status .btn {
+  margin-top: clamp(20px, 2.4vw, 32px);
+}

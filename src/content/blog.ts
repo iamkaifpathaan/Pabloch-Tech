@@ -244,9 +244,7 @@ export const posts: readonly Post[] = [
         p: [
           "You can see all of this working on ",
           { a: "Al-Abuzer Perfumes", href: "https://alabuzerperfumes.com" },
-          ", a live store we designed and built: eight collections, a full-bleed video homepage, customer accounts and an order-tracking page that answers “where’s my order?” before anyone has to email. ",
-          { a: "Read the case study", href: "/#case-study" },
-          ".",
+          ", a live store we designed and built: eight collections, a full-bleed video homepage, customer accounts and an order-tracking page that answers “where’s my order?” before anyone has to email.",
         ],
       },
 

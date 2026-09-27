@@ -1,8 +1,7 @@
 import { html, type SafeHtml } from "../lib/html.ts";
 import { rich } from "../lib/rich.ts";
 import { caseStudy } from "../content/studio.ts";
-import { shots } from "../content/shots.ts";
-import { ArrowLink, ContentSlot, Picture, RevealHeading, SectionLabel } from "./primitives.ts";
+import { ArrowLink, ContentSlot, Picture, PrimaryButton, RevealHeading, SectionLabel } from "./primitives.ts";
 
 export function CaseStudy(): SafeHtml {
   const cs = caseStudy;
@@ -17,8 +16,8 @@ export function CaseStudy(): SafeHtml {
     </div>
 
     <figure class="case-hero" data-reveal="image">
-      <span class="case-hero-img" data-parallax="0.08">${Picture(shots.alabuzerDesktop, { sizes: "100vw" })}</span>
-      <figcaption class="wrap mono">The homepage, as it runs in production today.</figcaption>
+      <span class="case-hero-img" data-parallax="0.08">${Picture(p.desktop, { sizes: "100vw" })}</span>
+      <figcaption class="wrap mono">The desktop app, as it runs today.</figcaption>
     </figure>
 
     <div class="wrap case-grid">
@@ -26,7 +25,8 @@ export function CaseStudy(): SafeHtml {
         <dl>
           ${cs.meta.map((m) => html`<div class="case-meta-row"><dt class="mono">${m.label}</dt><dd>${m.value}</dd></div>`)}
         </dl>
-        ${ArrowLink("Visit the live store", p.link.href)}
+        ${ArrowLink(p.link.label, p.link.href)}
+        ${p.more?.filter((m) => /^https?:/.test(m.href)).map((m) => ArrowLink(m.label, m.href))}
       </aside>
 
       <div class="case-body">
@@ -49,19 +49,12 @@ export function CaseStudy(): SafeHtml {
           </ol>
         </div>
 
-        <figure class="case-inline" data-reveal="image">
-          ${Picture(shots.alabuzerTablet, { sizes: "(min-width: 1024px) 60vw, 100vw" })}
-          <figcaption class="mono">The same storefront at tablet width: the logo, the video, one clear call to action.</figcaption>
-        </figure>
-
-        <div class="case-chapter">
-          <h3 class="case-chapter-label mono" data-reveal="fade">Eight collections</h3>
-          <ol class="case-collections" role="list">
-            ${cs.collections.map(
-              (c, i) => html`<li data-reveal="fade" style="--delay:${i * 50}ms"><span class="mono" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>${c}</li>`,
-            )}
-          </ol>
-        </div>
+        ${p.mobile
+          ? html`<figure class="case-inline" data-reveal="image">
+              ${Picture(p.mobile, { sizes: "(min-width: 1024px) 60vw, 100vw" })}
+              <figcaption class="mono">The same app at tablet width.</figcaption>
+            </figure>`
+          : ""}
 
         <div class="case-chapter">
           <h3 class="case-chapter-label mono" data-reveal="fade">What we built</h3>
@@ -69,8 +62,9 @@ export function CaseStudy(): SafeHtml {
         </div>
 
         <div class="case-chapter case-status" data-reveal="fade">
-          <h3 class="case-chapter-label mono">Where it stands</h3>
-          <p class="case-lead">Live in production. Open it, browse it, add something to the cart — the work is there to be checked.</p>
+          <h3 class="case-chapter-label mono">What it means for you</h3>
+          <p class="case-lead">${rich(cs.forYou)}</p>
+          ${PrimaryButton("Talk about your product", "#contact")}
           ${ContentSlot("Measured results", cs.results, (v) => html`<p class="case-lead">${v}</p>`)}
           ${ContentSlot("Client quote", cs.clientWords, (v) => html`<blockquote class="case-quote"><p>${v}</p></blockquote>`)}
         </div>
