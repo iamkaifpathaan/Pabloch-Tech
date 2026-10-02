@@ -1,14 +1,13 @@
 import { html, type SafeHtml } from "../lib/html.ts";
 import { process, processIntro } from "../content/process.ts";
-import { RevealHeading, SectionLabel } from "./primitives.ts";
+import { SectionHeading } from "./primitives.ts";
 
-export function Process(): SafeHtml {
+export function Process(index = "01"): SafeHtml {
   const count = String(process.length).padStart(2, "0");
-  return html`<section class="process" id="process" data-theme="paper" aria-labelledby="process-title">
+  return html`<section class="process process--page" id="steps" data-theme="paper" aria-labelledby="process-title">
     <div class="wrap">
       <header class="process-head">
-        ${SectionLabel("04", "Process")}
-        ${RevealHeading(2, ["From idea ", { em: "to impact." }], { id: "process-title", className: "process-title" })}
+        ${SectionHeading(index, "Five steps", "process-title")}
       </header>
 
       <div class="process-grid">

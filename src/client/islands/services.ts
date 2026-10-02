@@ -8,6 +8,10 @@ import { addTick } from "../core/ticker.ts";
  */
 export function mountServices(list: HTMLElement): void {
   const rows = qsa("[data-svc]", list);
+  // On the Services page every entry starts open (it's the whole point of the
+  // page); a link straight to one service opens just that one otherwise.
+  const openAll = list.dataset.open === "all";
+  const wanted = location.hash.replace(/^#svc-/, "");
 
   rows.forEach((row, i) => {
     const button = qs<HTMLButtonElement>("[data-svc-toggle]", row);
@@ -18,7 +22,7 @@ export function mountServices(list: HTMLElement): void {
       row.classList.toggle("is-collapsed", !open);
       panel.inert = !open;
     };
-    set(i === 0);
+    set(openAll || i === 0 || row.dataset.svc === wanted);
     button.addEventListener("click", () => set(button.getAttribute("aria-expanded") !== "true"));
   });
 

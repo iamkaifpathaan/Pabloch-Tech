@@ -1,7 +1,8 @@
 import { attrs, html, type SafeHtml } from "../lib/html.ts";
 import { budgets, callPreferences, contactCopy, projectTypes, type Choice } from "../content/contact.ts";
 import { site } from "../content/site.ts";
-import { SectionLabel } from "./primitives.ts";
+import { process } from "../content/process.ts";
+import { href, to } from "../lib/routes.ts";
 import { SocialList } from "./nav.ts";
 import { icons } from "./icons.ts";
 
@@ -54,21 +55,33 @@ function Choices(o: { name: string; legend: string; choices: readonly Choice[]; 
   </fieldset>`;
 }
 
+/** What happens after the form is sent: the first three steps of the process, verbatim. */
+function NextSteps(): SafeHtml {
+  return html`<div class="contact-next" data-reveal="fade" style="--delay:320ms">
+    <p class="mono contact-direct-label">What happens next</p>
+    <ol class="contact-steps" role="list">
+      ${process.slice(0, 3).map(
+        (s, i) => html`<li><span class="mono contact-step-num">0${i + 1}</span><span class="contact-step-body"><strong>${s.name}</strong> <span class="contact-step-when mono">${s.when}</span><span class="contact-step-out">${s.outcome}</span></span></li>`,
+      )}
+    </ol>
+    <a class="arrow-link contact-process-link" href="${href(to("process"))}"><span class="arrow-link-label">The full process</span>${icons.arrowRight}</a>
+  </div>`;
+}
+
+/** The Contact page. The brief form is the page's whole purpose, so it opens the page. */
 export function Contact(): SafeHtml {
-  return html`<section class="contact" id="contact" data-theme="ink" aria-labelledby="contact-title">
+  return html`<section class="contact contact--page" id="contact" data-theme="ink" aria-labelledby="page-title">
+    <div class="ph-grid" aria-hidden="true"></div>
     <div class="wrap contact-grid">
       <div class="contact-intro">
-        ${SectionLabel("11", "Contact")}
-        <h2 class="display-l contact-title" id="contact-title" data-reveal="fade">${contactCopy.title}</h2>
-        <p class="contact-lede" data-reveal="fade">${contactCopy.lede}</p>
-        <div class="contact-direct" data-reveal="fade">
-          <p class="mono contact-direct-label">Or reach us directly</p>
-          ${SocialList("contact-social")}
-          <p class="contact-call">Prefer to talk? Pick <strong>Zoom</strong> or <strong>Google Meet</strong> in the form and the invite comes back with our reply.</p>
-        </div>
+        <nav class="ph-crumbs mono" aria-label="Breadcrumb" data-reveal="fade" data-reveal-now>
+          <ol role="list"><li><a href="${href(to("home"))}">Pabloch Tech</a><span class="ph-sep" aria-hidden="true">/</span></li><li><span aria-current="page">Contact</span></li></ol>
+        </nav>
+        <h1 class="contact-title" id="page-title" data-reveal="fade" data-reveal-now>${contactCopy.title}</h1>
+        <p class="contact-lede" data-reveal="fade" data-reveal-now style="--delay:160ms">${contactCopy.lede}</p>
       </div>
 
-      <div class="contact-form-wrap" data-island="brief-form">
+      <div class="contact-form-wrap" data-island="brief-form" data-reveal="fade" data-reveal-now style="--delay:220ms">
         <form class="brief" id="brief" novalidate aria-describedby="brief-note">
           <div class="brief-row">
             ${Field({ id: "f-name", name: "name", label: "Name", required: true, autocomplete: "name", maxlength: 120 })}
@@ -102,10 +115,18 @@ export function Contact(): SafeHtml {
 
         <div class="brief-done" tabindex="-1" hidden data-done>
           <p class="mono brief-done-kicker"><span class="live-dot" aria-hidden="true"></span>Sent</p>
-          <h3 class="display-l">${contactCopy.success.title}</h3>
+          <h2 class="display-l">${contactCopy.success.title}</h2>
           <p>${contactCopy.success.body}</p>
           <p class="mono">In a hurry? <a href="mailto:${site.email}" data-email-link><span data-email-text>${site.email}</span></a></p>
         </div>
+      </div>
+      <div class="contact-aside">
+        <div class="contact-direct" data-reveal="fade">
+          <p class="mono contact-direct-label">Or reach us directly</p>
+          ${SocialList("contact-social")}
+          <p class="contact-call">Prefer to talk? Pick <strong>Zoom</strong> or <strong>Google Meet</strong> in the form and the invite comes back with our reply.</p>
+        </div>
+        ${NextSteps()}
       </div>
     </div>
   </section>`;

@@ -37,7 +37,35 @@ function safely(label: string, fn: () => void): void {
   }
 }
 
+/**
+ * The site used to be one long page. Old links like /#contact or /#work (in
+ * bios, emails, bookmarks) now point at real pages; send them there before
+ * anything else runs.
+ */
+const LEGACY_HASHES: Record<string, string> = {
+  work: "work/",
+  "case-study": "work/al-abuzer-perfumes/",
+  services: "services/",
+  capabilities: "services/#capabilities",
+  process: "process/",
+  why: "process/#why",
+  proof: "studio/#proof",
+  studio: "studio/",
+  contact: "contact/",
+};
+
+function redirectLegacyHash(): boolean {
+  const main = document.querySelector<HTMLElement>("main[data-page]");
+  if (main?.dataset.page !== "home") return false;
+  const key = location.hash.slice(1);
+  const target = LEGACY_HASHES[key];
+  if (!target || document.getElementById(key)) return false;
+  location.replace(new URL(target, location.href).href);
+  return true;
+}
+
 function boot(): void {
+  if (redirectLegacyHash()) return;
   safely("config", () => applyConfig(readConfig()));
 
   document.querySelectorAll<HTMLElement>("[data-island]").forEach((el) => {

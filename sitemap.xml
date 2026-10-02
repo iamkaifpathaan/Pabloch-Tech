@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://projects.pablochtech.com/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://projects.pablochtech.com/work/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://projects.pablochtech.com/work/al-abuzer-perfumes/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://projects.pablochtech.com/services/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://projects.pablochtech.com/process/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://projects.pablochtech.com/studio/</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://projects.pablochtech.com/contact/</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
 </urlset>

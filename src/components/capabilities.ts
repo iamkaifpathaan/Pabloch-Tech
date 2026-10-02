@@ -3,11 +3,11 @@ import { revealWords, rich } from "../lib/rich.ts";
 import { capabilities, manifestoCoda, manifestoLines, marqueeWords } from "../content/studio.ts";
 import { SectionLabel } from "./primitives.ts";
 
-export function Capabilities(): SafeHtml {
+export function Capabilities(index = "06"): SafeHtml {
   const marqueeRun = html`${marqueeWords.map((w) => html`<span class="mq-word">${w}</span><span class="mq-sep" aria-hidden="true">/</span>`)}`;
   return html`<section class="caps" id="capabilities" data-theme="paper" aria-labelledby="caps-title">
     <div class="wrap">
-      ${SectionLabel("06", "Capabilities")}
+      ${SectionLabel(index, "Capabilities")}
       <h2 class="caps-manifesto" id="caps-title" data-reveal="words">
         ${manifestoLines.map((line, i) => html`<span class="caps-line">${revealWords(line, i * 3)}</span> `)}
       </h2>

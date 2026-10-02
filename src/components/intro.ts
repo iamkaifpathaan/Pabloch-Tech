@@ -3,11 +3,11 @@ import { scrubWords } from "../lib/rich.ts";
 import { introNotes, introStatement } from "../content/studio.ts";
 import { SectionLabel } from "./primitives.ts";
 
-export function Intro(): SafeHtml {
+export function Intro(index = "01"): SafeHtml {
   return html`<section class="intro" id="intro" data-theme="ink" aria-label="About the studio, in one paragraph">
     <div class="intro-track" data-island="scrub-text">
       <div class="wrap intro-inner">
-        ${SectionLabel("01", "The studio")}
+        ${SectionLabel(index, "The studio")}
         <p class="intro-statement">${scrubWords(introStatement)}</p>
         <div class="intro-notes">
           ${introNotes.map(

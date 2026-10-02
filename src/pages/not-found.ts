@@ -14,7 +14,7 @@ export function renderNotFound(): SafeHtml {
       <p class="nf-copy">This page doesn’t exist — or it moved when the studio did. Everything worth seeing is one click away.</p>
       <div class="nf-actions">
         ${PrimaryButton("Back to the studio", "/")}
-        ${ArrowLink("Start a project", "/#contact")}
+        ${ArrowLink("Start a project", "/contact/")}
       </div>
     </div>
   </main>`;

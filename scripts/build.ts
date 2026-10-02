@@ -4,8 +4,9 @@
  *   npm run build      → production files in the repo root (commit them)
  *   npm run dev        → same, unminified, with dev-only content markers, served locally
  *
- * Writes:  index.html, 404.html, static/app.<hash>.{css,js}, robots.txt,
- *          sitemap.xml, favicon.svg
+ * Writes:  index.html plus one folder per page (work/, work/al-abuzer-perfumes/,
+ *          services/, process/, studio/, contact/ — each an index.html),
+ *          404.html, static/app.<hash>.{css,js}, robots.txt, sitemap.xml, favicon.svg
  * Never writes: config.js (your Web3Forms key + handles), assets/, .htaccess,
  * googleeaf0a72808bb7594.html (Google Search Console ownership proof)
  * (config.js is only *read*, to fingerprint it — see configFingerprint below)
@@ -138,20 +139,36 @@ export async function runBuild({ dev = false } = {}): Promise<void> {
   });
 
   // Pages import content at render time, after env is set.
-  const { renderHome } = await import("../src/pages/home.ts");
+  const { routes } = await import("../src/lib/routes.ts");
+  const pages = {
+    home: (await import("../src/pages/home.ts")).renderHome,
+    work: (await import("../src/pages/work.ts")).renderWork,
+    "case-study": (await import("../src/pages/case-study.ts")).renderCaseStudy,
+    services: (await import("../src/pages/services.ts")).renderServices,
+    process: (await import("../src/pages/process.ts")).renderProcess,
+    studio: (await import("../src/pages/studio.ts")).renderStudio,
+    contact: (await import("../src/pages/contact.ts")).renderContact,
+  } as const;
   const { renderNotFound } = await import("../src/pages/not-found.ts");
   const finish = (s: { value: string }) => (dev ? s.value : minifyHtml(s.value)) + "\n";
 
-  setEnv({ base: "" }); // home page: relative paths, so it also opens straight from disk
-  await safeWrite("index.html", finish(renderHome()));
-  setEnv({ base: "/" }); // 404 page: served at any URL, so absolute paths
+  // Every page is <path>index.html, so URLs are clean (/work/, /services/ …).
+  // Paths inside a page are relative to it ("", "../", "../../"), so the site
+  // also works from a sub-folder or a plain local server.
+  for (const route of Object.values(routes)) {
+    const depth = route.path.split("/").filter(Boolean).length;
+    setEnv({ page: route.path, base: "../".repeat(depth) });
+    await safeWrite(`${route.path}index.html`, finish(pages[route.id]()));
+  }
+  setEnv({ page: "", base: "/" }); // 404 page: served at any URL, so absolute paths
   await safeWrite("404.html", finish(renderNotFound()));
   await safeWrite("favicon.svg", faviconSvg);
   await safeWrite("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${site.url}sitemap.xml\n`);
-  await safeWrite(
-    "sitemap.xml",
-    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url>\n    <loc>${site.url}</loc>\n    <lastmod>${now.toISOString().slice(0, 10)}</lastmod>\n  </url>\n</urlset>\n`,
-  );
+  const lastmod = now.toISOString().slice(0, 10);
+  const urls = Object.values(routes)
+    .map((r) => `  <url>\n    <loc>${site.url}${r.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`)
+    .join("\n");
+  await safeWrite("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
 
   console.log(`✓ built ${dev ? "(dev) " : ""}${assets.css} ${assets.js} in ${Date.now() - started}ms`);
 }

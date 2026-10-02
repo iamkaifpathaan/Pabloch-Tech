@@ -55,7 +55,13 @@ createServer(async (req, res) => {
     return;
   }
   try {
-    if (!(await stat(file)).isFile()) throw new Error("not a file");
+    const st = await stat(file);
+    if (st.isDirectory()) {
+      // /work → /work/, like Apache does, so relative links resolve correctly.
+      res.writeHead(301, { Location: `${url.pathname}/${url.search}` }).end();
+      return;
+    }
+    if (!st.isFile()) throw new Error("not a file");
     res.writeHead(200, { "Content-Type": TYPES[path.extname(file)] ?? "application/octet-stream", "Cache-Control": "no-store" });
     res.end(await readFile(file));
   } catch {

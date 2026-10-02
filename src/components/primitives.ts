@@ -1,5 +1,6 @@
 import { attrs, html, type Child, type SafeHtml } from "../lib/html.ts";
 import { env } from "../lib/env.ts";
+import { href as resolve } from "../lib/routes.ts";
 import { PENDING, type Rich, type Shot } from "../lib/types.ts";
 import { revealWords } from "../lib/rich.ts";
 import { icons } from "./icons.ts";
@@ -54,6 +55,14 @@ export function SectionLabel(index: string, label: string): SafeHtml {
   return html`<p class="sec-label mono" data-reveal="fade"><span class="sec-index">(${index})</span><span>${label}</span></p>`;
 }
 
+/** A section's own heading, set like a section label: "(01) Services". */
+export function SectionHeading(index: string, label: string, id: string): SafeHtml {
+  return html`<h2 class="sec-label sec-heading mono" id="${id}" data-reveal="fade"><span class="sec-index">(${index})</span><span>${label}</span></h2>`;
+}
+
+/** Zero-padded section number: 1 → "01". */
+export const num = (n: number): string => String(n).padStart(2, "0");
+
 export function RevealHeading(
   level: 2 | 3,
   rich: Rich,
@@ -71,7 +80,7 @@ export function RevealHeading(
 export function PrimaryButton(label: string, href: string, opts: { size?: "sm" | "md" | "lg"; cursor?: string } = {}): SafeHtml {
   return html`<a ${attrs({
     class: `btn btn--primary btn--${opts.size ?? "md"}`,
-    href,
+    href: resolve(href),
     "data-magnetic": true,
     "data-cursor": opts.cursor,
   })}><span class="btn-label">${label}</span><span class="btn-icon">${icons.arrowRight}</span></a>`;
@@ -81,7 +90,7 @@ export function ArrowLink(label: Child, href: string, opts: { external?: boolean
   const external = opts.external ?? /^https?:/.test(href);
   return html`<a ${attrs({
     class: `arrow-link ${opts.className ?? ""}`.trim(),
-    href,
+    href: resolve(href),
     target: external ? "_blank" : undefined,
     rel: external ? "noopener" : undefined,
   })}><span class="arrow-link-label">${label}</span>${opts.icon ?? (external ? icons.arrowUpRight : icons.arrowRight)}${

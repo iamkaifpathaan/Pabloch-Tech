@@ -30,6 +30,20 @@ function csp(): string {
   ].join("; ");
 }
 
+function jsonLd(data: unknown): SafeHtml {
+  // JSON inside <script>: escape "<" so no string can ever close the tag.
+  const json = JSON.stringify(data).replace(/</g, "\\u003c");
+  return trusted(`<script type="application/ld+json">${json}</script>`);
+}
+
+function breadcrumbData(items: readonly { name: string; url: string }[]): SafeHtml {
+  return jsonLd({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: it.url })),
+  });
+}
+
 function structuredData(): SafeHtml {
   const data = {
     "@context": "https://schema.org",
@@ -67,9 +81,7 @@ function structuredData(): SafeHtml {
       },
     ],
   };
-  // JSON inside <script>: escape "<" so no string can ever close the tag.
-  const json = JSON.stringify(data).replace(/</g, "\\u003c");
-  return trusted(`<script type="application/ld+json">${json}</script>`);
+  return jsonLd(data);
 }
 
 interface DocumentOptions {
@@ -80,6 +92,7 @@ interface DocumentOptions {
   bodyClass?: string;
   noindex?: boolean;
   structured?: boolean;
+  breadcrumbs?: readonly { name: string; url: string }[];
 }
 
 export function Document(o: DocumentOptions): SafeHtml {
@@ -117,6 +130,7 @@ ${o.noindex ? html`<meta name="robots" content="noindex">` : html`<link rel="can
 <script src="${env.base}config.js?v=${env.configVersion}" defer></script>
 <script type="module" src="${env.base}static/${env.js}"></script>
 ${o.structured ? structuredData() : ""}
+${o.breadcrumbs ? breadcrumbData(o.breadcrumbs) : ""}
 </head>
 <body${o.bodyClass ? html` class="${o.bodyClass}"` : ""}>
 ${o.body}

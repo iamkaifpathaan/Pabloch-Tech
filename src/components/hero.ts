@@ -3,6 +3,7 @@ import { revealWords, wordCount } from "../lib/rich.ts";
 import type { Rich } from "../lib/types.ts";
 import { site } from "../content/site.ts";
 import { ArrowLink, PrimaryButton } from "./primitives.ts";
+import { to } from "../lib/routes.ts";
 
 const titleLines: readonly Rich[] = [
   "Digital products,",
@@ -18,7 +19,7 @@ export function Hero(): SafeHtml {
     return out;
   });
 
-  return html`<section class="hero" id="top" data-theme="ink" aria-labelledby="hero-title" data-island="grid-field">
+  return html`<section class="hero" id="hero" data-theme="ink" aria-labelledby="hero-title" data-island="grid-field">
     <canvas class="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-draft-slot" aria-hidden="true" data-draft-slot></div>
     <div class="wrap hero-inner">
@@ -35,8 +36,8 @@ export function Hero(): SafeHtml {
           <span class="hero-lede-em">You see a working draft before you pay a thing.</span>
         </p>
         <div class="hero-ctas hero-in" style="--delay:680ms">
-          ${PrimaryButton("Start a project", "#contact", { size: "lg", cursor: "Let’s talk" })}
-          ${ArrowLink("View our work", "#work", { className: "arrow-link--lg" })}
+          ${PrimaryButton("Start a project", to("contact"), { size: "lg", cursor: "Let’s talk" })}
+          ${ArrowLink("View our work", to("work"), { className: "arrow-link--lg" })}
         </div>
       </div>
       </div>

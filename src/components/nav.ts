@@ -1,24 +1,33 @@
 import { html, type SafeHtml } from "../lib/html.ts";
-import { nav, site, socialLinks } from "../content/site.ts";
+import { href, navRoutes, to, type PageId } from "../lib/routes.ts";
+import { site, socialLinks } from "../content/site.ts";
 import { logoMark, icons } from "./icons.ts";
 
+/** Which nav item a page belongs to (the case study lives under Work). */
+const section = (page: PageId): PageId => (page === "case-study" ? "work" : page);
+
 export function Brand(): SafeHtml {
-  return html`<a class="brand" href="#top" aria-label="Pabloch Tech — back to the top">
+  return html`<a class="brand" href="${href("/")}" aria-label="Pabloch Tech — home">
     ${logoMark}<span class="brand-name">Pabloch<span class="brand-tech">Tech</span></span>
   </a>`;
 }
 
-export function Nav(): SafeHtml {
-  return html`<header class="nav" data-island="nav">
+export function Nav(page: PageId): SafeHtml {
+  const current = section(page);
+  return html`<header class="nav" id="top" data-island="nav">
     <div class="nav-plate" aria-hidden="true"></div>
     <div class="nav-bar">
       ${Brand()}
       <nav class="nav-links" aria-label="Primary">
         <ul role="list">
-          ${nav.map((item) => html`<li><a href="#${item.id}" data-nav-link="${item.id}"><span>${item.label}</span></a></li>`)}
+          ${navRoutes.map(
+            (r) => html`<li><a href="${href(to(r.id))}"${r.id === current ? html` aria-current="page"` : ""}><span>${r.label}</span></a></li>`,
+          )}
         </ul>
       </nav>
-      <a class="btn btn--primary btn--sm nav-cta" href="#contact" data-magnetic><span class="btn-label">Start a project</span></a>
+      ${page === "contact"
+        ? ""
+        : html`<a class="btn btn--primary btn--sm nav-cta" href="${href(to("contact"))}" data-magnetic><span class="btn-label">Start a project</span></a>`}
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
         <span class="menu-toggle-label">Menu</span>
         <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i></span>
@@ -38,18 +47,20 @@ export function SocialList(className: string): SafeHtml {
   </ul>`;
 }
 
-export function MobileMenu(): SafeHtml {
+export function MobileMenu(page: PageId): SafeHtml {
+  const current = section(page);
+  const items = [{ id: "home" as PageId, label: "Home" }, ...navRoutes];
   return html`<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
     <div class="menu-grid" aria-hidden="true"></div>
     <nav class="menu-links" aria-label="Menu">
       <ol role="list">
-        ${nav.map(
-          (item, i) => html`<li style="--i:${i}"><a href="#${item.id}" data-menu-link><span class="menu-index mono">0${i + 1}</span><span class="menu-label">${item.label}</span></a></li>`,
+        ${items.map(
+          (r, i) => html`<li style="--i:${i}"><a href="${href(to(r.id))}" data-menu-link${r.id === current ? html` aria-current="page"` : ""}><span class="menu-index mono">0${i}</span><span class="menu-label">${r.label}</span></a></li>`,
         )}
       </ol>
     </nav>
     <div class="menu-foot">
-      <a class="btn btn--primary btn--md" href="#contact" data-menu-link><span class="btn-label">Start a project</span><span class="btn-icon">${icons.arrowRight}</span></a>
+      <a class="btn btn--primary btn--md" href="${href(to("contact"))}" data-menu-link><span class="btn-label">Start a project</span><span class="btn-icon">${icons.arrowRight}</span></a>
       ${SocialList("menu-social")}
       <p class="menu-clock mono"><span>Studio time</span> <span data-clock="short">${site.studio.timeZoneLabel}</span></p>
     </div>

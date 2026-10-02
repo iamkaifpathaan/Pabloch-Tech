@@ -1,14 +1,14 @@
 import { html, type SafeHtml } from "../lib/html.ts";
 import { about } from "../content/studio.ts";
 import { site } from "../content/site.ts";
-import { ContentSlot, RevealHeading, SectionLabel } from "./primitives.ts";
+import { ContentSlot, SectionHeading } from "./primitives.ts";
 
-export function About(): SafeHtml {
-  return html`<section class="about" id="studio" data-theme="paper" aria-labelledby="about-title">
+/** Studio page: who you'd be working with. The page header carries "Small on purpose." */
+export function About(index = "01"): SafeHtml {
+  return html`<section class="about about--page" id="about" data-theme="paper" aria-labelledby="about-title">
     <div class="wrap about-grid">
       <div class="about-main">
-        ${SectionLabel("09", "Studio")}
-        ${RevealHeading(2, about.title, { id: "about-title", className: "display-xl" })}
+        ${SectionHeading(index, "The studio", "about-title")}
         ${about.paragraphs.map((p, i) => html`<p class="about-p" data-reveal="fade" style="--delay:${i * 100}ms">${p}</p>`)}
         ${ContentSlot("Founder name & portrait", about.founder, (v) => html`<p class="about-p">${v}</p>`)}
       </div>

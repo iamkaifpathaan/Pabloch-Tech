@@ -63,7 +63,7 @@ export const alAbuzer: Project = {
   ],
   features: ["Cart & checkout", "8 collections", "Order tracking", "Customer accounts", "Product search", "Downloadable catalogue"],
   link: { label: "Visit alabuzerperfumes.com", href: "https://alabuzerperfumes.com" },
-  more: [{ label: "Read the case study", href: "#case-study" }],
+  more: [{ label: "Read the case study", href: "/work/al-abuzer-perfumes/" }],
   desktop: shots.alabuzerDesktop,
   mobile: shots.alabuzerTablet,
   mobileKind: "tablet",

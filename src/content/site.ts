@@ -46,10 +46,3 @@ export const socialLinks: ReadonlyArray<{ key: SocialKey; label: string; base: s
   { key: "facebook", label: "Facebook", base: "https://facebook.com/" },
 ];
 
-export const nav = [
-  { id: "work", label: "Work" },
-  { id: "services", label: "Services" },
-  { id: "process", label: "Process" },
-  { id: "studio", label: "Studio" },
-  { id: "contact", label: "Contact" },
-] as const;

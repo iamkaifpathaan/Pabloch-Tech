@@ -3,13 +3,13 @@ import { rich } from "../lib/rich.ts";
 import { principles } from "../content/studio.ts";
 import { RevealHeading, SectionLabel } from "./primitives.ts";
 
-export function Why(): SafeHtml {
+export function Why(index = "05"): SafeHtml {
   const count = String(principles.length).padStart(2, "0");
   return html`<section class="why" id="why" data-theme="ink" aria-labelledby="why-title">
     <div class="why-track" data-island="h-scroll">
       <div class="why-stage">
         <div class="wrap why-head">
-          ${SectionLabel("05", "Why Pabloch")}
+          ${SectionLabel(index, "Why Pabloch")}
           <div class="why-head-row">
             ${RevealHeading(2, ["Four things we ", { em: "do differently." }], { id: "why-title", className: "display-l why-title" })}
             <p class="why-count mono" aria-hidden="true"><span data-hs-now>01</span> / ${count}</p>

@@ -1,4 +1,4 @@
-/** Build-time environment, set once by scripts/build.ts before rendering. */
+/** Build-time environment, set by scripts/build.ts before each page is rendered. */
 export interface BuildEnv {
   dev: boolean;
   year: number;
@@ -6,8 +6,15 @@ export interface BuildEnv {
   css: string;
   js: string;
   headScriptHash: string;
-  /** Prefix for local files: "" (relative) on the home page so it also opens from disk, "/" on the 404 page, which can be served at any path. */
+  /**
+   * Prefix for local files: "" on the home page, "../" one level down,
+   * "../../" two levels down (relative, so pages also work from a local
+   * preview or a sub-folder), and "/" on the 404 page, which can be served
+   * at any path.
+   */
   base: string;
+  /** Path of the page being rendered, relative to the site root ("" = home, "work/" …). */
+  page: string;
   /**
    * Fingerprint of config.js, appended as ?v= so browsers can never keep
    * using an old copy (e.g. old social handles) after it changes.
@@ -23,6 +30,7 @@ export const env: BuildEnv = {
   js: "",
   headScriptHash: "",
   base: "/",
+  page: "",
   configVersion: "0",
 };
 

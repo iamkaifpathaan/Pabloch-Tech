@@ -2,9 +2,9 @@ import { media, qs, qsa } from "../core/env.ts";
 import { addScene } from "../core/scenes.ts";
 
 /**
- * Navigation: floating state after the first scroll, current-section marker,
- * and the full-screen menu (a modal dialog: focus contained, Esc closes,
- * page behind made inert, focus returned to the toggle).
+ * Navigation: floating state after the first scroll, and the full-screen menu
+ * (a modal dialog: focus contained, Esc closes, page behind made inert, focus
+ * returned to the toggle). Which page you're on is rendered into the markup.
  */
 export function mountNav(header: HTMLElement): void {
   // Floating plate
@@ -20,29 +20,7 @@ export function mountNav(header: HTMLElement): void {
     },
   });
 
-  // Current section
-  const links = qsa<HTMLAnchorElement>("[data-nav-link]", header);
-  const bySection = new Map<Element, HTMLAnchorElement>();
-  for (const a of links) {
-    const section = document.getElementById(a.dataset.navLink ?? "");
-    if (section) bySection.set(section, a);
-  }
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        const link = bySection.get(entry.target);
-        if (!link) continue;
-        if (entry.isIntersecting) {
-          links.forEach((l) => l.removeAttribute("aria-current"));
-          link.setAttribute("aria-current", "true");
-        } else if (link.hasAttribute("aria-current")) {
-          link.removeAttribute("aria-current");
-        }
-      }
-    },
-    { rootMargin: "-45% 0px -50% 0px" },
-  );
-  bySection.forEach((_, section) => io.observe(section));
+  // The current page is marked server-side (aria-current="page"); nothing to track here.
 
   mountMenu(header);
 }
@@ -83,22 +61,33 @@ function mountMenu(header: HTMLElement): void {
   toggle.setAttribute("aria-label", "Open menu");
   toggle.addEventListener("click", () => setOpen(!open));
 
-  // Following a link: close first (restores scrolling), then let the anchor jump happen.
+  // Following a link. Another page: just go (the menu doesn't need to animate
+  // out first). The page you're already on: close the menu and stay.
   menu.addEventListener("click", (e) => {
     const link = e.target instanceof Element ? e.target.closest<HTMLAnchorElement>("a[data-menu-link]") : null;
     if (!link) return;
-    const hash = link.hash;
+    const samePage = link.origin === location.origin && link.pathname === location.pathname;
+    if (!samePage) return;
     e.preventDefault();
     setOpen(false, false);
-    const target = hash ? document.querySelector<HTMLElement>(hash) : null;
+    const target = link.hash ? document.querySelector<HTMLElement>(link.hash) : null;
     requestAnimationFrame(() => {
-      target?.scrollIntoView({ behavior: media.reducedMotion.matches ? "auto" : "smooth", block: "start" });
-      if (hash) history.pushState(null, "", hash);
       if (target) {
+        target.scrollIntoView({ behavior: media.reducedMotion.matches ? "auto" : "smooth", block: "start" });
+        history.pushState(null, "", link.hash);
         if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
         target.focus({ preventScroll: true });
+      } else {
+        window.scrollTo({ top: 0, behavior: media.reducedMotion.matches ? "auto" : "smooth" });
+        toggle.focus({ preventScroll: true });
       }
     });
+  });
+
+  // Coming back to this page with the browser's back button can restore it
+  // from the back/forward cache with the menu still open.
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted) setOpen(false, false);
   });
 
   document.addEventListener("keydown", (e) => {
