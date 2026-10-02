@@ -15,6 +15,18 @@ Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
+# ---- one address for the whole site ----------------------------
+# www.projects.pablochtech.com served a full duplicate of the site.
+# Send it, permanently, to the same path on projects.pablochtech.com.
+# Loop-safe: it only fires for the www host and never looks at %{HTTPS}.
+# The Google verification file is left alone on purpose (see below).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.projects\.pablochtech\.com$ [NC]
+  RewriteCond %{REQUEST_URI} !^/google[0-9a-f]+\.html$ [NC]
+  RewriteRule ^(.*)$ https://projects.pablochtech.com/$1 [R=301,L]
+</IfModule>
+
 # ---- modern file types ---------------------------------------
 <IfModule mod_mime.c>
   AddType font/woff2  .woff2
@@ -78,6 +90,14 @@ RedirectMatch 404 ^/(src|scripts|node_modules)(/|$)
     Header unset Expires
   </FilesMatch>
 
+  # Files search engines and AI crawlers read to find every page. They change
+  # whenever a page is added, so neither browsers nor Hostinger's CDN may keep
+  # an old copy (a week-old sitemap.xml once hid six new pages from Google).
+  <FilesMatch "^(sitemap\.xml|robots\.txt|llms(-full)?\.txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header unset Expires
+  </FilesMatch>
+
   # ---- security headers ------------------------------------
   # The Content-Security-Policy lives in a <meta> tag in index.html, written
   # by the build with the hash of the one tiny inline script. Keeping it in
@@ -109,9 +129,8 @@ RedirectMatch 404 ^/(src|scripts|node_modules)(/|$)
 #    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 #  </IfModule>
 #
-#  The www → bare-domain redirect is deliberately gone too: the
-#  SSL certificate currently covers pablochtech.com only, so
-#  anyone reaching https://www. hits a certificate warning BEFORE
-#  any redirect can run. Add www to the certificate in hPanel
-#  first, then re-add the redirect if you want it.
+#  www.projects.pablochtech.com now has a valid certificate, so the
+#  www → projects.pablochtech.com redirect at the top of this file
+#  is safe (checked: https://www.projects.pablochtech.com/ loads
+#  without a certificate warning).
 # ============================================================
