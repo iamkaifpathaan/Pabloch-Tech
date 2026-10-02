@@ -1,0 +1,55 @@
+# Pabloch Tech
+
+> Pabloch Tech is an independent digital product studio that designs and hand-builds high-performance websites, e-commerce stores and custom digital tools for businesses, with a “working draft before you pay” approach.
+
+Hand-built custom websites, online stores and landing pages for US & UK businesses. Fixed prices from $400 — and a free working draft before you pay.
+
+## Key facts
+
+- Based in India; works US & UK business hours; replies within 24 hours.
+- Serves businesses mainly in the United States and United Kingdom.
+- Process: Discover → Define → Design → Build → Refine. A working first draft is built free, before any payment.
+- Pricing: fixed price in writing; 50% deposit after the draft is approved, 50% on launch day; two revision rounds included.
+- Payment: Invoices are paid securely through PayPal — by credit card, debit card or PayPal balance, with no PayPal account needed to pay by card. Invoices in US dollars or pounds sterling.
+- Ownership: the client owns the site, the code and the domain (registered in the client's name from day one).
+- Technology: hand-written HTML, CSS and JavaScript — no templates, page builders or WordPress; a real back end when a store needs one.
+- Contact: hello@pablochtech.com · https://projects.pablochtech.com/contact/
+
+## Services and prices
+
+- **Websites** — From $400 · growth builds from $700. The site people find after they’ve heard your name — built to turn a search into a phone call, not to win a design award.
+- **Online stores** — From $1,200. A storefront you own outright, with cart, checkout and order tracking built in — not rented from a platform taking a cut of every sale.
+- **Landing pages** — Quoted per project. One page with one job: turn an ad click, a flyer QR code or a Google listing into a name and a number you can call back.
+- **Product features** — Quoted per feature. The tools inside the site — built from scratch around how the business actually works, not bolted on from a plugin directory.
+- **Website care** — Optional · quoted per site. The part most people skip. A website nobody maintains is out of date within a year and invisible within two.
+
+## Main pages
+
+- [Home](https://projects.pablochtech.com/): who we are, featured work, services, process and FAQ
+- [Selected work](https://projects.pablochtech.com/work/): Royal Compass Travels, Renewal Tracker, Al-Abuzer Perfumes, The Cleaning Queens, Oak Tree Garden Maintenance, Dean the Decorator
+- [Case study: Renewal Tracker](https://projects.pablochtech.com/work/renewal-tracker/)
+- [Services and prices](https://projects.pablochtech.com/services/)
+- [Process](https://projects.pablochtech.com/process/)
+- [Studio](https://projects.pablochtech.com/studio/): who you'll be talking to
+- [FAQ](https://projects.pablochtech.com/#faq)
+- [Start a project](https://projects.pablochtech.com/contact/): the project brief form
+
+## Journal
+
+- [How much does a small business website cost in 2026?](https://projects.pablochtech.com/blog/how-much-does-a-small-business-website-cost/): What a small business website really costs in the US & UK: builders vs freelancers vs agencies, price drivers, running costs and fixed quotes.
+- [Custom website vs Wix, Squarespace or WordPress: which is right for your business?](https://projects.pablochtech.com/blog/custom-website-vs-wix-squarespace-wordpress/): Hand-built websites vs Wix, Squarespace and WordPress for small businesses: cost, speed, ownership, SEO and maintenance compared honestly.
+- [Shopify vs a custom online store: fees, ownership and control](https://projects.pablochtech.com/blog/shopify-vs-custom-online-store/): Shopify or a custom online store? Compare monthly and app fees, ownership, checkout flexibility and when each makes sense for a small brand.
+- [The small business website checklist: 12 things that turn searches into calls](https://projects.pablochtech.com/blog/small-business-website-checklist/): 12 essentials for a local or service business website: first-screen content, prices, reviews, areas served, mobile speed and SEO basics.
+- [Why you should see a working draft before paying a web designer](https://projects.pablochtech.com/blog/see-a-working-draft-before-you-pay/): Most web designers want a deposit before you see anything. Why a free working first draft protects small businesses — and how our 5 stages work.
+
+## Legal
+
+- [Privacy policy](https://projects.pablochtech.com/privacy/): How Pabloch Tech collects, uses and protects personal data. No cookies, no trackers, no selling of data — plus your GDPR, CCPA and DPDP rights.
+- [Terms of service](https://projects.pablochtech.com/terms/): Terms for working with Pabloch Tech: free first draft, fixed prices, two revision rounds, 50/50 payment via PayPal, and full ownership at launch.
+- [Cookie policy](https://projects.pablochtech.com/cookies/): Pabloch Tech’s website uses no cookies, analytics or tracking — so there’s no cookie banner. Here’s exactly what the site does and doesn’t store.
+- [Portfolio disclaimer](https://projects.pablochtech.com/disclaimer/): What the labels on Pabloch Tech’s portfolio mean — live, product, concept and preview — plus trademark, pricing and information notices.
+
+## Optional
+
+- [Full text of this site for language models](https://projects.pablochtech.com/llms-full.txt)
+- [Renewal Tracker](https://app.pablochtech.com/): the studio's own Windows & Mac app for tracking renewals

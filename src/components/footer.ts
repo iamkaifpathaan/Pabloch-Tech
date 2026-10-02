@@ -1,7 +1,7 @@
 import { html, type SafeHtml } from "../lib/html.ts";
 import { env } from "../lib/env.ts";
 import { href, navRoutes, routes, to } from "../lib/routes.ts";
-import { site, socialLinks } from "../content/site.ts";
+import { legalPages, pages, site, socialLinks } from "../content/site.ts";
 import { icons } from "./icons.ts";
 
 export function Footer(): SafeHtml {
@@ -18,7 +18,13 @@ export function Footer(): SafeHtml {
             <li><a href="${href(to("home"))}">Home</a></li>
             ${navRoutes.map((r) => html`<li><a href="${href(to(r.id))}">${r.label}</a></li>`)}
             <li><a href="${href(to("case-study"))}">Case study: ${routes["case-study"].label}</a></li>
+            <li><a href="${href(to("home", "faq"))}">${pages.faq.label}</a></li>
+            <li><a href="${href(`/${pages.blog.path}`)}">${pages.blog.label}</a></li>
           </ul>
+        </div>
+        <div class="footer-col">
+          <p class="mono footer-col-title">Legal</p>
+          <ul role="list">${legalPages.map((l) => html`<li><a href="${href(`/${l.slug}/`)}">${l.label}</a></li>`)}</ul>
         </div>
         <div class="footer-col">
           <p class="mono footer-col-title">Elsewhere</p>

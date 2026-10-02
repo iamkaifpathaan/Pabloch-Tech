@@ -1,6 +1,6 @@
 import { html, type SafeHtml } from "../lib/html.ts";
 import { href, navRoutes, to, type PageId } from "../lib/routes.ts";
-import { site, socialLinks } from "../content/site.ts";
+import { pages, site, socialLinks } from "../content/site.ts";
 import { logoMark, icons } from "./icons.ts";
 
 /** Which nav item a page belongs to (the case study lives under Work). */
@@ -23,6 +23,7 @@ export function Nav(page: PageId): SafeHtml {
           ${navRoutes.map(
             (r) => html`<li><a href="${href(to(r.id))}"${r.id === current ? html` aria-current="page"` : ""}><span>${r.label}</span></a></li>`,
           )}
+          <li><a href="${href(`/${pages.blog.path}`)}"><span>${pages.blog.label}</span></a></li>
         </ul>
       </nav>
       ${page === "contact"
@@ -57,6 +58,7 @@ export function MobileMenu(page: PageId): SafeHtml {
         ${items.map(
           (r, i) => html`<li style="--i:${i}"><a href="${href(to(r.id))}" data-menu-link${r.id === current ? html` aria-current="page"` : ""}><span class="menu-index mono">0${i}</span><span class="menu-label">${r.label}</span></a></li>`,
         )}
+        <li style="--i:${items.length}"><a href="${href(`/${pages.blog.path}`)}" data-menu-link><span class="menu-index mono">0${items.length}</span><span class="menu-label">${pages.blog.label}</span></a></li>
       </ol>
     </nav>
     <div class="menu-foot">

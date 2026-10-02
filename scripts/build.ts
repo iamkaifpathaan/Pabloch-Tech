@@ -4,9 +4,11 @@
  *   npm run build      → production files in the repo root (commit them)
  *   npm run dev        → same, unminified, with dev-only content markers, served locally
  *
- * Writes:  index.html plus one folder per page (work/, work/al-abuzer-perfumes/,
+ * Writes:  index.html plus one folder per page (work/, work/renewal-tracker/,
  *          services/, process/, studio/, contact/ — each an index.html),
- *          404.html, static/app.<hash>.{css,js}, robots.txt, sitemap.xml, favicon.svg
+ *          <legal>/index.html, blog/index.html, blog/<slug>/index.html,
+ *          blog/feed.xml, 404.html, static/app.<hash>.{css,js}, robots.txt,
+ *          sitemap.xml, llms.txt, llms-full.txt, favicon.svg
  * Never writes: config.js (your Web3Forms key + handles), assets/, .htaccess,
  * googleeaf0a72808bb7594.html (Google Search Console ownership proof)
  * (config.js is only *read*, to fingerprint it — see configFingerprint below)
@@ -116,6 +118,14 @@ async function bundleAssets(dev: boolean): Promise<{ css: string; js: string }> 
   return { css: cssName, js: jsName };
 }
 
+/** Deletes blog/<slug>/ folders for posts that no longer exist, so old URLs 404 instead of going stale. */
+async function removeStalePosts(slugs: readonly string[]): Promise<void> {
+  const dir = path.join(ROOT, "blog");
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    if (entry.isDirectory() && !slugs.includes(entry.name)) await rm(path.join(dir, entry.name), { recursive: true });
+  }
+}
+
 export async function runBuild({ dev = false } = {}): Promise<void> {
   const started = Date.now();
   await checkGoogleVerification(dev);
@@ -150,6 +160,13 @@ export async function runBuild({ dev = false } = {}): Promise<void> {
     contact: (await import("../src/pages/contact.ts")).renderContact,
   } as const;
   const { renderNotFound } = await import("../src/pages/not-found.ts");
+
+  const { renderLegal } = await import("../src/pages/legal.ts");
+  const { renderBlogIndex, renderPost } = await import("../src/pages/blog.ts");
+  const { legalPages } = await import("../src/content/site.ts");
+  const { legalDocs } = await import("../src/content/legal.ts");
+  const { posts } = await import("../src/content/blog.ts");
+  const { siteFiles } = await import("./site-files.ts");
   const finish = (s: { value: string }) => (dev ? s.value : minifyHtml(s.value)) + "\n";
 
   // Every page is <path>index.html, so URLs are clean (/work/, /services/ …).
@@ -160,15 +177,17 @@ export async function runBuild({ dev = false } = {}): Promise<void> {
     setEnv({ page: route.path, base: "../".repeat(depth) });
     await safeWrite(`${route.path}index.html`, finish(pages[route.id]()));
   }
-  setEnv({ page: "", base: "/" }); // 404 page: served at any URL, so absolute paths
+  // 404, legal and journal pages use root-absolute paths (the 404 can be served at any URL).
+  setEnv({ page: "", base: "/" });
   await safeWrite("404.html", finish(renderNotFound()));
+  for (const { slug } of legalPages) await safeWrite(`${slug}/index.html`, finish(renderLegal(slug)));
+  await safeWrite("blog/index.html", finish(renderBlogIndex()));
+  for (const post of posts) await safeWrite(`blog/${post.slug}/index.html`, finish(renderPost(post)));
+  await removeStalePosts(posts.map((p) => p.slug));
+
   await safeWrite("favicon.svg", faviconSvg);
-  await safeWrite("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${site.url}sitemap.xml\n`);
-  const lastmod = now.toISOString().slice(0, 10);
-  const urls = Object.values(routes)
-    .map((r) => `  <url>\n    <loc>${site.url}${r.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`)
-    .join("\n");
-  await safeWrite("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
+  const files = siteFiles({ site, routes: Object.values(routes), posts, legal: legalPages.map((l) => legalDocs[l.slug]), buildDate: now.toISOString().slice(0, 10) });
+  for (const [name, contents] of Object.entries(files)) await safeWrite(name, contents);
 
   console.log(`✓ built ${dev ? "(dev) " : ""}${assets.css} ${assets.js} in ${Date.now() - started}ms`);
 }

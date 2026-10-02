@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Pabloch Tech — Journal</title>
+  <link>https://projects.pablochtech.com/blog/</link>
+  <atom:link href="https://projects.pablochtech.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Practical guides on websites, online stores and turning searches into customers, from an independent web design studio.</description>
+  <language>en</language>
+  <lastBuildDate>Sun, 27 Sep 2026 09:00:00 GMT</lastBuildDate>
+  <item>
+    <title>How much does a small business website cost in 2026?</title>
+    <link>https://projects.pablochtech.com/blog/how-much-does-a-small-business-website-cost/</link>
+    <guid isPermaLink="true">https://projects.pablochtech.com/blog/how-much-does-a-small-business-website-cost/</guid>
+    <pubDate>Sun, 27 Sep 2026 09:00:00 GMT</pubDate>
+    <category>Pricing</category>
+    <description>What a small business website really costs in the US &amp; UK: builders vs freelancers vs agencies, price drivers, running costs and fixed quotes.</description>
+  </item>
+  <item>
+    <title>Custom website vs Wix, Squarespace or WordPress: which is right for your business?</title>
+    <link>https://projects.pablochtech.com/blog/custom-website-vs-wix-squarespace-wordpress/</link>
+    <guid isPermaLink="true">https://projects.pablochtech.com/blog/custom-website-vs-wix-squarespace-wordpress/</guid>
+    <pubDate>Sun, 27 Sep 2026 09:00:00 GMT</pubDate>
+    <category>Choosing</category>
+    <description>Hand-built websites vs Wix, Squarespace and WordPress for small businesses: cost, speed, ownership, SEO and maintenance compared honestly.</description>
+  </item>
+  <item>
+    <title>Shopify vs a custom online store: fees, ownership and control</title>
+    <link>https://projects.pablochtech.com/blog/shopify-vs-custom-online-store/</link>
+    <guid isPermaLink="true">https://projects.pablochtech.com/blog/shopify-vs-custom-online-store/</guid>
+    <pubDate>Sun, 27 Sep 2026 09:00:00 GMT</pubDate>
+    <category>E-commerce</category>
+    <description>Shopify or a custom online store? Compare monthly and app fees, ownership, checkout flexibility and when each makes sense for a small brand.</description>
+  </item>
+  <item>
+    <title>The small business website checklist: 12 things that turn searches into calls</title>
+    <link>https://projects.pablochtech.com/blog/small-business-website-checklist/</link>
+    <guid isPermaLink="true">https://projects.pablochtech.com/blog/small-business-website-checklist/</guid>
+    <pubDate>Sun, 27 Sep 2026 09:00:00 GMT</pubDate>
+    <category>Guides</category>
+    <description>12 essentials for a local or service business website: first-screen content, prices, reviews, areas served, mobile speed and SEO basics.</description>
+  </item>
+  <item>
+    <title>Why you should see a working draft before paying a web designer</title>
+    <link>https://projects.pablochtech.com/blog/see-a-working-draft-before-you-pay/</link>
+    <guid isPermaLink="true">https://projects.pablochtech.com/blog/see-a-working-draft-before-you-pay/</guid>
+    <pubDate>Sun, 27 Sep 2026 09:00:00 GMT</pubDate>
+    <category>Process</category>
+    <description>Most web designers want a deposit before you see anything. Why a free working first draft protects small businesses — and how our 5 stages work.</description>
+  </item>
+</channel>
+</rss>

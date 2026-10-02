@@ -1,7 +1,11 @@
 /** Shared content types. Content lives in `src/content/*`; components render it. */
 
-/** Inline rich text: plain strings, serif-italic emphasis, or strong. */
-export type RichPart = string | { readonly em: string } | { readonly strong: string };
+/** Inline rich text: plain strings, serif-italic emphasis, strong, or a link. */
+export type RichPart =
+  | string
+  | { readonly em: string }
+  | { readonly strong: string }
+  | { readonly a: string; readonly href: string };
 export type Rich = string | readonly RichPart[];
 
 export type Theme = "ink" | "paper";
@@ -54,6 +58,8 @@ export interface Service {
   readonly line: string;
   readonly includes: readonly string[];
   readonly price: string;
+  /** Lowest published price in USD, for structured data. Omit when quoted per project. */
+  readonly fromUSD?: number;
   readonly preview?: Shot;
 }
 
@@ -88,3 +94,41 @@ export interface Fact {
  */
 export const PENDING = "[CONTENT TO BE PROVIDED]" as const;
 export type Pending = typeof PENDING;
+
+/* ------------------------------------------------------------------ */
+/*  Long-form pages (legal, journal)                                   */
+/* ------------------------------------------------------------------ */
+
+/** One block of long-form copy. `h2` blocks carry an id and form the table of contents. */
+export type Block =
+  | { readonly h2: string; readonly id: string }
+  | { readonly h3: string }
+  | { readonly p: Rich }
+  | { readonly ul: readonly Rich[] }
+  | { readonly ol: readonly Rich[] }
+  | { readonly note: Rich };
+
+export interface LongformDoc {
+  /** URL segment: /<section>/<slug>/ */
+  readonly slug: string;
+  /** Visible H1. */
+  readonly title: string;
+  /** <title> and social title. Keep under ~60 characters. */
+  readonly metaTitle: string;
+  /** Meta description. Keep under ~160 characters. */
+  readonly description: string;
+  readonly lede: Rich;
+  /** ISO date (YYYY-MM-DD) the text last changed. */
+  readonly updated: string;
+  readonly blocks: readonly Block[];
+}
+
+export interface Post extends LongformDoc {
+  /** ISO date first published. */
+  readonly published: string;
+  readonly category: string;
+  /** Short answers shown above the article — quotable on their own. */
+  readonly takeaways: readonly string[];
+  /** Questions answered in the article, also emitted as FAQPage data. */
+  readonly faq?: readonly { readonly q: string; readonly a: string }[];
+}

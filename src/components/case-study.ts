@@ -1,16 +1,30 @@
 import { html, type SafeHtml } from "../lib/html.ts";
+import { rich } from "../lib/rich.ts";
+import { href, to } from "../lib/routes.ts";
 import { caseStudy } from "../content/studio.ts";
-import { shots } from "../content/shots.ts";
-import { ArrowLink, ContentSlot, Picture } from "./primitives.ts";
+import { ArrowLink, ContentSlot, Picture, PrimaryButton } from "./primitives.ts";
 
 /** The case-study page body. Its page header (the h1) carries the project name. */
 export function CaseStudy(): SafeHtml {
   const cs = caseStudy;
   const p = cs.project;
   return html`<section class="case case--page" id="case-study" data-theme="ink" aria-label="${p.name} — case study">
-    <figure class="case-hero" data-reveal="image">
-      <span class="case-hero-img" data-parallax="0.08">${Picture(shots.alabuzerDesktop, { sizes: "100vw" })}</span>
-      <figcaption class="wrap mono">The homepage, as it runs in production today.</figcaption>
+    <figure class="wrap case-stage">
+      <div class="case-stage-glow" aria-hidden="true"></div>
+      <div class="case-window">
+        <div class="case-window-bar" aria-hidden="true">
+          <span class="case-window-dots"><i></i><i></i><i></i></span>
+          <span class="case-window-title mono">${p.name}</span>
+        </div>
+        ${Picture(p.desktop, { sizes: "(min-width: 1260px) 1120px, calc(100vw - 2 * clamp(20px, 4.4vw, 72px))", imgClass: "case-window-img" })}
+      </div>
+      ${p.mobile
+        ? html`<div class="case-device">${Picture(p.mobile, { sizes: "(min-width: 768px) 360px, 44vw" })}</div>`
+        : ""}
+      <ul class="case-callouts" role="list" aria-hidden="true">
+        ${cs.callouts.map((c, i) => html`<li class="case-callout mono" style="--i:${i}">${c}</li>`)}
+      </ul>
+      <figcaption class="case-stage-caption mono">The desktop app and its calendar view, as they run today.</figcaption>
     </figure>
 
     <div class="wrap case-grid">
@@ -18,7 +32,8 @@ export function CaseStudy(): SafeHtml {
         <dl>
           ${cs.meta.map((m) => html`<div class="case-meta-row"><dt class="mono">${m.label}</dt><dd>${m.value}</dd></div>`)}
         </dl>
-        ${ArrowLink("Visit the live store", p.link.href)}
+        ${ArrowLink(p.link.label, p.link.href)}
+        ${p.more?.filter((m) => /^https?:/.test(m.href)).map((m) => ArrowLink(m.label, m.href))}
       </aside>
 
       <div class="case-body">
@@ -41,28 +56,15 @@ export function CaseStudy(): SafeHtml {
           </ol>
         </div>
 
-        <figure class="case-inline" data-reveal="image">
-          ${Picture(shots.alabuzerTablet, { sizes: "(min-width: 1024px) 60vw, 100vw" })}
-          <figcaption class="mono">The same storefront at tablet width: the logo, the video, one clear call to action.</figcaption>
-        </figure>
-
-        <div class="case-chapter">
-          <h2 class="case-chapter-label mono" data-reveal="fade">Eight collections</h2>
-          <ol class="case-collections" role="list">
-            ${cs.collections.map(
-              (c, i) => html`<li data-reveal="fade" style="--delay:${i * 50}ms"><span class="mono" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>${c}</li>`,
-            )}
-          </ol>
-        </div>
-
         <div class="case-chapter">
           <h2 class="case-chapter-label mono" data-reveal="fade">What we built</h2>
           <ul class="case-built" role="list">${cs.built.map((b) => html`<li data-reveal="fade">${b}</li>`)}</ul>
         </div>
 
         <div class="case-chapter case-status" data-reveal="fade">
-          <h2 class="case-chapter-label mono">Where it stands</h2>
-          <p class="case-lead">Live in production. Open it, browse it, add something to the cart — the work is there to be checked.</p>
+          <h2 class="case-chapter-label mono">What it means for you</h2>
+          <p class="case-lead">${rich(cs.forYou)}</p>
+          ${PrimaryButton("Talk about your product", href(to("contact")))}
           ${ContentSlot("Measured results", cs.results, (v) => html`<p class="case-lead">${v}</p>`)}
           ${ContentSlot("Client quote", cs.clientWords, (v) => html`<blockquote class="case-quote"><p>${v}</p></blockquote>`)}
         </div>

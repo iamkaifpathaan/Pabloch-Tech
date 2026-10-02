@@ -1,5 +1,6 @@
 import { PENDING, type Fact, type Principle, type ProofItem, type Rich } from "../lib/types.ts";
-import { alAbuzer, featured, previews } from "./work.ts";
+import { alAbuzer, featured, previews, renewalTracker } from "./work.ts";
+import { site } from "./site.ts";
 
 /* ------------------------------------------------------------------ */
 /*  Intro statement                                                    */
@@ -93,57 +94,52 @@ export const marqueeWords = [
 ] as const;
 
 /* ------------------------------------------------------------------ */
-/*  Case study — Al-Abuzer Perfumes                                    */
+/*  Case study — Renewal Tracker                                       */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Short on purpose. Renewal Tracker is our own product, so the case study is
+ * framed around the service a client buys: the same end-to-end build — app,
+ * back end, emails and website — done for their business.
+ */
 export const caseStudy = {
-  project: alAbuzer,
-  headline: ["Selling ", { em: "atmosphere" }, ", online."] as Rich,
+  project: renewalTracker,
+  headline: ["We build products, ", { em: "not just pages." }] as Rich,
   meta: [
-    { label: "Client", value: "Al-Abuzer Perfumes" },
-    { label: "Sector", value: "Fragrance retail" },
-    { label: "Scope", value: "Design, full-stack build, launch" },
-    { label: "Status", value: "Live in production" },
+    { label: "Built for", value: "Our own product — the same way we’d build yours" },
+    { label: "Platforms", value: "Windows & Mac desktop app, web" },
+    { label: "Scope", value: "Design, app, API, emails, website" },
+    { label: "Status", value: "Live · free to download" },
   ],
   chapters: [
     {
       label: "The brief",
-      body: "A perfume house with a catalogue that runs from attar roll-ons and oudh to bakhoor, body mists and travel sets — and a brand that sells on atmosphere before it sells on price.",
-    },
-    {
-      label: "The problem",
-      body: "Eight distinct collections, each with its own customer. A store that had to feel luxurious without feeling slow. And the question every small store gets by email: where is my order?",
+      body: "Subscriptions, insurance, MOT, TV Licence, passports — everything that renews, in one calm list, with a reminder before each one is due.",
     },
   ],
   moves: [
     {
-      title: "Open on atmosphere",
-      body: "The homepage opens on a full-bleed product video. Price comes second; the feeling comes first.",
+      title: "A real desktop app",
+      body: "Installable on Windows and Mac, with a Ctrl+K command palette and automatic background updates.",
     },
     {
-      title: "Make a big catalogue easy",
-      body: "Eight collections, each with its own catalogue page, product search, and a catalogue customers can download.",
+      title: "A back end that does the work",
+      body: "The API behind the app, plus a desktop reminder and a daily 8am email before anything is due.",
     },
     {
-      title: "Answer the question before it’s asked",
-      body: "Customers follow their order on a tracking page instead of emailing to ask where it is.",
-    },
-    {
-      title: "Give customers a reason to return",
-      body: "Customer accounts, sale pricing and combo packs, all running on the store’s own checkout.",
+      title: "The website that sells it",
+      body: "Designed and built in house, with the downloads for both platforms.",
     },
   ],
-  collections: [
-    "Attar Roll On",
-    "Oudh Collection",
-    "Perfume 75ml",
-    "Body Mist",
-    "Bakhoor",
-    "Air Freshener",
-    "Travelling Collection",
-    "Combo Packs",
-  ],
-  built: ["Cart & checkout", "Customer accounts", "Order tracking", "Product search", "Downloadable catalogue", "Full-bleed video hero"],
+  /** Short labels floated around the screenshot on wide screens (decorative; the same facts are in the text). */
+  callouts: ["Daily 8am reminder email", "Ctrl+K command palette", "Windows & Mac"],
+  built: ["Windows & Mac app", "API", "Reminder emails", "Command palette", "Auto-updates", "Product website"],
+  /** What the build means for a client — the point of the section. */
+  forYou: [
+    "Need more than a website — a booking system, a customer portal, a dashboard, an internal tool? ",
+    { em: "That’s a service we sell." },
+    " Same process: a working draft first, then a fixed price.",
+  ] as Rich,
   /** Not supplied yet — shown in dev builds only. */
   results: PENDING,
   clientWords: PENDING,
@@ -173,7 +169,7 @@ export const proof: readonly ProofItem[] = [
   },
   {
     claim: "Pay in two halves — after you’ve seen it.",
-    detail: "50% once you approve the draft, 50% on launch day. Bank transfer, Wise, Payoneer or PayPal, invoiced in USD, GBP, AED or INR.",
+    detail: `50% once you approve the draft, 50% on launch day. ${site.payments.summary} Invoiced in ${site.payments.currencyLabel}.`,
   },
   {
     claim: "Two full revision rounds, included.",

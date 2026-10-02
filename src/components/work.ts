@@ -179,7 +179,7 @@ export function CaseTeaser(index = "03"): SafeHtml {
     <div class="wrap">
       <header class="sec-head sec-head--compact">${SectionHeading(index, "Case study", "case-teaser-label")}</header>
       <a class="cteaser-link" href="${href(to("case-study"))}" data-cursor="Read">
-        <span class="cteaser-media" data-reveal="image">${Picture(shots.alabuzerHero, { sizes: "(min-width: 1024px) 58vw, 100vw" })}</span>
+        <span class="cteaser-media" data-reveal="image">${Picture(p.desktop, { sizes: "(min-width: 1024px) 58vw, 100vw" })}</span>
         <span class="cteaser-text">
           <span class="cteaser-kicker mono">${p.name} · ${statusLabel[p.status]}</span>
           <h3 class="cteaser-title" id="case-teaser-title">${rich(caseStudy.headline)}</h3>

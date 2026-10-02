@@ -3,7 +3,7 @@ import { revealWords, rich } from "../lib/rich.ts";
 import type { Rich } from "../lib/types.ts";
 import { absoluteUrl, href, routes, to, type PageId } from "../lib/routes.ts";
 import { site } from "../content/site.ts";
-import { Document } from "./document.ts";
+import { Document, type Json } from "./document.ts";
 import { MobileMenu, Nav } from "./nav.ts";
 import { Footer } from "./footer.ts";
 import { icons } from "./icons.ts";
@@ -17,7 +17,10 @@ interface PageOptions {
   title: string;
   description: string;
   body: SafeHtml;
-  structured?: boolean;
+  /** schema.org type of the page node, e.g. "AboutPage", "ContactPage". */
+  pageType?: string;
+  /** Extra structured-data nodes for this page. */
+  schema?: readonly Json[];
 }
 
 /** Breadcrumb trail for a page: Home › (Work ›) Page. */
@@ -44,8 +47,9 @@ ${Footer()}`;
     canonical: absoluteUrl(site.url, o.id),
     body,
     bodyClass: `page-${o.id}`,
-    ...(o.structured ? { structured: true } : {}),
-    ...(crumbs.length ? { breadcrumbs: crumbs } : {}),
+    ...(o.pageType ? { pageType: o.pageType } : {}),
+    ...(o.schema ? { schema: o.schema } : {}),
+    ...(crumbs.length ? { crumbs } : {}),
   });
 }
 

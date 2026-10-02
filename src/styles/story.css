@@ -27,49 +27,215 @@
 .case-sub em {
   color: var(--fg);
 }
-.case-hero {
+/* Case study stage: the app as a floating desktop window with the tablet view
+   overlapping it. Images are never shown larger than their source width, so UI
+   text stays crisp; the scroll tilt is a rotation that ends flat. */
+.case-stage {
   position: relative;
-  margin: 0;
+  max-width: calc(1120px + 2 * var(--margin));
+  margin: 0 auto;
+  padding-bottom: clamp(56px, 9vw, 150px);
+  perspective: 1800px;
 }
-.case-hero-img {
-  display: block;
-  height: clamp(300px, 56vw, 880px);
+.case-stage-glow {
+  position: absolute;
+  inset: 8% 4% 18%;
+  z-index: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side, rgba(233, 180, 76, 0.22), transparent 70%),
+    radial-gradient(closest-side at 70% 60%, rgba(120, 140, 255, 0.14), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.case-window {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
+  border: 1px solid var(--line-ink-2);
+  border-radius: clamp(10px, 1.2vw, 16px);
+  background: #101012;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 40px 80px -30px rgba(0, 0, 0, 0.8),
+    0 18px 36px -18px rgba(0, 0, 0, 0.6);
+  transform: rotateX(var(--tilt));
+  transform-origin: 50% 100%;
 }
-.case-hero-img picture,
-.case-hero-img img {
+.case-window-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: clamp(28px, 2.6vw, 38px);
+  padding-inline: 14px;
+  border-bottom: 1px solid var(--line-ink);
+  background: linear-gradient(#1b1b1f, #151518);
+}
+.case-window-dots {
+  display: flex;
+  gap: 7px;
+}
+.case-window-dots i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #3a3a40;
+}
+.case-window-dots i:first-child {
+  background: var(--accent);
+}
+.case-window-title {
+  color: var(--fg-3);
+  font-size: 0.6875rem;
+}
+.case-window picture,
+.case-window img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
-.case-hero-img img {
-  object-fit: cover;
-  object-position: 55% 50%;
-}
-.js-motion .case-hero-img {
-  height: calc(clamp(300px, 56vw, 880px) * 1.16);
-  margin-block: calc(clamp(300px, 56vw, 880px) * -0.08);
-}
-.js-motion .case-hero {
+
+/* The tablet view, overlapping the window's lower-right corner. */
+.case-device {
+  position: absolute;
+  z-index: 2;
+  right: calc(var(--margin) - clamp(12px, 3vw, 56px));
+  bottom: clamp(8px, 3vw, 60px);
+  width: clamp(150px, 32%, 360px);
   overflow: hidden;
+  padding: clamp(5px, 0.6vw, 9px);
+  border: 1px solid var(--line-ink-2);
+  border-radius: clamp(12px, 1.6vw, 22px);
+  background: #09090a;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.85);
 }
-.case-hero figcaption {
-  position: relative;
-  z-index: 3;
-  padding-top: 14px;
+.case-device img {
+  width: 100%;
+  height: auto;
+  border-radius: clamp(8px, 1vw, 14px);
+}
+
+/* Callouts: small glass labels pinned to the left edge of the window. */
+.case-callouts {
+  position: absolute;
+  z-index: 2;
+  left: calc(var(--margin) - clamp(12px, 2.4vw, 40px));
+  top: 30%;
+  display: grid;
+  gap: 12px;
+  pointer-events: none;
+}
+.case-callout {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border: 1px solid var(--line-ink-2);
+  border-radius: 999px;
+  background: rgba(19, 19, 21, 0.82);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--fg);
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.7);
+}
+.case-callout::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(233, 180, 76, 0.18);
+}
+.case-callout:nth-child(2) {
+  margin-left: clamp(16px, 3vw, 48px);
+}
+.case-stage-caption {
+  position: absolute;
+  left: var(--margin);
+  bottom: clamp(16px, 3vw, 56px);
+  max-width: 50%;
   color: var(--fg-3);
 }
-@media (min-width: 768px) {
-.js-motion .case-hero figcaption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin-inline: auto;
-  padding-bottom: 18px;
-  color: var(--fg);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+@media (max-width: 1023px) {
+  .case-callouts {
+    display: none;
+  }
 }
+@media (max-width: 767px) {
+  .case-stage {
+    padding-bottom: 0;
+  }
+  .case-device {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 58%;
+    margin: -18% 0 0 auto;
+  }
+  .case-stage-caption {
+    position: static;
+    max-width: none;
+    padding-top: 16px;
+  }
 }
+
+/* Scroll-linked entrance: the window tilts up like a laptop lid and the device
+   slides in. Only where scroll timelines exist and motion is welcome. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .case-window {
+      animation: case-lid linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 85%;
+    }
+    .case-device {
+      animation: case-device linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+    .case-callout {
+      animation: case-callout linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+}
+@keyframes case-lid {
+  from {
+    --tilt: 24deg;
+    opacity: 0.4;
+  }
+  to {
+    --tilt: 0deg;
+    opacity: 1;
+  }
+}
+@keyframes case-device {
+  from {
+    opacity: 0;
+    translate: 0 60px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes case-callout {
+  from {
+    opacity: 0;
+    translate: -24px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@property --tilt {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 .case-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -135,21 +301,6 @@
 .case-move p {
   max-width: 48ch;
   color: var(--fg-2);
-}
-.case-inline {
-  margin: 0;
-  border-radius: 6px;
-}
-.case-inline img {
-  width: 100%;
-}
-.case-inline figcaption {
-  position: relative;
-  z-index: 3;
-  padding-top: 14px;
-  color: var(--fg-3);
-  text-transform: none;
-  letter-spacing: 0.01em;
 }
 .case-collections {
   columns: 2;
@@ -470,4 +621,7 @@
 }
 .cta-alt a:hover {
   border-color: var(--accent);
+}
+.case-status .btn {
+  margin-top: clamp(20px, 2.4vw, 32px);
 }

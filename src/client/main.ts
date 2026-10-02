@@ -44,7 +44,7 @@ function safely(label: string, fn: () => void): void {
  */
 const LEGACY_HASHES: Record<string, string> = {
   work: "work/",
-  "case-study": "work/al-abuzer-perfumes/",
+  "case-study": "work/renewal-tracker/",
   services: "services/",
   capabilities: "services/#capabilities",
   process: "process/",

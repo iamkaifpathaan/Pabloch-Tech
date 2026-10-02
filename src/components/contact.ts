@@ -107,7 +107,7 @@ export function Contact(): SafeHtml {
             <button class="btn btn--primary btn--lg brief-submit" type="submit" data-magnetic disabled data-submit>
               <span class="btn-label" data-submit-label>${contactCopy.submit}</span><span class="btn-icon">${icons.arrowRight}</span>
             </button>
-            <p class="brief-note mono" id="brief-note">${contactCopy.reassurance}</p>
+            <p class="brief-note mono" id="brief-note">${contactCopy.reassurance} <a href="${href("/privacy/")}">How we handle your data</a>.</p>
           </div>
           <p class="brief-status" role="status" aria-live="polite" data-status></p>
           <noscript><p class="brief-status is-error">This form needs JavaScript, which is switched off in your browser. Email <a href="mailto:${site.email}">${site.email}</a> instead — it reaches us just the same.</p></noscript>

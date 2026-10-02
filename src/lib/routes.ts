@@ -17,7 +17,7 @@ export interface Route {
 export const routes: Readonly<Record<PageId, Route>> = {
   home: { id: "home", path: "", label: "Home" },
   work: { id: "work", path: "work/", label: "Work" },
-  "case-study": { id: "case-study", path: "work/al-abuzer-perfumes/", label: "Al-Abuzer Perfumes" },
+  "case-study": { id: "case-study", path: "work/renewal-tracker/", label: "Renewal Tracker" },
   services: { id: "services", path: "services/", label: "Services" },
   process: { id: "process", path: "process/", label: "Process" },
   studio: { id: "studio", path: "studio/", label: "Studio" },

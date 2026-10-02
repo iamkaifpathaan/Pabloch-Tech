@@ -16,6 +16,7 @@ export const services: readonly Service[] = [
       "SEO foundations and analytics",
     ],
     price: "From $400 · growth builds from $700",
+    fromUSD: 400,
     preview: shots.deanDesktop,
   },
   {
@@ -31,6 +32,7 @@ export const services: readonly Service[] = [
       "Shipping and tax configuration",
     ],
     price: "From $1,200",
+    fromUSD: 1200,
     preview: shots.alabuzerDesktop,
   },
   {
