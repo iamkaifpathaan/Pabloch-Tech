@@ -26,7 +26,7 @@ Hand-built custom websites, online stores and landing pages for US & UK business
 ## Main pages
 
 - [Home](https://projects.pablochtech.com/): who we are, featured work, services, process and FAQ
-- [Selected work](https://projects.pablochtech.com/work/): Royal Compass Travels, Renewal Tracker, Al-Abuzer Perfumes, The Cleaning Queens, Oak Tree Garden Maintenance, Dean the Decorator
+- [Selected work](https://projects.pablochtech.com/work/): Royal Compass Travels, Electronica, Renewal Tracker, Al-Abuzer Perfumes, The Cleaning Queens, Oak Tree Garden Maintenance, Dean the Decorator
 - [Case study: Renewal Tracker](https://projects.pablochtech.com/work/renewal-tracker/)
 - [Services and prices](https://projects.pablochtech.com/services/)
 - [Process](https://projects.pablochtech.com/process/)

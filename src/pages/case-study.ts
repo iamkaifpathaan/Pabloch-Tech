@@ -18,6 +18,6 @@ export function renderCaseStudy(): SafeHtml {
       meta: caseStudy.meta,
     })}
 ${CaseStudy()}
-${PageNext({ to: "work", kicker: "Back to", title: ["Selected ", { em: "work" }], note: "Six builds — a concept, our own app, a live store and three previews — each labelled for exactly what it is." })}`,
+${PageNext({ to: "work", kicker: "Back to", title: ["Selected ", { em: "work" }], note: "Seven builds — a concept, our own learning site and app, a live store and three previews — each labelled for exactly what it is." })}`,
   });
 }

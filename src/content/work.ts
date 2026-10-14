@@ -28,10 +28,29 @@ export const featured: Project = {
   words: ["Royal", "Compass"],
 };
 
+/** Our own product: a free learning site, live. The latest build. */
+export const electronica: Project = {
+  id: "electronica",
+  index: "02",
+  name: "Electronica",
+  sector: "Learning platform · Electronics",
+  status: "product",
+  summary: [
+    "Our own learning site for total beginners: 95 thirty-second video lessons in 19 series, from a first LED to Embedded C. It ",
+    { em: "builds itself" },
+    " from the repo the reels are made in — every new reel becomes a lesson page, sorted into its series, linked to its YouTube Short — alongside a hands-on component lab, a quiz lab and an arcade of electronics games.",
+  ],
+  features: ["95 lessons in 19 series", "12 interactive lab tools", "Daily 5 & 74-question quiz bank", "5 electronics games", "Builds and deploys itself"],
+  link: { label: "learn.pablochtech.com", href: "https://learn.pablochtech.com/" },
+  desktop: shots.electronicaDesktop,
+  mobile: shots.electronicaMobile,
+  layout: "a",
+};
+
 /** Our own product: a desktop app, live. */
 export const renewalTracker: Project = {
   id: "renewal-tracker",
-  index: "02",
+  index: "03",
   name: "Renewal Tracker",
   sector: "Desktop app · Windows & Mac",
   status: "product",
@@ -55,7 +74,7 @@ export const renewalTracker: Project = {
 /** The live store — also the subject of the case study. */
 export const alAbuzer: Project = {
   id: "al-abuzer",
-  index: "03",
+  index: "04",
   name: "Al-Abuzer Perfumes",
   sector: "Online store · Fragrance retail",
   status: "live",
@@ -75,7 +94,7 @@ export const alAbuzer: Project = {
 export const previews: readonly Project[] = [
   {
     id: "cleaning-queens",
-    index: "04",
+    index: "05",
     name: "The Cleaning Queens",
     sector: "Cleaning",
     location: "Sylvania & Toledo, Ohio",
@@ -93,7 +112,7 @@ export const previews: readonly Project[] = [
   },
   {
     id: "oak-tree",
-    index: "05",
+    index: "06",
     name: "Oak Tree Garden Maintenance",
     sector: "Landscaping",
     location: "Heanor, Derbyshire",
@@ -111,7 +130,7 @@ export const previews: readonly Project[] = [
   },
   {
     id: "dean-the-decorator",
-    index: "06",
+    index: "07",
     name: "Dean the Decorator",
     sector: "Painting & decorating",
     location: "Ilkeston, Derbyshire",
@@ -130,7 +149,7 @@ export const previews: readonly Project[] = [
 ];
 
 /** Everything after the headline, in order. */
-export const moreWork: readonly Project[] = [renewalTracker, alAbuzer, ...previews];
+export const moreWork: readonly Project[] = [electronica, renewalTracker, alAbuzer, ...previews];
 
 export const allWork: readonly Project[] = [featured, ...moreWork];
 
@@ -143,7 +162,7 @@ export const statusLabel: Readonly<Record<Project["status"], string>> = {
 
 export const workIntro = {
   title: "Selected work",
-  lede: "A self-initiated concept, our own desktop app, a storefront live in production, and three preview builds made on spec — our own time, no brief, no deposit — to show local businesses what their site could be.",
+  lede: "A self-initiated concept, our own learning site and desktop app, a storefront live in production, and three preview builds made on spec — our own time, no brief, no deposit — to show local businesses what their site could be.",
   previewNote:
     "Royal Compass Travels is our own concept, not a client commission. The three previews are unpaid and unpublished: none sits on the business’s own domain, and each still carries a banner saying it’s a design preview.",
 } as const;

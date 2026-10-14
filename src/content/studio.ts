@@ -1,5 +1,5 @@
 import { PENDING, type Fact, type Principle, type ProofItem, type Rich } from "../lib/types.ts";
-import { alAbuzer, featured, previews, renewalTracker } from "./work.ts";
+import { alAbuzer, electronica, featured, previews, renewalTracker } from "./work.ts";
 import { site } from "./site.ts";
 
 /* ------------------------------------------------------------------ */
@@ -157,6 +157,11 @@ export const proof: readonly ProofItem[] = [
     claim: "A live store you can open right now.",
     detail: "Browse it, search it, add something to the cart. It’s in production.",
     links: [{ label: "alabuzerperfumes.com", href: alAbuzer.link.href }],
+  },
+  {
+    claim: "Two products of our own, live and free.",
+    detail: "A learning site with 95 lessons, a lab, quizzes and games, and a desktop app for Windows and Mac. We run what we build.",
+    links: [electronica, renewalTracker].map((p) => ({ label: p.link.label, href: p.link.href })),
   },
   {
     claim: "Four more builds you can open on your phone.",

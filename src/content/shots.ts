@@ -2,7 +2,7 @@ import type { Shot } from "../lib/types.ts";
 
 /**
  * Screenshots of real work, pre-encoded to /assets/work/{name}-{width}.{avif,webp}.
- * Renewal Tracker: captured from the desktop app. Al-Abuzer: captured from the live store. Previews: rendered from the preview
+ * Electronica: captured from its own build. Renewal Tracker: captured from the desktop app. Al-Abuzer: captured from the live store. Previews: rendered from the preview
  * builds themselves — each still shows its "design preview" banner, on purpose.
  */
 const shot = (name: string, width: number, height: number, widths: number[], alt: string): Shot => ({
@@ -34,6 +34,20 @@ export const shots = {
     616,
     [800, 1200, 1550],
     "Royal Compass Travels destinations section: “Choose a direction. We’ll map the way.” beside a compass instrument reading 4.1755° N, 73.5093° E, heading 189° S for the Maldives.",
+  ),
+  electronicaDesktop: shot(
+    "electronica-desktop",
+    2400,
+    1500,
+    [640, 960, 1440, 1920],
+    "Electronica homepage in dark mode: the headline “Learn electronics in 30-second lessons” over a glowing oscilloscope trace, with a status line reading 95 lessons, 19 series, 100% free, and Start here and Browse all series buttons.",
+  ),
+  electronicaMobile: shot(
+    "electronica-mobile",
+    1170,
+    2532,
+    [360, 540, 780],
+    "Electronica’s resistor colour code lab on a phone: a resistor with brown, black, red and gold bands reading 1 kΩ ±5%, above colour swatches for each band.",
   ),
   rtDesktop: shot(
     "rt-desktop",

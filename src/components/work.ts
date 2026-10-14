@@ -1,7 +1,7 @@
 import { html, type SafeHtml } from "../lib/html.ts";
 import { rich } from "../lib/rich.ts";
 import type { Project } from "../lib/types.ts";
-import { alAbuzer, allWork, featured, moreWork, previews, renewalTracker, statusLabel, workIntro } from "../content/work.ts";
+import { alAbuzer, allWork, electronica, featured, moreWork, renewalTracker, statusLabel, workIntro } from "../content/work.ts";
 import { caseStudy } from "../content/studio.ts";
 import { shots } from "../content/shots.ts";
 import { href, to } from "../lib/routes.ts";
@@ -110,7 +110,7 @@ function WorkCard(p: Project, i: number): SafeHtml {
 }
 
 export function HomeWork(index = "02"): SafeHtml {
-  const cards = [renewalTracker, alAbuzer, previews[0]].filter((p): p is Project => !!p);
+  const cards = [electronica, renewalTracker, alAbuzer].filter((p): p is Project => !!p);
   return html`<section class="work work--home" id="selected-work" data-theme="ink" aria-labelledby="work-title">
     <header class="wrap work-head">
       ${SectionLabel(index, "Selected work")}
@@ -125,7 +125,7 @@ export function HomeWork(index = "02"): SafeHtml {
       <ul class="wcards" role="list">${cards.map((p, i) => WorkCard(p, i))}</ul>
       <div class="wcards-foot" data-reveal="fade">
         <p class="mono wcards-note">+ ${String(allWork.length - 1 - cards.length).padStart(2, "0")} more builds, with the full write-ups</p>
-        ${ArrowLink(`See all ${allWork.length === 6 ? "six" : allWork.length} builds`, to("work"), { className: "arrow-link--lg" })}
+        ${ArrowLink(`See all ${allWork.length === 7 ? "seven" : allWork.length} builds`, to("work"), { className: "arrow-link--lg" })}
       </div>
     </div>
   </section>`;

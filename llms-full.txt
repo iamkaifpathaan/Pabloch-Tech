@@ -2,7 +2,7 @@
 
 > Pabloch Tech is an independent digital product studio that designs and hand-builds high-performance websites, e-commerce stores and custom digital tools for businesses, with a “working draft before you pay” approach.
 
-Source: https://projects.pablochtech.com/ · Generated 2026-10-02
+Source: https://projects.pablochtech.com/ · Generated 2026-10-14
 
 ## Key facts
 
@@ -94,6 +94,7 @@ Five steps, in this order. The free draft sits in the middle — after we unders
 ## Selected work
 
 - **Royal Compass Travels** — Luxury travel planning (Concept · self-initiated). A concept site for a luxury travel planner, built around one line — *every journey begins with a direction*. A compass reads out heading and coordinates for every destination, and a six-step trip planner takes the place of a contact form. Link: https://royalcompasstravels.netlify.app
+- **Electronica** — Learning platform · Electronics (Own product · Live). Our own learning site for total beginners: 95 thirty-second video lessons in 19 series, from a first LED to Embedded C. It *builds itself* from the repo the reels are made in — every new reel becomes a lesson page, sorted into its series, linked to its YouTube Short — alongside a hands-on component lab, a quiz lab and an arcade of electronics games. Link: https://learn.pablochtech.com/
 - **Renewal Tracker** — Desktop app · Windows & Mac (Own product · Live). Our own product, built end to end in house. Subscriptions, insurance, MOT, TV Licence, passports: everything that renews sits in one calm list, and a desktop reminder plus an 8am email arrive before each one is due. We designed and built the Windows and Mac app, the API behind it, the reminder emails and the *website*. Link: https://app.pablochtech.com/
 - **Al-Abuzer Perfumes** — Online store · Fragrance retail (Live in production). A complete storefront for a perfume house — eight collections, cart and checkout, customer accounts and order tracking — opening on a *full-bleed product video*, because a fragrance brand sells on atmosphere before it sells on price. Link: https://alabuzerperfumes.com
 - **The Cleaning Queens** — Cleaning, Sylvania & Toledo, Ohio (Preview · not published). Nineteen years, six staff, 5.0 stars across 69 reviews — and a Google listing whose Website button pointed at a parked domain. An *instant estimator* answers “how much for a 3-bed deep clean?” on screen, so every enquiry arrives with a price already attached. Link: https://cleaningqueens-preview.netlify.app
