@@ -75,8 +75,8 @@ export const services: readonly Service[] = [
       "Original music & sound effects, no copyright claims",
       "Cover image, plus a 16:9 version on request",
     ],
-    price: "From $49 per reel · monthly packs from $449",
-    fromUSD: 49,
+    price: "From $21 per reel · monthly pack $199 · custom quotes",
+    fromUSD: 21,
     preview: shots.motionReels,
   },
   {

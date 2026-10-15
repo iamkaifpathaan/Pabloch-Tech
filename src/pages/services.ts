@@ -11,7 +11,7 @@ export function renderServices(): SafeHtml {
   return Page({
     id: "services",
     title: `Services & pricing — ${site.name}`,
-    description: "Websites from $400, online stores from $1,200, motion graphics reels from $49, plus landing pages, features and care — fixed prices in writing.",
+    description: "Websites from $400, online stores from $1,200, motion graphics reels from $21, plus landing pages, features and care — fixed prices in writing.",
     body: html`${PageHeader({
       id: "services",
       title: ["What we ", { em: "build." }],

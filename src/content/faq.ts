@@ -39,8 +39,8 @@ export const faq: readonly FaqItem[] = [
     q: "Do you make videos too?",
     a: [
       "Yes — motion graphics reels and Shorts for Instagram, YouTube and TikTok: kinetic text, animated diagrams and mock-ups, original music and an optional English AI voiceover. A music-only reel is ",
-      { strong: "$49" },
-      ", a voiceover reel $79, an explainer or promo up to 60 seconds $149, and a monthly pack of eight reels $449. Real samples are on the Services page.",
+      { strong: "$21" },
+      ", a voiceover reel $29, an explainer or promo up to 60 seconds $49, and a monthly pack of eight voiceover reels $199. Need something else? Custom pricing is available based on what you need. Real samples are on the Services page.",
     ],
   },
   {

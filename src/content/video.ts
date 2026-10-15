@@ -27,23 +27,28 @@ export const showreel = {
 export const videoTiers: readonly VideoTier[] = [
   {
     name: "Music-only reel",
-    price: "$49",
+    price: "$21",
     detail: "Up to 20 seconds, 9:16. Kinetic text, animated graphics, original music and sound effects.",
   },
   {
     name: "Voiceover reel",
-    price: "$79",
+    price: "$29",
     detail: "Up to 30 seconds. Everything above, plus an English AI voiceover and on-screen captions that match it.",
   },
   {
     name: "Explainer or promo",
-    price: "$149",
+    price: "$49",
     detail: "Up to 60 seconds, 9:16 or 16:9. Your product, service or app explained with animated mock-ups or a screen-recorded tour.",
   },
   {
     name: "Monthly pack",
-    price: "$449 / month",
-    detail: "Eight voiceover reels a month, planned as a series — with captions, hashtags and a YouTube title for each.",
+    price: "$199 / month",
+    detail: "Eight voiceover reels a month (about $25 each), planned as a series — with captions, hashtags and a YouTube title for each.",
+  },
+  {
+    name: "Custom",
+    price: "On request",
+    detail: "Longer videos, more reels a month or a special style — tell us what you need and we'll price it to fit.",
   },
 ];
 

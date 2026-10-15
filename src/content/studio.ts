@@ -170,7 +170,7 @@ export const proof: readonly ProofItem[] = [
   },
   {
     claim: "A fixed price, in writing, before work starts.",
-    detail: "Websites from $400, motion graphics reels from $49. The number you agree is the number you pay.",
+    detail: "Websites from $400, motion graphics reels from $21. The number you agree is the number you pay.",
   },
   {
     claim: "Pay in two halves — after you’ve seen it.",
