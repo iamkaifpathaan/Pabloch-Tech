@@ -1,7 +1,7 @@
 import type { Service } from "../lib/types.ts";
 import { shots } from "./shots.ts";
 
-/** Services and starting prices, as published on the previous site. */
+/** Services and starting prices. Websites, stores and care as published on the previous site; motion graphics added 2026-10-15. */
 export const services: readonly Service[] = [
   {
     id: "websites",
@@ -60,6 +60,24 @@ export const services: readonly Service[] = [
     ],
     price: "Quoted per feature",
     preview: shots.cqEstimator,
+  },
+  {
+    id: "motion-graphics",
+    name: "Motion graphics videos",
+    line: "Reels and Shorts that stop the scroll — kinetic text, animated diagrams and mock-ups, made in code by the engine behind our own 90-reel channel.",
+    includes: [
+      "Instagram Reels, YouTube Shorts & TikToks (9:16)",
+      "Kinetic text and animated icons & diagrams",
+      "Quizzes, explainers, myth-busters & buying guides",
+      "Animated phone, browser & app mock-ups",
+      "English AI voiceover — or music only",
+      "Captions that match the voice",
+      "Original music & sound effects, no copyright claims",
+      "Cover image, plus a 16:9 version on request",
+    ],
+    price: "From $49 per reel · monthly packs from $449",
+    fromUSD: 49,
+    preview: shots.motionReels,
   },
   {
     id: "care",

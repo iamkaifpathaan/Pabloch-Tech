@@ -10,12 +10,14 @@ export const projectTypes: readonly Choice[] = [
   { value: "Online store", label: "Online store" },
   { value: "Landing page", label: "Landing page" },
   { value: "Product feature", label: "Product feature" },
+  { value: "Motion graphics video", label: "Motion graphics video" },
   { value: "Redesign", label: "Redesign" },
   { value: "Website care", label: "Website care" },
   { value: "Not sure yet", label: "Not sure yet" },
 ];
 
 export const budgets: readonly Choice[] = [
+  { value: "Under $400", label: "Under $400" },
   { value: "$400 – $700", label: "$400 – 700" },
   { value: "$700 – $1,200", label: "$700 – 1,200" },
   { value: "$1,200 – $2,500", label: "$1,200 – 2,500" },

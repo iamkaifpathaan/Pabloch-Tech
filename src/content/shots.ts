@@ -4,6 +4,7 @@ import type { Shot } from "../lib/types.ts";
  * Screenshots of real work, pre-encoded to /assets/work/{name}-{width}.{avif,webp}.
  * Electronica: captured from its own build. Renewal Tracker: captured from the desktop app. Al-Abuzer: captured from the live store. Previews: rendered from the preview
  * builds themselves — each still shows its "design preview" banner, on purpose.
+ * Motion graphics: covers rendered by the reel engine that made each video.
  */
 const shot = (name: string, width: number, height: number, widths: number[], alt: string): Shot => ({
   name,
@@ -133,4 +134,18 @@ export const shots = {
     [360, 540, 780],
     "Dean the Decorator preview on a phone, with the design-preview banner across the top.",
   ),
+  /* Motion graphics: covers of real reels from our Electronica channel, cropped to 3:4. */
+  motionReels: shot(
+    "motion-reels",
+    1200,
+    750,
+    [480, 800, 1200],
+    "Three motion graphics reels side by side: a quiz asking which bulb uses the least power, a touchscreen explainer, and an LED bulb buying guide.",
+  ),
+  reelEp78: shot("reel-ep78", 720, 960, [360, 540, 720], "Quiz reel: “same light — which uses least power?” over an old bulb, a CFL and an LED on a violet stage."),
+  reelEp80: shot("reel-ep80", 720, 960, [360, 540, 720], "Buying guide reel: “buying a bulb? ignore the watts!” with an LED bulb box and a price tag."),
+  reelEp43: shot("reel-ep43", 720, 960, [360, 540, 720], "Explainer reel: “how does glass know where your finger is?” with a finger touching a glowing touchscreen grid."),
+  reelEp55: shot("reel-ep55", 720, 960, [360, 540, 720], "Code lesson reel: “three numbers… or one byte?” showing 0b00100000 = 0x20 = 32."),
+  reelEp17: shot("reel-ep17", 720, 960, [360, 540, 720], "Explainer reel: “these 2 coils never touch” above a glowing transformer with copper coils."),
+  reelEp36: shot("reel-ep36", 720, 960, [360, 540, 720], "How-it’s-made reel: “your phone’s chip started as SAND” with a pile of sand and a zoomed crystal lattice."),
 } as const satisfies Record<string, Shot>;

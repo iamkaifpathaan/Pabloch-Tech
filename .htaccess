@@ -33,6 +33,7 @@ ErrorDocument 404 /404.html
   AddType image/avif  .avif
   AddType image/webp  .webp
   AddType image/svg+xml .svg
+  AddType video/mp4   .mp4
 </IfModule>
 
 # ---- never serve the source, tooling or notes ------------------
@@ -67,6 +68,7 @@ RedirectMatch 404 ^/(src|scripts|node_modules)(/|$)
   ExpiresByType image/x-icon           "access plus 1 year"
   ExpiresByType image/webp             "access plus 1 year"
   ExpiresByType image/avif             "access plus 1 year"
+  ExpiresByType video/mp4              "access plus 1 month"
   ExpiresByType font/woff2             "access plus 1 year"
 </IfModule>
 

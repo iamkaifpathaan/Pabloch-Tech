@@ -15,7 +15,7 @@ export const introStatement: Rich = [
 export const introNotes = [
   {
     label: "What we make",
-    body: "Websites, online stores, landing pages — and the tools inside them: estimators, booking flows, photo-upload quote forms.",
+    body: "Websites, online stores, landing pages — and the tools inside them: estimators, booking flows, photo-upload quote forms. Plus motion graphics reels and Shorts.",
   },
   {
     label: "Who it’s for",
@@ -170,7 +170,7 @@ export const proof: readonly ProofItem[] = [
   },
   {
     claim: "A fixed price, in writing, before work starts.",
-    detail: "Starting prices from $400. The number you agree is the number you pay.",
+    detail: "Websites from $400, motion graphics reels from $49. The number you agree is the number you pay.",
   },
   {
     claim: "Pay in two halves — after you’ve seen it.",

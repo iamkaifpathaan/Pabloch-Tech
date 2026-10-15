@@ -35,6 +35,15 @@ export const faq: readonly FaqItem[] = [
     ],
   },
   {
+    id: "video",
+    q: "Do you make videos too?",
+    a: [
+      "Yes — motion graphics reels and Shorts for Instagram, YouTube and TikTok: kinetic text, animated diagrams and mock-ups, original music and an optional English AI voiceover. A music-only reel is ",
+      { strong: "$49" },
+      ", a voiceover reel $79, an explainer or promo up to 60 seconds $149, and a monthly pack of eight reels $449. Real samples are on the Services page.",
+    ],
+  },
+  {
     id: "pay-before",
     q: "Do I have to pay before I see anything?",
     a: "No. We build a working first draft of your site for free — real layout, your services, your words. If it isn’t right, you owe nothing. You pay a 50% deposit only after you approve the draft, and the remaining 50% on launch day.",

@@ -575,3 +575,201 @@
     padding-left: 0;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Motion graphics samples — a showreel phone, fixed prices, six real reels.
+   -------------------------------------------------------------------------- */
+.vw {
+  padding-block: var(--section-y);
+}
+.vw-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+  gap: clamp(40px, 6vw, 112px);
+  align-items: start;
+}
+.vw-copy {
+  display: grid;
+  gap: clamp(20px, 2.4vw, 32px);
+  align-content: start;
+}
+.vw-lede em {
+  color: var(--c-fg);
+}
+.vw-tiers {
+  margin-top: clamp(8px, 1.6vw, 24px);
+  border-top: 1px solid var(--c-line-2);
+}
+.vw-tier {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px var(--gutter);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--c-line);
+}
+.vw-tier-name {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 480;
+}
+.vw-tier-price {
+  align-self: center;
+  color: var(--c-accent-text);
+  font-size: clamp(0.95rem, 1.3vw, 1.125rem);
+}
+.vw-tier-detail {
+  grid-column: 1 / -1;
+  max-width: 52ch;
+  font-size: 0.9375rem;
+  color: var(--c-fg-2);
+}
+.vw-cta {
+  margin-top: 8px;
+}
+.vw-reel {
+  margin: 0;
+  position: sticky;
+  top: 112px;
+}
+.vw-phone {
+  padding: 9px;
+  border: 1px solid var(--c-line-2);
+  border-radius: 34px;
+  background: #050506;
+  box-shadow:
+    0 40px 90px -30px rgba(108, 99, 255, 0.45),
+    0 0 0 6px rgba(242, 239, 232, 0.03);
+}
+.vw-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 26px;
+  background: #0b0b0f;
+  object-fit: cover;
+}
+.vw-cap {
+  margin-top: 14px;
+  text-align: center;
+  color: var(--c-fg-3);
+}
+.vw-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(28px, 3vw, 44px) clamp(14px, 1.6vw, 24px);
+  margin-top: clamp(64px, 9vw, 140px);
+  padding-top: clamp(24px, 3vw, 40px);
+  border-top: 1px solid var(--c-line-2);
+}
+.vw-link {
+  display: grid;
+  gap: 10px;
+}
+.vw-poster {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b0b0f;
+  box-shadow: 0 0 0 1px var(--c-line);
+}
+.vw-poster img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease-out);
+}
+.vw-play {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(11, 11, 15, 0.72);
+  box-shadow: inset 0 0 0 1px var(--line-ink-2);
+  transition:
+    transform 0.5s var(--ease-spring),
+    background-color 0.3s ease;
+}
+.vw-play::after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 14px;
+  border-style: solid;
+  border-width: 8px 0 8px 13px;
+  border-color: transparent transparent transparent var(--fg);
+}
+.vw-link:hover .vw-poster img,
+.vw-link:focus-visible .vw-poster img {
+  transform: scale(1.045);
+}
+.vw-link:hover .vw-play,
+.vw-link:focus-visible .vw-play {
+  transform: scale(1.12);
+  background: var(--accent);
+}
+.vw-link:hover .vw-play::after,
+.vw-link:focus-visible .vw-play::after {
+  border-left-color: var(--ink);
+}
+.vw-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: center;
+  color: var(--c-fg-3);
+}
+.vw-meta > span:last-child {
+  flex-basis: 100%;
+}
+.vw-audio {
+  padding: 3px 8px;
+  border: 1px solid var(--c-line-2);
+  border-radius: 999px;
+  color: var(--c-fg-2);
+}
+.vw-audio--voiceover {
+  border-color: var(--accent);
+  color: var(--c-accent-text);
+}
+.vw-title {
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+.vw-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-fg-2);
+}
+.vw-watch svg {
+  width: 14px;
+  height: 14px;
+}
+.vw-link:hover .vw-watch {
+  color: var(--c-fg);
+}
+@media (max-width: 1199px) {
+  .vw-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 899px) {
+  .vw-top {
+    grid-template-columns: 1fr;
+  }
+  .vw-reel {
+    position: static;
+    width: min(100%, 300px);
+    margin-inline: auto;
+  }
+}
+@media (max-width: 767px) {
+  .vw-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

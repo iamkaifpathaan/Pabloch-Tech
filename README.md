@@ -52,7 +52,7 @@ scripts/build.ts  scripts/dev.ts
 | `/` | Hero + the Pabloch Grid, the studio in one paragraph, the pinned headline project and three more, the services at a glance, the five steps, the numbers, and the way in |
 | `/work/` | Index of all seven builds, every build in full, and the case study as a door |
 | `/work/renewal-tracker/` | The Renewal Tracker case study |
-| `/services/` | Every service with what's included and its price, capabilities, pricing & terms |
+| `/services/` | Every service with what’s included and its price, motion graphics samples (showreel + six real reels), capabilities, pricing & terms |
 | `/process/` | The five steps, and the four things we do differently |
 | `/studio/` | Who you'll be talking to, studio details, and proof you can check |
 | `/contact/` | The brief form, other ways in, and what happens next |

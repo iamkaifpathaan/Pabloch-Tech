@@ -2,7 +2,7 @@
 
 > Pabloch Tech is an independent digital product studio that designs and hand-builds high-performance websites, e-commerce stores and custom digital tools for businesses, with a “working draft before you pay” approach.
 
-Source: https://projects.pablochtech.com/ · Generated 2026-10-14
+Source: https://projects.pablochtech.com/ · Generated 2026-10-15
 
 ## Key facts
 
@@ -69,6 +69,22 @@ Includes:
 - Photo-upload quote forms
 - Customer portals and dashboards
 
+### Motion graphics videos
+
+Reels and Shorts that stop the scroll — kinetic text, animated diagrams and mock-ups, made in code by the engine behind our own 90-reel channel.
+
+Price: From $49 per reel · monthly packs from $449
+
+Includes:
+- Instagram Reels, YouTube Shorts & TikToks (9:16)
+- Kinetic text and animated icons & diagrams
+- Quizzes, explainers, myth-busters & buying guides
+- Animated phone, browser & app mock-ups
+- English AI voiceover — or music only
+- Captions that match the voice
+- Original music & sound effects, no copyright claims
+- Cover image, plus a 16:9 version on request
+
 ### Website care
 
 The part most people skip. A website nobody maintains is out of date within a year and invisible within two.
@@ -110,6 +126,10 @@ Pabloch Tech is an independent digital product studio that designs and hand-buil
 ### How much does a website cost?
 
 Websites start from **$400**, with growth builds from $700. Online stores start from **$1,200**. Landing pages and custom features such as estimators or booking flows are quoted per project. Whatever the job, you get a fixed price in writing before the paid build starts — the number you agree is the number you pay.
+
+### Do you make videos too?
+
+Yes — motion graphics reels and Shorts for Instagram, YouTube and TikTok: kinetic text, animated diagrams and mock-ups, original music and an optional English AI voiceover. A music-only reel is **$49**, a voiceover reel $79, an explainer or promo up to 60 seconds $149, and a monthly pack of eight reels $449. Real samples are on the Services page.
 
 ### Do I have to pay before I see anything?
 

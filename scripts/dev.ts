@@ -19,6 +19,7 @@ const TYPES: Record<string, string> = {
   ".jpg": "image/jpeg",
   ".webp": "image/webp",
   ".avif": "image/avif",
+  ".mp4": "video/mp4",
   ".woff2": "font/woff2",
   ".xml": "application/xml",
   ".txt": "text/plain; charset=utf-8",

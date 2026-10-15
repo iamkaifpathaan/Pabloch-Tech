@@ -12,6 +12,7 @@ import { mountNav } from "./islands/nav.ts";
 import { mountGridField } from "./islands/grid-field.ts";
 import { mountServices } from "./islands/services.ts";
 import { mountBriefForm } from "./islands/brief-form.ts";
+import { mountReelVideo } from "./islands/reel-video.ts";
 import { mountHorizontal, mountMarquee, mountProcessLine, mountScrubText, mountWorkFeature } from "./islands/scroll-islands.ts";
 
 type Island = (el: HTMLElement) => void;
@@ -26,6 +27,7 @@ const islands: Record<string, Island> = {
   "h-scroll": mountHorizontal,
   marquee: mountMarquee,
   "brief-form": mountBriefForm,
+  "reel-video": mountReelVideo,
 };
 
 function safely(label: string, fn: () => void): void {

@@ -63,6 +63,27 @@ export interface Service {
   readonly preview?: Shot;
 }
 
+/** One finished reel shown as a sample of the motion graphics service. */
+export interface VideoSample {
+  readonly id: string;
+  /** Format, e.g. "Quiz", "Buying guide". */
+  readonly kind: string;
+  /** Voiceover or music only — the two ways a reel can sound. */
+  readonly audio: "voiceover" | "music";
+  readonly title: string;
+  readonly length: string;
+  /** The published YouTube Short (a plain link — no embed, no third-party cookies). */
+  readonly href: string;
+  readonly poster: Shot;
+}
+
+/** A fixed-price motion graphics package. */
+export interface VideoTier {
+  readonly name: string;
+  readonly price: string;
+  readonly detail: string;
+}
+
 export interface ProcessStep {
   readonly id: string;
   readonly name: string;
