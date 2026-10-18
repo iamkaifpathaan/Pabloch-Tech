@@ -3,16 +3,16 @@
  * Shared setup for /api/brief.php and /admin/.
  *
  * Everything private lives in ONE folder outside the git repo, so a deploy can
- * never overwrite or publish it:
+ * never overwrite or publish it. It's created automatically:
  *
  *   pabloch-private/
- *     config.php      ← your settings and secrets (copy server/config.sample.php)
+ *     config.php      ← settings and secrets, written by /admin/ (setup + Settings)
  *     leads.sqlite    ← every enquiry (created automatically)
  *     sessions/       ← admin login sessions (created automatically)
  *
  * The folder is looked for, in order:
  *   1. the PABLOCH_PRIVATE_DIR environment variable
- *   2. pabloch-private/ next to the site folder (one level above public_html) ← recommended
+ *   2. pabloch-private/ next to the site folder (one level above public_html), created if possible
  *   3. server/private/ inside the site (git-ignored, and blocked by server/.htaccess)
  */
 declare(strict_types=1);
@@ -36,6 +36,12 @@ const PT_SOURCES = [
     'other' => 'Other',
 ];
 
+/**
+ * The studio mailbox. Setup codes are sent here (so only its owner can claim
+ * the admin), and it's the default sender and recipient for alerts.
+ */
+const PT_OWNER_EMAIL = 'kaifkhan@pablochtech.com';
+
 function pt_private_dir(): string
 {
     static $dir = null;
@@ -44,41 +50,66 @@ function pt_private_dir(): string
     if (is_string($env) && $env !== '') return $dir = rtrim($env, '/');
     $siteRoot = dirname(__DIR__);
     $outside = dirname($siteRoot) . '/pabloch-private';
-    if (is_dir($outside)) return $dir = $outside;
+    if (is_dir($outside) || (is_writable(dirname($siteRoot)) && @mkdir($outside, 0700))) return $dir = $outside;
     return $dir = __DIR__ . '/private';
 }
 
-/** Settings from pabloch-private/config.php, merged over safe defaults. */
-function pt_config(): array
+/** Settings from pabloch-private/config.php (written by /admin/), merged over safe defaults. */
+function pt_config(bool $reload = false): array
 {
     static $cfg = null;
-    if ($cfg !== null) return $cfg;
+    if ($cfg !== null && !$reload) return $cfg;
     $defaults = [
         'ADMIN_PASSWORD_HASH' => '',
         'SITE_URL' => 'https://projects.pablochtech.com',
         'TIMEZONE' => 'Asia/Kolkata',
-        'NOTIFY_EMAILS' => [],
-        'MAIL_FROM' => '',
+        'NOTIFY_EMAILS' => [PT_OWNER_EMAIL],
+        'MAIL_FROM' => PT_OWNER_EMAIL,
         'MAIL_FROM_NAME' => 'Pabloch Tech enquiries',
-        'SMTP_HOST' => '',
+        'SMTP_HOST' => 'smtp.hostinger.com',
         'SMTP_PORT' => 465,
         'SMTP_SECURE' => 'ssl',
-        'SMTP_USER' => '',
+        'SMTP_USER' => PT_OWNER_EMAIL,
         'SMTP_PASS' => '',
         'TELEGRAM_BOT_TOKEN' => '',
+        'TELEGRAM_BOT_NAME' => '',
         'TELEGRAM_CHAT_IDS' => [],
         'SECRET' => '',
     ];
-    $file = pt_private_dir() . '/config.php';
-    $loaded = is_file($file) ? require $file : [];
-    $cfg = array_merge($defaults, is_array($loaded) ? $loaded : []);
+    $cfg = array_merge($defaults, pt_read_config_file());
     $cfg['NOTIFY_EMAILS'] = array_values(array_filter((array) $cfg['NOTIFY_EMAILS'], fn ($e) => is_string($e) && filter_var($e, FILTER_VALIDATE_EMAIL)));
     $cfg['TELEGRAM_CHAT_IDS'] = array_values(array_filter(array_map('strval', (array) $cfg['TELEGRAM_CHAT_IDS']), fn ($id) => preg_match('/^-?\d{3,20}$/', $id) === 1));
     $cfg['SITE_URL'] = rtrim((string) $cfg['SITE_URL'], '/');
-    // Used to salt IP hashes. Falls back to something stable but install-specific.
-    if ($cfg['SECRET'] === '') $cfg['SECRET'] = hash('sha256', $file . (string) $cfg['ADMIN_PASSWORD_HASH']);
+    foreach (['MAIL_FROM', 'SMTP_USER'] as $k) if ($cfg[$k] === '') $cfg[$k] = PT_OWNER_EMAIL;
+    // Salts IP hashes. Setup writes a random one; this fallback is stable per install.
+    if ($cfg['SECRET'] === '') $cfg['SECRET'] = hash('sha256', pt_private_dir());
     @date_default_timezone_set((string) $cfg['TIMEZONE']) || date_default_timezone_set('Asia/Kolkata');
     return $cfg;
+}
+
+function pt_read_config_file(): array
+{
+    $file = pt_private_dir() . '/config.php';
+    if (!is_file($file)) return [];
+    $loaded = (static fn () => require $file)();
+    return is_array($loaded) ? $loaded : [];
+}
+
+/** Merges $changes into config.php (atomically) and reloads settings. */
+function pt_save_config(array $changes): void
+{
+    pt_ensure_private_dir();
+    $file = pt_private_dir() . '/config.php';
+    $data = array_merge(pt_read_config_file(), $changes);
+    $php = "<?php\n// Written by /admin/ (Settings). Editing by hand also works.\nreturn " . var_export($data, true) . ";\n";
+    $tmp = $file . '.' . bin2hex(random_bytes(4)) . '.tmp';
+    if (file_put_contents($tmp, $php, LOCK_EX) === false || !rename($tmp, $file)) {
+        @unlink($tmp);
+        throw new RuntimeException("Can't write $file");
+    }
+    @chmod($file, 0600);
+    if (function_exists('opcache_invalidate')) opcache_invalidate($file, true);
+    pt_config(true);
 }
 
 function pt_ensure_private_dir(): void
@@ -87,6 +118,8 @@ function pt_ensure_private_dir(): void
     if (!is_dir($dir) && !@mkdir($dir, 0700, true) && !is_dir($dir)) {
         throw new RuntimeException("Can't create the private folder: $dir");
     }
+    // Belt and braces: even if this folder ever sits under a web root, nothing in it is served.
+    if (!is_file("$dir/.htaccess")) @file_put_contents("$dir/.htaccess", "Require all denied\n");
 }
 
 function pt_db(): PDO

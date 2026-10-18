@@ -2,7 +2,8 @@
 /**
  * Pabloch Tech — private settings for the leads inbox and alerts.
  *
- * DON'T EDIT THIS SAMPLE IN PLACE. Copy it to:
+ * You normally never need this: /admin/ writes the config for you (first-run
+ * setup, then Settings). Only if that's impossible, copy this file to:
  *     pabloch-private/config.php
  * in the folder ABOVE the site folder (next to public_html), and fill it in
  * there. That folder is never in git and never reachable from the web.
@@ -12,8 +13,8 @@
  */
 return [
 
-    /* Your admin password, stored as a hash. Open /admin/ before this is set
-       and the page generates the line to paste here. */
+    /* Your admin password, stored as a hash:
+       php -r "echo password_hash('your password', PASSWORD_DEFAULT);" */
     'ADMIN_PASSWORD_HASH' => '',
 
     'SITE_URL' => 'https://projects.pablochtech.com',
@@ -39,7 +40,7 @@ return [
     /* ---- Telegram alerts (instant, free) ----
        1. In Telegram, message @BotFather → /newbot → copy the token here.
        2. Open your new bot and press Start.
-       3. Admin → Settings → "Find my chat ID" and paste the number below. */
+       3. Admin → Settings → "Connect Telegram" fills this in for you. */
     'TELEGRAM_BOT_TOKEN' => '',
     'TELEGRAM_CHAT_IDS' => [
         // '123456789',

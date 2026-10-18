@@ -193,7 +193,7 @@ function pt_send_mail(array $to, string $subject, string $text, string $html, ?s
         . chunk_split(base64_encode($html))
         . "--$boundary--\r\n";
 
-    if ($cfg['SMTP_HOST'] !== '') {
+    if ($cfg['SMTP_HOST'] !== '' && $cfg['SMTP_PASS'] !== '') {
         $raw = '';
         foreach ($headers as $k => $v) $raw .= "$k: $v\r\n";
         pt_smtp_send($from, $to, $raw . "\r\n" . $body);

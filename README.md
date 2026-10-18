@@ -140,29 +140,29 @@ api/brief.php          ← the form's endpoint
 admin/                 ← index.php (the whole admin), admin.css, admin.js
 server/                ← shared PHP: bootstrap (paths, SQLite), auth, notify (Telegram + SMTP)
                          Blocked from the web by server/.htaccess.
-server/config.sample.php ← copy to pabloch-private/config.php and fill in
+server/config.sample.php ← only if you ever need to write the config by hand
 ```
 
 **Private data never lives in git.** Settings, secrets, the SQLite database and admin sessions go
-in a `pabloch-private/` folder **next to** the site folder (one level above `public_html`). If that
-folder doesn't exist, `server/private/` is used instead (git-ignored and web-blocked).
+in a `pabloch-private/` folder **next to** the site folder (one level above `public_html`), created
+automatically. If it can't be created there, `server/private/` is used instead (git-ignored and
+web-blocked).
 
-### One-time setup on Hostinger
+### One-time setup (all in the browser)
 
-1. hPanel → File Manager: in the folder that **contains** the site folder, create `pabloch-private/`
-   and copy `server/config.sample.php` into it as `config.php`.
-2. Open `/admin/`, choose a password, paste the generated `ADMIN_PASSWORD_HASH` line into
-   `config.php`.
-3. **Email:** fill in `NOTIFY_EMAILS` and the SMTP details of your Hostinger mailbox
-   (`smtp.hostinger.com`, 465, `ssl`).
-4. **Telegram:** create a bot with @BotFather, paste its token into `TELEGRAM_BOT_TOKEN`, press
-   Start in the bot, then Admin → Settings → *Find my chat ID* and paste it into
-   `TELEGRAM_CHAT_IDS`.
-5. Admin → Settings → *Send a test alert*.
+1. Open `/admin/` → **Email me a setup code**. It goes to `PT_OWNER_EMAIL`
+   (kaifkhan@pablochtech.com, set in `server/bootstrap.php`), so only that inbox can claim the admin.
+2. Enter the code, choose a password, list the alert emails, and optionally paste a Telegram bot
+   token (@BotFather → /newbot) and the mailbox password (alerts then go out through
+   smtp.hostinger.com and avoid spam folders).
+3. Settings → open the bot in Telegram, press **Start**, then **Connect Telegram**.
+
+Everything can be changed later under Settings. If the setup email never arrives, copy
+`server/config.sample.php` to `pabloch-private/config.php` and fill it in by hand.
 
 Security: bcrypt-hashed password, `Secure`/`HttpOnly`/`SameSite=Strict` session cookie scoped to
 `/admin/`, CSRF token on every form, lockout after 5 wrong passwords per IP (50 globally per hour),
-a Telegram alert on every admin login, strict CSP, `noindex`. The endpoint accepts same-origin
+a one-time emailed code to claim the admin, a Telegram alert on every admin login, strict CSP, `noindex`. The endpoint accepts same-origin
 POSTs only, validates every field, rate-limits to 5 briefs per IP per 10 minutes, and stores IPs
 only as salted hashes.
 

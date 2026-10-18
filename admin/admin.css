@@ -236,3 +236,6 @@ pre.copy.is-copied { border-color: var(--ok); }
 .checks li.ok > span { color: var(--ok); }
 .checks li.off > span { color: var(--fg-3); }
 .checks p { margin: 2px 0 0; overflow-wrap: anywhere; }
+.resend { margin: 12px 0 0; text-align: center; }
+label.tick { display: flex; align-items: center; gap: 8px; }
+label.tick input { width: auto; }
