@@ -3,3 +3,7 @@ DirectoryIndex index.php
 <IfModule mod_headers.c>
   Header always set X-Robots-Tag "noindex, nofollow"
 </IfModule>
+# Keep LiteSpeed's page cache away from the admin.
+<IfModule LiteSpeed>
+  CacheLookup off
+</IfModule>

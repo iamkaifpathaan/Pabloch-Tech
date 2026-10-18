@@ -16,7 +16,10 @@ require __DIR__ . '/../server/bootstrap.php';
 require __DIR__ . '/../server/auth.php';
 require __DIR__ . '/../server/notify.php';
 
-header('Cache-Control: no-store');
+// Never cache: Hostinger's LiteSpeed/CDN layers must always run this page fresh.
+header('Cache-Control: no-store, no-cache, must-revalidate, private, max-age=0');
+header('Pragma: no-cache');
+header('X-LiteSpeed-Cache-Control: no-cache');
 header('X-Robots-Tag: noindex, nofollow');
 header('Referrer-Policy: no-referrer');
 header('X-Frame-Options: DENY');
@@ -305,8 +308,8 @@ function handle_setup(string $action): void
             file_put_contents($codeFile, json_encode(['hash' => password_hash($code, PASSWORD_DEFAULT), 'expires' => time() + 1800, 'tries' => 0]), LOCK_EX);
             pt_send_mail([PT_OWNER_EMAIL], "Your Pabloch admin setup code: $code", "Your setup code is $code\n\nIt works for 30 minutes. If you didn't ask for it, ignore this email.\n",
                 '<p style="font-family:Arial,sans-serif;font-size:15px">Your Pabloch admin setup code is</p><p style="font-family:Arial,sans-serif;font-size:32px;font-weight:bold;letter-spacing:4px">' . $code . '</p><p style="font-family:Arial,sans-serif;font-size:13px;color:#69645c">It works for 30 minutes. If you didn’t ask for it, ignore this email.</p>');
-            $_SESSION['setup_sent'] = true;
-            redirect('./');
+            render_setup(true, null);
+            return;
         } catch (Throwable $e) {
             error_log('[pabloch] setup code: ' . $e->getMessage());
             $err = 'Couldn’t send the code: ' . $e->getMessage();
@@ -318,7 +321,6 @@ function handle_setup(string $action): void
         $botName = '';
         if (!is_array($saved) || $saved['expires'] < time() || $saved['tries'] >= 5) {
             @unlink($codeFile);
-            unset($_SESSION['setup_sent']);
             $err = 'That code has expired. Send a new one.';
         } elseif (!password_verify(preg_replace('/\D/', '', (string) ($_POST['code'] ?? '')), $saved['hash'])) {
             $saved['tries']++;
@@ -345,7 +347,9 @@ function handle_setup(string $action): void
             redirect('./?view=settings');
         }
     }
-    render_setup(!empty($_SESSION['setup_sent']) && is_file($codeFile), $err);
+    // Show the code form whenever a live code exists — no reliance on the session or a redirect.
+    $live = is_file($codeFile) ? json_decode((string) file_get_contents($codeFile), true) : null;
+    render_setup(is_array($live) && $live['expires'] >= time() && $live['tries'] < 5, $err);
 }
 
 function render_setup(bool $codeSent, ?string $err): void

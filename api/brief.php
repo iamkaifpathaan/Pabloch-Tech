@@ -13,7 +13,8 @@ require __DIR__ . '/../server/bootstrap.php';
 require __DIR__ . '/../server/notify.php';
 
 header('Content-Type: application/json; charset=utf-8');
-header('Cache-Control: no-store');
+header('Cache-Control: no-store, private, max-age=0');
+header('X-LiteSpeed-Cache-Control: no-cache');
 header('X-Robots-Tag: noindex');
 
 function respond(int $status, array $body): never
