@@ -10,3 +10,6 @@ node_modules/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Leads database, sessions and config if kept inside the site (see server/bootstrap.php).
+server/private/

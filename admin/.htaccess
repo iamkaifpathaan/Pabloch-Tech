@@ -1,0 +1,5 @@
+# The admin is PHP; the site root's DirectoryIndex only knows index.html.
+DirectoryIndex index.php
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>

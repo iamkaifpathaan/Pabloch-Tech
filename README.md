@@ -116,18 +116,55 @@ quote, the founder's name and portrait) the content holds `PENDING` —
 
 ## The contact form
 
-The form posts to **Web3Forms** exactly as before, using `WEB3FORMS_KEY` from `config.js`
-(unchanged, never touched by the build). Fields: name, email, company, project type, budget,
-preferred way to talk, message — plus the same `pt_hp` honeypot. `replyto` is set, so hitting
-Reply in your inbox answers the client directly.
+Briefs go to **`/api/brief.php`** first — PHP on Hostinger, in this repo. It saves the brief as a
+lead in the private admin inbox, then sends the alerts (Telegram + email). If that endpoint is
+down, or it saved the lead but couldn't alert anyone (e.g. alerts not configured yet), the form
+**also** sends the brief through **Web3Forms**, using `WEB3FORMS_KEY` from `config.js`, so an
+enquiry is never silently lost. Fields: name, email, company, project type, budget, preferred way
+to talk, message — plus the same `pt_hp` honeypot.
 
-It never pretends: if the key is missing it says the form isn't connected and shows the email
-address; if Web3Forms fails or times out (20 s) it says the brief was **not** sent. The
-confirmation only appears after Web3Forms reports success.
+It never pretends: if both routes fail or time out it says the brief was **not** sent. The
+confirmation only appears after a route reports success. The transport lives in
+`src/client/form/brief.ts` → `resolveTransport()`.
 
-**Moving to your own backend later:** `src/client/form/brief.ts` → `resolveTransport()`. Return
-`jsonEndpointTransport("https://…")` instead and the brief is POSTed to you as JSON. Nothing else
-changes.
+## Leads inbox & alerts (`/admin/`)
+
+A private, password-protected page at **https://projects.pablochtech.com/admin/** listing every
+enquiry as a lead: status (New → Contacted → In talks → Won / Lost, or Future lead), follow-up
+dates, deal value, notes, search, CSV export, and manual entry for leads from Telegram, Instagram
+or referrals. Every new enquiry also triggers a Telegram message and an email to each address in
+`NOTIFY_EMAILS`.
+
+```
+api/brief.php          ← the form's endpoint
+admin/                 ← index.php (the whole admin), admin.css, admin.js
+server/                ← shared PHP: bootstrap (paths, SQLite), auth, notify (Telegram + SMTP)
+                         Blocked from the web by server/.htaccess.
+server/config.sample.php ← copy to pabloch-private/config.php and fill in
+```
+
+**Private data never lives in git.** Settings, secrets, the SQLite database and admin sessions go
+in a `pabloch-private/` folder **next to** the site folder (one level above `public_html`). If that
+folder doesn't exist, `server/private/` is used instead (git-ignored and web-blocked).
+
+### One-time setup on Hostinger
+
+1. hPanel → File Manager: in the folder that **contains** the site folder, create `pabloch-private/`
+   and copy `server/config.sample.php` into it as `config.php`.
+2. Open `/admin/`, choose a password, paste the generated `ADMIN_PASSWORD_HASH` line into
+   `config.php`.
+3. **Email:** fill in `NOTIFY_EMAILS` and the SMTP details of your Hostinger mailbox
+   (`smtp.hostinger.com`, 465, `ssl`).
+4. **Telegram:** create a bot with @BotFather, paste its token into `TELEGRAM_BOT_TOKEN`, press
+   Start in the bot, then Admin → Settings → *Find my chat ID* and paste it into
+   `TELEGRAM_CHAT_IDS`.
+5. Admin → Settings → *Send a test alert*.
+
+Security: bcrypt-hashed password, `Secure`/`HttpOnly`/`SameSite=Strict` session cookie scoped to
+`/admin/`, CSRF token on every form, lockout after 5 wrong passwords per IP (50 globally per hour),
+a Telegram alert on every admin login, strict CSP, `noindex`. The endpoint accepts same-origin
+POSTs only, validates every field, rate-limits to 5 briefs per IP per 10 minutes, and stores IPs
+only as salted hashes.
 
 ## Security
 
@@ -167,6 +204,7 @@ should change them:
 | `config.js` | Your Web3Forms key, email and social handles. |
 | `.htaccess` | Server rules, hand-maintained. |
 | `googleeaf0a72808bb7594.html` | Proves ownership of projects.pablochtech.com to Google Search Console. |
+| `../pabloch-private/` | Admin password hash, alert secrets and the leads database. Outside the repo, never deployed over. |
 
 `googleeaf0a72808bb7594.html` must stay in the repo root (= the site root), with exactly that name
 and exactly this content, with no newline at the end:

@@ -2,7 +2,7 @@
 
 > Pabloch Tech is an independent digital product studio that designs and hand-builds high-performance websites, e-commerce stores and custom digital tools for businesses, with a “working draft before you pay” approach.
 
-Source: https://projects.pablochtech.com/ · Generated 2026-10-15
+Source: https://projects.pablochtech.com/ · Generated 2026-10-18
 
 ## Key facts
 
@@ -422,7 +422,7 @@ A working draft isn’t a mood board or a static mock-up. It’s a real web page
 
 ## Privacy policy
 
-URL: https://projects.pablochtech.com/privacy/ · Last updated 2026-09-27
+URL: https://projects.pablochtech.com/privacy/ · Last updated 2026-10-18
 
 We collect as little as possible, use it only to reply to you and deliver your project, and never sell it. This page explains exactly what that means.
 
@@ -472,9 +472,10 @@ We don’t use your data for automated decision-making or profiling, and we don�
 
 We use a small number of trusted service providers to run the studio. They process data on our behalf, only for the purposes below:
 
-- **Web3Forms** — delivers contact-form submissions to our inbox.
-- **Our email providers** — store and deliver our email.
-- **Hostinger** — hosts this website and its server logs.
+- **Hostinger** — hosts this website, its server logs and our private inbox of contact-form enquiries.
+- **Telegram** — delivers an instant alert of each new enquiry to our own phone.
+- **Our email providers** — store and deliver our email, including a copy of each enquiry.
+- **Web3Forms** — a backup that delivers contact-form submissions to our inbox if our own system is unavailable.
 - **PayPal** — processes invoice payments. Your card or bank details go to PayPal and are never shared with us.
 - **Zoom, Google Meet, Telegram, Instagram and Facebook** — only if you choose to talk with us there, under those services’ own privacy policies.
 
@@ -539,7 +540,7 @@ Questions, requests or complaints about privacy: [hello@pablochtech.com](mailto:
 
 ## Terms of service
 
-URL: https://projects.pablochtech.com/terms/ · Last updated 2026-09-27
+URL: https://projects.pablochtech.com/terms/ · Last updated 2026-10-18
 
 How working with Pabloch Tech works, in plain English: the free draft, the fixed price, what you own, and what happens if plans change.
 
@@ -625,13 +626,15 @@ We may update these terms; the version that applies to your project is the one i
 
 ## Cookie policy
 
-URL: https://projects.pablochtech.com/cookies/ · Last updated 2026-09-27
+URL: https://projects.pablochtech.com/cookies/ · Last updated 2026-10-18
 
 This website uses no cookies at all. That’s why you didn’t see a cookie banner.
 
 ### What this site stores
 
 Nothing. The site sets no cookies — first-party or third-party — and doesn’t use local storage, session storage, tracking pixels, fingerprinting or any similar technology to recognise you or follow you around the web.
+
+The one exception isn’t for visitors: our private admin area uses a strictly necessary login cookie so that only we can open it. You’ll never receive it by browsing the site.
 
 - No analytics (no Google Analytics, no Meta Pixel, nothing similar).
 - No advertising or retargeting tags.
@@ -642,7 +645,7 @@ A Content Security Policy built into every page blocks scripts and embeds from o
 
 ### The contact form
 
-When you press send, the details you typed are posted directly to Web3Forms, which emails them to us. Sending the form doesn’t set a cookie. How we use what you send is covered in our [privacy policy](https://projects.pablochtech.com/privacy/).
+When you press send, the details you typed are posted to our own server, which saves them in our private enquiry inbox and alerts us by email and Telegram. If our server can’t be reached, they go to Web3Forms instead, which emails them to us. Sending the form doesn’t set a cookie. How we use what you send is covered in our [privacy policy](https://projects.pablochtech.com/privacy/).
 
 ### Links to other sites
 
@@ -662,7 +665,7 @@ Email [hello@pablochtech.com](mailto:hello@pablochtech.com) and we’ll answer.
 
 ## Portfolio disclaimer
 
-URL: https://projects.pablochtech.com/disclaimer/ · Last updated 2026-09-27
+URL: https://projects.pablochtech.com/disclaimer/ · Last updated 2026-10-18
 
 Every project on this site is labelled for exactly what it is. This page explains the labels, and the notices that go with them.
 

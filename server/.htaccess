@@ -1,0 +1,3 @@
+# Server-only PHP (config, database, notifications). Never served directly:
+# only /api/brief.php and /admin/ include these files.
+Require all denied

@@ -2,12 +2,12 @@ import { qs } from "../core/env.ts";
 import { readConfig } from "../config.ts";
 import { resolveTransport, validateBrief, type BriefErrors, type BriefField, type ProjectBrief } from "../form/brief.ts";
 
-const TIMEOUT_MS = 20_000;
+/** Covers the studio endpoint (12 s max) plus the Web3Forms fallback. */
+const TIMEOUT_MS = 30_000;
 
 /**
  * Contact form: inline validation (on blur once touched, on submit always),
- * an honest "not connected" state, a timeout, and a real confirmation only
- * after the transport reports success. All text is set with textContent.
+ * a timeout, and a real confirmation only after the transport reports success. All text is set with textContent.
  */
 export function mountBriefForm(wrap: HTMLElement): void {
   const form = qs<HTMLFormElement>("form", wrap);
@@ -20,7 +20,6 @@ export function mountBriefForm(wrap: HTMLElement): void {
   const config = readConfig();
   const transport = resolveTransport(config);
   const idleLabel = submitLabel?.textContent ?? "Send project brief";
-  if (!transport) console.warn("[brief] No valid Web3Forms key in config.js — the form will ask visitors to email instead.");
 
   submit.disabled = false;
   let attempted = false;
@@ -119,11 +118,6 @@ export function mountBriefForm(wrap: HTMLElement): void {
     if (firstInvalid) {
       setStatus("Please check the highlighted fields.", true);
       fieldEl(firstInvalid)?.focus();
-      return;
-    }
-
-    if (!transport) {
-      setStatus("This form isn’t connected yet, so nothing was sent. Please email ", true, true);
       return;
     }
 

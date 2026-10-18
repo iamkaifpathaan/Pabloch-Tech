@@ -5,7 +5,10 @@ import type { LongformDoc } from "../lib/types.ts";
 /**
  * Legal pages. Written for how this site and studio actually work:
  *   - no cookies, analytics, pixels or third-party embeds (see the CSP in document.ts)
- *   - the contact form posts to Web3Forms, which emails the brief to the studio
+ *   - the contact form posts to our own endpoint on Hostinger, which saves the brief in a
+ *     private enquiry inbox and alerts the studio by email and Telegram; Web3Forms is the
+ *     backup when that endpoint is unavailable
+ *   - the only cookie is the owner's login cookie on /admin/ — visitors never get one
  *   - the site is hosted on Hostinger; fonts are self-hosted
  *   - clients pay through PayPal
  * If any of that changes, change these pages in the same commit.
@@ -15,7 +18,7 @@ import type { LongformDoc } from "../lib/types.ts";
  */
 
 /** Bump when the wording of any legal page changes. */
-export const LEGAL_UPDATED = "2026-09-27";
+export const LEGAL_UPDATED = "2026-10-18";
 
 const email = site.email;
 const mail = { a: email, href: `mailto:${email}` } as const;
@@ -85,9 +88,10 @@ export const privacy: LongformDoc = {
     { p: "We use a small number of trusted service providers to run the studio. They process data on our behalf, only for the purposes below:" },
     {
       ul: [
-        [{ strong: "Web3Forms" }, " — delivers contact-form submissions to our inbox."],
-        [{ strong: "Our email providers" }, " — store and deliver our email."],
-        [{ strong: "Hostinger" }, " — hosts this website and its server logs."],
+        [{ strong: "Hostinger" }, " — hosts this website, its server logs and our private inbox of contact-form enquiries."],
+        [{ strong: "Telegram" }, " — delivers an instant alert of each new enquiry to our own phone."],
+        [{ strong: "Our email providers" }, " — store and deliver our email, including a copy of each enquiry."],
+        [{ strong: "Web3Forms" }, " — a backup that delivers contact-form submissions to our inbox if our own system is unavailable."],
         [{ strong: "PayPal" }, " — processes invoice payments. Your card or bank details go to PayPal and are never shared with us."],
         [{ strong: "Zoom, Google Meet, Telegram, Instagram and Facebook" }, " — only if you choose to talk with us there, under those services’ own privacy policies."],
       ],
@@ -183,6 +187,7 @@ export const cookies: LongformDoc = {
     {
       p: "Nothing. The site sets no cookies — first-party or third-party — and doesn’t use local storage, session storage, tracking pixels, fingerprinting or any similar technology to recognise you or follow you around the web.",
     },
+    { p: "The one exception isn’t for visitors: our private admin area uses a strictly necessary login cookie so that only we can open it. You’ll never receive it by browsing the site." },
     {
       ul: [
         "No analytics (no Google Analytics, no Meta Pixel, nothing similar).",
@@ -196,7 +201,7 @@ export const cookies: LongformDoc = {
     { h2: "The contact form", id: "form" },
     {
       p: [
-        "When you press send, the details you typed are posted directly to Web3Forms, which emails them to us. Sending the form doesn’t set a cookie. How we use what you send is covered in our ",
+        "When you press send, the details you typed are posted to our own server, which saves them in our private enquiry inbox and alerts us by email and Telegram. If our server can’t be reached, they go to Web3Forms instead, which emails them to us. Sending the form doesn’t set a cookie. How we use what you send is covered in our ",
         { a: "privacy policy", href: "/privacy/" },
         ".",
       ],
